@@ -328,8 +328,8 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="space-y-8">
-                            <span className="text-[10px] tracking-[0.4em] uppercase text-neutral-600 font-medium">Toolstack & Expertise</span>
+                        <div>
+                            <span className="block text-[10px] tracking-[0.4em] uppercase text-neutral-600 font-medium mb-6">Toolstack & Expertise</span>
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                                 {skills.map((skill) => (
                                     <motion.div
