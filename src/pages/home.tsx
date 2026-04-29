@@ -62,7 +62,7 @@ export default function Home() {
                     UX/UI <span className="text-[#9FD592] font-medium">&</span> GRAPHICS <br />
                     <span className="text-neutral-600 italic font-thin">Designer.</span>
                 </motion.h1>
-                <motion.p className="text-xl md:text-2xl text-neutral-400 font-light max-w-2xl leading-relaxed mb-12 relative z-10">
+                <motion.p className="text-xl md:text-2xl text-neutral-400 font-light leading-relaxed mb-12 relative z-10">
                     Diseño productos digitales donde convergen la estética y la funcionalidad. Integro Inteligencia Artificial para optimizar procesos, elevar la experiencia del usuario y potenciar el pensamiento estratégico.
                 </motion.p>
 
