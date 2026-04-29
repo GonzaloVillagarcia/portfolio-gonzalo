@@ -302,7 +302,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center z-10 relative">
                     <motion.div style={{ y: yImage }} className="lg:col-span-5 relative group">
                         <div className="absolute -inset-4 border border-neutral-900 rounded-2xl -z-10 group-hover:inset-0 transition-all duration-700"></div>
-                        <div className="aspect-[3/4] overflow-hidden rounded-xl bg-neutral-900 border border-neutral-800 relative z-10">
+                        <div className="aspect-square lg:aspect-[3/4] max-w-sm mx-auto lg:max-w-none lg:mx-0 overflow-hidden rounded-xl bg-neutral-900 border border-neutral-800 relative z-10">
                             <img
                                 src="/porfolio.png"
                                 alt="Gonzalo Villagarcía"
