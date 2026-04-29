@@ -199,7 +199,7 @@ export default function Home() {
 
                     {/* FILA 4: 2 PROYECTOS (SMALL) */}
                     {/* PROYECTO 5: 361 CASA DE PASTAS */}
-                    <Link to="/361casadepastas" className="block outline-none md:mt-12">
+                    <Link to="/361casadepastas" className="block outline-none">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
