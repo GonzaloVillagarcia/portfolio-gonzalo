@@ -28,7 +28,7 @@ export default function Home() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a] text-neutral-50 flex flex-col items-center px-6 md:px-12 lg:px-24 selection:bg-[#9FD592] selection:text-[#0a0a0a]">
+        <div className="min-h-screen bg-[#0a0a0a] text-neutral-50 flex flex-col items-center px-6 md:px-12 lg:px-24 selection:bg-[#9FD592] selection:text-[#0a0a0a] w-full overflow-x-hidden">
 
             {/* --- NAVBAR --- */}
             <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-neutral-900/50">
@@ -63,7 +63,7 @@ export default function Home() {
                     <span className="text-neutral-600 italic font-thin">Designer.</span>
                 </motion.h1>
                 <motion.p className="text-xl md:text-2xl text-neutral-400 font-light max-w-2xl leading-relaxed mb-12 relative z-10">
-                    Transformo identidades visuales en productos digitales de alto impacto, potenciando cada flujo con Inteligencia Artificial.
+                    Diseño productos digitales donde convergen la estética y la funcionalidad. Integro Inteligencia Artificial para optimizar procesos, elevar la experiencia del usuario y potenciar el pensamiento estratégico.
                 </motion.p>
 
                 <button
@@ -302,7 +302,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center z-10 relative">
                     <motion.div style={{ y: yImage }} className="lg:col-span-5 relative group">
                         <div className="absolute -inset-4 border border-neutral-900 rounded-2xl -z-10 group-hover:inset-0 transition-all duration-700"></div>
-                        <div className="aspect-[4/5] lg:aspect-[3/4] max-w-[280px] md:max-w-sm mx-auto lg:max-w-none lg:mx-0 overflow-hidden rounded-xl bg-neutral-900 border border-neutral-800 relative z-10">
+                        <div className="aspect-[4/5] lg:aspect-[3/4] w-full overflow-hidden rounded-xl relative z-10">
                             <img
                                 src="/porfolio.png"
                                 alt="Gonzalo Villagarcía"
