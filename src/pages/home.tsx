@@ -62,7 +62,7 @@ export default function Home() {
                     UX/UI <span className="text-[#9FD592] font-medium">&</span> GRAPHICS <br />
                     <span className="text-neutral-600 italic font-thin">Designer.</span>
                 </motion.h1>
-                <motion.p className="text-xl md:text-2xl text-neutral-400 font-light leading-relaxed mb-12 relative z-10">
+                <motion.p className="text-lg md:text-2xl text-neutral-400 font-light leading-relaxed mb-12 relative z-10">
                     Diseño productos digitales donde convergen la estética y la funcionalidad. Integro Inteligencia Artificial para optimizar procesos, elevar la experiencia del usuario y potenciar el pensamiento estratégico.
                 </motion.p>
 
@@ -102,12 +102,12 @@ export default function Home() {
                                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
                                 <span className="inline-block border border-[#9FD592]/30 text-[#9FD592] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#9FD592]/10">
                                     Founder
                                 </span>
                                 <h4 className="text-4xl md:text-5xl font-light tracking-tight mb-2">Pedí tu lavado</h4>
-                                <p className="text-neutral-400 text-base font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
+                                <p className="text-neutral-400 text-base font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
                                     Logística de servicios On-Demand.
                                 </p>
                             </div>
@@ -130,12 +130,12 @@ export default function Home() {
                                 className="absolute inset-0 w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition-all duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
                                 <span className="inline-block border border-[#e34d6d]/30 text-[#e34d6d] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#e34d6d]/10">
                                     Brand Identity
                                 </span>
                                 <h4 className="text-3xl font-light tracking-tight mb-2">RS Connecting</h4>
-                                <p className="text-neutral-400 text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <p className="text-neutral-400 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     Reclutamiento IT a nivel LATAM.
                                 </p>
                             </div>
@@ -157,12 +157,12 @@ export default function Home() {
                                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
                                 <span className="inline-block border border-[#d5a05a]/30 text-[#d5a05a] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#d5a05a]/10">
                                     Food Branding & D2C
                                 </span>
                                 <h4 className="text-3xl font-light tracking-tight mb-2">Los Tucus Empanadas</h4>
-                                <p className="text-neutral-400 text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
+                                <p className="text-neutral-400 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
                                     Identidad visual y packaging para modelo de negocio de congelados direct-to-consumer.
                                 </p>
                             </div>
@@ -185,12 +185,12 @@ export default function Home() {
                                 className="absolute inset-0 w-full h-full object-cover object-[center_45%] group-hover:scale-105 transition-all duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
                                 <span className="inline-block border border-[#c0e600]/30 text-[#c0e600] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#c0e600]/10">
                                     Branding
                                 </span>
                                 <h4 className="text-4xl md:text-5xl font-light tracking-tight mb-2">Brooklyn’s</h4>
-                                <p className="text-neutral-400 text-base font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
+                                <p className="text-neutral-400 text-base font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
                                     Identidad visual y sistema de marca con espíritu urbano.
                                 </p>
                             </div>
@@ -213,12 +213,12 @@ export default function Home() {
                                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b0a] via-transparent to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
                                 <span className="inline-block border border-[#a34d35]/30 text-[#a34d35] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#a34d35]/10 font-sans">
                                     Branding
                                 </span>
                                 <h4 className="text-3xl font-light tracking-tight mb-2 text-white italic" style={{ fontFamily: 'serif' }}>361 Casa de Pastas</h4>
-                                <p className="text-neutral-400 text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 font-sans">
+                                <p className="text-neutral-400 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 font-sans">
                                     Identidad visual urbana.
                                 </p>
                             </div>
@@ -240,12 +240,12 @@ export default function Home() {
                                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
                                 <span className="inline-block border border-[#c28e6c]/30 text-[#c28e6c] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#c28e6c]/10">
                                     Branding
                                 </span>
                                 <h4 className="text-3xl font-light tracking-tight mb-2 text-[#e8dccb]" style={{ fontFamily: "'ACaslonPro-Regular', Georgia, serif" }}>Don Quijote</h4>
-                                <p className="text-[#a89582] text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <p className="text-[#a89582] text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     Gastronomía de categoría.
                                 </p>
                             </div>
@@ -268,12 +268,12 @@ export default function Home() {
                                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#003D7F]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
                                 <span className="inline-block border border-[#C1D000]/30 text-[#C1D000] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#C1D000]/10">
                                     AgTech Branding
                                 </span>
                                 <h4 className="text-3xl md:text-5xl font-light tracking-tight mb-2 text-white">Academia de Riego</h4>
-                                <p className="text-neutral-300 text-base font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
+                                <p className="text-neutral-300 text-base font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
                                     Arquitectura de marca e identidad visual by Kilimo.
                                 </p>
                             </div>
@@ -311,7 +311,7 @@ export default function Home() {
                         </div>
                     </motion.div>
 
-                    <motion.div style={{ y: yText }} className="lg:col-span-7 space-y-16 pt-12 lg:pt-0">
+                    <motion.div style={{ y: yText }} className="lg:col-span-7 space-y-16 pt-4 lg:pt-0">
                         <div className="space-y-8">
                             <span className="block text-neutral-500 text-xs tracking-[0.2em] uppercase font-medium">Sobre Mí</span>
                             <h3 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight uppercase text-neutral-200">
