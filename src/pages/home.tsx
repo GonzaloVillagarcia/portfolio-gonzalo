@@ -368,8 +368,8 @@ export default function Home() {
                 <div className="absolute bottom-8 lg:bottom-12 w-full max-w-7xl px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-neutral-600 z-10">
                     <span className="font-medium">© 2026 Gonzalo Villagarcía</span>
                     <div className="flex gap-8 font-medium">
-                        <a href="#" className="hover:text-white transition-colors duration-300">LinkedIn</a>
-                        <a href="#" className="hover:text-white transition-colors duration-300">GitHub</a>
+                        <a href="https://www.linkedin.com/in/gonzalovillagarcia/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">LinkedIn</a>
+                        <a href="https://github.com/GonzaloVillagarcia?tab=repositories" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">GitHub</a>
                     </div>
                 </div>
             </div>
