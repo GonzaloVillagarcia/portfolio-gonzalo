@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function CasaDePastas361() {
     const fadeUp = {
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
     };
 
     return (
