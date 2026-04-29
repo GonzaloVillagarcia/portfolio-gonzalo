@@ -57,9 +57,9 @@ export default function Home() {
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-7xl md:text-[9rem] lg:text-[11rem] font-light tracking-tighter leading-[0.9] uppercase mb-12 relative z-10"
+                    className="text-6xl md:text-[6rem] lg:text-[7.5rem] font-light tracking-tighter leading-[0.9] uppercase mb-12 relative z-10"
                 >
-                    UX/UI <span className="text-[#9FD592] font-medium">&</span> <br />
+                    UX/UI <span className="text-[#9FD592] font-medium">&</span> GRAPHICS <br />
                     <span className="text-neutral-600 italic font-thin">Designer.</span>
                 </motion.h1>
                 <motion.p className="text-xl md:text-2xl text-neutral-400 font-light max-w-2xl leading-relaxed mb-12 relative z-10">
