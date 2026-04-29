@@ -20,10 +20,11 @@ export default function Home() {
     };
 
     const skills = [
-        "UX/UI DESIGN", "PRODUCT STRATEGY", "DESIGN SYSTEMS",
-        "FIGMA", "WEB3 INTERFACES", "WIREFRAMING",
-        "PROTOTYPING", "AI-DRIVEN WORKFLOWS",
-        "PHOTOSHOP", "ILLUSTRATOR", "AFTER EFFECTS"
+        "Claudecode", "Antigravity", "Nano banana",
+        "Gemini", "Supabase", "Vercel",
+        "Webflow", "HTML / CSS", "Figma",
+        "Illustrator", "Photoshop", "After Effects",
+        "AI Driven Workflows", "Product Management"
     ];
 
     return (
