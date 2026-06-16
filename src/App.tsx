@@ -8,6 +8,8 @@ import DonQuijote from './pages/donquijote';
 import AcademiaDeRiego from './pages/academiaderiego';
 import CasaDePastas361 from './pages/361casadepastas';
 import LosTucus from './pages/lostucus';
+import Museo3D from './pages/museo3d';
+
 
 // Este componente hace que al cambiar de ruta, la página aparezca arriba de todo
 const ScrollToTop = () => {
@@ -31,6 +33,8 @@ export default function App() {
         <Route path="/academiaderiego" element={<AcademiaDeRiego />} />
         <Route path="/361casadepastas" element={<CasaDePastas361 />} />
         <Route path="/lostucus" element={<LosTucus />} />
+        <Route path="/museo3d" element={<Museo3D />} />
+
         {/* <Route path="/xcapit" element={<Xcapit />} /> */}
       </Routes>
     </Router>
