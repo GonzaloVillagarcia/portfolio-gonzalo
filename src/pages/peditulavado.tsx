@@ -59,7 +59,7 @@ export default function PediTuLavado() {
                             <img
                                 src="/portfolio1.png"
                                 alt="PediTuLavado Web Interface"
-                                className="w-full h-full object-cover md:object-contain group-hover:scale-105 transition-transform duration-1000"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                             />
                             <div className="absolute bottom-6 left-6 flex items-center gap-3">
                                 <span className="text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
