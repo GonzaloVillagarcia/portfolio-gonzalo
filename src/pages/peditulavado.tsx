@@ -57,7 +57,7 @@ export default function PediTuLavado() {
                     <div className="md:col-span-12 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl relative group p-2 md:p-6">
                         <div className="aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
                             <img
-                                src="/portfolio.png"
+                                src="/portfolio1.png"
                                 alt="PediTuLavado Web Interface"
                                 className="w-full h-full object-cover md:object-contain group-hover:scale-105 transition-transform duration-1000"
                             />
