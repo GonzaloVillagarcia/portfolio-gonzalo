@@ -55,15 +55,15 @@ export default function PediTuLavado() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
                     <div className="md:col-span-12 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl relative group p-2 md:p-6">
-                        <div className="aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
+                        <div className="aspect-video md:aspect-[16/9] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
                             <img
                                 src="/portfolio1.png"
-                                alt="PediTuLavado Web Interface"
+                                alt="PediTuLavado Main Interface"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                             />
                             <div className="absolute bottom-6 left-6 flex items-center gap-3">
                                 <span className="text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                    [ Web Dashboard ]
+                                    [ App Showcase ]
                                 </span>
                             </div>
                         </div>
