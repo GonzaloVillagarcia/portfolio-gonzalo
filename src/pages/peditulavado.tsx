@@ -57,7 +57,7 @@ export default function PediTuLavado() {
                     <div className="md:col-span-12 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl relative group p-2 md:p-6">
                         <div className="aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
                             <img
-                                src="/perfilcliente1.png"
+                                src="/portfolio.png"
                                 alt="PediTuLavado Web Interface"
                                 className="w-full h-full object-cover md:object-contain group-hover:scale-105 transition-transform duration-1000"
                             />
@@ -72,7 +72,7 @@ export default function PediTuLavado() {
                     <div className="md:col-span-7 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-4 md:p-6 group">
                         <div className="aspect-[4/3] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
                             <img
-                                src="/perfilcliente2.png"
+                                src="/portfolio2.png"
                                 alt="PediTuLavado App Isometric"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             />
@@ -85,7 +85,7 @@ export default function PediTuLavado() {
                     <div className="md:col-span-5 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-4 md:p-6 md:mt-16 group">
                         <div className="aspect-[3/4] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
                             <img
-                                src="/perfilcliente.png"
+                                src="/portfolio.png"
                                 alt="PediTuLavado UI Front"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             />

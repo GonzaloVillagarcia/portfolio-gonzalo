@@ -97,7 +97,7 @@ export default function Home() {
                             className="group relative aspect-square md:aspect-[16/9] bg-neutral-900 border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
                         >
                             <img
-                                src="/perfilcliente2.png"
+                                src="/portfolio1.png"
                                 alt="PediTuLavado Preview"
                                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
                             />
