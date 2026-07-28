@@ -1,6 +1,98 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+
+// --- CARD DE PROYECTO PROPIO: tratamiento hero diferenciado (tilt 3D + spotlight + beam) ---
+function FounderCard() {
+    const px = useMotionValue(0.5);
+    const py = useMotionValue(0.5);
+
+    const rotateX = useSpring(useTransform(py, [0, 1], [7, -7]), { stiffness: 150, damping: 18 });
+    const rotateY = useSpring(useTransform(px, [0, 1], [-7, 7]), { stiffness: 150, damping: 18 });
+
+    const parX = useSpring(useTransform(px, [0, 1], [-10, 10]), { stiffness: 120, damping: 22 });
+    const parY = useSpring(useTransform(py, [0, 1], [-6, 6]), { stiffness: 120, damping: 22 });
+
+    return (
+        <Link
+            to="/peditulavado"
+            className="block outline-none md:col-span-2 group"
+            style={{ perspective: 1400 }}
+        >
+            <motion.div
+                onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    px.set((e.clientX - rect.left) / rect.width);
+                    py.set((e.clientY - rect.top) / rect.height);
+                }}
+                onMouseLeave={() => {
+                    px.set(0.5);
+                    py.set(0.5);
+                }}
+                style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+                className="relative aspect-square md:aspect-[16/9] rounded-2xl"
+            >
+                {/* Haz de luz giratorio en el borde (beam) */}
+                <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                    <motion.div
+                        aria-hidden
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+                        className="absolute left-1/2 top-1/2 h-[190%] w-[190%] -translate-x-1/2 -translate-y-1/2"
+                        style={{
+                            background:
+                                'conic-gradient(from 0deg, transparent 0deg, transparent 250deg, rgba(159,213,146,0.9) 305deg, rgba(159,213,146,0) 340deg, transparent 360deg)',
+                        }}
+                    />
+                </div>
+
+                {/* Superficie de la card */}
+                <div className="absolute inset-[1.5px] rounded-[15px] overflow-hidden bg-neutral-900 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.85)] transition-shadow duration-700 group-hover:shadow-[0_40px_110px_-30px_rgba(159,213,146,0.28)]">
+                    <img
+                        src="/portfolio1.png"
+                        alt="PediTuLavado Preview"
+                        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-60"></div>
+
+                    {/* Contenido con parallax de profundidad */}
+                    <motion.div
+                        style={{ x: parX, y: parY }}
+                        className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full"
+                    >
+                        <h4 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">Pedí tu lavado</h4>
+
+                        {/* Firma del founder — foto + estado en vivo para máxima presencia personal */}
+                        <div className="flex items-center gap-3.5 mb-5">
+                            <div className="relative shrink-0">
+                                <img
+                                    src="/porfolio.png"
+                                    alt="Gonzalo Villagarcía"
+                                    className="w-12 h-12 rounded-full object-cover object-top ring-1 ring-[#9FD592]/50 shadow-[0_0_18px_-2px_rgba(159,213,146,0.55)]"
+                                />
+                                <span className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9FD592] opacity-60"></span>
+                                    <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-[#9FD592] border-2 border-[#0a0a0a] shadow-[0_0_6px_rgba(159,213,146,0.9)]"></span>
+                                </span>
+                            </div>
+                            <div className="flex flex-col leading-tight gap-1">
+                                <span className="text-white text-base md:text-lg font-normal">Gonzalo Villagarcía</span>
+                                <span className="text-sm font-light tracking-wide">
+                                    <span className="text-[#9FD592]">Founder</span>
+                                    <span className="text-neutral-400"> &amp; Product Designer</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <p className="text-neutral-300 text-base font-light max-w-md">
+                            Logística de servicios On-Demand.
+                        </p>
+                    </motion.div>
+                </div>
+            </motion.div>
+        </Link>
+    );
+}
 
 export default function Home() {
     const containerRef = useRef(null);
@@ -88,31 +180,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     {/* FILA 1: 1 PROYECTO (LARGE) */}
                     {/* PROYECTO 1: PEDI TU LAVADO */}
-                    <Link to="/peditulavado" className="block outline-none md:col-span-2">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: 0.1, duration: 0.6 }}
-                            className="group relative aspect-square md:aspect-[16/9] bg-neutral-900 border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
-                        >
-                            <img
-                                src="/portfolio1.png"
-                                alt="PediTuLavado Preview"
-                                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="inline-block border border-[#9FD592]/30 text-[#9FD592] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#9FD592]/10">
-                                    Founder
-                                </span>
-                                <h4 className="text-4xl md:text-5xl font-light tracking-tight mb-2">Pedí tu lavado</h4>
-                                <p className="text-neutral-400 text-base font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
-                                    Logística de servicios On-Demand.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </Link>
+                    <FounderCard />
 
                     {/* FILA 2: 2 PROYECTOS (SMALL) */}
                     {/* PROYECTO 2: RS CONNECTING */}
