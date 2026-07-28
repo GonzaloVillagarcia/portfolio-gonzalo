@@ -280,28 +280,56 @@ export default function Home() {
                         </motion.div>
                     </Link>
 
-                    {/* NUEVO PROYECTO: MUSEO 3D */}
-                    <Link to="/museo3d" className="block outline-none md:col-span-2 md:mt-12">
+                    {/* FILA 6: 2 PROYECTOS (SMALL) */}
+                    {/* PROYECTO 8: MUSEO 3D */}
+                    <Link to="/museo3d" className="block outline-none">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "0px" }}
-                            transition={{ delay: 0.2, duration: 0.6 }}
-                            className="group relative aspect-square md:aspect-[16/9] bg-[#0a0a0a] border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ delay: 0.1, duration: 0.6 }}
+                            className="group relative aspect-[4/5] bg-[#0a0a0a] border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
                         >
                             <img
                                 src="/login.png"
                                 alt="Museo 3D Web Experience"
-                                className="absolute inset-0 w-full h-full object-cover md:object-contain group-hover:scale-105 transition-all duration-700 ease-out"
+                                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
                                 <span className="inline-block border border-[#9FD592]/30 text-[#9FD592] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#9FD592]/10">
                                     Web 3D
                                 </span>
-                                <h4 className="text-3xl md:text-5xl font-light tracking-tight mb-2 text-white">Museo 3D</h4>
-                                <p className="text-neutral-300 text-base font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
+                                <h4 className="text-3xl font-light tracking-tight mb-2 text-white">Museo 3D</h4>
+                                <p className="text-neutral-300 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
                                     Experiencia inmersiva e interactiva en la web.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </Link>
+
+                    {/* PROYECTO 9: ZYGMA */}
+                    <Link to="/zygma" className="block outline-none md:mt-12">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ delay: 0.2, duration: 0.6 }}
+                            className="group relative aspect-[4/5] bg-[#0a0a0a] border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
+                        >
+                            <img
+                                src="/zygmamobile.png"
+                                alt="Zygma Empresa Constructora"
+                                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10 opacity-95 transition-opacity duration-700 group-hover:opacity-80"></div>
+                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                                <span className="inline-block border border-[#cc5631]/30 text-[#e27254] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#cc5631]/10">
+                                    Web Design & Dev
+                                </span>
+                                <h4 className="text-3xl font-light tracking-tight mb-2 text-white">Zygma</h4>
+                                <p className="text-neutral-300 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
+                                    Sitio institucional para empresa de soluciones constructivas.
                                 </p>
                             </div>
                         </motion.div>
