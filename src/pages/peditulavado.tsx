@@ -63,7 +63,7 @@ export default function PediTuLavado() {
                             />
                             <div className="absolute bottom-6 left-6 flex items-center gap-3">
                                 <span className="text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                    [ App Showcase ]
+                                    [ Vista General ]
                                 </span>
                             </div>
                         </div>
@@ -77,7 +77,7 @@ export default function PediTuLavado() {
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                             <span className="absolute bottom-6 left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                [ Mobile App Experience ]
+                                [ Experiencia Web ]
                             </span>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ export default function PediTuLavado() {
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                             <span className="absolute bottom-6 left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                [ Interface Detail ]
+                                [ Experiencia Mobile ]
                             </span>
                         </div>
                     </div>
