@@ -1,6 +1,47 @@
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+const CONTACT_EMAIL = 'gonzaloevillagarcia@gmail.com';
+
+// --- EMAIL: clic para copiar, con feedback visual ---
+function CopyEmailButton() {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(CONTACT_EMAIL);
+        } catch {
+            return;
+        }
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
+    return (
+        <button
+            type="button"
+            onClick={handleCopy}
+            className="group relative text-lg md:text-2xl font-light text-neutral-400 hover:text-[#9FD592] transition-colors duration-500"
+        >
+            {CONTACT_EMAIL}
+            <span className="absolute -bottom-2 left-0 w-0 h-px bg-[#9FD592] transition-all duration-500 group-hover:w-full"></span>
+            <AnimatePresence>
+                {copied && (
+                    <motion.span
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 6 }}
+                        transition={{ duration: 0.25 }}
+                        className="absolute left-1/2 -translate-x-1/2 -bottom-10 text-xs font-medium tracking-widest uppercase text-[#9FD592] whitespace-nowrap"
+                    >
+                        ¡Copiado!
+                    </motion.span>
+                )}
+            </AnimatePresence>
+        </button>
+    );
+}
 
 // --- CARD DE PROYECTO PROPIO: tratamiento hero diferenciado (tilt 3D + spotlight + beam) ---
 function FounderCard() {
@@ -409,7 +450,7 @@ export default function Home() {
 
             {/* --- ABOUT SECTION --- */}
             <section id="about" ref={containerRef} className="w-full max-w-7xl py-32 md:py-40 relative overflow-hidden scroll-mt-20 z-10">
-                <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.03] pointer-events-none overflow-hidden">
+                <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.12] pointer-events-none overflow-hidden">
                     <div className="w-[150vw] h-[150vw] animate-[spin_60s_linear_infinite]">
                         <svg viewBox="0 0 1000 1000" className="w-full h-full fill-current text-[#9FD592]">
                             <path id="giantTextPath" d="M 500, 500 m -450, 0 a 450,450 0 1,1 900,0 a 450,450 0 1,1 -900,0" fill="none" />
@@ -482,10 +523,7 @@ export default function Home() {
                     <h2 className="text-[12vw] md:text-[8vw] font-black tracking-tighter leading-[0.9] text-neutral-50 mb-12 uppercase">
                         Hagámosla <span className="text-[#9FD592]">real.</span>
                     </h2>
-                    <a href="mailto:gonzaloevillagarcia@gmail.com" className="group relative text-lg md:text-2xl font-light text-neutral-400 hover:text-[#9FD592] transition-colors duration-500">
-                        gonzaloevillagarcia@gmail.com
-                        <span className="absolute -bottom-2 left-0 w-0 h-px bg-[#9FD592] transition-all duration-500 group-hover:w-full"></span>
-                    </a>
+                    <CopyEmailButton />
                 </motion.div>
 
                 <div className="absolute bottom-8 lg:bottom-12 w-full max-w-7xl px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-neutral-600 z-10">

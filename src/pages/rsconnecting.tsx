@@ -60,7 +60,7 @@ export default function RsConnecting() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                             <div className="absolute bottom-6 left-6 flex items-center gap-3">
                                 <span className="text-xs text-white/90 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                    [ Brand Application: Identity ]
+                                    [ Identidad de Marca ]
                                 </span>
                             </div>
                         </div>
@@ -76,7 +76,7 @@ export default function RsConnecting() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             <span className="absolute bottom-6 left-6 text-xs text-white/90 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                [ Brand Application: Stationery ]
+                                [ Papelería ]
                             </span>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ export default function RsConnecting() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             <span className="absolute bottom-6 left-6 text-xs text-white/90 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                [ Brand Application: Corporate ]
+                                [ Aplicación Corporativa ]
                             </span>
                         </div>
                     </div>

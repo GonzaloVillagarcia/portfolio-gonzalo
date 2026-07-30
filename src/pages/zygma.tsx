@@ -63,7 +63,7 @@ export default function Zygma() {
                             />
                             <div className="absolute bottom-6 left-6 flex items-center gap-3">
                                 <span className="text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                    [ Home / Hero ]
+                                    [ Portada Principal ]
                                 </span>
                             </div>
                         </div>
