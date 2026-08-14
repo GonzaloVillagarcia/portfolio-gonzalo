@@ -10,6 +10,7 @@ import CasaDePastas361 from './pages/361casadepastas';
 import LosTucus from './pages/lostucus';
 import Museo3D from './pages/museo3d';
 import Zygma from './pages/zygma';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 
 // Este componente hace que al cambiar de ruta, la página aparezca arriba de todo
@@ -39,6 +40,7 @@ export default function App() {
 
         {/* <Route path="/xcapit" element={<Xcapit />} /> */}
       </Routes>
+      <FloatingWhatsApp />
     </Router>
   );
 }
