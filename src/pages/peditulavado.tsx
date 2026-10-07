@@ -1,6 +1,68 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+const PROJECT_FACTS = [
+    { label: 'Rol', value: 'Founder & Product Designer (proyecto individual)' },
+    { label: 'Período', value: 'Enero 2026 – hoy · lanzado en agosto' },
+    { label: 'Plataforma', value: 'Webapp, sin descarga' },
+    { label: 'Zona', value: 'Córdoba, Argentina' },
+    { label: 'Usuarios', value: 'Cliente y profesional' },
+];
+
+// --- FLUJO DEL PEDIDO: pasos del profesional, con las fotos opcionales intercaladas ---
+const ORDER_STEPS: { label: string; optional?: boolean }[] = [
+    { label: 'Ir a la ubicación del lavado' },
+    { label: 'Ingresar el PIN del cliente' },
+    { label: 'Fotos del antes', optional: true },
+    { label: 'Lavado en curso' },
+    { label: 'Fotos del después', optional: true },
+    { label: 'Pago' },
+    { label: 'Trabajo terminado' },
+];
+
+function OrderFlow() {
+    let step = 0;
+    return (
+        <figure className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6 md:p-8">
+            <figcaption className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-medium mb-6">
+                Pedido confirmado → flujo del profesional
+            </figcaption>
+            <ol className="relative">
+                {ORDER_STEPS.map((s, i) => {
+                    if (!s.optional) step += 1;
+                    const isLast = i === ORDER_STEPS.length - 1;
+                    return (
+                        <li key={s.label} className={`relative flex items-center gap-4 ${isLast ? '' : 'pb-5'}`}>
+                            {!isLast && (
+                                <span aria-hidden className="absolute left-[15px] top-8 bottom-0 w-px bg-neutral-800" />
+                            )}
+                            {s.optional ? (
+                                <span className="relative z-10 flex shrink-0 items-center justify-center w-8 h-8 rounded-full border border-dashed border-neutral-600 bg-neutral-950">
+                                    <svg aria-hidden viewBox="0 0 16 16" className="w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" strokeWidth="1.3">
+                                        <rect x="2" y="4" width="12" height="9" rx="1.5" />
+                                        <circle cx="8" cy="8.5" r="2.2" />
+                                        <path d="M5.5 4l1-1.5h3l1 1.5" />
+                                    </svg>
+                                </span>
+                            ) : (
+                                <span className="relative z-10 flex shrink-0 items-center justify-center w-8 h-8 rounded-full border border-[#9FD592]/50 bg-[#9FD592]/10 text-[#9FD592] text-xs font-medium">
+                                    {step}
+                                </span>
+                            )}
+                            <span className={s.optional ? 'text-sm text-neutral-500' : 'text-sm md:text-base text-neutral-200'}>
+                                {s.label}
+                                {s.optional && (
+                                    <span className="ml-2 text-[10px] tracking-[0.15em] uppercase text-neutral-600">Opcional</span>
+                                )}
+                            </span>
+                        </li>
+                    );
+                })}
+            </ol>
+        </figure>
+    );
+}
+
 export default function PediTuLavado() {
     const fadeUp = {
         hidden: { opacity: 0, y: 20 },
@@ -172,65 +234,83 @@ export default function PediTuLavado() {
                                     Cuando el profesional llega, el cliente le da un PIN. Así se asegura de que la persona que va a su casa es la que envió la plataforma y no otra. Es una decisión de seguridad y de confianza: el cliente abre la puerta de su casa a alguien que no conoce, y el PIN le da una forma concreta de verificarlo.
                                 </p>
                             </div>
+                            <div className="space-y-3">
+                                <h4 className="text-neutral-200 font-normal">Verificación de identidad y antecedentes</h4>
+                                <p>
+                                    Para que la plataforma sea segura, cada profesional tiene que presentar su DNI, una selfie y un certificado de antecedentes vigente, con una antigüedad máxima de 3 a 6 meses. Es la otra mitad del PIN: el PIN confirma que llegó la persona correcta, y la verificación confirma que esa persona es quien dice ser y no tiene antecedentes.
+                                </p>
+                            </div>
+                            <div className="space-y-3">
+                                <h4 className="text-neutral-200 font-normal">Split de pagos</h4>
+                                <p>
+                                    El cliente hace un solo pago y la plataforma lo divide automáticamente: una parte va al profesional y otra queda como comisión. Es la forma más simple de repartir la plata: el cliente paga una vez, el profesional recibe lo suyo y yo no tengo que hacer transferencias a mano.
+                                </p>
+                            </div>
+                            <div className="space-y-6">
+                                <div className="space-y-3">
+                                    <h4 className="text-neutral-200 font-normal">Flujo del pedido</h4>
+                                    <p>
+                                        Mantuve los pasos al mínimo. Una vez hecho el pedido, el profesional pasa por cinco estados. En el medio puede subir fotos de cómo estaba el auto antes de empezar y de cómo quedó al terminar. Es opcional, pero sirve si el auto tiene un rayón, una marca o algún daño previo: queda la evidencia de que ya estaba así y no se culpa al profesional por algo que no hizo.
+                                    </p>
+                                </div>
+                                <OrderFlow />
+                            </div>
+                        </div>
+                    </motion.section>
+                    <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
+                        <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6 border-b border-neutral-800 pb-4">
+                            Lanzamiento
+                        </h3>
+                        <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-6">
+                            <p>
+                                Lancé la plataforma en agosto de 2026 en Córdoba. Hoy tiene más de 150 usuarios entre clientes y profesionales.
+                            </p>
+                            <p>
+                                El proyecto salió en El Show del Lagarto, un programa de TV local.
+                            </p>
+                            <a
+                                href="https://www.youtube.com/watch?v=JaMCPTRfNcQ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group inline-flex items-center gap-3 text-sm tracking-wide text-[#9FD592] hover:text-neutral-50 transition-colors duration-300"
+                            >
+                                <span className="flex items-center justify-center w-9 h-9 rounded-full border border-[#9FD592]/40 group-hover:bg-[#9FD592] group-hover:text-[#0a0a0a] transition-all duration-300">
+                                    <svg aria-hidden viewBox="0 0 12 12" className="w-3 h-3 ml-0.5" fill="currentColor"><path d="M3 1.5v9l7.5-4.5z" /></svg>
+                                </span>
+                                Ver la nota en YouTube
+                            </a>
                         </div>
                     </motion.section>
                 </div>
 
-                <div className="md:col-span-5 relative z-10">
-                    <div className="sticky top-32 space-y-16">
+                <div className="md:col-span-5 relative z-10 order-first md:order-none">
+                    <div className="sticky top-32 space-y-10">
 
                         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6">
-                                Excelencia Técnica
+                                Ficha del proyecto
                             </h3>
-                            <ul className="space-y-6 text-sm md:text-base text-neutral-400 font-light">
-                                <li className="flex flex-col gap-1">
-                                    <span className="text-neutral-200 font-medium">Frontend</span>
-                                    <span>React 19, TypeScript (Vite), Framer Motion.</span>
-                                </li>
-                                <li className="flex flex-col gap-1">
-                                    <span className="text-neutral-200 font-medium">Backend & Infraestructura</span>
-                                    <span>Supabase (PostgreSQL, Realtime, RLS Auth).</span>
-                                </li>
-                                <li className="flex flex-col gap-1">
-                                    <span className="text-neutral-200 font-medium">Metodología</span>
-                                    <span>AI-Driven Workflows (IA generativa para iteración ágil).</span>
-                                </li>
-                            </ul>
+                            <dl className="space-y-5 text-sm md:text-base font-light">
+                                {PROJECT_FACTS.map((fact) => (
+                                    <div key={fact.label} className="border-l border-neutral-800 pl-4">
+                                        <dt className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-medium mb-1">{fact.label}</dt>
+                                        <dd className="text-neutral-200">{fact.value}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                            <p className="mt-8 text-sm text-neutral-500 font-light leading-relaxed">
+                                Construido con desarrollo asistido por IA (Claude Code): React, Supabase, Mercado Pago.
+                            </p>
                         </motion.section>
 
-                        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                            <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6">
-                                Pilares del Proyecto
-                            </h3>
-                            <ul className="space-y-6 text-sm font-light text-neutral-400">
-                                <li className="border-l border-neutral-800 pl-4">
-                                    <strong className="text-neutral-200 font-medium block mb-1">UX/UI Mobile-First</strong>
-                                    Flujo de conversión reducido a su mínima expresión.
-                                </li>
-                                <li className="border-l border-neutral-800 pl-4">
-                                    <strong className="text-neutral-200 font-medium block mb-1">Google Maps API</strong>
-                                    Asignación dinámica por proximidad geográfica.
-                                </li>
-                                <li className="border-l border-neutral-800 pl-4">
-                                    <strong className="text-neutral-200 font-medium block mb-1">Fintech Integration</strong>
-                                    Checkout transparente y split payments (Mercado Pago).
-                                </li>
-                                <li className="border-l border-neutral-800 pl-4">
-                                    <strong className="text-neutral-200 font-medium block mb-1">WhatsApp API (Meta)</strong>
-                                    Notificación instantánea a los lavadores sobre nuevas solicitudes.
-                                </li>
-                            </ul>
-                        </motion.section>
-
-                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="pt-8 relative z-20">
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative z-20">
                             <a
                                 href="https://www.peditulavado.com.ar"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 className="w-full flex justify-center items-center px-8 py-4 bg-[#9FD592]/10 border border-[#9FD592]/50 rounded-xl text-xs tracking-widest uppercase text-[#9FD592] hover:bg-[#9FD592] hover:text-[#0a0a0a] transition-all duration-500 font-bold"
                             >
-                                Visitar Plataforma (Alpha)
+                                Visitar plataforma
                             </a>
                         </motion.div>
 
