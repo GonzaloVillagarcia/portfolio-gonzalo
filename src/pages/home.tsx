@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 
 const CONTACT_EMAIL = 'gonzaloevillagarcia@gmail.com';
@@ -136,6 +136,140 @@ function FounderCard() {
     );
 }
 
+// --- TÍTULO DE BLOQUE DE PROYECTOS ---
+function SectionHeading({ eyebrow, title, accent }: { eyebrow: string; title: string; accent: string }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="mb-12 md:mb-16"
+        >
+            <span className="block text-neutral-500 text-xs tracking-[0.2em] uppercase font-medium mb-4">{eyebrow}</span>
+            <h3 className="text-[8vw] md:text-[4vw] font-light tracking-tighter leading-none uppercase text-neutral-50">
+                {title} <span className="text-[#9FD592]">{accent}</span>
+            </h3>
+        </motion.div>
+    );
+}
+
+// --- PROYECTOS DE BRANDING: grilla compacta, cada uno conserva su color de marca ---
+type BrandProject = {
+    to: string;
+    img: string;
+    alt: string;
+    imgPosition?: string;
+    tag: string;
+    color: string;
+    title: string;
+    titleClassName?: string;
+    titleStyle?: CSSProperties;
+    description: string;
+    descriptionClassName?: string;
+    cardClassName?: string;
+};
+
+const BRANDING_PROJECTS: BrandProject[] = [
+    {
+        to: '/rsconnecting',
+        img: '/rs-home-mockup.png',
+        alt: 'RS Connecting Identity',
+        imgPosition: 'object-[center_60%]',
+        tag: 'Brand Identity',
+        color: '#e34d6d',
+        title: 'RS Connecting',
+        description: 'Reclutamiento IT a nivel LATAM.',
+    },
+    {
+        to: '/lostucus',
+        img: '/tucus-box1.png',
+        alt: 'Los Tucus Branding',
+        tag: 'Food Branding & D2C',
+        color: '#d5a05a',
+        title: 'Los Tucus Empanadas',
+        description: 'Identidad visual y packaging para modelo de negocio de congelados direct-to-consumer.',
+    },
+    {
+        to: '/brooklyns',
+        img: '/brooklyns-home-mockup.jpg',
+        alt: 'Brooklyn’s Branding',
+        imgPosition: 'object-[center_45%]',
+        tag: 'Branding',
+        color: '#c0e600',
+        title: 'Brooklyn’s',
+        description: 'Identidad visual y sistema de marca con espíritu urbano.',
+    },
+    {
+        to: '/361casadepastas',
+        img: '/361-packaging.png',
+        alt: '361 Identidad',
+        tag: 'Branding',
+        color: '#a34d35',
+        title: '361 Casa de Pastas',
+        titleClassName: 'text-white italic',
+        titleStyle: { fontFamily: 'serif' },
+        description: 'Identidad visual urbana.',
+        cardClassName: 'bg-[#0d0b0a] border-white/5',
+    },
+    {
+        to: '/donquijote',
+        img: '/quijote-menu.png',
+        alt: 'Don Quijote Identity',
+        tag: 'Branding',
+        color: '#c28e6c',
+        title: 'Don Quijote',
+        titleClassName: 'text-[#e8dccb]',
+        titleStyle: { fontFamily: "'ACaslonPro-Regular', Georgia, serif" },
+        description: 'Gastronomía de categoría.',
+        descriptionClassName: 'text-[#a89582]',
+        cardClassName: 'bg-[#16100c] border-[#3a281c]/30',
+    },
+    {
+        to: '/academiaderiego',
+        img: '/riego-brandbook.png',
+        alt: 'Academia de Riego Brandbook',
+        tag: 'AgTech Branding',
+        color: '#C1D000',
+        title: 'Academia de Riego',
+        description: 'Arquitectura de marca e identidad visual by Kilimo.',
+    },
+];
+
+function BrandCard({ project, index }: { project: BrandProject; index: number }) {
+    return (
+        <Link to={project.to} className="block outline-none">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: (index % 3) * 0.1, duration: 0.6 }}
+                className={`group relative aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer border shadow-[0_0_40px_rgba(0,0,0,0.4)] ${project.cardClassName ?? 'bg-neutral-900 border-neutral-800/50'}`}
+            >
+                <img
+                    src={project.img}
+                    alt={project.alt}
+                    className={`absolute inset-0 w-full h-full object-cover ${project.imgPosition ?? 'object-center'} group-hover:scale-105 transition-all duration-700 ease-out`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
+                <div className="absolute bottom-0 left-0 p-3 sm:p-6 z-20 w-full transform translate-y-0 md:translate-y-3 md:group-hover:translate-y-0 transition-transform duration-500">
+                    <span
+                        className="inline-block border text-[8px] sm:text-[10px] tracking-[0.12em] sm:tracking-[0.15em] uppercase px-2 sm:px-3 py-0.5 sm:py-1 rounded-full mb-2 sm:mb-3 leading-tight font-bold font-sans"
+                        style={{ color: project.color, borderColor: `${project.color}4d`, backgroundColor: `${project.color}1a` }}
+                    >
+                        {project.tag}
+                    </span>
+                    <h4 className={`text-base sm:text-2xl font-light tracking-tight leading-tight mb-1 ${project.titleClassName ?? 'text-white'}`} style={project.titleStyle}>
+                        {project.title}
+                    </h4>
+                    <p className={`hidden sm:block text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 ${project.descriptionClassName ?? 'text-neutral-400'}`}>
+                        {project.description}
+                    </p>
+                </div>
+            </motion.div>
+        </Link>
+    );
+}
+
 export default function Home() {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -153,12 +287,9 @@ export default function Home() {
         }
     };
 
-    const skills = [
-        "Claudecode", "Antigravity", "Nano banana",
-        "Gemini", "Supabase", "Vercel",
-        "Webflow", "HTML / CSS", "Figma",
-        "Illustrator", "Photoshop", "After Effects",
-        "AI Driven Workflows", "Product Management"
+    const toolGroups = [
+        { label: "Diseño", tools: ["Figma", "Illustrator", "Photoshop", "After Effects", "Webflow"] },
+        { label: "Construcción con IA", tools: ["Claude Code", "Gemini", "Antigravity", "Nano Banana", "Supabase", "Vercel"] },
     ];
 
     return (
@@ -225,221 +356,23 @@ export default function Home() {
 
             {/* --- SELECTED WORK SECTION --- */}
             <div id="work" className="max-w-7xl w-full scroll-mt-32 pt-12 pb-24 md:pb-32 relative z-10">
-                <motion.h3
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="text-[8vw] md:text-[4vw] font-light tracking-tighter leading-none mb-16 uppercase text-neutral-50"
-                >
-                    Selected <span className="font-light text-[#9FD592]">Work.</span>
-                </motion.h3>
+
+                {/* BLOQUE 1: PRODUCTO / UX-UI */}
+                <SectionHeading eyebrow="01 — Selected Work" title="Producto /" accent="UX-UI." />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    {/* FILA 1: 1 PROYECTO (LARGE) */}
-                    {/* PROYECTO 1: PEDI TU LAVADO */}
+                    {/* PROYECTO PRINCIPAL: PEDI TU LAVADO */}
                     <FounderCard />
 
-                    {/* FILA 2: 2 PROYECTOS (SMALL) */}
-                    {/* PROYECTO 2: RS CONNECTING */}
-                    <Link to="/rsconnecting" className="block outline-none md:mt-12">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: 0.1, duration: 0.6 }}
-                            className="group relative aspect-[4/5] bg-neutral-900 border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
-                        >
-                            <img
-                                src="/rs-home-mockup.png"
-                                alt="RS Connecting Identity"
-                                className="absolute inset-0 w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="inline-block border border-[#e34d6d]/30 text-[#e34d6d] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#e34d6d]/10">
-                                    Brand Identity
-                                </span>
-                                <h4 className="text-3xl font-light tracking-tight mb-2">RS Connecting</h4>
-                                <p className="text-neutral-400 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                    Reclutamiento IT a nivel LATAM.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </Link>
+                    {/* XCAPIT: se agrega acá cuando exista la página /xcapit (y su ruta en App.tsx) */}
 
-                    {/* PROYECTO 3: LOS TUCUS */}
-                    <Link to="/lostucus" className="block outline-none md:mt-32">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: 0.2, duration: 0.6 }}
-                            className="group relative aspect-[4/5] bg-neutral-900 border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
-                        >
-                            <img
-                                src="/tucus-box1.png"
-                                alt="Los Tucus Branding"
-                                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="inline-block border border-[#d5a05a]/30 text-[#d5a05a] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#d5a05a]/10">
-                                    Food Branding & D2C
-                                </span>
-                                <h4 className="text-3xl font-light tracking-tight mb-2">Los Tucus Empanadas</h4>
-                                <p className="text-neutral-400 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
-                                    Identidad visual y packaging para modelo de negocio de congelados direct-to-consumer.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </Link>
-
-                    {/* FILA 3: 1 PROYECTO (LARGE) */}
-                    {/* PROYECTO 4: BROOKLYN'S */}
-                    <Link to="/brooklyns" className="block outline-none md:col-span-2 md:mt-12">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: 0.1, duration: 0.6 }}
-                            className="group relative aspect-square md:aspect-[16/9] bg-neutral-900 border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
-                        >
-                            <img
-                                src="/brooklyns-home-mockup.jpg"
-                                alt="Brooklyn's Branding"
-                                className="absolute inset-0 w-full h-full object-cover object-[center_45%] group-hover:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="inline-block border border-[#c0e600]/30 text-[#c0e600] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#c0e600]/10">
-                                    Branding
-                                </span>
-                                <h4 className="text-4xl md:text-5xl font-light tracking-tight mb-2">Brooklyn’s</h4>
-                                <p className="text-neutral-400 text-base font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
-                                    Identidad visual y sistema de marca con espíritu urbano.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </Link>
-
-                    {/* FILA 4: 2 PROYECTOS (SMALL) */}
-                    {/* PROYECTO 5: 361 CASA DE PASTAS */}
-                    <Link to="/361casadepastas" className="block outline-none">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: 0.1, duration: 0.6 }}
-                            className="group relative aspect-[4/5] bg-[#0d0b0a] border border-white/5 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
-                        >
-                            <img
-                                src="/361-packaging.png"
-                                alt="361 Identidad"
-                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b0a] via-transparent to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="inline-block border border-[#a34d35]/30 text-[#a34d35] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#a34d35]/10 font-sans">
-                                    Branding
-                                </span>
-                                <h4 className="text-3xl font-light tracking-tight mb-2 text-white italic" style={{ fontFamily: 'serif' }}>361 Casa de Pastas</h4>
-                                <p className="text-neutral-400 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 font-sans">
-                                    Identidad visual urbana.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </Link>
-
-                    {/* PROYECTO 6: DON QUIJOTE */}
-                    <Link to="/donquijote" className="block outline-none md:mt-12">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: 0.1, duration: 0.6 }}
-                            className="group relative aspect-[4/5] bg-[#16100c] border border-[#3a281c]/30 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
-                        >
-                            <img
-                                src="/quijote-menu.png"
-                                alt="Don Quijote Identity"
-                                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="inline-block border border-[#c28e6c]/30 text-[#c28e6c] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#c28e6c]/10">
-                                    Branding
-                                </span>
-                                <h4 className="text-3xl font-light tracking-tight mb-2 text-[#e8dccb]" style={{ fontFamily: "'ACaslonPro-Regular', Georgia, serif" }}>Don Quijote</h4>
-                                <p className="text-[#a89582] text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                    Gastronomía de categoría.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </Link>
-
-                    {/* FILA 5: 1 PROYECTO (LARGE) */}
-                    {/* PROYECTO 7: ACADEMIA DE RIEGO */}
-                    <Link to="/academiaderiego" className="block outline-none md:col-span-2 md:mt-12">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "0px" }}
-                            transition={{ delay: 0.1, duration: 0.6 }}
-                            className="group relative aspect-square md:aspect-[16/9] bg-neutral-900 border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
-                        >
-                            <img
-                                src="/riego-brandbook.png"
-                                alt="Academia de Riego Brandbook"
-                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#003D7F]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="inline-block border border-[#C1D000]/30 text-[#C1D000] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#C1D000]/10">
-                                    AgTech Branding
-                                </span>
-                                <h4 className="text-3xl md:text-5xl font-light tracking-tight mb-2 text-white">Academia de Riego</h4>
-                                <p className="text-neutral-300 text-base font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
-                                    Arquitectura de marca e identidad visual by Kilimo.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </Link>
-
-                    {/* FILA 6: 2 PROYECTOS (SMALL) */}
-                    {/* PROYECTO 8: MUSEO 3D */}
-                    <Link to="/museo3d" className="block outline-none">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: 0.1, duration: 0.6 }}
-                            className="group relative aspect-[4/5] bg-[#0a0a0a] border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
-                        >
-                            <img
-                                src="/login.png"
-                                alt="Museo 3D Web Experience"
-                                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
-                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="inline-block border border-[#9FD592]/30 text-[#9FD592] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#9FD592]/10">
-                                    Web 3D
-                                </span>
-                                <h4 className="text-3xl font-light tracking-tight mb-2 text-white">Museo 3D</h4>
-                                <p className="text-neutral-300 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
-                                    Experiencia inmersiva e interactiva en la web.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </Link>
-
-                    {/* PROYECTO 9: ZYGMA */}
+                    {/* ZYGMA */}
                     <Link to="/zygma" className="block outline-none md:mt-12">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: 0.2, duration: 0.6 }}
+                            transition={{ delay: 0.1, duration: 0.6 }}
                             className="group relative aspect-[4/5] bg-[#0a0a0a] border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
                         >
                             <img
@@ -460,7 +393,43 @@ export default function Home() {
                         </motion.div>
                     </Link>
 
+                    {/* MUSEO 3D */}
+                    <Link to="/museo3d" className="block outline-none md:mt-32">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ delay: 0.2, duration: 0.6 }}
+                            className="group relative aspect-[4/5] bg-[#0a0a0a] border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
+                        >
+                            <img
+                                src="/login.png"
+                                alt="Museo 3D Web Experience"
+                                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-70"></div>
+                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                                <span className="inline-block border border-[#9FD592]/30 text-[#9FD592] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#9FD592]/10">
+                                    Web 3D
+                                </span>
+                                <h4 className="text-3xl font-light tracking-tight mb-2 text-white">Museo 3D</h4>
+                                <p className="text-neutral-300 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
+                                    Experiencia inmersiva e interactiva en la web.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </Link>
+                </div>
 
+                {/* BLOQUE 2: BRANDING & GRÁFICO (grilla compacta) */}
+                <div className="mt-32 md:mt-48">
+                    <SectionHeading eyebrow="02 — Identidad visual" title="Branding &" accent="Gráfico." />
+
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
+                        {BRANDING_PROJECTS.map((project, i) => (
+                            <BrandCard key={project.to} project={project} index={i} />
+                        ))}
+                    </div>
                 </div>
             </div>
 
@@ -472,7 +441,7 @@ export default function Home() {
                             <path id="giantTextPath" d="M 500, 500 m -450, 0 a 450,450 0 1,1 900,0 a 450,450 0 1,1 -900,0" fill="none" />
                             <text className="text-[40px] tracking-[0.4em] uppercase font-bold">
                                 <textPath href="#giantTextPath" startOffset="0%">
-                                    Product Designer (UX/UI) • Gonzalo Villagarcía • AI Driven Workflows • Figma • Web3 •
+                                    Product Designer (UX/UI) • Gonzalo Villagarcía • Diseño + Construcción con IA • Figma • Web3 •
                                 </textPath>
                             </text>
                         </svg>
@@ -509,16 +478,23 @@ export default function Home() {
                         </div>
 
                         <div>
-                            <span className="block text-[10px] tracking-[0.4em] uppercase text-neutral-600 font-medium mb-6">Toolstack & Expertise</span>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                {skills.map((skill) => (
-                                    <motion.div
-                                        key={skill}
-                                        whileHover={{ scale: 1.03, y: -2 }}
-                                        className="flex justify-center items-center w-full px-4 py-3 border border-[#9FD592]/30 rounded-lg text-[10px] md:text-[11px] font-bold tracking-[0.1em] uppercase text-center text-[#9FD592] bg-[#9FD592]/5 hover:bg-[#9FD592] hover:text-[#0a0a0a] transition-all duration-300 cursor-default"
-                                    >
-                                        {skill}
-                                    </motion.div>
+                            <span className="block text-[10px] tracking-[0.4em] uppercase text-neutral-600 font-medium mb-6">Toolstack</span>
+                            <div className="space-y-8">
+                                {toolGroups.map((group) => (
+                                    <div key={group.label}>
+                                        <span className="block text-xs tracking-[0.2em] uppercase text-neutral-400 font-medium mb-3">{group.label}</span>
+                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                            {group.tools.map((tool) => (
+                                                <motion.div
+                                                    key={tool}
+                                                    whileHover={{ scale: 1.03, y: -2 }}
+                                                    className="flex justify-center items-center w-full px-4 py-3 border border-[#9FD592]/30 rounded-lg text-[10px] md:text-[11px] font-bold tracking-[0.1em] uppercase text-center text-[#9FD592] bg-[#9FD592]/5 hover:bg-[#9FD592] hover:text-[#0a0a0a] transition-all duration-300 cursor-default"
+                                                >
+                                                    {tool}
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
                         </div>
