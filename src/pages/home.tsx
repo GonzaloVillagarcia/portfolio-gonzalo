@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const CONTACT_EMAIL = 'gonzaloevillagarcia@gmail.com';
+const CV_URL = '/cv-gonzalo-villagarcia.pdf';
 
 // --- EMAIL: clic para copiar, con feedback visual ---
 function CopyEmailButton() {
@@ -176,6 +177,7 @@ export default function Home() {
                         <button onClick={() => scrollToSection('work')} className="hover:text-neutral-50 transition-colors duration-300 outline-none">Work</button>
                         <button onClick={() => scrollToSection('about')} className="hover:text-neutral-50 transition-colors duration-300 outline-none">About</button>
                         <button onClick={() => scrollToSection('contact')} className="hover:text-neutral-50 transition-colors duration-300 outline-none">Contact</button>
+                        <a href={CV_URL} download className="text-[#9FD592] hover:text-neutral-50 transition-colors duration-300 outline-none">CV</a>
                     </div>
                 </div>
             </nav>
@@ -192,19 +194,33 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-6xl md:text-[6rem] lg:text-[7.5rem] font-light tracking-tighter leading-[0.9] uppercase mb-12 relative z-10"
                 >
-                    UX/UI <span className="text-[#9FD592] font-medium">&</span> GRAPHICS <br />
-                    <span className="text-neutral-600 italic font-thin">Designer.</span>
+                    Product <span className="text-[#9FD592] font-medium">Designer</span> <br />
+                    <span className="text-neutral-600 italic font-thin">(UX/UI).</span>
                 </motion.h1>
-                <motion.p className="text-lg md:text-2xl text-neutral-400 font-light leading-relaxed mb-12 relative z-10">
-                    Diseño productos digitales donde convergen la estética y la funcionalidad. Integro Inteligencia Artificial para optimizar procesos, elevar la experiencia del usuario y potenciar el pensamiento estratégico.
+                <motion.p className="text-lg md:text-2xl text-neutral-300 font-light leading-relaxed mb-4 relative z-10 max-w-3xl">
+                    Diseño productos digitales y los llevo a producción con desarrollo asistido por IA.
+                </motion.p>
+                <motion.p className="text-sm md:text-base text-neutral-500 font-light tracking-wide mb-12 relative z-10">
+                    <span className="text-[#9FD592]">6+ años</span> en diseño
+                    <span className="text-neutral-700 mx-3">|</span>
+                    <span className="text-[#9FD592]">casi 4</span> en productos fintech y Web3
                 </motion.p>
 
-                <button
-                    onClick={() => scrollToSection('work')}
-                    className="w-fit px-10 py-4 border border-[#9FD592]/60 rounded-full text-xs tracking-widest uppercase text-neutral-300 hover:bg-[#9FD592] hover:border-[#9FD592] hover:text-[#0a0a0a] transition-all duration-500 relative z-10 outline-none font-medium"
-                >
-                    Explore Projects
-                </button>
+                <div className="flex flex-wrap gap-4 relative z-10">
+                    <button
+                        onClick={() => scrollToSection('work')}
+                        className="w-fit px-10 py-4 bg-[#9FD592] border border-[#9FD592] rounded-full text-xs tracking-widest uppercase text-[#0a0a0a] hover:bg-transparent hover:text-[#9FD592] transition-all duration-500 outline-none font-medium"
+                    >
+                        Ver proyectos
+                    </button>
+                    <a
+                        href={CV_URL}
+                        download
+                        className="w-fit px-10 py-4 border border-[#9FD592]/60 rounded-full text-xs tracking-widest uppercase text-neutral-300 hover:bg-[#9FD592] hover:border-[#9FD592] hover:text-[#0a0a0a] transition-all duration-500 outline-none font-medium"
+                    >
+                        Descargar CV
+                    </a>
+                </div>
             </div>
 
             {/* --- SELECTED WORK SECTION --- */}
@@ -456,7 +472,7 @@ export default function Home() {
                             <path id="giantTextPath" d="M 500, 500 m -450, 0 a 450,450 0 1,1 900,0 a 450,450 0 1,1 -900,0" fill="none" />
                             <text className="text-[40px] tracking-[0.4em] uppercase font-bold">
                                 <textPath href="#giantTextPath" startOffset="0%">
-                                    UX/UI & Graphics Designer • Gonzalo Villagarcía • AI Driven Workflows • Figma • Web3 •
+                                    Product Designer (UX/UI) • Gonzalo Villagarcía • AI Driven Workflows • Figma • Web3 •
                                 </textPath>
                             </text>
                         </svg>
@@ -483,12 +499,12 @@ export default function Home() {
                             </h3>
                             <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed max-w-xl space-y-6">
                                 <p className="flex items-center gap-4 text-neutral-300 font-light tracking-wide">
-                                    <span className="text-[#9FD592] font-medium">6+ Años</span> de trayectoria visual.
+                                    <span className="text-[#9FD592] font-medium">6+ años</span> en diseño.
                                     <span className="text-neutral-700">|</span>
-                                    <span className="text-[#9FD592] font-medium">4+ Años</span> en IT & Fintech.
+                                    <span className="text-[#9FD592] font-medium">Casi 4</span> en fintech y Web3.
                                 </p>
                                 <p>Soy un diseñador con raíces visuales que evolucionó hacia el UX/UI para impactar directamente en la esencia de los productos digitales.</p>
-                                <p>Tras más de 4 años simplificando la complejidad de entornos IT y Fintech, hoy me dedico a transformar sistemas robustos en experiencias limpias y ágiles.</p>
+                                <p>Hace casi 4 años que diseño productos fintech y Web3. Hoy, además, llevo mis diseños a producción con desarrollo asistido por IA.</p>
                             </div>
                         </div>
 

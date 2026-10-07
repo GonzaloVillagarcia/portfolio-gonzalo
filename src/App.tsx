@@ -11,6 +11,7 @@ import LosTucus from './pages/lostucus';
 import Museo3D from './pages/museo3d';
 import Zygma from './pages/zygma';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import { ROUTE_META } from './seo';
 
 
 // Este componente hace que al cambiar de ruta, la página aparezca arriba de todo
@@ -22,10 +23,22 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Actualiza título y descripción al navegar dentro de la SPA (los HTML estáticos por ruta los genera vite.config.ts)
+const RouteMeta = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const meta = ROUTE_META[pathname] ?? ROUTE_META['/'];
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description);
+  }, [pathname]);
+  return null;
+};
+
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <RouteMeta />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/peditulavado" element={<PediTuLavado />} />
