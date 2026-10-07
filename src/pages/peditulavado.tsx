@@ -56,11 +56,16 @@ export default function PediTuLavado() {
 
                     <div className="md:col-span-12 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl relative group p-2 md:p-6">
                         <div className="aspect-video md:aspect-[16/9] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
-                            <img
-                                src="/portfolio1.png"
-                                alt="PediTuLavado Main Interface"
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                            />
+                            <picture>
+                                <source srcSet="/peditulavado-mockup.webp" type="image/webp" />
+                                <img
+                                    src="/peditulavado-mockup.jpg"
+                                    alt="PediTuLavado Main Interface"
+                                    width={2000}
+                                    height={1333}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                                />
+                            </picture>
                             <div className="absolute bottom-6 left-6 flex items-center gap-3">
                                 <span className="text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
                                     [ Vista General ]

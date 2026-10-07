@@ -82,11 +82,16 @@ function FeaturedImage() {
                 </div>
 
                 <div className="absolute inset-[1.5px] rounded-[15px] overflow-hidden bg-neutral-900 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.85)] transition-shadow duration-700 group-hover:shadow-[0_40px_110px_-30px_rgba(159,213,146,0.28)]">
-                    <img
-                        src="/portfolio1.png"
-                        alt="Pantallas de Pedí tu lavado: mapa de lavadores y selección de servicios"
-                        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
+                    <picture>
+                        <source srcSet="/peditulavado-mockup.webp" type="image/webp" />
+                        <img
+                            src="/peditulavado-mockup.jpg"
+                            alt="Pantallas de Pedí tu lavado: mapa de lavadores y selección de servicios"
+                            width={2000}
+                            height={1333}
+                            className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                    </picture>
                 </div>
             </motion.div>
         </Link>

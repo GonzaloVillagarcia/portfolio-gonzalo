@@ -22,7 +22,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
         title: 'Pedí tu lavado — Caso de estudio | Gonzalo Villagarcía',
         description:
             'Caso de estudio de Pedí tu lavado, producto propio: plataforma web que conecta clientes con lavadores. Diseño de producto y lanzamiento.',
-        image: '/portfolio1.png',
+        image: '/peditulavado-mockup.jpg',
     },
     '/zygma': {
         title: 'Zygma — Diseño web | Gonzalo Villagarcía',
