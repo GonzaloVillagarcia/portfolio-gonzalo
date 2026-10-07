@@ -165,7 +165,7 @@ export default function Brooklyns() {
             </motion.div>
 
             {/* --- TEXTO DEL CASE STUDY --- */}
-            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 pb-32 relative z-10 border-t border-neutral-900 pt-20">
+            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-x-8 lg:gap-x-12 md:gap-y-24 pb-32 relative z-10 border-t border-neutral-900 pt-20">
                 <div className="md:col-span-7 space-y-20">
                     <section>
                         <h3 className="text-xs tracking-[0.3em] uppercase text-[#c0e600] font-bold mb-6 border-b border-neutral-800 pb-4">El Desafío</h3>

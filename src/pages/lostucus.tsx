@@ -27,7 +27,7 @@ export default function LosTucus() {
                     <span className="inline-block px-4 py-2 border border-[#d5a05a]/30 rounded-full text-[10px] tracking-[0.2em] uppercase text-[#d5a05a] bg-[#d5a05a]/5 mb-8 font-bold">
                         Food Branding & D2C
                     </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-light tracking-tighter leading-[0.9] mb-8 whitespace-nowrap">
+                    <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-light tracking-tighter leading-[0.9] mb-8 xl:whitespace-nowrap">
                         <span className="text-[#d5a05a] font-medium">Los Tucus</span> Empanadas
                     </h1>
                     <h2 className="text-xl md:text-3xl text-neutral-300 font-light tracking-tight mb-6">
@@ -60,7 +60,7 @@ export default function LosTucus() {
             </motion.div>
 
             {/* --- EL CASE STUDY --- */}
-            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 pb-32 border-t border-neutral-900 pt-20">
+            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-x-8 lg:gap-x-12 md:gap-y-24 pb-32 border-t border-neutral-900 pt-20">
                 <div className="md:col-span-7 space-y-20">
                     <section>
                         <h3 className="text-xs tracking-[0.3em] uppercase text-[#d5a05a] font-bold mb-6 border-b border-neutral-800 pb-4">El Proyecto</h3>

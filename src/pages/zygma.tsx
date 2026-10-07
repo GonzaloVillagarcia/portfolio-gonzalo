@@ -99,7 +99,7 @@ export default function Zygma() {
             </motion.div>
 
             {/* --- ESTRUCTURA DEL CASE STUDY --- */}
-            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 pb-20 relative z-10">
+            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-x-8 lg:gap-x-12 md:gap-y-24 pb-20 relative z-10">
 
                 <div className="md:col-span-7 space-y-20">
                     <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>

@@ -44,23 +44,16 @@ function CopyEmailButton() {
     );
 }
 
-// --- CARD DE PROYECTO PROPIO: tratamiento hero diferenciado (tilt 3D + spotlight + beam) ---
-function FounderCard() {
+// --- PROYECTO DESTACADO: imagen con el mismo tratamiento hero de antes (tilt 3D + beam) ---
+function FeaturedImage() {
     const px = useMotionValue(0.5);
     const py = useMotionValue(0.5);
 
-    const rotateX = useSpring(useTransform(py, [0, 1], [7, -7]), { stiffness: 150, damping: 18 });
-    const rotateY = useSpring(useTransform(px, [0, 1], [-7, 7]), { stiffness: 150, damping: 18 });
-
-    const parX = useSpring(useTransform(px, [0, 1], [-10, 10]), { stiffness: 120, damping: 22 });
-    const parY = useSpring(useTransform(py, [0, 1], [-6, 6]), { stiffness: 120, damping: 22 });
+    const rotateX = useSpring(useTransform(py, [0, 1], [6, -6]), { stiffness: 150, damping: 18 });
+    const rotateY = useSpring(useTransform(px, [0, 1], [-6, 6]), { stiffness: 150, damping: 18 });
 
     return (
-        <Link
-            to="/peditulavado"
-            className="block outline-none md:col-span-2 group"
-            style={{ perspective: 1400 }}
-        >
+        <Link to="/peditulavado" className="block outline-none group" style={{ perspective: 1400 }}>
             <motion.div
                 onMouseMove={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
@@ -72,7 +65,7 @@ function FounderCard() {
                     py.set(0.5);
                 }}
                 style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
-                className="relative aspect-square md:aspect-[16/9] rounded-2xl"
+                className="relative aspect-[3/2] rounded-2xl"
             >
                 {/* Haz de luz giratorio en el borde (beam) */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
@@ -88,51 +81,97 @@ function FounderCard() {
                     />
                 </div>
 
-                {/* Superficie de la card */}
                 <div className="absolute inset-[1.5px] rounded-[15px] overflow-hidden bg-neutral-900 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.85)] transition-shadow duration-700 group-hover:shadow-[0_40px_110px_-30px_rgba(159,213,146,0.28)]">
                     <img
                         src="/portfolio1.png"
-                        alt="PediTuLavado Preview"
+                        alt="Pantallas de Pedí tu lavado: mapa de lavadores y selección de servicios"
                         className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10 opacity-90 transition-opacity duration-700 group-hover:opacity-60"></div>
-
-                    {/* Contenido con parallax de profundidad */}
-                    <motion.div
-                        style={{ x: parX, y: parY }}
-                        className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full"
-                    >
-                        <h4 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">Pedí tu lavado</h4>
-
-                        {/* Firma del founder — foto + estado en vivo para máxima presencia personal */}
-                        <div className="flex items-center gap-3.5 mb-5">
-                            <div className="relative shrink-0">
-                                <img
-                                    src="/porfolio.png"
-                                    alt="Gonzalo Villagarcía"
-                                    className="w-12 h-12 rounded-full object-cover object-top ring-1 ring-[#9FD592]/50 shadow-[0_0_18px_-2px_rgba(159,213,146,0.55)]"
-                                />
-                                <span className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9FD592] opacity-60"></span>
-                                    <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-[#9FD592] border-2 border-[#0a0a0a] shadow-[0_0_6px_rgba(159,213,146,0.9)]"></span>
-                                </span>
-                            </div>
-                            <div className="flex flex-col leading-tight gap-1">
-                                <span className="text-white text-base md:text-lg font-normal">Gonzalo Villagarcía</span>
-                                <span className="text-sm font-light tracking-wide">
-                                    <span className="text-[#9FD592]">Founder</span>
-                                    <span className="text-neutral-400"> &amp; Product Designer</span>
-                                </span>
-                            </div>
-                        </div>
-
-                        <p className="text-neutral-300 text-base font-light max-w-md">
-                            Logística de servicios On-Demand.
-                        </p>
-                    </motion.div>
                 </div>
             </motion.div>
         </Link>
+    );
+}
+
+const FEATURED_STATS = [
+    { value: '+150', label: 'usuarios entre clientes y lavadores' },
+    { value: '100% web', label: 'sin descargar una app' },
+    { value: 'En TV local', label: 'El Show del Lagarto' },
+];
+
+function FeaturedProject() {
+    return (
+        <section id="destacado" className="max-w-7xl w-full scroll-mt-28 pb-24 md:pb-40 relative z-10">
+            <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="block text-neutral-500 text-xs tracking-[0.2em] uppercase font-medium mb-8"
+            >
+                Proyecto destacado
+            </motion.span>
+
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8 }}
+                className="relative rounded-3xl border border-[#9FD592]/15 bg-gradient-to-br from-[#9FD592]/[0.07] via-neutral-950 to-[#0a0a0a] p-6 md:p-12 xl:p-16 overflow-hidden"
+            >
+                <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#9FD592]/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+                <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    <div className="lg:col-span-6 order-2 lg:order-1">
+                        <span className="inline-block border border-[#9FD592]/30 text-[#9FD592] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-6 font-bold bg-[#9FD592]/10">
+                            Proyecto propio · Founder & Product Designer
+                        </span>
+                        <h3 className="text-5xl md:text-7xl font-light tracking-tighter leading-[0.95] text-white mb-6">
+                            Pedí tu <span className="text-[#9FD592] font-medium">lavado</span>
+                        </h3>
+                        <p className="text-base md:text-lg text-neutral-300 font-light leading-relaxed mb-10 max-w-md">
+                            Diseñé y lancé una plataforma on-demand de lavado de autos a domicilio, de la idea a producción.
+                        </p>
+
+                        <div className="grid grid-cols-3 gap-4 sm:flex sm:justify-between sm:gap-6 border-t border-neutral-800 pt-8 mb-10">
+                            {FEATURED_STATS.map((stat) => (
+                                <div key={stat.value}>
+                                    <span className="block text-xl sm:text-3xl lg:text-[1.75rem] xl:text-[2rem] font-light tracking-tight leading-none text-[#9FD592] mb-2 sm:whitespace-nowrap">
+                                        {stat.value}
+                                    </span>
+                                    <span className="block text-[11px] md:text-xs text-neutral-500 font-light leading-snug sm:max-w-[10rem]">
+                                        {stat.label}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="flex flex-wrap gap-4">
+                            <Link
+                                to="/peditulavado"
+                                className="w-fit px-8 py-4 bg-[#9FD592] border border-[#9FD592] rounded-full text-xs tracking-widest uppercase text-[#0a0a0a] hover:bg-transparent hover:text-[#9FD592] transition-all duration-500 outline-none font-medium"
+                            >
+                                Ver caso de estudio
+                            </Link>
+                            <a
+                                href="https://www.peditulavado.com.ar"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-fit inline-flex items-center gap-2 px-8 py-4 border border-[#9FD592]/60 rounded-full text-xs tracking-widest uppercase text-neutral-300 hover:bg-[#9FD592] hover:border-[#9FD592] hover:text-[#0a0a0a] transition-all duration-500 outline-none font-medium"
+                            >
+                                Visitar plataforma
+                                <svg aria-hidden viewBox="0 0 12 12" className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                    <path d="M3 9L9 3M4 3h5v5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="lg:col-span-6 order-1 lg:order-2">
+                        <FeaturedImage />
+                    </div>
+                </div>
+            </motion.div>
+        </section>
     );
 }
 
@@ -354,6 +393,9 @@ export default function Home() {
                 </div>
             </div>
 
+            {/* --- PROYECTO DESTACADO --- */}
+            <FeaturedProject />
+
             {/* --- SELECTED WORK SECTION --- */}
             <div id="work" className="max-w-7xl w-full scroll-mt-32 pt-12 pb-24 md:pb-32 relative z-10">
 
@@ -361,13 +403,10 @@ export default function Home() {
                 <SectionHeading eyebrow="01 — Selected Work" title="Producto /" accent="UX-UI." />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    {/* PROYECTO PRINCIPAL: PEDI TU LAVADO */}
-                    <FounderCard />
-
                     {/* XCAPIT: se agrega acá cuando exista la página /xcapit (y su ruta en App.tsx) */}
 
                     {/* ZYGMA */}
-                    <Link to="/zygma" className="block outline-none md:mt-12">
+                    <Link to="/zygma" className="block outline-none">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -394,7 +433,7 @@ export default function Home() {
                     </Link>
 
                     {/* MUSEO 3D */}
-                    <Link to="/museo3d" className="block outline-none md:mt-32">
+                    <Link to="/museo3d" className="block outline-none md:mt-24">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}

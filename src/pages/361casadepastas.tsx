@@ -61,7 +61,7 @@ export default function CasaDePastas361() {
             </motion.div>
 
             {/* --- ESTRATEGIA & DISEÑO --- */}
-            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 pb-32 border-t border-white/5 pt-20 font-sans">
+            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-x-8 lg:gap-x-12 md:gap-y-24 pb-32 border-t border-white/5 pt-20 font-sans">
                 <div className="md:col-span-7 space-y-20">
                     <section>
                         <h3 className="text-xs tracking-[0.3em] uppercase text-[#a34d35] font-bold mb-6 border-b border-white/5 pb-4">La Estrategia</h3>
