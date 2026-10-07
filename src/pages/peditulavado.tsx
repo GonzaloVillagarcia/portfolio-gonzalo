@@ -109,37 +109,69 @@ export default function PediTuLavado() {
                 <div className="md:col-span-7 space-y-20">
                     <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
                         <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6 border-b border-neutral-800 pb-4">
-                            El Desafío
+                            Contexto
                         </h3>
                         <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-6">
                             <p>
-                                El proyecto nace de una doble necesidad estructural: democratizar el acceso a oportunidades laborales flexibles en el contexto económico argentino, y eliminar la fricción logística para usuarios que carecen de tiempo.
+                                Pedí tu lavado es una webapp que conecta a personas que necesitan un servicio de estética vehicular con profesionales independientes que lo hacen a domicilio. Empezó con el lavado de autos y hoy también incluye otros servicios, como limpieza de tapizados y pulido de ópticas.
                             </p>
                             <p>
-                                El reto principal era digitalizar un rubro 100% analógico, reduciendo la carga cognitiva al mínimo para que solicitar un lavado a domicilio fuera tan intuitivo como pedir un Uber.
+                                Funciona en Córdoba, Argentina. Empecé a trabajar en el proyecto entre enero y febrero de 2026 y lo lancé en agosto de 2026.
                             </p>
                         </div>
                     </motion.section>
 
                     <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
                         <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6 border-b border-neutral-800 pb-4">
-                            La Solución
+                            Problema
                         </h3>
                         <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-6">
+                            <p>La idea salió de dos cosas que vi al mismo tiempo.</p>
                             <p>
-                                Un ecosistema digital end-to-end que conecta demanda y oferta mediante una interfaz hiper-optimizada. La plataforma automatiza todo el ciclo de vida del servicio: desde el descubrimiento geolocalizado hasta la transacción financiera y la notificación final.
+                                Por un lado, hoy en Argentina hay mucha gente que necesita trabajo o busca una forma de generar ingresos por su cuenta.
+                            </p>
+                            <p>
+                                Por otro, el lavado de autos se hace de la misma forma desde hace años y casi no se digitalizó. Para el cliente, ir a lavar el auto implica perder tiempo y resolver la logística de llevarlo y esperar. Lo mismo pasa con otros servicios de estética vehicular.
+                            </p>
+                            <p>
+                                Mi propuesta fue juntar las dos cosas en una sola plataforma: que pedir un servicio para el auto sea simple para el cliente, y que un profesional independiente pueda ofrecer su trabajo y conseguir clientes sin tener un local.
                             </p>
                         </div>
                     </motion.section>
 
                     <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
                         <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6 border-b border-neutral-800 pb-4">
-                            El Impacto
+                            Mi rol
                         </h3>
                         <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-6">
-                            <p>
-                                Pedí tu lavado trasciende la idea de una simple aplicación; es la validación empírica de cómo el diseño centrado en el usuario y la ingeniería moderna pueden resolver problemas socio-logísticos complejos. Un producto que orquesta múltiples APIs de escala empresarial bajo una interfaz fluida, estética y funcional.
-                            </p>
+                            <p>Hice el proyecto solo, de punta a punta:</p>
+                            <ul className="space-y-4">
+                                <li><span className="text-neutral-200 font-normal">Producto:</span> definí qué problema resolver, para quién y qué entraba en la primera versión.</li>
+                                <li><span className="text-neutral-200 font-normal">UX/UI:</span> diseñé los flujos y las pantallas para los dos tipos de usuario, el cliente y el profesional.</li>
+                                <li><span className="text-neutral-200 font-normal">Branding:</span> creé la identidad de la marca.</li>
+                                <li><span className="text-neutral-200 font-normal">Desarrollo:</span> construí la plataforma con desarrollo asistido por IA.</li>
+                                <li><span className="text-neutral-200 font-normal">Lanzamiento y operación:</span> la puse en producción y hoy la opero.</li>
+                            </ul>
+                        </div>
+                    </motion.section>
+
+                    <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
+                        <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6 border-b border-neutral-800 pb-4">
+                            Decisiones de diseño
+                        </h3>
+                        <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-10">
+                            <div className="space-y-3">
+                                <h4 className="text-neutral-200 font-normal">100% web, sin app</h4>
+                                <p>
+                                    El producto todavía no está terminado. Una webapp me permite iterar mucho más rápido: publico un cambio, mido cómo lo usan y veo el feedback real sin pasar por la revisión de las tiendas. Para el usuario también es más simple, porque no tiene que descargar nada para pedir un servicio.
+                                </p>
+                            </div>
+                            <div className="space-y-3">
+                                <h4 className="text-neutral-200 font-normal">PIN al llegar</h4>
+                                <p>
+                                    Cuando el profesional llega, el cliente le da un PIN. Así se asegura de que la persona que va a su casa es la que envió la plataforma y no otra. Es una decisión de seguridad y de confianza: el cliente abre la puerta de su casa a alguien que no conoce, y el PIN le da una forma concreta de verificarlo.
+                                </p>
+                            </div>
                         </div>
                     </motion.section>
                 </div>
@@ -231,16 +263,16 @@ export default function PediTuLavado() {
                     {/* Justificación Estratégica */}
                     <div className="md:col-span-6 space-y-6">
                         <span className="inline-block border border-neutral-700 text-neutral-400 text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-2 font-medium">
-                            Brand Evolution (Concept)
+                            Propuesta de concepto
                         </span>
                         <h3 className="text-3xl md:text-4xl font-light tracking-tight text-neutral-200">
-                            Rediseño & <br />Viabilidad Comercial.
+                            Rebranding "Gota"
                         </h3>
                         <p className="text-base text-neutral-400 font-light leading-relaxed">
-                            Propuesta de rebranding ("Gota") desarrollada para elevar la identidad visual a estándares corporativos. El concepto superó las pruebas de validación con usuarios finales gracias a su legibilidad y pregnancia isotípica.
+                            Diseñé una propuesta de rebranding para Pedí tu lavado con el nombre "Gota". Es un concepto: no lo probé con usuarios.
                         </p>
                         <p className="text-base text-neutral-400 font-light leading-relaxed">
-                            Actualmente el rediseño se encuentra en <span className="text-neutral-200 font-medium">stand-by estratégico</span> debido a la ocupación de activos digitales críticos (dominios y handles en redes). Una decisión que subraya mi filosofía: el diseño siempre debe estar supeditado a la estrategia y viabilidad del negocio.
+                            Por ahora está en pausa, porque el dominio y los nombres de usuario en redes que necesitaría no están disponibles.
                         </p>
                     </div>
 
