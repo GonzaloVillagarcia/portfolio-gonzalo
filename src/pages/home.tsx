@@ -516,7 +516,7 @@ export default function Home() {
                                     <span className="text-neutral-700">|</span>
                                     <span className="text-[#9FD592] font-medium">Casi 4</span> en fintech y Web3.
                                 </p>
-                                <p>Soy un diseñador con raíces visuales que evolucionó hacia el UX/UI para impactar directamente en la esencia de los productos digitales.</p>
+                                <p>Empecé en el diseño gráfico y me pasé al diseño de producto.</p>
                                 <p>Hace casi 4 años que diseño productos fintech y Web3. Hoy, además, llevo mis diseños a producción con desarrollo asistido por IA.</p>
                             </div>
                         </div>
@@ -555,11 +555,28 @@ export default function Home() {
                     viewport={{ once: true }}
                     className="text-center relative z-10"
                 >
-                    <h2 className="text-[10vw] md:text-[6vw] font-light tracking-tighter leading-[0.8] text-neutral-400 uppercase">¿Tenés una idea?</h2>
-                    <h2 className="text-[12vw] md:text-[8vw] font-black tracking-tighter leading-[0.9] text-neutral-50 mb-12 uppercase">
-                        Hagámosla <span className="text-[#9FD592]">real.</span>
+                    <h2 className="text-[8vw] md:text-[4.5vw] font-light tracking-tighter leading-[0.95] text-neutral-400 uppercase mb-2">¿Buscás un Product Designer?</h2>
+                    <h2 className="text-[14vw] md:text-[8vw] font-black tracking-tighter leading-[0.9] text-[#9FD592] mb-12 uppercase">
+                        Hablemos.
                     </h2>
                     <CopyEmailButton />
+                    <div className="flex flex-wrap justify-center gap-4 mt-14">
+                        <a
+                            href="https://www.linkedin.com/in/gonzalovillagarcia/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-10 py-4 border border-[#9FD592]/60 rounded-full text-xs tracking-widest uppercase text-neutral-300 hover:bg-[#9FD592] hover:border-[#9FD592] hover:text-[#0a0a0a] transition-all duration-500 outline-none font-medium"
+                        >
+                            LinkedIn
+                        </a>
+                        <a
+                            href={CV_URL}
+                            download
+                            className="px-10 py-4 bg-[#9FD592] border border-[#9FD592] rounded-full text-xs tracking-widest uppercase text-[#0a0a0a] hover:bg-transparent hover:text-[#9FD592] transition-all duration-500 outline-none font-medium"
+                        >
+                            Descargar CV
+                        </a>
+                    </div>
                 </motion.div>
 
                 <div className="absolute bottom-8 lg:bottom-12 w-full max-w-7xl px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-neutral-600 z-10">

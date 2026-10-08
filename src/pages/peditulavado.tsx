@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import type { ReactNode } from 'react';
 
 const PROJECT_FACTS = [
     { label: 'Rol', value: 'Founder & Product Designer (proyecto individual)' },
@@ -9,50 +10,78 @@ const PROJECT_FACTS = [
     { label: 'Usuarios', value: 'Cliente y profesional' },
 ];
 
-// --- FLUJO DEL PEDIDO: pasos del profesional, con las fotos opcionales intercaladas ---
-const ORDER_STEPS: { label: string; optional?: boolean }[] = [
-    { label: 'Ir a la ubicación del lavado' },
-    { label: 'Ingresar el PIN del cliente' },
-    { label: 'Fotos del antes', optional: true },
+// --- DIAGRAMAS DE FLUJO: pasos numerados; los opcionales o previos van punteados ---
+type FlowStep = { label: string; kind?: 'optional' | 'previous'; note?: string };
+
+const CLIENT_STEPS: FlowStep[] = [
+    { label: 'Ubicación cargada', kind: 'previous' },
+    { label: 'Elegir profesional' },
+    { label: 'Elegir servicio' },
+    { label: 'Día' },
+    { label: 'Horario' },
+    { label: 'Vehículo', note: 'si tiene más de uno cargado' },
+    { label: 'Confirmar pedido' },
+];
+
+const ORDER_STEPS: FlowStep[] = [
+    { label: 'Pedido' },
+    { label: 'Aceptado' },
+    { label: 'En camino' },
+    { label: 'Fotos del antes', kind: 'optional' },
+    { label: 'PIN de seguridad' },
+    { label: 'Pago del cliente' },
     { label: 'Lavado en curso' },
-    { label: 'Fotos del después', optional: true },
-    { label: 'Pago' },
+    { label: 'Fotos del después', kind: 'optional' },
     { label: 'Trabajo terminado' },
 ];
 
-function OrderFlow() {
+const STEP_TAG = { optional: 'Opcional', previous: 'Previo' };
+
+function StepIcon({ kind }: { kind: 'optional' | 'previous' }) {
+    return kind === 'optional' ? (
+        <svg aria-hidden viewBox="0 0 16 16" className="w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" strokeWidth="1.3">
+            <rect x="2" y="4" width="12" height="9" rx="1.5" />
+            <circle cx="8" cy="8.5" r="2.2" />
+            <path d="M5.5 4l1-1.5h3l1 1.5" />
+        </svg>
+    ) : (
+        <svg aria-hidden viewBox="0 0 16 16" className="w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" strokeWidth="1.3">
+            <path d="M8 14s4.5-4.2 4.5-7.5a4.5 4.5 0 10-9 0C3.5 9.8 8 14 8 14z" />
+            <circle cx="8" cy="6.5" r="1.6" />
+        </svg>
+    );
+}
+
+function FlowDiagram({ caption, steps }: { caption: string; steps: FlowStep[] }) {
     let step = 0;
     return (
         <figure className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6 md:p-8">
             <figcaption className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-medium mb-6">
-                Pedido confirmado → flujo del profesional
+                {caption}
             </figcaption>
             <ol className="relative">
-                {ORDER_STEPS.map((s, i) => {
-                    if (!s.optional) step += 1;
-                    const isLast = i === ORDER_STEPS.length - 1;
+                {steps.map((s, i) => {
+                    if (!s.kind) step += 1;
+                    const isLast = i === steps.length - 1;
                     return (
                         <li key={s.label} className={`relative flex items-center gap-4 ${isLast ? '' : 'pb-5'}`}>
                             {!isLast && (
                                 <span aria-hidden className="absolute left-[15px] top-8 bottom-0 w-px bg-neutral-800" />
                             )}
-                            {s.optional ? (
+                            {s.kind ? (
                                 <span className="relative z-10 flex shrink-0 items-center justify-center w-8 h-8 rounded-full border border-dashed border-neutral-600 bg-neutral-950">
-                                    <svg aria-hidden viewBox="0 0 16 16" className="w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" strokeWidth="1.3">
-                                        <rect x="2" y="4" width="12" height="9" rx="1.5" />
-                                        <circle cx="8" cy="8.5" r="2.2" />
-                                        <path d="M5.5 4l1-1.5h3l1 1.5" />
-                                    </svg>
+                                    <StepIcon kind={s.kind} />
                                 </span>
                             ) : (
                                 <span className="relative z-10 flex shrink-0 items-center justify-center w-8 h-8 rounded-full border border-[#9FD592]/50 bg-[#9FD592]/10 text-[#9FD592] text-xs font-medium">
                                     {step}
                                 </span>
                             )}
-                            <span className={s.optional ? 'text-sm text-neutral-500' : 'text-sm md:text-base text-neutral-200'}>
+                            <span className={s.kind ? 'text-sm text-neutral-500' : 'text-sm md:text-base text-neutral-200'}>
                                 {s.label}
-                                {s.optional && (
-                                    <span className="ml-2 text-[10px] tracking-[0.15em] uppercase text-neutral-600">Opcional</span>
+                                {s.note && <span className="text-neutral-500"> · {s.note}</span>}
+                                {s.kind && (
+                                    <span className="ml-2 text-[10px] tracking-[0.15em] uppercase text-neutral-600">{STEP_TAG[s.kind]}</span>
                                 )}
                             </span>
                         </li>
@@ -60,6 +89,94 @@ function OrderFlow() {
                 })}
             </ol>
         </figure>
+    );
+}
+
+// --- PANTALLAS ANOTADAS: captura real con marcadores numerados que remiten a las notas ---
+type Marker = { n: number; x: number; y: number };
+
+function AnnotatedScreen({ src, alt, label, width, height, markers = [], detail = false }: {
+    src: string;
+    alt: string;
+    label: string;
+    width: number;
+    height: number;
+    markers?: Marker[];
+    detail?: boolean;
+}) {
+    return (
+        <figure className={`w-full ${detail ? 'max-w-[340px]' : 'max-w-[260px]'}`}>
+            <figcaption className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-medium mb-3 text-center">
+                {label}
+            </figcaption>
+            <div className={`border border-neutral-800 bg-neutral-900 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)] ${detail ? 'rounded-2xl p-1.5' : 'rounded-[1.75rem] p-1.5'}`}>
+                <div className="relative">
+                    <img
+                        src={src}
+                        alt={alt}
+                        width={width}
+                        height={height}
+                        loading="lazy"
+                        className={`block w-full h-auto ${detail ? 'rounded-xl' : 'rounded-[1.4rem]'}`}
+                    />
+                    {markers.map((m) => (
+                        <span
+                            key={m.n}
+                            aria-hidden
+                            style={{ left: `${m.x}%`, top: `${m.y}%` }}
+                            className="absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-7 h-7 rounded-full bg-[#9FD592] text-[#0a0a0a] text-xs font-bold ring-4 ring-[#9FD592]/25 shadow-lg"
+                        >
+                            {m.n}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </figure>
+    );
+}
+
+function AnnotationNotes({ notes }: { notes: string[] }) {
+    return (
+        <ol className="space-y-3 pt-2">
+            {notes.map((note, i) => (
+                <li key={note} className="flex gap-3 text-sm md:text-base text-neutral-400 font-light leading-relaxed">
+                    <span className="flex shrink-0 items-center justify-center w-6 h-6 mt-0.5 rounded-full bg-[#9FD592] text-[#0a0a0a] text-[11px] font-bold">
+                        {i + 1}
+                    </span>
+                    <span>{note}</span>
+                </li>
+            ))}
+        </ol>
+    );
+}
+
+function DecisionRow({ index, title, children, screens, notes }: {
+    index: string;
+    title: string;
+    children: ReactNode;
+    screens?: ReactNode;
+    notes?: string[];
+}) {
+    return (
+        <motion.article
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 border-t border-neutral-900 pt-14 md:pt-20"
+        >
+            <div className={screens ? 'lg:col-span-5 space-y-5' : 'lg:col-span-8 space-y-5'}>
+                <span className="block text-xs tracking-[0.2em] text-[#9FD592] font-medium">{index}</span>
+                <h4 className="text-2xl md:text-3xl font-light tracking-tight text-neutral-100">{title}</h4>
+                <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-4">{children}</div>
+                {notes && <AnnotationNotes notes={notes} />}
+            </div>
+            {screens && (
+                <div className="lg:col-span-7 flex flex-wrap items-start justify-center gap-6 md:gap-8">
+                    {screens}
+                </div>
+            )}
+        </motion.article>
     );
 }
 
@@ -213,71 +330,6 @@ export default function PediTuLavado() {
                             </ul>
                         </div>
                     </motion.section>
-
-                    <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
-                        <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6 border-b border-neutral-800 pb-4">
-                            Decisiones de diseño
-                        </h3>
-                        <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-10">
-                            <div className="space-y-3">
-                                <h4 className="text-neutral-200 font-normal">100% web, sin app</h4>
-                                <p>
-                                    El producto todavía no está terminado. Una webapp me permite iterar mucho más rápido: publico un cambio, mido cómo lo usan y veo el feedback real sin pasar por la revisión de las tiendas. Para el usuario también es más simple, porque no tiene que descargar nada para pedir un servicio.
-                                </p>
-                            </div>
-                            <div className="space-y-3">
-                                <h4 className="text-neutral-200 font-normal">PIN al llegar</h4>
-                                <p>
-                                    Cuando el profesional llega, el cliente le da un PIN. Así se asegura de que la persona que va a su casa es la que envió la plataforma y no otra. Es una decisión de seguridad y de confianza: el cliente abre la puerta de su casa a alguien que no conoce, y el PIN le da una forma concreta de verificarlo.
-                                </p>
-                            </div>
-                            <div className="space-y-3">
-                                <h4 className="text-neutral-200 font-normal">Verificación de identidad y antecedentes</h4>
-                                <p>
-                                    Para que la plataforma sea segura, cada profesional tiene que presentar su DNI, una selfie y un certificado de antecedentes vigente, con una antigüedad máxima de 3 a 6 meses. Es la otra mitad del PIN: el PIN confirma que llegó la persona correcta, y la verificación confirma que esa persona es quien dice ser y no tiene antecedentes.
-                                </p>
-                            </div>
-                            <div className="space-y-3">
-                                <h4 className="text-neutral-200 font-normal">Split de pagos</h4>
-                                <p>
-                                    El cliente hace un solo pago y la plataforma lo divide automáticamente: una parte va al profesional y otra queda como comisión. Es la forma más simple de repartir la plata: el cliente paga una vez, el profesional recibe lo suyo y yo no tengo que hacer transferencias a mano.
-                                </p>
-                            </div>
-                            <div className="space-y-6">
-                                <div className="space-y-3">
-                                    <h4 className="text-neutral-200 font-normal">Flujo del pedido</h4>
-                                    <p>
-                                        Mantuve los pasos al mínimo. Una vez hecho el pedido, el profesional pasa por cinco estados. En el medio puede subir fotos de cómo estaba el auto antes de empezar y de cómo quedó al terminar. Es opcional, pero sirve si el auto tiene un rayón, una marca o algún daño previo: queda la evidencia de que ya estaba así y no se culpa al profesional por algo que no hizo.
-                                    </p>
-                                </div>
-                                <OrderFlow />
-                            </div>
-                        </div>
-                    </motion.section>
-                    <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
-                        <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6 border-b border-neutral-800 pb-4">
-                            Lanzamiento
-                        </h3>
-                        <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-6">
-                            <p>
-                                Lancé la plataforma en agosto de 2026 en Córdoba. Hoy tiene más de 150 usuarios entre clientes y profesionales.
-                            </p>
-                            <p>
-                                El proyecto salió en El Show del Lagarto, un programa de TV local.
-                            </p>
-                            <a
-                                href="https://www.youtube.com/watch?v=JaMCPTRfNcQ"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group inline-flex items-center gap-3 text-sm tracking-wide text-[#9FD592] hover:text-neutral-50 transition-colors duration-300"
-                            >
-                                <span className="flex items-center justify-center w-9 h-9 rounded-full border border-[#9FD592]/40 group-hover:bg-[#9FD592] group-hover:text-[#0a0a0a] transition-all duration-300">
-                                    <svg aria-hidden viewBox="0 0 12 12" className="w-3 h-3 ml-0.5" fill="currentColor"><path d="M3 1.5v9l7.5-4.5z" /></svg>
-                                </span>
-                                Ver la nota en YouTube
-                            </a>
-                        </div>
-                    </motion.section>
                 </div>
 
                 <div className="md:col-span-5 relative z-10 order-first md:order-none">
@@ -314,6 +366,220 @@ export default function PediTuLavado() {
                     </div>
                 </div>
             </div>
+
+            {/* --- DECISIONES DE DISEÑO (ancho completo, con pantallas anotadas) --- */}
+            <section className="max-w-6xl w-full pb-24 md:pb-32 relative z-10">
+                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="mb-4 md:mb-8">
+                    <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6">
+                        Decisiones de diseño
+                    </h3>
+                    <p className="text-2xl md:text-4xl font-light tracking-tight text-neutral-200 max-w-3xl leading-snug">
+                        Las decisiones que definen cómo funciona la plataforma, con las pantallas donde se ven.
+                    </p>
+                </motion.div>
+
+                <div className="space-y-14 md:space-y-20">
+                    <DecisionRow index="01" title="100% web, sin app">
+                        <p>
+                            El producto todavía no está terminado. Una webapp me permite iterar mucho más rápido: publico un cambio, mido cómo lo usan y veo el feedback real sin pasar por la revisión de las tiendas. Para el usuario también es más simple, porque no tiene que descargar nada para pedir un servicio.
+                        </p>
+                    </DecisionRow>
+
+                    <DecisionRow
+                        index="02"
+                        title="PIN al llegar"
+                        notes={[
+                            'Mientras el profesional está en camino, el cliente ve un PIN de 4 dígitos.',
+                            'Al llegar, el profesional lo ingresa para validar el servicio.',
+                        ]}
+                        screens={
+                            <>
+                                <AnnotatedScreen
+                                    src="/peditulavado/pin-cliente.jpg"
+                                    alt="Vista del cliente: estado del pedido con el PIN de seguridad"
+                                    label="Cliente"
+                                    width={750}
+                                    height={790}
+                                    markers={[{ n: 1, x: 71, y: 29 }]}
+                                />
+                                <AnnotatedScreen
+                                    src="/peditulavado/pin-profesional.jpg"
+                                    alt="Vista del profesional: validación del PIN al llegar"
+                                    label="Profesional"
+                                    width={750}
+                                    height={1410}
+                                    markers={[{ n: 2, x: 9, y: 87 }]}
+                                />
+                            </>
+                        }
+                    >
+                        <p>
+                            Cuando el profesional llega, el cliente le da un PIN. Así se asegura de que la persona que va a su casa es la que envió la plataforma y no otra. Es una decisión de seguridad y de confianza: el cliente abre la puerta de su casa a alguien que no conoce, y el PIN le da una forma concreta de verificarlo.
+                        </p>
+                    </DecisionRow>
+
+                    <DecisionRow
+                        index="03"
+                        title="Verificación de identidad y antecedentes"
+                        notes={[
+                            'DNI, frente y dorso.',
+                            'Selfie como prueba de vida.',
+                            'Certificado de antecedentes penales del R.N.R., con acceso directo para tramitarlo online.',
+                        ]}
+                        screens={
+                            <AnnotatedScreen
+                                src="/peditulavado/verificacion.jpg"
+                                alt="Pantalla de verificación del profesional: DNI, selfie y antecedentes"
+                                label="Profesional · alta"
+                                width={750}
+                                height={1550}
+                                markers={[
+                                    { n: 1, x: 16, y: 51 },
+                                    { n: 2, x: 16, y: 76.5 },
+                                    { n: 3, x: 16, y: 89.5 },
+                                ]}
+                            />
+                        }
+                    >
+                        <p>
+                            Para que la plataforma sea segura, cada profesional tiene que presentar su DNI, una selfie y un certificado de antecedentes penales del R.N.R. con una antigüedad máxima de 30 días. Sin esa documentación no puede activarse ni recibir pedidos.
+                        </p>
+                        <p>
+                            Es la otra mitad del PIN: el PIN confirma que llegó la persona correcta, y la verificación confirma que esa persona es quien dice ser y no tiene antecedentes.
+                        </p>
+                    </DecisionRow>
+
+                    <DecisionRow
+                        index="04"
+                        title="Split de pagos"
+                        notes={[
+                            'El cliente paga una sola vez, después de validar el PIN y antes de que empiece el lavado.',
+                            'En el mismo pedido, el profesional ve $22.000: su parte, ya descontada la comisión.',
+                        ]}
+                        screens={
+                            <>
+                                <AnnotatedScreen
+                                    src="/peditulavado/pago-cliente.jpg"
+                                    alt="Vista del cliente: botón para pagar e iniciar el lavado"
+                                    label="Cliente"
+                                    width={750}
+                                    height={900}
+                                    markers={[{ n: 1, x: 9, y: 67 }]}
+                                />
+                                <AnnotatedScreen
+                                    src="/peditulavado/pedido-profesional-detalle.jpg"
+                                    alt="Vista del profesional: detalle del pedido con su monto"
+                                    label="Profesional · detalle"
+                                    width={670}
+                                    height={330}
+                                    markers={[{ n: 2, x: 70, y: 79 }]}
+                                    detail
+                                />
+                            </>
+                        }
+                    >
+                        <p>
+                            El cliente hace un solo pago y la plataforma lo divide automáticamente: una parte va al profesional y otra queda como comisión. Es la forma más simple de repartir la plata: el cliente paga una vez, el profesional recibe lo suyo y yo no tengo que hacer transferencias a mano.
+                        </p>
+                    </DecisionRow>
+
+                    <DecisionRow
+                        index="05"
+                        title="Pedir un servicio"
+                        notes={[
+                            'Cada profesional tiene su ficha, con calificación, nivel y distancia.',
+                            'El cliente elige uno de sus servicios y ve el total antes de solicitar.',
+                            'La reserva se completa en cuatro pasos: fecha, horario, vehículo y confirmación.',
+                        ]}
+                        screens={
+                            <>
+                                <AnnotatedScreen
+                                    src="/peditulavado/cliente-servicios.jpg"
+                                    alt="Vista del cliente: servicios de un profesional"
+                                    label="Cliente · servicios"
+                                    width={600}
+                                    height={1160}
+                                    markers={[
+                                        { n: 1, x: 4, y: 14 },
+                                        { n: 2, x: 58, y: 92 },
+                                    ]}
+                                />
+                                <AnnotatedScreen
+                                    src="/peditulavado/cliente-reserva.jpg"
+                                    alt="Vista del cliente: completar reserva en cuatro pasos"
+                                    label="Cliente · reserva"
+                                    width={600}
+                                    height={1124}
+                                    markers={[{ n: 3, x: 96, y: 41 }]}
+                                />
+                            </>
+                        }
+                    >
+                        <p>
+                            Mantuve el pedido corto. El cliente carga su ubicación antes, así que pedir empieza directamente por elegir un profesional. Después elige uno de sus servicios, el día, el horario y el vehículo, si tiene más de uno cargado, y confirma.
+                        </p>
+                        <FlowDiagram caption="Flujo del cliente" steps={CLIENT_STEPS} />
+                    </DecisionRow>
+
+                    <DecisionRow
+                        index="06"
+                        title="Estados del pedido"
+                        notes={[
+                            'Durante el lavado, el profesional ve el tiempo transcurrido.',
+                            'Al terminar, puede subir una foto del trabajo terminado. El aviso para las fotos del antes aparece en la pantalla del PIN.',
+                        ]}
+                        screens={
+                            <AnnotatedScreen
+                                src="/peditulavado/lavado-en-curso.jpg"
+                                alt="Vista del profesional: lavado en curso con foto del trabajo terminado"
+                                label="Profesional · lavado en curso"
+                                width={750}
+                                height={1310}
+                                markers={[
+                                    { n: 1, x: 17, y: 70.5 },
+                                    { n: 2, x: 28, y: 81 },
+                                ]}
+                            />
+                        }
+                    >
+                        <p>
+                            Una vez confirmado, el cliente y el profesional ven los mismos estados del pedido: pedido, aceptado, en camino, PIN, pago y lavado.
+                        </p>
+                        <p>
+                            Antes de empezar y al terminar, el profesional puede subir fotos del auto. Es opcional, pero sirve si el auto tiene un rayón, una marca o algún daño previo: queda la evidencia de que ya estaba así y no se culpa al profesional por algo que no hizo.
+                        </p>
+                        <FlowDiagram caption="Estados del pedido" steps={ORDER_STEPS} />
+                    </DecisionRow>
+                </div>
+            </section>
+
+            {/* --- LANZAMIENTO --- */}
+            <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="max-w-6xl w-full border-t border-neutral-900 pt-16 md:pt-20 pb-24 md:pb-32 relative z-10">
+                <div className="max-w-2xl">
+                    <h3 className="text-xs tracking-[0.3em] uppercase text-[#9FD592] font-bold mb-6">
+                        Lanzamiento
+                    </h3>
+                    <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-6">
+                        <p>
+                            Lancé la plataforma en agosto de 2026 en Córdoba. Hoy tiene más de 150 usuarios entre clientes y profesionales.
+                        </p>
+                        <p>
+                            El proyecto salió en El Show del Lagarto, un programa de TV local.
+                        </p>
+                        <a
+                            href="https://www.youtube.com/watch?v=JaMCPTRfNcQ"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group inline-flex items-center gap-3 text-sm tracking-wide text-[#9FD592] hover:text-neutral-50 transition-colors duration-300"
+                        >
+                            <span className="flex items-center justify-center w-9 h-9 rounded-full border border-[#9FD592]/40 group-hover:bg-[#9FD592] group-hover:text-[#0a0a0a] transition-all duration-300">
+                                <svg aria-hidden viewBox="0 0 12 12" className="w-3 h-3 ml-0.5" fill="currentColor"><path d="M3 1.5v9l7.5-4.5z" /></svg>
+                            </span>
+                            Ver la nota en YouTube
+                        </a>
+                    </div>
+                </div>
+            </motion.section>
 
             {/* --- NUEVA SECCIÓN: BRAND EVOLUTION --- */}
             <motion.div
