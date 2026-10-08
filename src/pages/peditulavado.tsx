@@ -97,12 +97,9 @@ export default function PediTuLavado() {
                     <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-light tracking-tighter leading-[0.9] uppercase mb-8">
                         Pedí tu <span className="text-[#9FD592] font-medium">lavado</span>
                     </h1>
-                    <h2 className="text-xl md:text-3xl text-neutral-300 font-light tracking-tight mb-6">
-                        Elevando la Logística On-Demand.
+                    <h2 className="text-xl md:text-3xl text-neutral-300 font-light tracking-tight leading-snug max-w-3xl">
+                        Diseñé y lancé una plataforma on-demand de lavado de autos a domicilio, de la idea a producción.
                     </h2>
-                    <p className="text-base md:text-lg text-neutral-500 font-light leading-relaxed max-w-2xl">
-                        Transformando un servicio tradicional en una experiencia digital de alta fidelidad, con flujos de trabajo impulsados por IA.
-                    </p>
                 </motion.div>
             </div>
 
