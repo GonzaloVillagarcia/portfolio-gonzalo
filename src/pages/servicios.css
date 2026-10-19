@@ -9,15 +9,17 @@
 .sv .btn-p:hover{background:#C2E8B8}
 .sv .btn-g{border:1px solid #4A4A4A;color:#FAFAFA}
 .sv .btn-g:hover{border-color:#9FD592;color:#9FD592}
-.sv a:focus-visible{outline:2px solid #9FD592;outline-offset:4px;border-radius:6px}
+.sv a:focus-visible,.sv button:focus-visible{outline:2px solid #9FD592;outline-offset:4px;border-radius:6px}
 
 /* nav */
 .sv .nav{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(10,10,10,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(23,23,23,.5)}
 .sv .nav .in{display:flex;justify-content:space-between;align-items:center;height:80px}
-.sv .nav a{font-size:12px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:#8A8A8A;text-decoration:none;transition:color .3s ease}
-.sv .nav a:hover,.sv .nav a.on{color:#FAFAFA}
-.sv .nav a.brand{color:#E5E5E5;font-weight:300}
-.sv .nav a.ct{color:#9FD592}
+.sv .nav button{background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
+.sv .nav a,.sv .nav button{font-size:12px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:#8A8A8A;text-decoration:none;transition:color .3s ease}
+.sv .nav a:hover,.sv .nav button:hover,.sv .nav .on{color:#FAFAFA}
+.sv .nav .ct.on,.sv .nav .ct:hover{color:#C2E8B8}
+.sv .nav .brand{color:#E5E5E5;font-weight:300}
+.sv .nav .ct{color:#9FD592}
 .sv .nav .links{display:flex;gap:36px;align-items:center}
 
 /* progreso y cursor */
@@ -147,7 +149,7 @@
 @media (max-width:900px){
   .sv .wrap{padding:0 24px}
   .sv .svc{grid-template-columns:minmax(0,1fr);gap:8px}
-  .sv .nav a.hide{display:none}
+  .sv .nav .hide{display:none}
   .sv .nav .links{gap:24px}
   .sv .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sv .cases{grid-template-columns:minmax(0,1fr)}
@@ -157,7 +159,7 @@
   .sv .heroCopy{top:auto;bottom:56px}
   .sv .ttl{font-size:10.4vw}
   .sv .nav a{font-size:11px;letter-spacing:.12em}
-  .sv .nav a.brand{white-space:nowrap;letter-spacing:.08em}
+  .sv .nav .brand{white-space:nowrap;letter-spacing:.08em}
   .sv .nav .links{gap:18px}
   .sv .shade{height:62%;background:linear-gradient(0deg,#0A0A0A 35%,rgba(10,10,10,0))}
 }

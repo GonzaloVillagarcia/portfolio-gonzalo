@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState, type CSSProperties, type MouseEvent } from 'react';
+import { Fragment, useEffect, useRef, useState, type CSSProperties, type MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './servicios.css';
@@ -26,6 +26,15 @@ const CASES = [
     { to: '/zygma', img: '/zygmamobile.png', alt: 'Sitio de Zygma en celular', t: 'Zygma', d: 'Sitio institucional para una constructora.' },
 ];
 
+const NAV = [
+    { id: 'servicios', label: 'Servicios', hide: true },
+    { id: 'proceso', label: 'Proceso', hide: true },
+    { id: 'casos', label: 'Casos', hide: true },
+    { id: 'contacto', label: 'Contacto', hide: false },
+];
+
+const goTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
 const ROWS: { cls: string; words: [string, boolean][] }[] = [
     { cls: 'r1', words: [['Webs', false], ['Apps', true], ['Integraciones', false], ['UX/UI', true]] },
     { cls: 'r2', words: [['Diseño', true], ['Desarrollo', false], ['Lanzamiento', true], ['Motion', false]] },
@@ -48,6 +57,19 @@ function Preview({ i }: { i: number }) {
 export default function Servicios() {
     const pageRef = useRef<HTMLDivElement>(null);
     const [hov, setHov] = useState(-1);
+    const [active, setActive] = useState('');
+
+    // Marca en el menú la sección que se está viendo
+    useEffect(() => {
+        const io = new IntersectionObserver(
+            (entries) => entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); }),
+            { rootMargin: '-45% 0px -50% 0px' },
+        );
+        NAV.forEach((n) => { const el = document.getElementById(n.id); if (el) io.observe(el); });
+        const top = () => { if (window.scrollY < 200) setActive(''); };
+        window.addEventListener('scroll', top, { passive: true });
+        return () => { io.disconnect(); window.removeEventListener('scroll', top); };
+    }, []);
 
     const moveCursor = (e: MouseEvent<HTMLDivElement>) => {
         pageRef.current?.style.setProperty('--cx', `${e.clientX}px`);
@@ -67,12 +89,19 @@ export default function Servicios() {
 
             <header className="nav">
                 <div className="wrap in">
-                    <Link to="/" className="brand">Gonzalo E. Villagarcía</Link>
-                    <nav aria-label="Principal" className="links">
-                        <Link className="hide" to="/#work">Work</Link>
-                        <Link className="hide" to="/#about">About</Link>
-                        <a className="on" href="#servicios">Servicios</a>
-                        <a className="ct" href="#contacto">Contacto</a>
+                    <button type="button" className="brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Gonzalo E. Villagarcía</button>
+                    <nav aria-label="Secciones" className="links">
+                        {NAV.map((n) => (
+                            <button
+                                key={n.id}
+                                type="button"
+                                onClick={() => goTo(n.id)}
+                                className={[n.hide ? 'hide' : '', n.id === 'contacto' ? 'ct' : '', active === n.id ? 'on' : ''].join(' ').trim() || undefined}
+                                aria-current={active === n.id ? 'true' : undefined}
+                            >
+                                {n.label}
+                            </button>
+                        ))}
                     </nav>
                 </div>
             </header>
@@ -135,7 +164,7 @@ export default function Servicios() {
                 </div>
             </section>
 
-            <section className="wrap" style={{ paddingTop: 128 }}>
+            <section id="proceso" className="wrap" style={{ paddingTop: 128, scrollMarginTop: 40 }}>
                 <div className="rv">
                     <p className="lbl" style={{ margin: '0 0 16px' }}>02 — Proceso</p>
                     <h2 className="h2" style={{ marginBottom: 40 }}><span className="l">Cómo </span><span className="b">trabajo.</span></h2>
@@ -150,7 +179,7 @@ export default function Servicios() {
                 </div>
             </section>
 
-            <section className="wrap" style={{ paddingTop: 128 }}>
+            <section id="casos" className="wrap" style={{ paddingTop: 128, scrollMarginTop: 40 }}>
                 <div className="rv" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 24, flexWrap: 'wrap', marginBottom: 40 }}>
                     <div>
                         <p className="lbl" style={{ margin: '0 0 16px' }}>03 — Casos</p>
@@ -179,9 +208,9 @@ export default function Servicios() {
                     transition={{ duration: 0.8 }}
                     className="relative z-10"
                 >
-                    <h2 className="text-[8vw] md:text-[4.5vw] font-light tracking-tighter leading-[0.95] text-neutral-400 uppercase mb-2">¿Tenés un proyecto en mente?</h2>
-                    <h2 className="text-[14vw] md:text-[8vw] font-black tracking-tighter leading-[0.9] text-[#9FD592] mb-12 uppercase">
-                        Hablemos.
+                    <h2 className="text-[9vw] md:text-[4.5vw] font-light tracking-tighter leading-[0.95] text-neutral-400 uppercase mb-4 md:mb-5">¿Tenés una idea?</h2>
+                    <h2 className="text-[14.5vw] md:text-[8vw] font-black tracking-tighter leading-[0.9] text-[#9FD592] mb-12 uppercase">
+                        <span className="block md:inline">Hagámosla</span> real.
                     </h2>
                     <a href={`mailto:${EMAIL}`} className="group relative inline-block text-lg md:text-2xl font-light text-neutral-400 hover:text-[#9FD592] transition-colors duration-500">
                         {EMAIL}
