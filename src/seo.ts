@@ -18,6 +18,12 @@ export const ROUTE_META: Record<string, RouteMeta> = {
         description:
             'Product Designer (UX/UI) en Córdoba, Argentina. Diseño productos digitales y los llevo a producción con desarrollo asistido por IA. 6+ años en diseño, casi 4 en productos fintech y Web3.',
     },
+    '/servicios': {
+        title: 'Servicios — Webs, apps e integraciones | Gonzalo Villagarcía',
+        description:
+            'Diseño y desarrollo de sitios, landings, apps, plataformas e integraciones (pagos, WhatsApp, CRM) para empresas y emprendedores. Córdoba, Argentina.',
+        image: '/vertex-mock-hero.jpg',
+    },
     '/peditulavado': {
         title: 'Pedí tu lavado — Caso de estudio | Gonzalo Villagarcía',
         description:

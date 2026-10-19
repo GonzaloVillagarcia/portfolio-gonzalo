@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
-import { useRef, useState, type CSSProperties } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const CONTACT_EMAIL = 'gonzaloevillagarcia@gmail.com';
 const CV_URL = '/cv-gonzalo-villagarcia.pdf';
@@ -331,6 +331,14 @@ export default function Home() {
         }
     };
 
+    // Llegando desde otra página con /#work o /#about
+    const { hash } = useLocation();
+    useEffect(() => {
+        if (!hash) return;
+        const t = setTimeout(() => document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' }), 150);
+        return () => clearTimeout(t);
+    }, [hash]);
+
     const toolGroups = [
         { label: "Diseño", tools: ["Figma", "Illustrator", "Photoshop", "After Effects", "Webflow"] },
         { label: "Construcción con IA", tools: ["Claude Code", "Gemini", "Antigravity", "Nano Banana", "Supabase", "Vercel"] },
@@ -350,7 +358,8 @@ export default function Home() {
                     </span>
                     <div className="flex gap-6 md:gap-10 text-[10px] md:text-xs tracking-[0.2em] uppercase text-neutral-500 font-medium">
                         <button onClick={() => scrollToSection('work')} className="hover:text-neutral-50 transition-colors duration-300 outline-none">Work</button>
-                        <button onClick={() => scrollToSection('about')} className="hover:text-neutral-50 transition-colors duration-300 outline-none">About</button>
+                        <button onClick={() => scrollToSection('about')} className="hidden sm:inline hover:text-neutral-50 transition-colors duration-300 outline-none">About</button>
+                        <Link to="/servicios" className="normal-case hover:text-neutral-50 transition-colors duration-300 outline-none">Servicios</Link>
                         <button onClick={() => scrollToSection('contact')} className="hover:text-neutral-50 transition-colors duration-300 outline-none">Contact</button>
                         <a href={CV_URL} download className="text-[#9FD592] hover:text-neutral-50 transition-colors duration-300 outline-none">CV</a>
                     </div>
@@ -604,6 +613,12 @@ export default function Home() {
                             Descargar CV
                         </a>
                     </div>
+                    <p className="mt-12 text-sm md:text-base text-neutral-500 font-light">
+                        ¿Tenés un proyecto para tu negocio?{' '}
+                        <Link to="/servicios" className="text-neutral-200 hover:text-[#9FD592] underline underline-offset-4 decoration-neutral-700 hover:decoration-[#9FD592] transition-colors duration-300">
+                            Mirá mis servicios →
+                        </Link>
+                    </p>
                 </motion.div>
 
                 <div className="absolute bottom-8 lg:bottom-12 w-full max-w-7xl px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-neutral-600 z-10">
