@@ -108,7 +108,7 @@ export default function Vertex() {
                         </h3>
                         <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-6">
                             <p>
-                                La idea nació de un amigo que organiza torneos en sus canchas de pádel y llevaba todo el proceso a mano: inscripciones por mensaje, cruces armados en planillas y resultados que se perdían entre grupos de WhatsApp.
+                                La idea nació de un amigo que organiza torneos en sus canchas de pádel y llevaba todo el proceso a mano: inscripciones, cruces, fixture y resultados.
                             </p>
                             <p>
                                 El desafío era resolver ese flujo completo para cualquier club, no solo para uno: contemplar distintas modalidades de torneo, que los jugadores pudieran inscribirse solos y que todos siguieran el cuadro en tiempo real.
@@ -135,11 +135,17 @@ export default function Vertex() {
 
                     <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
                         <h3 className="text-xs tracking-[0.3em] uppercase text-[#b58cff] font-bold mb-6 border-b border-neutral-800 pb-4">
-                            La Identidad
+                            El Nombre y la Identidad
                         </h3>
                         <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed space-y-6">
                             <p>
-                                El nombre y la marca parten de una idea: una red de clubes y jugadores conectados. El isotipo es una V construida con nodos y líneas, y el sistema visual combina un fondo oscuro con acentos neón (azul, violeta y magenta), tipografía display en mayúsculas y canchas de pádel iluminadas como escenario.
+                                Vertex (vértice) hace referencia al punto de convergencia: la cima, la cúspide donde se cruzan las líneas de un cuadro de torneo y donde los jugadores se disputan la gloria en la cancha.
+                            </p>
+                            <p>
+                                Además, fonética y visualmente encajaba con la estética que definimos desde el día uno: dark mode, minimalista y con aire tech/Web3, para distanciarnos de los sistemas aburridos y anticuados que usan la mayoría de los clubes.
+                            </p>
+                            <p>
+                                El isotipo es una V construida con nodos y líneas, y el sistema visual combina fondo oscuro con acentos neón (azul, violeta y magenta), tipografía display en mayúsculas y canchas de pádel iluminadas como escenario.
                             </p>
                         </div>
                     </motion.section>
