@@ -1,5 +1,6 @@
 import { Fragment, useRef, useState, type CSSProperties, type MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import './servicios.css';
 
 const WA = `https://wa.me/5493513904389?text=${encodeURIComponent('Hola Gonzalo! Vi tus servicios y quiero contarte un proyecto.')}`;
@@ -169,16 +170,40 @@ export default function Servicios() {
                 </div>
             </section>
 
-            <section id="contacto" className="wrap" style={{ paddingTop: 160, paddingBottom: 120, scrollMarginTop: 40 }}>
-                <p className="lbl" style={{ margin: '0 0 16px' }}>¿Tenés un proyecto en mente?</p>
-                <h2 className="bigcta"><span style={{ fontWeight: 200, color: '#FAFAFA' }}>Hablemos</span><span style={{ fontWeight: 700, color: '#9FD592' }}>.</span></h2>
-                <p style={{ margin: '28px 0 0', fontSize: 18, fontWeight: 300, color: '#D4D4D4', maxWidth: '30em' }}>
-                    Contame el contexto y el objetivo. Te respondo con los próximos pasos.
-                </p>
-                <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', alignItems: 'center', marginTop: 36 }}>
-                    <a className="btn btn-p" href={WA} target="_blank" rel="noopener noreferrer">Escribime por WhatsApp</a>
-                    <a href={`mailto:${EMAIL}`} style={{ fontSize: 15, color: '#8A8A8A', textDecoration: 'none' }}>{EMAIL}</a>
-                </div>
+            <section id="contacto" className="relative w-full min-h-screen flex flex-col justify-center items-center px-6 text-center" style={{ scrollMarginTop: 0 }}>
+                <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] max-w-full bg-[#9FD592]/5 rounded-full blur-[180px] pointer-events-none" aria-hidden="true" />
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="relative z-10"
+                >
+                    <h2 className="text-[8vw] md:text-[4.5vw] font-light tracking-tighter leading-[0.95] text-neutral-400 uppercase mb-2">¿Tenés un proyecto en mente?</h2>
+                    <h2 className="text-[14vw] md:text-[8vw] font-black tracking-tighter leading-[0.9] text-[#9FD592] mb-12 uppercase">
+                        Hablemos.
+                    </h2>
+                    <a href={`mailto:${EMAIL}`} className="group relative inline-block text-lg md:text-2xl font-light text-neutral-400 hover:text-[#9FD592] transition-colors duration-500">
+                        {EMAIL}
+                        <span className="absolute -bottom-2 left-0 w-0 h-px bg-[#9FD592] transition-all duration-500 group-hover:w-full" />
+                    </a>
+                    <div className="flex flex-wrap justify-center gap-4 mt-14">
+                        <a
+                            href={WA}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-10 py-4 bg-[#9FD592] border border-[#9FD592] rounded-full text-xs tracking-widest uppercase text-[#0a0a0a] hover:bg-transparent hover:text-[#9FD592] transition-all duration-500 outline-none font-medium"
+                        >
+                            Escribime por WhatsApp
+                        </a>
+                        <Link
+                            to="/#work"
+                            className="px-10 py-4 border border-[#9FD592]/60 rounded-full text-xs tracking-widest uppercase text-neutral-300 hover:bg-[#9FD592] hover:border-[#9FD592] hover:text-[#0a0a0a] transition-all duration-500 outline-none font-medium"
+                        >
+                            Ver portfolio
+                        </Link>
+                    </div>
+                </motion.div>
             </section>
 
             <footer className="wrap">
