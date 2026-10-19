@@ -24,6 +24,12 @@ export const ROUTE_META: Record<string, RouteMeta> = {
             'Caso de estudio de Pedí tu lavado, producto propio: plataforma web que conecta clientes con lavadores. Diseño de producto y lanzamiento.',
         image: '/peditulavado-mockup.jpg',
     },
+    '/vertex': {
+        title: 'Vertex — Producto SaaS | Gonzalo Villagarcía',
+        description:
+            'Caso de estudio de Vertex, plataforma multi-club para torneos de pádel: inscripciones, fixture automático, cuadro en vivo y ranking. Producto, diseño y desarrollo.',
+        image: '/vertex-hero.jpg',
+    },
     '/zygma': {
         title: 'Zygma — Diseño web | Gonzalo Villagarcía',
         description: 'Sitio institucional para empresa de soluciones constructivas.',

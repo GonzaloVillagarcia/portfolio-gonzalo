@@ -10,6 +10,7 @@ import CasaDePastas361 from './pages/361casadepastas';
 import LosTucus from './pages/lostucus';
 import Museo3D from './pages/museo3d';
 import Zygma from './pages/zygma';
+import Vertex from './pages/vertex';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import { ROUTE_META } from './seo';
 
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="/lostucus" element={<LosTucus />} />
         <Route path="/museo3d" element={<Museo3D />} />
         <Route path="/zygma" element={<Zygma />} />
+        <Route path="/vertex" element={<Vertex />} />
 
         {/* <Route path="/xcapit" element={<Xcapit />} /> */}
       </Routes>

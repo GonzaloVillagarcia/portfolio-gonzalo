@@ -410,8 +410,35 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     {/* XCAPIT: se agrega acá cuando exista la página /xcapit (y su ruta en App.tsx) */}
 
+                    {/* VERTEX */}
+                    <Link to="/vertex" className="block outline-none">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ delay: 0.1, duration: 0.6 }}
+                            className="group relative aspect-[4/5] bg-[#0a0a0a] border border-neutral-800/50 rounded-2xl overflow-hidden cursor-pointer shadow-[0_0_40px_rgba(0,0,0,0.4)]"
+                        >
+                            <img
+                                src="/vertex-cover.jpg"
+                                alt="Vertex, plataforma de torneos de pádel"
+                                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10 opacity-95 transition-opacity duration-700 group-hover:opacity-80"></div>
+                            <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                                <span className="inline-block border border-[#9841ff]/30 text-[#b58cff] text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-4 font-bold bg-[#9841ff]/10">
+                                    Producto · SaaS
+                                </span>
+                                <h4 className="text-3xl font-light tracking-tight mb-2 text-white">Vertex</h4>
+                                <p className="text-neutral-300 text-sm font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">
+                                    Plataforma multi-club para organizar torneos de pádel.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </Link>
+
                     {/* ZYGMA */}
-                    <Link to="/zygma" className="block outline-none">
+                    <Link to="/zygma" className="block outline-none md:mt-24">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -438,7 +465,7 @@ export default function Home() {
                     </Link>
 
                     {/* MUSEO 3D */}
-                    <Link to="/museo3d" className="block outline-none md:mt-24">
+                    <Link to="/museo3d" className="block outline-none">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
