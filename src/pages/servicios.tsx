@@ -5,6 +5,8 @@ import './servicios.css';
 
 const WA = `https://wa.me/5493513904389?text=${encodeURIComponent('Hola Gonzalo! Vi tus servicios y quiero contarte un proyecto.')}`;
 const EMAIL = 'gonzaloevillagarcia@gmail.com';
+const waFor = (servicio: string) =>
+    `https://wa.me/5493513904389?text=${encodeURIComponent(`Hola Gonzalo! Vi tus servicios y me interesa ${servicio}. Te cuento mi proyecto:`)}`;
 
 const SERVICES = [
     { a: 'Sitios y ', b: 'landings', d: 'Diseño y desarrollo orientados a conversión, con medición desde el día uno.' },
@@ -156,9 +158,18 @@ export default function Servicios() {
                 <div className="svcList" onMouseMove={movePreview} onMouseLeave={() => setHov(-1)}>
                     <div className={hov >= 0 ? 'pv on' : 'pv'} aria-hidden="true"><Preview i={hov} /></div>
                     {SERVICES.map((s, i) => (
-                        <a key={s.b} className="svc" href={WA} target="_blank" rel="noopener noreferrer" onMouseEnter={() => setHov(i)}>
+                        <a
+                            key={s.b}
+                            className="svc"
+                            href={waFor(`${s.a}${s.b}`.toLowerCase())}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Consultar por ${s.a}${s.b} por WhatsApp`}
+                            onMouseEnter={() => setHov(i)}
+                        >
                             <span className="t">{s.a}<b>{s.b}</b></span>
                             <span className="d">{s.d}</span>
+                            <span className="go">Consultar <span aria-hidden="true">→</span></span>
                         </a>
                     ))}
                 </div>
