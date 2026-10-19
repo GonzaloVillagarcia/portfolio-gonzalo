@@ -49,6 +49,9 @@
 .sv .shade{position:absolute;left:0;bottom:0;right:0;height:22%;background:linear-gradient(0deg,#0A0A0A 10%,rgba(10,10,10,0));z-index:2;pointer-events:none}
 .sv .heroCopy{position:absolute;left:0;right:0;top:220px;z-index:3}
 .sv .heroCopy .inner{max-width:640px}
+.sv .hlbl{margin:0 0 24px;color:#9A9A9A}
+.sv .hsub{margin:28px 0 0;font-size:19px;font-weight:300;line-height:1.5;color:#C4C4C4;max-width:26em}
+.sv .hcta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 .sv .ttl{margin:0;text-transform:uppercase;font-size:clamp(48px,5vw,76px);line-height:.95;letter-spacing:-.05em;color:#FAFAFA}
 .sv .ttl .ln{display:block;overflow:hidden;padding-bottom:.07em;margin-bottom:-.07em}
 .sv .ttl .ln>span{display:block;animation:svLnUp 1s var(--ex) both;animation-delay:calc(.35s + var(--i) * .12s)}
@@ -156,13 +159,14 @@
   .sv .svc .go{color:#9FD592;margin-top:6px}
   .sv .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sv .cases{grid-template-columns:repeat(2,minmax(0,1fr))}
-  /* hero apilado: foto arriba, texto abajo */
-  .sv .hero{height:auto;min-height:0;padding:96px 0 40px;display:flex;flex-direction:column}
+  /* hero apilado: foto arriba, texto abajo, todo en la primera pantalla */
+  .sv .hero{height:100vh;height:100svh;min-height:560px;max-height:1100px;padding:84px 0 28px;display:flex;flex-direction:column;box-sizing:border-box}
   .sv .glow{right:50%;top:60px;transform:translateX(50%);width:min(110vw,640px)}
-  .sv .rows{top:110px}
-  .sv .me{position:relative;right:auto;bottom:auto;align-self:center;height:auto;width:min(72vw,440px);-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 94%);mask-image:linear-gradient(180deg,#000 62%,transparent 94%)}
+  .sv .rows{top:100px}
+  .sv .me{position:relative;right:auto;bottom:auto;flex:1 1 0;min-height:0;height:auto;width:100%;aspect-ratio:auto;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 96%);mask-image:linear-gradient(180deg,#000 60%,transparent 96%)}
+  .sv .me img{object-position:center bottom}
   .sv .shade{display:none}
-  .sv .heroCopy{position:relative;top:auto;bottom:auto;margin-top:-18%}
+  .sv .heroCopy{position:relative;top:auto;bottom:auto;margin-top:-12vh;flex:none}
   .sv .ttl{font-size:clamp(40px,10.4vw,76px)}
 }
 @media (max-width:600px){
@@ -171,7 +175,11 @@
   .sv .nav .brand{white-space:nowrap;letter-spacing:.08em}
   .sv .nav .links{gap:18px}
   .sv .cases{grid-template-columns:minmax(0,1fr)}
-  .sv .me{width:84vw}
+  .sv .hlbl{font-size:10px;margin-bottom:14px}
+  .sv .ttl{font-size:clamp(34px,10vw,48px)}
+  .sv .hsub{font-size:16px;margin-top:14px}
+  .sv .hcta{margin-top:20px}
+  .sv .hsec{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   .sv .row,.sv .track,.sv .me,.sv .glow,.sv .heroCopy .inner,.sv .fu,.sv .ttl .ln>span,.sv .prog,.sv .rv,.sv .svc,.sv .step,.sv .pline i,.sv .case,.sv .bigcta,.sv .mini *{animation:none!important}

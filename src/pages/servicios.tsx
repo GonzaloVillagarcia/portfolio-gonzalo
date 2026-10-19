@@ -132,18 +132,18 @@ export default function Servicios() {
                 <div className="heroCopy">
                     <div className="wrap">
                         <div className="inner">
-                            <p className="lbl fu" style={{ margin: '0 0 24px', color: '#9A9A9A' }}>Servicios para empresas y emprendedores</p>
+                            <p className="lbl fu hlbl">Servicios para empresas y emprendedores</p>
                             <h1 className="ttl" aria-label="Webs, apps e integraciones para tu negocio.">
                                 <span className="ln" aria-hidden="true"><span style={{ '--i': 0, fontWeight: 200 } as CSSProperties}>Webs, apps e</span></span>
                                 <span className="ln" aria-hidden="true"><span style={{ '--i': 1, fontWeight: 700 } as CSSProperties}>integraciones</span></span>
                                 <span className="ln" aria-hidden="true"><span className="it" style={{ '--i': 2 } as CSSProperties}>(para tu negocio).</span></span>
                             </h1>
-                            <p className="fu" style={{ margin: '28px 0 0', fontSize: 19, fontWeight: 300, lineHeight: 1.5, color: '#C4C4C4', maxWidth: '26em' }}>
+                            <p className="fu hsub">
                                 Diseño y desarrollo con foco en tu negocio.
                             </p>
-                            <div className="fu" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 32 }}>
+                            <div className="fu hcta">
                                 <a className="btn btn-p" href={WA} target="_blank" rel="noopener noreferrer">Contame tu proyecto</a>
-                                <a className="btn btn-g" href="#servicios">Ver servicios</a>
+                                <a className="btn btn-g hsec" href="#servicios">Ver servicios</a>
                             </div>
                         </div>
                     </div>
