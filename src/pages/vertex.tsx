@@ -54,43 +54,72 @@ export default function Vertex() {
             >
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
-                    <div className="md:col-span-12 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl relative group p-2 md:p-6">
-                        <div className="aspect-video md:aspect-[16/9] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
-                            <img
-                                src="/vertex-hero.jpg"
-                                alt="Identidad de Vertex sobre una cancha de pádel"
-                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000"
-                            />
-                            <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                                <span className="text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                    [ Identidad ]
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="md:col-span-7 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-4 md:p-6 group">
+                    <div className="md:col-span-12 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-2 md:p-4 group">
                         <div className="aspect-video rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
                             <img
-                                src="/vertex-court.jpg"
-                                alt="Fondo de cancha de pádel con estética neón de Vertex"
-                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                src="/vertex-mock-hero.jpg"
+                                alt="Webapp de Vertex en notebook y mobile: home y próximo partido"
+                                loading="lazy"
+                                className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-1000"
                             />
-                            <span className="absolute bottom-6 left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                [ Universo visual ]
+                            <span className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
+                                [ Webapp · Desktop y mobile ]
                             </span>
                         </div>
                     </div>
 
-                    <div className="md:col-span-5 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-4 md:p-6 md:mt-16 group">
-                        <div className="aspect-[9/16] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
+                    <div className="md:col-span-7 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-2 md:p-4 group">
+                        <div className="aspect-video rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
                             <img
-                                src="/vertex-story.jpg"
-                                alt="Historia de ganadores del torneo generada por Vertex"
-                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                src="/vertex-mock-bracket.jpg"
+                                alt="Cuadro en vivo de un torneo en Vertex, en notebook"
+                                loading="lazy"
+                                className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-1000"
                             />
-                            <span className="absolute bottom-6 left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
-                                [ Historia para compartir ]
+                            <span className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
+                                [ Cuadro en vivo ]
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="md:col-span-5 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-2 md:p-4 group md:mt-16">
+                        <div className="aspect-[4/5] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
+                            <img
+                                src="/vertex-mock-ranking.jpg"
+                                alt="Ranking por categoría de Vertex en mobile"
+                                loading="lazy"
+                                className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-1000"
+                            />
+                            <span className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
+                                [ Ranking por categoría ]
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="md:col-span-5 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-2 md:p-4 group">
+                        <div className="aspect-[4/5] rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
+                            <img
+                                src="/vertex-mock-mobile.jpg"
+                                alt="Home y cuadro de torneo de Vertex en mobile"
+                                loading="lazy"
+                                className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-1000"
+                            />
+                            <span className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
+                                [ Pensada para mobile ]
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="md:col-span-7 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl p-2 md:p-4 group md:mt-16">
+                        <div className="aspect-video rounded-2xl overflow-hidden relative border border-neutral-800 bg-[#0a0a0a]">
+                            <img
+                                src="/vertex-mock-torneos.jpg"
+                                alt="Listado de torneos de todos los clubes en Vertex, en notebook"
+                                loading="lazy"
+                                className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-1000"
+                            />
+                            <span className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-xs text-white/80 font-medium tracking-wide uppercase bg-black/50 px-3 py-1 rounded backdrop-blur-md">
+                                [ Torneos de todos los clubes ]
                             </span>
                         </div>
                     </div>
