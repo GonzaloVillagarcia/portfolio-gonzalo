@@ -35,13 +35,15 @@
 .sv .row{animation:svRowIn 1.3s var(--ex) both}
 .sv .row.r1{--from:-14%}.sv .row.r2{--from:14%;animation-delay:.08s}.sv .row.r3{--from:-14%;animation-delay:.16s}
 @keyframes svRowIn{from{transform:translateX(var(--from));opacity:0}to{transform:none;opacity:1}}
-.sv .track{display:flex;align-items:center;gap:40px;width:max-content;animation:svMq 50s linear infinite}
-.sv .r2 .track{animation-duration:58s;animation-direction:reverse}
-.sv .r3 .track{animation-duration:66s}
+/* sin gap: cada ítem lleva su margen, así la mitad de la pista es exactamente 2 copias y el loop no salta */
+.sv .track{display:flex;align-items:center;width:max-content;animation:svMq 100s linear infinite;will-change:transform;backface-visibility:hidden}
+.sv .track>*{margin-right:40px}
+.sv .r2 .track{animation-duration:116s;animation-direction:reverse}
+.sv .r3 .track{animation-duration:132s}
 .sv .track span{font-size:clamp(90px,12vw,180px);font-weight:700;text-transform:uppercase;letter-spacing:-.055em;line-height:1;color:#161616;white-space:nowrap}
 .sv .track span.ol{color:transparent;font-weight:300;-webkit-text-stroke:1px #242424}
 .sv .track i{flex:none;width:14px;height:14px;border-radius:50%;background:#9FD592;opacity:.22}
-@keyframes svMq{to{transform:translateX(-50%)}}
+@keyframes svMq{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 .sv .me{position:absolute;right:max(3%,calc((100% - 1180px) / 2));bottom:0;height:min(840px,92%);z-index:1;aspect-ratio:3/4;pointer-events:none;animation:svMeIn 1.5s var(--ex) .2s both;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
 .sv .me img{display:block;width:100%;height:100%;object-fit:contain;object-position:bottom}
 @keyframes svMeIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
