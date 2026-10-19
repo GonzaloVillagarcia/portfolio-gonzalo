@@ -220,7 +220,7 @@ export default function Servicios() {
                     className="relative z-10"
                 >
                     <h2 className="text-[9vw] md:text-[4.5vw] font-light tracking-tighter leading-[0.95] text-neutral-400 uppercase mb-4 md:mb-5">¿Tenés una idea?</h2>
-                    <h2 className="text-[14.5vw] md:text-[8vw] font-black tracking-tighter leading-[0.9] text-[#9FD592] mb-12 uppercase">
+                    <h2 className="text-[13vw] md:text-[8vw] font-black tracking-tighter leading-[0.9] text-[#9FD592] mb-12 uppercase">
                         <span className="block md:inline">Hagámosla</span> real.
                     </h2>
                     <a href={`mailto:${EMAIL}`} className="group relative inline-block text-lg md:text-2xl font-light text-neutral-400 hover:text-[#9FD592] transition-colors duration-500">
