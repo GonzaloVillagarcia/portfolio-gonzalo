@@ -114,7 +114,7 @@ export default function Servicios() {
                     {ROWS.map((row) => (
                         <div key={row.cls} className={`row ${row.cls}`}>
                             <div className="track">
-                                {[...row.words, ...row.words].map(([w, ol], k) => (
+                                {[...row.words, ...row.words, ...row.words, ...row.words].map(([w, ol], k) => (
                                     <Fragment key={k}>
                                         <span className={ol ? 'ol' : undefined}>{w}</span>
                                         <i />
