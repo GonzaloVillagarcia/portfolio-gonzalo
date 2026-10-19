@@ -28,7 +28,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
         title: 'Vertex — Producto SaaS | Gonzalo Villagarcía',
         description:
             'Caso de estudio de Vertex, plataforma multi-club para torneos de pádel: inscripciones, fixture automático, cuadro en vivo y ranking. Producto, diseño y desarrollo.',
-        image: '/vertex-hero.jpg',
+        image: '/vertex-mock-hero.jpg',
     },
     '/zygma': {
         title: 'Zygma — Diseño web | Gonzalo Villagarcía',
