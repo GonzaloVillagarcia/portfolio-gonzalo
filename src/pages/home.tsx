@@ -349,15 +349,15 @@ export default function Home() {
 
             {/* --- NAVBAR --- */}
             <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-neutral-900/50">
-                <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center h-20">
+                <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center gap-4 h-20">
                     <span
                         onClick={() => scrollToSection('home')}
-                        className="text-neutral-200 font-light tracking-[0.15em] text-xs cursor-pointer hover:opacity-70 transition-opacity uppercase"
+                        className="text-neutral-200 font-light tracking-[0.08em] sm:tracking-[0.15em] text-[10px] sm:text-xs whitespace-nowrap cursor-pointer hover:opacity-70 transition-opacity uppercase"
                     >
                         Gonzalo E. Villagarcía
                     </span>
-                    <div className="flex gap-6 md:gap-10 text-[10px] md:text-xs tracking-[0.2em] uppercase text-neutral-500 font-medium">
-                        <button onClick={() => scrollToSection('work')} className="hover:text-neutral-50 transition-colors duration-300 outline-none">Work</button>
+                    <div className="flex gap-3 sm:gap-6 md:gap-10 text-[10px] md:text-xs tracking-[0.12em] sm:tracking-[0.2em] uppercase text-neutral-500 font-medium">
+                        <button onClick={() => scrollToSection('work')} className="hidden min-[380px]:inline hover:text-neutral-50 transition-colors duration-300 outline-none">Work</button>
                         <button onClick={() => scrollToSection('about')} className="hidden sm:inline hover:text-neutral-50 transition-colors duration-300 outline-none">About</button>
                         <Link to="/servicios" className="normal-case hover:text-neutral-50 transition-colors duration-300 outline-none">Servicios</Link>
                         <button onClick={() => scrollToSection('contact')} className="hover:text-neutral-50 transition-colors duration-300 outline-none">Contact</button>
@@ -544,13 +544,13 @@ export default function Home() {
                         <div className="space-y-8">
                             <span className="block text-neutral-500 text-xs tracking-[0.2em] uppercase font-medium">Sobre Mí</span>
                             <h3 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight uppercase text-neutral-200">
-                                Visión enfocada en <br /> la <span className="text-[#9FD592]">funcionalidad.</span>
+                                Visión enfocada en <br className="hidden md:block" /> la <span className="text-[#9FD592]">funcionalidad.</span>
                             </h3>
                             <div className="text-base md:text-lg text-neutral-400 font-light leading-relaxed max-w-xl space-y-6">
-                                <p className="flex items-center gap-4 text-neutral-300 font-light tracking-wide">
-                                    <span className="text-[#9FD592] font-medium">6+ años</span> en diseño.
-                                    <span className="text-neutral-700">|</span>
-                                    <span className="text-[#9FD592] font-medium">Casi 4</span> en fintech y Web3.
+                                <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-300 font-light tracking-wide">
+                                    <span><span className="text-[#9FD592] font-medium">6+ años</span> en diseño.</span>
+                                    <span className="hidden sm:inline text-neutral-700">|</span>
+                                    <span><span className="text-[#9FD592] font-medium">Casi 4</span> en fintech y Web3.</span>
                                 </p>
                                 <p>Empecé en el diseño gráfico y me pasé al diseño de producto.</p>
                                 <p>Hace casi 4 años que diseño productos fintech y Web3. Hoy, además, llevo mis diseños a producción con desarrollo asistido por IA.</p>
