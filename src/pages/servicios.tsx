@@ -73,15 +73,20 @@ export default function Servicios() {
         return () => { io.disconnect(); window.removeEventListener('scroll', top); };
     }, []);
 
+    // En pantallas grandes el sitio usa zoom (ver index.css): las coordenadas del mouse
+    // vienen sin zoom, así que se dividen por el factor para que el punto siga al puntero.
+    const zoom = () => parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
     const moveCursor = (e: MouseEvent<HTMLDivElement>) => {
-        pageRef.current?.style.setProperty('--cx', `${e.clientX}px`);
-        pageRef.current?.style.setProperty('--cy', `${e.clientY}px`);
+        const z = zoom();
+        pageRef.current?.style.setProperty('--cx', `${e.clientX / z}px`);
+        pageRef.current?.style.setProperty('--cy', `${e.clientY / z}px`);
     };
     const movePreview = (e: MouseEvent<HTMLDivElement>) => {
         const el = e.currentTarget;
         const r = el.getBoundingClientRect();
-        el.style.setProperty('--px', `${e.clientX - r.left}px`);
-        el.style.setProperty('--py', `${e.clientY - r.top}px`);
+        const z = zoom();
+        el.style.setProperty('--px', `${(e.clientX - r.left) / z}px`);
+        el.style.setProperty('--py', `${(e.clientY - r.top) / z}px`);
     };
 
     return (
