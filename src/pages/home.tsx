@@ -381,14 +381,6 @@ export default function Home() {
                     Product <span className="text-[#9FD592] font-medium">Designer</span> <br />
                     <span className="text-neutral-600 italic font-thin">(UX/UI).</span>
                 </motion.h1>
-                <motion.p className="text-lg md:text-2xl text-neutral-300 font-light leading-relaxed mb-4 relative z-10 max-w-3xl">
-                    Diseño productos digitales y los llevo a producción con desarrollo asistido por IA.
-                </motion.p>
-                <motion.p className="text-sm md:text-base text-neutral-500 font-light tracking-wide mb-12 relative z-10">
-                    <span className="text-[#9FD592]">6+ años</span> en diseño
-                    <span className="text-neutral-700 mx-3">|</span>
-                    <span className="text-[#9FD592]">casi 4</span> en productos fintech y Web3
-                </motion.p>
 
                 <div className="flex flex-wrap gap-4 relative z-10">
                     <button

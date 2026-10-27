@@ -16,7 +16,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     '/': {
         title: 'Gonzalo Villagarcía | Product Designer (UX/UI)',
         description:
-            'Product Designer (UX/UI) en Córdoba, Argentina. Diseño productos digitales y los llevo a producción con desarrollo asistido por IA. 6+ años en diseño, casi 4 en productos fintech y Web3.',
+            'Product Designer (UX/UI) en Córdoba, Argentina. Diseño productos digitales para fintech, Web3 y servicios on-demand.',
     },
     '/servicios': {
         title: 'Servicios — Webs, apps e integraciones | Gonzalo Villagarcía',
