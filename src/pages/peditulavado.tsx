@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
+import PeditulavadoDesignSystem from '../components/PeditulavadoDesignSystem';
 import type { ReactNode } from 'react';
 
 const PROJECT_FACTS = [
@@ -180,7 +181,51 @@ function DecisionRow({ index, title, children, screens, notes }: {
     );
 }
 
+// Pestañas del caso. Cada una tiene su link (?seccion=...) para poder compartirla directo.
+const TABS = [
+    { id: 'producto', label: 'El producto' },
+    { id: 'design-system', label: 'Design system' },
+    { id: 'rebranding', label: 'Rebranding' },
+] as const;
+type TabId = (typeof TABS)[number]['id'];
+
+function CaseTabs({ active, onSelect }: { active: TabId; onSelect: (id: TabId) => void }) {
+    return (
+        <div id="pestanas" className="sticky top-20 z-40 w-[calc(100%+3rem)] md:w-[calc(100%+6rem)] lg:w-[calc(100%+12rem)] -mx-6 md:-mx-12 lg:-mx-24 mb-16 md:mb-24 bg-[#0a0a0a]/85 backdrop-blur-md border-y border-neutral-900">
+            <div className="px-6 md:px-12 lg:px-24"><div role="tablist" aria-label="Secciones del caso" className="max-w-4xl mx-auto flex gap-1 md:gap-2 py-3" style={{ scrollbarWidth: 'none' }}>
+                {TABS.map((t) => (
+                    <button
+                        key={t.id}
+                        type="button"
+                        role="tab"
+                        aria-selected={active === t.id}
+                        onClick={() => onSelect(t.id)}
+                        className={`flex-1 md:flex-none px-2 md:px-5 py-2.5 rounded-full text-[10px] md:text-xs tracking-[0.08em] md:tracking-[0.15em] whitespace-nowrap uppercase font-medium transition-colors duration-300 outline-none focus-visible:ring-2 focus-visible:ring-[#9FD592] ${
+                            active === t.id ? 'bg-[#9FD592] text-[#0a0a0a]' : 'text-neutral-400 hover:text-neutral-100 hover:bg-neutral-900'
+                        }`}
+                    >
+                        {t.label}
+                    </button>
+                ))}
+            </div></div>
+        </div>
+    );
+}
+
 export default function PediTuLavado() {
+    const [params, setParams] = useSearchParams();
+    const requested = params.get('seccion');
+    const tab: TabId = TABS.some((t) => t.id === requested) ? (requested as TabId) : 'producto';
+    const selectTab = (id: TabId) => {
+        setParams(id === 'producto' ? {} : { seccion: id }, { replace: true });
+        // Si ya bajaste, volvé al inicio de la pestaña (debajo de la barra fija)
+        const bar = document.getElementById('pestanas');
+        if (bar) {
+            const top = bar.getBoundingClientRect().top + window.scrollY - 80;
+            if (window.scrollY > top) window.scrollTo({ top, behavior: 'auto' });
+        }
+    };
+
     const fadeUp = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any } }
@@ -219,6 +264,11 @@ export default function PediTuLavado() {
                     </h2>
                 </motion.div>
             </div>
+
+            <CaseTabs active={tab} onSelect={selectTab} />
+
+            {/* ===================== PESTAÑA: EL PRODUCTO ===================== */}
+            {tab === 'producto' && (<>
 
             {/* --- SECCIÓN DE MOCKUPS INTEGRADOS (BENTO GRID) --- */}
             <motion.div
@@ -361,6 +411,13 @@ export default function PediTuLavado() {
                             >
                                 Visitar plataforma
                             </a>
+                            <button
+                                type="button"
+                                onClick={() => selectTab('design-system')}
+                                className="mt-3 w-full flex justify-center items-center px-8 py-4 border border-neutral-800 rounded-xl text-xs tracking-widest uppercase text-neutral-300 hover:border-[#9FD592]/50 hover:text-[#9FD592] transition-all duration-500 font-bold"
+                            >
+                                Ver el design system
+                            </button>
                         </motion.div>
 
                     </div>
@@ -581,13 +638,20 @@ export default function PediTuLavado() {
                 </div>
             </motion.section>
 
-            {/* --- NUEVA SECCIÓN: BRAND EVOLUTION --- */}
+            </>)}
+
+            {/* ===================== PESTAÑA: DESIGN SYSTEM ===================== */}
+            {tab === 'design-system' && <PeditulavadoDesignSystem />}
+
+            {/* ===================== PESTAÑA: REBRANDING ===================== */}
+            {tab === 'rebranding' && (
+            /* --- BRAND EVOLUTION --- */
             <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 variants={fadeUp}
-                className="max-w-5xl w-full border-t border-neutral-900 pt-20 pb-32"
+                className="max-w-5xl w-full pb-32"
             >
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
 
@@ -621,6 +685,8 @@ export default function PediTuLavado() {
 
                 </div>
             </motion.div>
+
+            )}
 
             {/* --- FOOTER SIMPLIFICADO --- */}
             <div className="w-full max-w-7xl px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-neutral-600 py-12 border-t border-neutral-900 z-10 relative">
