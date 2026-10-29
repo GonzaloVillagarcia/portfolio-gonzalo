@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link, useSearchParams } from 'react-router-dom';
-import PeditulavadoDesignSystem from '../components/PeditulavadoDesignSystem';
+import { lazy, Suspense } from 'react';
+// El design system se descarga solo cuando se abre su pestaña
+const PeditulavadoDesignSystem = lazy(() => import('../components/PeditulavadoDesignSystem'));
 import type { ReactNode } from 'react';
 
 const PROJECT_FACTS = [
@@ -641,7 +643,11 @@ export default function PediTuLavado() {
             </>)}
 
             {/* ===================== PESTAÑA: DESIGN SYSTEM ===================== */}
-            {tab === 'design-system' && <PeditulavadoDesignSystem />}
+            {tab === 'design-system' && (
+                <Suspense fallback={<div className="min-h-[60vh]" />}>
+                    <PeditulavadoDesignSystem />
+                </Suspense>
+            )}
 
             {/* ===================== PESTAÑA: REBRANDING ===================== */}
             {tab === 'rebranding' && (

@@ -1,0 +1,9 @@
+{
+  "name": "Pedí tu lavado · Design System",
+  "id": "peditulavado-design-system-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": { "allowedDomains": ["none"] }
+}

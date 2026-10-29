@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Capturas locales para revisar el design system
+design-system/vista-previa/

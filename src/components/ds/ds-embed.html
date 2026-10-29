@@ -1,0 +1,596 @@
+<!-- Generado por design-system/tools/export-portfolio.mjs desde style-guide.html — no editar a mano -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></symbol>
+  <symbol id="i-drops" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-loader" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+</svg>
+<section class="sg" id="color">
+    <p class="eyebrow">Fundamentos</p>
+    <h2 class="sg-h2">Color</h2>
+    <p class="sg-p">Dos capas. Los <b>primitivos</b> son las escalas por tono y solo incluyen los pasos que la app usa. Los <b>semánticos</b> nombran la función y son lo único que usan los componentes. Cambiá entre Claro y Oscuro con el selector de arriba.</p>
+    <h3 class="sg-h3">Primitivos</h3>
+    <div id="ramps"><div class="ramp"><span class="name">neutral</span><div class="chip-sw" style="background:#ffffff;color:#0f172a"><b>0</b><span>#ffffff</span></div><div class="chip-sw" style="background:#f8fafc;color:#0f172a"><b>50</b><span>#f8fafc</span></div><div class="chip-sw" style="background:#f1f5f9;color:#0f172a"><b>100</b><span>#f1f5f9</span></div><div class="chip-sw" style="background:#e2e8f0;color:#0f172a"><b>200</b><span>#e2e8f0</span></div><div class="chip-sw" style="background:#cbd5e1;color:#0f172a"><b>300</b><span>#cbd5e1</span></div><div class="chip-sw" style="background:#94a3b8;color:#0f172a"><b>400</b><span>#94a3b8</span></div><div class="chip-sw" style="background:#64748b;color:#ffffff"><b>500</b><span>#64748b</span></div><div class="chip-sw" style="background:#475569;color:#ffffff"><b>600</b><span>#475569</span></div><div class="chip-sw" style="background:#334155;color:#ffffff"><b>700</b><span>#334155</span></div><div class="chip-sw" style="background:#1e293b;color:#ffffff"><b>800</b><span>#1e293b</span></div><div class="chip-sw" style="background:#0f172a;color:#ffffff"><b>900</b><span>#0f172a</span></div></div>
+<div class="ramp"><span class="name">navy</span><div class="chip-sw" style="background:#0a0f1c;color:#ffffff"><b>900</b><span>#0a0f1c</span></div><div class="chip-sw" style="background:#050814;color:#ffffff"><b>950</b><span>#050814</span></div></div>
+<div class="ramp"><span class="name">blue</span><div class="chip-sw" style="background:#eff6ff;color:#0f172a"><b>50</b><span>#eff6ff</span></div><div class="chip-sw" style="background:#dbeafe;color:#0f172a"><b>100</b><span>#dbeafe</span></div><div class="chip-sw" style="background:#bfdbfe;color:#0f172a"><b>200</b><span>#bfdbfe</span></div><div class="chip-sw" style="background:#60a5fa;color:#0f172a"><b>400</b><span>#60a5fa</span></div><div class="chip-sw" style="background:#3b82f6;color:#ffffff"><b>500</b><span>#3b82f6</span></div><div class="chip-sw" style="background:#2563eb;color:#ffffff"><b>600</b><span>#2563eb</span></div><div class="chip-sw" style="background:#1d4ed8;color:#ffffff"><b>700</b><span>#1d4ed8</span></div><div class="chip-sw" style="background:#1e3a8a;color:#ffffff"><b>900</b><span>#1e3a8a</span></div></div>
+<div class="ramp"><span class="name">indigo</span><div class="chip-sw" style="background:#4338ca;color:#ffffff"><b>700</b><span>#4338ca</span></div></div>
+<div class="ramp"><span class="name">magenta</span><div class="chip-sw" style="background:#fff0f7;color:#0f172a"><b>50</b><span>#fff0f7</span></div><div class="chip-sw" style="background:#ff4da6;color:#ffffff"><b>400</b><span>#ff4da6</span></div><div class="chip-sw" style="background:#ff0080;color:#ffffff"><b>500</b><span>#ff0080</span></div><div class="chip-sw" style="background:#e0007a;color:#ffffff"><b>600</b><span>#e0007a</span></div><div class="chip-sw" style="background:#b30062;color:#ffffff"><b>700</b><span>#b30062</span></div></div>
+<div class="ramp"><span class="name">fuchsia</span><div class="chip-sw" style="background:#d946ef;color:#ffffff"><b>500</b><span>#d946ef</span></div></div>
+<div class="ramp"><span class="name">violet</span><div class="chip-sw" style="background:#f5f3ff;color:#0f172a"><b>50</b><span>#f5f3ff</span></div><div class="chip-sw" style="background:#ddd6fe;color:#0f172a"><b>200</b><span>#ddd6fe</span></div><div class="chip-sw" style="background:#a78bfa;color:#0f172a"><b>400</b><span>#a78bfa</span></div><div class="chip-sw" style="background:#7c3aed;color:#ffffff"><b>600</b><span>#7c3aed</span></div><div class="chip-sw" style="background:#6d28d9;color:#ffffff"><b>700</b><span>#6d28d9</span></div></div>
+<div class="ramp"><span class="name">emerald</span><div class="chip-sw" style="background:#ecfdf5;color:#0f172a"><b>50</b><span>#ecfdf5</span></div><div class="chip-sw" style="background:#d1fae5;color:#0f172a"><b>100</b><span>#d1fae5</span></div><div class="chip-sw" style="background:#34d399;color:#0f172a"><b>400</b><span>#34d399</span></div><div class="chip-sw" style="background:#10b981;color:#ffffff"><b>500</b><span>#10b981</span></div><div class="chip-sw" style="background:#059669;color:#ffffff"><b>600</b><span>#059669</span></div><div class="chip-sw" style="background:#047857;color:#ffffff"><b>700</b><span>#047857</span></div></div>
+<div class="ramp"><span class="name">amber</span><div class="chip-sw" style="background:#fffbeb;color:#0f172a"><b>50</b><span>#fffbeb</span></div><div class="chip-sw" style="background:#fef3c7;color:#0f172a"><b>100</b><span>#fef3c7</span></div><div class="chip-sw" style="background:#fde68a;color:#0f172a"><b>200</b><span>#fde68a</span></div><div class="chip-sw" style="background:#fbbf24;color:#0f172a"><b>400</b><span>#fbbf24</span></div><div class="chip-sw" style="background:#f59e0b;color:#0f172a"><b>500</b><span>#f59e0b</span></div><div class="chip-sw" style="background:#d97706;color:#ffffff"><b>600</b><span>#d97706</span></div><div class="chip-sw" style="background:#b45309;color:#ffffff"><b>700</b><span>#b45309</span></div><div class="chip-sw" style="background:#78350f;color:#ffffff"><b>900</b><span>#78350f</span></div></div>
+<div class="ramp"><span class="name">orange</span><div class="chip-sw" style="background:#fff7ed;color:#0f172a"><b>50</b><span>#fff7ed</span></div><div class="chip-sw" style="background:#fdba74;color:#0f172a"><b>300</b><span>#fdba74</span></div><div class="chip-sw" style="background:#c2410c;color:#ffffff"><b>600</b><span>#c2410c</span></div><div class="chip-sw" style="background:#9a3412;color:#ffffff"><b>800</b><span>#9a3412</span></div></div>
+<div class="ramp"><span class="name">red</span><div class="chip-sw" style="background:#fef2f2;color:#0f172a"><b>50</b><span>#fef2f2</span></div><div class="chip-sw" style="background:#f87171;color:#0f172a"><b>400</b><span>#f87171</span></div><div class="chip-sw" style="background:#dc2626;color:#ffffff"><b>600</b><span>#dc2626</span></div><div class="chip-sw" style="background:#b91c1c;color:#ffffff"><b>700</b><span>#b91c1c</span></div></div>
+<div class="ramp"><span class="name">rose</span><div class="chip-sw" style="background:#e11d48;color:#ffffff"><b>600</b><span>#e11d48</span></div></div>
+<div class="ramp"><span class="name">alpha</span><div class="chip-sw" style="background:#ffffff0d;color:#e5e5e5"><b>white-5</b><span>#ffffff0d</span></div><div class="chip-sw" style="background:#ffffff1a;color:#e5e5e5"><b>white-10</b><span>#ffffff1a</span></div><div class="chip-sw" style="background:#ffffff99;color:#e5e5e5"><b>white-60</b><span>#ffffff99</span></div><div class="chip-sw" style="background:#00000080;color:#e5e5e5"><b>black-50</b><span>#00000080</span></div><div class="chip-sw" style="background:#00000099;color:#e5e5e5"><b>black-60</b><span>#00000099</span></div><div class="chip-sw" style="background:#2563eb33;color:#e5e5e5"><b>blue-20</b><span>#2563eb33</span></div><div class="chip-sw" style="background:#ff008033;color:#e5e5e5"><b>magenta-20</b><span>#ff008033</span></div><div class="chip-sw" style="background:#10b98126;color:#e5e5e5"><b>emerald-15</b><span>#10b98126</span></div><div class="chip-sw" style="background:#f59e0b26;color:#e5e5e5"><b>amber-15</b><span>#f59e0b26</span></div><div class="chip-sw" style="background:#dc262626;color:#e5e5e5"><b>red-15</b><span>#dc262626</span></div><div class="chip-sw" style="background:#7c3aed33;color:#e5e5e5"><b>violet-20</b><span>#7c3aed33</span></div><div class="chip-sw" style="background:#0f172a0f;color:#e5e5e5"><b>shadow-sm</b><span>#0f172a0f</span></div><div class="chip-sw" style="background:#0f172a2e;color:#e5e5e5"><b>shadow-md</b><span>#0f172a2e</span></div><div class="chip-sw" style="background:#00000080;color:#e5e5e5"><b>shadow-lg</b><span>#00000080</span></div><div class="chip-sw" style="background:#2563eb59;color:#e5e5e5"><b>glow-brand</b><span>#2563eb59</span></div><div class="chip-sw" style="background:#ff00804d;color:#e5e5e5"><b>glow-washer</b><span>#ff00804d</span></div><div class="chip-sw" style="background:#7c3aed8c;color:#e5e5e5"><b>glow-certified</b><span>#7c3aed8c</span></div></div></div>
+    <h3 class="sg-h3">Semánticos</h3>
+    <div class="table-wrap" style="padding:8px 16px"><div id="semantic"><div class="sem-row" data-mode-row="claro" style="font:700 10px var(--font);letter-spacing:.15em;text-transform:uppercase"><span></span><span>Token</span><span>Primitivo</span><span class="hide-sm">Valor</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#f8fafc"></i></span><code>bg</code><span>neutral.50</span><span class="hide-sm">#f8fafc</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#ffffff"></i></span><code>surface</code><span>neutral.0</span><span class="hide-sm">#ffffff</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#f1f5f9"></i></span><code>surface-muted</code><span>neutral.100</span><span class="hide-sm">#f1f5f9</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#050814"></i></span><code>surface-chrome</code><span>navy.950</span><span class="hide-sm">#050814</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#0a0f1c"></i></span><code>surface-chrome-raised</code><span>navy.900</span><span class="hide-sm">#0a0f1c</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#e2e8f0"></i></span><code>border</code><span>neutral.200</span><span class="hide-sm">#e2e8f0</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#64748b"></i></span><code>border-strong</code><span>neutral.500</span><span class="hide-sm">#64748b</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#ffffff1a"></i></span><code>border-chrome</code><span>alpha.white-10</span><span class="hide-sm">#ffffff1a</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#0f172a"></i></span><code>text-primary</code><span>neutral.900</span><span class="hide-sm">#0f172a</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#64748b"></i></span><code>text-secondary</code><span>neutral.500</span><span class="hide-sm">#64748b</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#475569"></i></span><code>text-on-muted</code><span>neutral.600</span><span class="hide-sm">#475569</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#ffffff"></i></span><code>text-on-brand</code><span>neutral.0</span><span class="hide-sm">#ffffff</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#ffffff"></i></span><code>text-on-chrome</code><span>neutral.0</span><span class="hide-sm">#ffffff</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#94a3b8"></i></span><code>text-on-chrome-muted</code><span>neutral.400</span><span class="hide-sm">#94a3b8</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#2563eb"></i></span><code>brand</code><span>blue.600</span><span class="hide-sm">#2563eb</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#1d4ed8"></i></span><code>brand-hover</code><span>blue.700</span><span class="hide-sm">#1d4ed8</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#2563eb"></i></span><code>brand-text</code><span>blue.600</span><span class="hide-sm">#2563eb</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#eff6ff"></i></span><code>brand-subtle</code><span>blue.50</span><span class="hide-sm">#eff6ff</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#60a5fa"></i></span><code>brand-text-on-chrome</code><span>blue.400</span><span class="hide-sm">#60a5fa</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#e0007a"></i></span><code>washer</code><span>magenta.600</span><span class="hide-sm">#e0007a</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#b30062"></i></span><code>washer-hover</code><span>magenta.700</span><span class="hide-sm">#b30062</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#e0007a"></i></span><code>washer-text</code><span>magenta.600</span><span class="hide-sm">#e0007a</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#fff0f7"></i></span><code>washer-subtle</code><span>magenta.50</span><span class="hide-sm">#fff0f7</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#059669"></i></span><code>success</code><span>emerald.600</span><span class="hide-sm">#059669</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#047857"></i></span><code>success-text</code><span>emerald.700</span><span class="hide-sm">#047857</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#ecfdf5"></i></span><code>success-subtle</code><span>emerald.50</span><span class="hide-sm">#ecfdf5</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#f59e0b"></i></span><code>warning</code><span>amber.500</span><span class="hide-sm">#f59e0b</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#b45309"></i></span><code>warning-text</code><span>amber.700</span><span class="hide-sm">#b45309</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#fffbeb"></i></span><code>warning-subtle</code><span>amber.50</span><span class="hide-sm">#fffbeb</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#dc2626"></i></span><code>danger</code><span>red.600</span><span class="hide-sm">#dc2626</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#b91c1c"></i></span><code>danger-hover</code><span>red.700</span><span class="hide-sm">#b91c1c</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#dc2626"></i></span><code>danger-text</code><span>red.600</span><span class="hide-sm">#dc2626</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#fef2f2"></i></span><code>danger-subtle</code><span>red.50</span><span class="hide-sm">#fef2f2</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#7c3aed"></i></span><code>certified</code><span>violet.600</span><span class="hide-sm">#7c3aed</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#6d28d9"></i></span><code>certified-text</code><span>violet.700</span><span class="hide-sm">#6d28d9</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#a78bfa"></i></span><code>certified-border</code><span>violet.400</span><span class="hide-sm">#a78bfa</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#f5f3ff"></i></span><code>certified-subtle</code><span>violet.50</span><span class="hide-sm">#f5f3ff</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#d946ef"></i></span><code>certified-end</code><span>fuchsia.500</span><span class="hide-sm">#d946ef</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#f59e0b"></i></span><code>rating</code><span>amber.500</span><span class="hide-sm">#f59e0b</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#b45309"></i></span><code>rating-text</code><span>amber.700</span><span class="hide-sm">#b45309</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#fffbeb"></i></span><code>rating-subtle</code><span>amber.50</span><span class="hide-sm">#fffbeb</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#e11d48"></i></span><code>promo</code><span>rose.600</span><span class="hide-sm">#e11d48</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#3b82f6"></i></span><code>focus</code><span>blue.500</span><span class="hide-sm">#3b82f6</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#00000080"></i></span><code>overlay</code><span>alpha.black-50</span><span class="hide-sm">#00000080</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#1d4ed8"></i></span><code>gradient-subscribe-start</code><span>blue.700</span><span class="hide-sm">#1d4ed8</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#4338ca"></i></span><code>gradient-subscribe-mid</code><span>indigo.700</span><span class="hide-sm">#4338ca</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#0f172a"></i></span><code>gradient-subscribe-end</code><span>neutral.900</span><span class="hide-sm">#0f172a</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#0f172a0f"></i></span><code>shadow-sm</code><span>alpha.shadow-sm</span><span class="hide-sm">#0f172a0f</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#0f172a2e"></i></span><code>shadow-md</code><span>alpha.shadow-md</span><span class="hide-sm">#0f172a2e</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#00000080"></i></span><code>shadow-lg</code><span>alpha.shadow-lg</span><span class="hide-sm">#00000080</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#2563eb59"></i></span><code>glow-brand</code><span>alpha.glow-brand</span><span class="hide-sm">#2563eb59</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#ff00804d"></i></span><code>glow-washer</code><span>alpha.glow-washer</span><span class="hide-sm">#ff00804d</span></div><div class="sem-row" data-mode-row="claro"><span class="sem-dot"><i style="background:#7c3aed8c"></i></span><code>glow-certified</code><span>alpha.glow-certified</span><span class="hide-sm">#7c3aed8c</span></div>
+<div class="sem-row" data-mode-row="oscuro" style="font:700 10px var(--font);letter-spacing:.15em;text-transform:uppercase"><span></span><span>Token</span><span>Primitivo</span><span class="hide-sm">Valor</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#050814"></i></span><code>bg</code><span>navy.950</span><span class="hide-sm">#050814</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#0f172a"></i></span><code>surface</code><span>neutral.900</span><span class="hide-sm">#0f172a</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#1e293b"></i></span><code>surface-muted</code><span>neutral.800</span><span class="hide-sm">#1e293b</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#050814"></i></span><code>surface-chrome</code><span>navy.950</span><span class="hide-sm">#050814</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#0a0f1c"></i></span><code>surface-chrome-raised</code><span>navy.900</span><span class="hide-sm">#0a0f1c</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#ffffff1a"></i></span><code>border</code><span>alpha.white-10</span><span class="hide-sm">#ffffff1a</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#64748b"></i></span><code>border-strong</code><span>neutral.500</span><span class="hide-sm">#64748b</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#ffffff1a"></i></span><code>border-chrome</code><span>alpha.white-10</span><span class="hide-sm">#ffffff1a</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#f8fafc"></i></span><code>text-primary</code><span>neutral.50</span><span class="hide-sm">#f8fafc</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#94a3b8"></i></span><code>text-secondary</code><span>neutral.400</span><span class="hide-sm">#94a3b8</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#94a3b8"></i></span><code>text-on-muted</code><span>neutral.400</span><span class="hide-sm">#94a3b8</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#ffffff"></i></span><code>text-on-brand</code><span>neutral.0</span><span class="hide-sm">#ffffff</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#ffffff"></i></span><code>text-on-chrome</code><span>neutral.0</span><span class="hide-sm">#ffffff</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#94a3b8"></i></span><code>text-on-chrome-muted</code><span>neutral.400</span><span class="hide-sm">#94a3b8</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#2563eb"></i></span><code>brand</code><span>blue.600</span><span class="hide-sm">#2563eb</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#1d4ed8"></i></span><code>brand-hover</code><span>blue.700</span><span class="hide-sm">#1d4ed8</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#60a5fa"></i></span><code>brand-text</code><span>blue.400</span><span class="hide-sm">#60a5fa</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#2563eb33"></i></span><code>brand-subtle</code><span>alpha.blue-20</span><span class="hide-sm">#2563eb33</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#60a5fa"></i></span><code>brand-text-on-chrome</code><span>blue.400</span><span class="hide-sm">#60a5fa</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#e0007a"></i></span><code>washer</code><span>magenta.600</span><span class="hide-sm">#e0007a</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#ff0080"></i></span><code>washer-hover</code><span>magenta.500</span><span class="hide-sm">#ff0080</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#ff4da6"></i></span><code>washer-text</code><span>magenta.400</span><span class="hide-sm">#ff4da6</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#ff008033"></i></span><code>washer-subtle</code><span>alpha.magenta-20</span><span class="hide-sm">#ff008033</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#10b981"></i></span><code>success</code><span>emerald.500</span><span class="hide-sm">#10b981</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#34d399"></i></span><code>success-text</code><span>emerald.400</span><span class="hide-sm">#34d399</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#10b98126"></i></span><code>success-subtle</code><span>alpha.emerald-15</span><span class="hide-sm">#10b98126</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#f59e0b"></i></span><code>warning</code><span>amber.500</span><span class="hide-sm">#f59e0b</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#fbbf24"></i></span><code>warning-text</code><span>amber.400</span><span class="hide-sm">#fbbf24</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#f59e0b26"></i></span><code>warning-subtle</code><span>alpha.amber-15</span><span class="hide-sm">#f59e0b26</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#dc2626"></i></span><code>danger</code><span>red.600</span><span class="hide-sm">#dc2626</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#b91c1c"></i></span><code>danger-hover</code><span>red.700</span><span class="hide-sm">#b91c1c</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#f87171"></i></span><code>danger-text</code><span>red.400</span><span class="hide-sm">#f87171</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#dc262626"></i></span><code>danger-subtle</code><span>alpha.red-15</span><span class="hide-sm">#dc262626</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#7c3aed"></i></span><code>certified</code><span>violet.600</span><span class="hide-sm">#7c3aed</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#a78bfa"></i></span><code>certified-text</code><span>violet.400</span><span class="hide-sm">#a78bfa</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#7c3aed"></i></span><code>certified-border</code><span>violet.600</span><span class="hide-sm">#7c3aed</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#7c3aed33"></i></span><code>certified-subtle</code><span>alpha.violet-20</span><span class="hide-sm">#7c3aed33</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#d946ef"></i></span><code>certified-end</code><span>fuchsia.500</span><span class="hide-sm">#d946ef</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#fbbf24"></i></span><code>rating</code><span>amber.400</span><span class="hide-sm">#fbbf24</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#fbbf24"></i></span><code>rating-text</code><span>amber.400</span><span class="hide-sm">#fbbf24</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#f59e0b26"></i></span><code>rating-subtle</code><span>alpha.amber-15</span><span class="hide-sm">#f59e0b26</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#e11d48"></i></span><code>promo</code><span>rose.600</span><span class="hide-sm">#e11d48</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#60a5fa"></i></span><code>focus</code><span>blue.400</span><span class="hide-sm">#60a5fa</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#00000099"></i></span><code>overlay</code><span>alpha.black-60</span><span class="hide-sm">#00000099</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#1d4ed8"></i></span><code>gradient-subscribe-start</code><span>blue.700</span><span class="hide-sm">#1d4ed8</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#4338ca"></i></span><code>gradient-subscribe-mid</code><span>indigo.700</span><span class="hide-sm">#4338ca</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#0f172a"></i></span><code>gradient-subscribe-end</code><span>neutral.900</span><span class="hide-sm">#0f172a</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#00000080"></i></span><code>shadow-sm</code><span>alpha.black-50</span><span class="hide-sm">#00000080</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#00000080"></i></span><code>shadow-md</code><span>alpha.black-50</span><span class="hide-sm">#00000080</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#00000099"></i></span><code>shadow-lg</code><span>alpha.black-60</span><span class="hide-sm">#00000099</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#2563eb59"></i></span><code>glow-brand</code><span>alpha.glow-brand</span><span class="hide-sm">#2563eb59</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#ff00804d"></i></span><code>glow-washer</code><span>alpha.glow-washer</span><span class="hide-sm">#ff00804d</span></div><div class="sem-row" data-mode-row="oscuro"><span class="sem-dot"><i style="background:#7c3aed8c"></i></span><code>glow-certified</code><span>alpha.glow-certified</span><span class="hide-sm">#7c3aed8c</span></div></div></div>
+  </section>
+<section class="sg" id="contraste">
+    <p class="eyebrow">Accesibilidad</p>
+    <h2 class="sg-h2">Contraste WCAG AA</h2>
+    <p class="sg-p">Texto 4.5:1, bordes de inputs y componentes 3:1. Cada par se calcula automáticamente a partir de los tokens: si un cambio rompe el contraste, el build falla.</p>
+    <h3 class="sg-h3">Pares verificados</h3>
+    <div class="table-wrap">
+      <table class="sg-table" id="contrast-table">
+        <thead><tr><th>Modo</th><th>Par</th><th>Uso</th><th>Ratio</th><th>Mínimo</th><th>Resultado</th></tr></thead>
+        <tbody>
+<!-- CONTRASTE:START -->
+<tr data-mode="claro"><td>Claro</td><td><code>text-primary</code> / <code>surface</code></td><td>Texto principal en cards</td><td class="num">17.85:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-primary</code> / <code>bg</code></td><td>Texto principal sobre el fondo</td><td class="num">17.06:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-secondary</code> / <code>surface</code></td><td>Texto secundario en cards</td><td class="num">4.76:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-secondary</code> / <code>bg</code></td><td>Texto secundario sobre el fondo</td><td class="num">4.55:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-muted</code> / <code>surface-muted</code></td><td>Chips de filtro inactivos, "Offline"</td><td class="num">6.92:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>brand</code></td><td>Botón "Pedir lavado"</td><td class="num">5.17:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>brand-hover</code></td><td>Botón principal en hover</td><td class="num">6.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>washer</code></td><td>Botón "Ser lavador"</td><td class="num">4.72:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>danger</code></td><td>Botón destructivo</td><td class="num">4.83:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>certified</code></td><td>Cinta "Certificado"</td><td class="num">5.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>promo</code></td><td>Etiqueta de descuento</td><td class="num">4.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>brand-text</code> / <code>surface</code></td><td>Links y "en la zona"</td><td class="num">5.17:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>brand-text</code> / <code>brand-subtle</code></td><td>Badge de servicio</td><td class="num">4.75:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>washer-text</code> / <code>surface</code></td><td>Texto del modo lavador</td><td class="num">4.72:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>success-text</code> / <code>success-subtle</code></td><td>Badge "Cerca de tu zona"</td><td class="num">5.21:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>warning-text</code> / <code>warning-subtle</code></td><td>Badge "Ocupado"</td><td class="num">4.84:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>rating-text</code> / <code>rating-subtle</code></td><td>Número de calificación</td><td class="num">4.84:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>certified-text</code> / <code>surface</code></td><td>"Hizo el curso de lavado"</td><td class="num">7.10:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>danger-text</code> / <code>surface</code></td><td>Texto de error</td><td class="num">4.83:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-chrome</code> / <code>surface-chrome</code></td><td>Header y barra inferior</td><td class="num">19.98:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-chrome-muted</code> / <code>surface-chrome</code></td><td>Ítems inactivos de la barra inferior</td><td class="num">7.79:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>brand-text-on-chrome</code> / <code>surface-chrome</code></td><td>Etiqueta "Ubicación de lavado"</td><td class="num">7.86:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>border-strong</code> / <code>surface</code></td><td>Borde de inputs</td><td class="num">4.76:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>focus</code> / <code>surface</code></td><td>Anillo de foco</td><td class="num">3.68:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>success</code> / <code>surface</code></td><td>Punto "online" (componente)</td><td class="num">3.77:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-primary</code> / <code>surface</code></td><td>Texto principal en cards</td><td class="num">17.06:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-primary</code> / <code>bg</code></td><td>Texto principal sobre el fondo</td><td class="num">19.09:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-secondary</code> / <code>surface</code></td><td>Texto secundario en cards</td><td class="num">6.96:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-secondary</code> / <code>bg</code></td><td>Texto secundario sobre el fondo</td><td class="num">7.79:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-muted</code> / <code>surface-muted</code></td><td>Chips de filtro inactivos, "Offline"</td><td class="num">5.71:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>brand</code></td><td>Botón "Pedir lavado"</td><td class="num">5.17:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>brand-hover</code></td><td>Botón principal en hover</td><td class="num">6.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>washer</code></td><td>Botón "Ser lavador"</td><td class="num">4.72:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>danger</code></td><td>Botón destructivo</td><td class="num">4.83:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>certified</code></td><td>Cinta "Certificado"</td><td class="num">5.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>promo</code></td><td>Etiqueta de descuento</td><td class="num">4.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>brand-text</code> / <code>surface</code></td><td>Links y "en la zona"</td><td class="num">7.02:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>brand-text</code> / <code>brand-subtle</code></td><td>Badge de servicio</td><td class="num">5.80:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>washer-text</code> / <code>surface</code></td><td>Texto del modo lavador</td><td class="num">5.84:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>success-text</code> / <code>success-subtle</code></td><td>Badge "Cerca de tu zona"</td><td class="num">7.37:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>warning-text</code> / <code>warning-subtle</code></td><td>Badge "Ocupado"</td><td class="num">8.37:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>rating-text</code> / <code>rating-subtle</code></td><td>Número de calificación</td><td class="num">8.37:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>certified-text</code> / <code>surface</code></td><td>"Hizo el curso de lavado"</td><td class="num">6.56:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>danger-text</code> / <code>surface</code></td><td>Texto de error</td><td class="num">6.45:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-chrome</code> / <code>surface-chrome</code></td><td>Header y barra inferior</td><td class="num">19.98:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-chrome-muted</code> / <code>surface-chrome</code></td><td>Ítems inactivos de la barra inferior</td><td class="num">7.79:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>brand-text-on-chrome</code> / <code>surface-chrome</code></td><td>Etiqueta "Ubicación de lavado"</td><td class="num">7.86:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>border-strong</code> / <code>surface</code></td><td>Borde de inputs</td><td class="num">3.75:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>focus</code> / <code>surface</code></td><td>Anillo de foco</td><td class="num">7.02:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>success</code> / <code>surface</code></td><td>Punto "online" (componente)</td><td class="num">7.04:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<!-- CONTRASTE:END -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+<section class="sg" id="tipografia">
+    <p class="eyebrow">Fundamentos</p>
+    <h2 class="sg-h2">Tipografía</h2>
+    <p class="sg-p">Lexend en 4 pesos: 400 (texto), 500 (UI), 700 (títulos y énfasis) y 900 (CTA en mayúsculas). Nueve tamaños, de 10 a 48 px.</p>
+    <div class="panel" id="type"><div class="type-row"><code>display</code><span style="font:700 48px/1.05 'Lexend',system-ui,sans-serif;letter-spacing:-0.02em">Tu auto impecable, sin moverte.</span><span class="meta">48 / 1.05 · 700</span></div>
+<div class="type-row"><code>title-xl</code><span style="font:700 32px/1.1 'Lexend',system-ui,sans-serif;letter-spacing:-0.02em">Lavadores en la zona</span><span class="meta">32 / 1.1 · 700</span></div>
+<div class="type-row"><code>title-lg</code><span style="font:700 24px/1.2 'Lexend',system-ui,sans-serif;letter-spacing:-0.02em">Lavadores en la zona</span><span class="meta">24 / 1.2 · 700</span></div>
+<div class="type-row"><code>title-md</code><span style="font:700 20px/1.25 'Lexend',system-ui,sans-serif;letter-spacing:-0.02em">Lavador en camino</span><span class="meta">20 / 1.25 · 700</span></div>
+<div class="type-row"><code>title-sm</code><span style="font:700 18px/1.3 'Lexend',system-ui,sans-serif;letter-spacing:-0.01em">¡Hola, Lucía!</span><span class="meta">18 / 1.3 · 700</span></div>
+<div class="type-row"><code>body</code><span style="font:400 16px/1.5 'Lexend',system-ui,sans-serif;letter-spacing:0em">Elegí dónde va a estar el auto: tu casa, el trabajo u otra dirección.</span><span class="meta">16 / 1.5 · 400</span></div>
+<div class="type-row"><code>body-sm</code><span style="font:400 14px/1.5 'Lexend',system-ui,sans-serif;letter-spacing:0em">El precio con crédito incluye el costo de financiación.</span><span class="meta">14 / 1.5 · 400</span></div>
+<div class="type-row"><code>label</code><span style="font:500 14px/1.2 'Lexend',system-ui,sans-serif;letter-spacing:0em">Lavadores · Historial · Mi Perfil</span><span class="meta">14 / 1.2 · 500</span></div>
+<div class="type-row"><code>label-sm</code><span style="font:700 12px/1.2 'Lexend',system-ui,sans-serif;letter-spacing:0em">12 cerca ahora</span><span class="meta">12 / 1.2 · 700</span></div>
+<div class="type-row"><code>caption</code><span style="font:500 12px/1.4 'Lexend',system-ui,sans-serif;letter-spacing:0em">Eco lavado — muy pronto</span><span class="meta">12 / 1.4 · 500</span></div>
+<div class="type-row"><code>overline</code><span style="font:700 10px/1.2 'Lexend',system-ui,sans-serif;letter-spacing:0.2em;text-transform:uppercase">Ubicación de lavado</span><span class="meta">10 / 1.2 · 700 · MAYÚS</span></div>
+<div class="type-row"><code>cta</code><span style="font:900 14px/1 'Lexend',system-ui,sans-serif;letter-spacing:0.1em;text-transform:uppercase">Pedir lavado</span><span class="meta">14 / 1 · 900 · MAYÚS</span></div>
+<div class="type-row"><code>cta-sm</code><span style="font:700 12px/1 'Lexend',system-ui,sans-serif;letter-spacing:0.05em;text-transform:uppercase">Iniciar sesión</span><span class="meta">12 / 1 · 700 · MAYÚS</span></div>
+<div class="type-row"><code>pin</code><span style="font:700 24px/1 ui-monospace,monospace;letter-spacing:0.1em">4821</span><span class="meta">24 / 1 · 700</span></div></div>
+  </section>
+<section class="sg" id="espacio">
+    <p class="eyebrow">Fundamentos</p>
+    <h2 class="sg-h2">Espaciado, radios y elevación</h2>
+    <p class="sg-p">Base de 4 px: todos los espacios son múltiplos de 4. El 2 px queda solo para separaciones mínimas entre íconos y texto.</p>
+    <div class="grid g2">
+      <div class="panel" id="spacing"><h4 class="eyebrow">Espaciado</h4><div class="space-row"><span class="lbl"><code>space-2</code></span><span class="bar" style="width:6px"></span><span>2px</span></div><div class="space-row"><span class="lbl"><code>space-4</code></span><span class="bar" style="width:12px"></span><span>4px</span></div><div class="space-row"><span class="lbl"><code>space-8</code></span><span class="bar" style="width:24px"></span><span>8px</span></div><div class="space-row"><span class="lbl"><code>space-12</code></span><span class="bar" style="width:36px"></span><span>12px</span></div><div class="space-row"><span class="lbl"><code>space-16</code></span><span class="bar" style="width:48px"></span><span>16px</span></div><div class="space-row"><span class="lbl"><code>space-20</code></span><span class="bar" style="width:60px"></span><span>20px</span></div><div class="space-row"><span class="lbl"><code>space-24</code></span><span class="bar" style="width:72px"></span><span>24px</span></div><div class="space-row"><span class="lbl"><code>space-32</code></span><span class="bar" style="width:96px"></span><span>32px</span></div><div class="space-row"><span class="lbl"><code>space-40</code></span><span class="bar" style="width:120px"></span><span>40px</span></div><div class="space-row"><span class="lbl"><code>space-48</code></span><span class="bar" style="width:144px"></span><span>48px</span></div><div class="space-row"><span class="lbl"><code>space-64</code></span><span class="bar" style="width:192px"></span><span>64px</span></div></div>
+      <div>
+        <div class="grid g3" id="radii"><div><div class="radius-box" style="border-radius:8px"></div><p class="stat-label"><code>radius-sm</code> · 8px</p></div><div><div class="radius-box" style="border-radius:12px"></div><p class="stat-label"><code>radius-md</code> · 12px</p></div><div><div class="radius-box" style="border-radius:20px"></div><p class="stat-label"><code>radius-lg</code> · 20px</p></div><div><div class="radius-box" style="border-radius:32px"></div><p class="stat-label"><code>radius-xl</code> · 32px</p></div><div><div class="radius-box" style="border-radius:36px"></div><p class="stat-label"><code>radius-full</code> · píldora</p></div></div>
+        <div class="grid g3" id="elev" style="margin-top:16px"><div class="elev-box" style="box-shadow:var(--shadow-sm)"><span><code>sm</code><br>Cards en reposo (shadow-sm).</span></div><div class="elev-box" style="box-shadow:var(--shadow-md)"><span><code>md</code><br>Hover de card, popovers, chips activos.</span></div><div class="elev-box" style="box-shadow:var(--shadow-lg)"><span><code>lg</code><br>Elementos flotantes sobre el mapa y barras oscuras.</span></div><div class="elev-box" style="box-shadow:var(--shadow-glow-brand)"><span><code>glow-brand</code><br>CTA principal y paso activo del pedido.</span></div><div class="elev-box" style="box-shadow:var(--shadow-glow-washer)"><span><code>glow-washer</code><br>CTA "Ser lavador".</span></div><div class="elev-box" style="box-shadow:var(--shadow-glow-certified)"><span><code>glow-certified</code><br>Card de lavador certificado.</span></div></div>
+      </div>
+    </div>
+  </section>
+<section class="sg" id="componentes">
+    <p class="eyebrow">Componentes</p>
+    <h2 class="sg-h2">Componentes reales</h2>
+    <p class="sg-p">Cada componente con sus variantes, sus estados y una regla corta de cuándo usarlo y cuándo no. Debajo del título, el archivo de la app donde vive. Los nombres son de ejemplo, no de lavadores reales.</p>
+
+    <!-- Botón -->
+    <div class="comp">
+      <div>
+        <h3>Botón</h3>
+        <p class="src">Landing.tsx · NavbarActions.tsx · ActiveBookingCard.tsx</p>
+        <div class="stage" style="flex-direction:column">
+          <div style="display:flex;flex-wrap:wrap;gap:16px">
+            <div class="state"><span class="lbl">Primario</span><button class="btn md primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Lavador</span><button class="btn md washer">Ser lavador</button></div>
+            <div class="state"><span class="lbl">Secundario</span><button class="btn md secondary">Buscar otro</button></div>
+            <div class="state"><span class="lbl">Ghost</span><button class="btn md ghost">Volver</button></div>
+            <div class="state"><span class="lbl">Destructivo</span><button class="btn md danger">Cancelar</button></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:16px">
+            <div class="state"><span class="lbl">Default</span><button class="btn md primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Hover</span><button class="btn md primary is-hover">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Pressed</span><button class="btn md primary is-pressed">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Focus</span><button class="btn md primary is-focus">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Disabled</span><button class="btn md primary is-disabled" disabled>Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Loading</span><button class="btn md primary"><svg class="ic spin"><use href="#i-loader"/></svg>Preparando pago…</button></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
+            <div class="state"><span class="lbl">sm · 36</span><button class="btn sm primary">Iniciar sesión</button></div>
+            <div class="state"><span class="lbl">md · 48</span><button class="btn md primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">lg · 56</span><button class="btn lg primary">Pedir lavado</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Primario</b>: una sola acción principal por pantalla (pedir, pagar, aceptar).</li><li><b>Lavador</b>: solo para sumarse como lavador o en el modo lavador.</li><li>En mobile, altura mínima de 44 px (md o lg).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No pongas dos primarios juntos: el segundo va como secundario.</li><li>No uses el rosa de lavador para acciones del cliente.</li><li><b>sm</b> no va como acción principal en mobile.</li></ul></div>
+        <p class="tokens">Tokens: <code>brand</code>, <code>brand-hover</code>, <code>washer</code>, <code>text-on-brand</code>, <code>radius-full</code>, <code>glow-brand</code>, estilo <code>cta</code>.</p>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="comp">
+      <div>
+        <h3>Header oscuro</h3>
+        <p class="src">RootLayout.tsx · NavbarActions.tsx</p>
+        <div class="stage" style="flex-direction:column;align-items:stretch">
+          <div class="state" style="align-items:stretch"><span class="lbl">Invitado</span>
+            <div class="app-header"><img src="/design-system/logo2.png" alt="Pedí tu lavado" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><button class="btn sm primary">Iniciar sesión</button></div></div></div>
+          <div class="state" style="align-items:stretch"><span class="lbl">Con sesión</span>
+            <div class="app-header"><img src="/design-system/logo2.png" alt="Pedí tu lavado" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><span class="avatar-btn">L</span></div></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Arriba de todas las pantallas de la app, cliente y lavador.</li><li>Es oscuro en los dos modos: es el "chrome" de la marca.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No sumes más acciones: logo, Instagram y sesión.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>text-on-chrome</code>, <code>washer-subtle</code>.</p>
+      </div>
+    </div>
+
+    <!-- Nav segmentada -->
+    <div class="comp">
+      <div>
+        <h3>Navegación segmentada</h3>
+        <p class="src">ClientLayout.tsx (solo desktop)</p>
+        <div class="stage" style="flex-direction:column">
+          <div class="state"><span class="lbl">Lavadores activo</span>
+            <nav class="seg"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
+          <div class="state"><span class="lbl">Hover en Historial</span>
+            <nav class="seg"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a class="hover" href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para las secciones principales en desktop. En mobile, el mismo rol lo cumple la barra inferior.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No la uses para filtrar contenido: para eso están los chips.</li><li>Máximo 4 ítems.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-muted</code>, <code>surface</code>, <code>brand-text</code>, <code>radius-full</code>.</p>
+      </div>
+    </div>
+
+    <!-- Barra de ubicación -->
+    <div class="comp">
+      <div>
+        <h3>Barra de ubicación de lavado</h3>
+        <p class="src">client/Dashboard.tsx (Select + Popover)</p>
+        <div class="stage map" style="flex-direction:column">
+          <div class="state" style="width:100%"><span class="lbl">Cerrada</span>
+            <div class="loc"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado <span>· tocá para cambiar</span><svg class="ic" style="width:12px;height:12px"><use href="#i-info"/></svg></div><div class="value">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Desplegada</span>
+            <div class="loc"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado <span>· tocá para cambiar</span></div><div class="value">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div>
+            <div class="loc-menu"><div>Ubicación actual</div><div class="sel">Casa · Barrio Jardín</div><div>Trabajo · Centro</div><div class="new">+ Nueva dirección</div></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Flotando arriba del mapa: define qué lavadores llegan hasta esa dirección.</li><li>La "i" explica para qué sirve y no abre el selector.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No la repitas dentro de la lista: es una sola por pantalla.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, <code>shadow lg</code>, radio 24.</p>
+      </div>
+    </div>
+
+    <!-- Bienvenida + tabs + filtros -->
+    <div class="comp">
+      <div>
+        <h3>Bienvenida, tabs y filtros</h3>
+        <p class="src">client/Dashboard.tsx</p>
+        <div class="stage" style="flex-direction:column;max-width:460px">
+          <div class="state" style="width:100%"><span class="lbl">Card de bienvenida</span>
+            <div class="welcome"><span class="avatar">L</span><div><h5>¡Hola, <span>Lucía!</span></h5><p>¿Qué lavamos hoy? ✨</p></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Tabs</span>
+            <div class="tabs"><button class="active"><svg class="ic"><use href="#i-car"/></svg>Lavadores</button><button><svg class="ic"><use href="#i-cal"/></svg>Turnos (2)</button></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Título de sección</span>
+            <div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca ahora</span></div></div>
+          <div class="state"><span class="lbl">Chips de filtro (Todos activo · hover en Pulidos)</span>
+            <div class="chips"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip hover">Pulidos</button></div>
+            <span class="note"><svg class="ic" style="width:14px;height:14px"><use href="#i-leaf"/></svg>Eco lavado — muy pronto</span></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Tabs</b>: alternar dos vistas del mismo contexto (lista y turnos).</li><li><b>Chips</b>: filtrar la lista. Siempre hay uno activo ("Todos").</li><li>La nota "muy pronto" va en texto secundario, sin acción.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>Los chips no navegan a otra pantalla.</li><li>No muestres un chip deshabilitado para lo que viene: usá la nota.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-muted</code>, <code>text-on-muted</code>, <code>brand-text</code>, <code>success</code>, estilos <code>title-lg</code>, <code>overline</code>.</p>
+      </div>
+    </div>
+
+    <!-- Banner suscripción -->
+    <div class="comp">
+      <div>
+        <h3>Banner "¡Suscribite y ahorrá!"</h3>
+        <p class="src">client/SubscribeBanner.tsx</p>
+        <div class="stage" style="flex-direction:column">
+          <div class="state" style="width:100%"><span class="lbl">En la lista</span>
+            <div class="sub"><p>¡Suscribite y ahorrá!</p><button class="pill">Ver planes</button><span class="x"><svg class="ic" style="width:14px;height:14px"><use href="#i-x"/></svg></span></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Flotando en el mapa</span>
+            <div class="sub map"><p>¡Suscribite y ahorrá!</p><button class="pill">Ver planes</button><span class="x"><svg class="ic" style="width:14px;height:14px"><use href="#i-x"/></svg></span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Solo para quien no está suscripto. La cruz lo oculta durante esa visita.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No sumes más texto: la info está en la pantalla de planes.</li><li>No uses este gradiente para otra cosa.</li></ul></div>
+        <p class="tokens">Tokens: <code>gradient-subscribe-*</code>, <code>radius-lg</code>, <code>shadow md / lg</code>.</p>
+      </div>
+    </div>
+
+    <!-- Card de lavador -->
+    <div class="comp">
+      <div>
+        <h3>Card de lavador</h3>
+        <p class="src">client/Dashboard.tsx · ui/WasherBadge.tsx · ui/CertifiedInfo.tsx</p>
+        <div class="stage" style="flex-direction:column">
+          <div class="state"><span class="lbl">Online · cerca · nuevo</span>
+            <div class="wcard"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg><span class="badge near"><svg class="ic"><use href="#i-nav"/></svg>Cerca de tu zona</span></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div></div>
+          <div class="state"><span class="lbl">Online · con calificación · nivel oro</span>
+            <div class="wcard"><div class="av"><div class="img" style="background:#0f766e">T</div><span class="dot"></span></div><div class="info"><div class="name"><b>Tomás R.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 7.3 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>5.0</b></span><span class="level gold">🥇 Oro</span></div></div></div>
+          <div class="state"><span class="lbl">Ocupado · con promo</span>
+            <div class="wcard"><div class="av"><span class="badge promo" style="position:absolute;top:-8px;left:-8px;z-index:2">-20%</span><div class="img" style="background:#9333ea">S</div><span class="busy-ic"><svg class="ic"><use href="#i-clock"/></svg></span></div><div class="info"><div class="name"><b>Sofía P.</b><span class="badge busy">Ocupado</span><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 2.1 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.8</b></span></div></div></div>
+          <div class="state"><span class="lbl">Offline · solo reservas a futuro</span>
+            <div class="wcard offline"><div class="av"><div class="img" style="background:#64748b">A</div></div><div class="info"><div class="name"><b>Andrés L.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 1.3 km</div></div><div class="side"><div class="off"><b>Offline</b><span>Solo reservas a futuro</span></div></div></div></div>
+          <div class="state"><span class="lbl">Certificado · online</span>
+            <div class="wcard certified"><div class="ribbon">Certificado</div><div class="av"><div class="img" style="background:#0d9488">J</div><span class="dot"></span></div><div class="info"><div class="name"><b>Julián V.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 2.4 km</div><div class="course"><svg class="ic"><use href="#i-award"/></svg>Hizo el curso de lavado<svg class="ic" style="opacity:.7"><use href="#i-info"/></svg></div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div></div>
+          <div class="state"><span class="lbl">Certificado · offline</span>
+            <div class="wcard certified offline"><div class="ribbon">Certificado</div><div class="av"><div class="img" style="background:#ea580c">E</div></div><div class="info"><div class="name"><b>Emilia M.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 3.6 km</div><div class="course"><svg class="ic"><use href="#i-award"/></svg>Hizo el curso de lavado</div></div><div class="side"><div class="off"><b>Offline</b><span>Solo reservas a futuro</span></div></div></div></div>
+          <div class="state"><span class="lbl">Hover</span>
+            <div class="wcard hover"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.9</b></span></div></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>En la lista de lavadores, una por lavador.</li><li>El punto verde solo para online. Ocupado usa el reloj ámbar.</li><li>Offline sigue legible: solo se atenúa el avatar.</li><li>"Certificado" (hizo el curso) es distinto de "verificado" (el escudo azul, que tienen todos).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No combines la cinta violeta con el marco de medalla: la certificación manda.</li><li>No uses el violeta para otra cosa que la certificación.</li><li>Rating y "Offline" nunca juntos.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface</code>, <code>success</code>, <code>warning</code>, <code>certified-*</code>, <code>rating-*</code>, <code>promo</code>, <code>radius-lg</code>, <code>glow-certified</code>.</p>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="comp">
+      <div>
+        <h3>Badges</h3>
+        <p class="src">client/Dashboard.tsx · ui/WasherBadge.tsx</p>
+        <div class="stage">
+          <div class="state"><span class="lbl">Cerca</span><span class="badge near"><svg class="ic"><use href="#i-nav"/></svg>Cerca de tu zona</span></div>
+          <div class="state"><span class="lbl">Ocupado</span><span class="badge busy">Ocupado</span></div>
+          <div class="state"><span class="lbl">Suscripción</span><span class="badge sub-b"><svg class="ic"><use href="#i-drops"/></svg>Suscripción</span></div>
+          <div class="state"><span class="lbl">Nuevo</span><span class="badge new">Nuevo</span></div>
+          <div class="state"><span class="lbl">Promo</span><span class="badge promo">-20%</span></div>
+          <div class="state"><span class="lbl">Rating</span><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.9</b></span></div>
+          <div class="state"><span class="lbl">Sin rating</span><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span></div>
+          <div class="state"><span class="lbl">Nivel</span><div style="display:flex;gap:6px"><span class="level gold">🥇 Oro</span><span class="level silver">🥈 Plata</span><span class="level bronze">🥉 Bronce</span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para estados o atributos cortos (1 a 3 palabras), en mayúsculas.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>Nunca menos de 10 px. Si no entra, sacá palabras.</li><li>Las medallas usan sus gradientes metálicos y no se recolorean.</li></ul></div>
+        <p class="tokens">Tokens: <code>success-*</code>, <code>warning-*</code>, <code>brand-*</code>, <code>rating-*</code>, <code>promo</code>, estilo <code>overline</code>.</p>
+      </div>
+    </div>
+
+    <!-- Pins -->
+    <div class="comp">
+      <div>
+        <h3>Pins del mapa</h3>
+        <p class="src">shared/MapView.tsx</p>
+        <div class="stage map" style="gap:32px">
+          <div class="state"><span class="lbl">Online</span><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div>
+          <div class="state"><span class="lbl">Ocupado</span><div class="mpin busy"><div class="ring"><div class="face" style="background:#9333ea">S</div><span class="sdot"></span></div><span class="label" style="background:rgba(255,255,255,.92);color:var(--p-neutral-800)"><i style="width:6px;height:6px;border-radius:50%;background:var(--p-indigo-700)"></i>Lavando</span></div></div>
+          <div class="state"><span class="lbl">Certificado</span><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div>
+          <div class="state"><span class="lbl">Offline</span><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div>
+          <div class="state"><span class="lbl">Cliente</span><div class="mpin client"><div class="ring"><div class="face">L</div></div><span class="label">Vos</span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>El aro de color indica el estado y siempre va con la etiqueta de texto.</li><li>La etiqueta violeta solo para lavadores certificados.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses el color como única señal: la etiqueta "Solo reservas" lo dice con texto.</li></ul></div>
+        <p class="tokens">Tokens: <code>success</code>, <code>warning</code>, <code>certified</code>, <code>certified-end</code>, <code>radius-full</code>.</p>
+      </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="comp">
+      <div>
+        <h3>Barra inferior (mobile)</h3>
+        <p class="src">layouts/ClientLayout.tsx</p>
+        <div class="stage" style="flex-direction:column;align-items:center">
+          <div class="state" style="align-items:center"><span class="lbl">Mapa activo</span>
+            <nav class="bnav"><a href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
+          <div class="state" style="align-items:center"><span class="lbl">Lavadores activo</span>
+            <nav class="bnav"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab idle"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Navegación principal en mobile. El botón central (mapa) es la vista de inicio.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No más de 5 destinos.</li><li>Las etiquetas no bajan de 10 px.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>brand</code>, <code>brand-text-on-chrome</code>, <code>text-on-chrome-muted</code>, <code>radius-xl</code>.</p>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="comp">
+      <div>
+        <h3>Input</h3>
+        <p class="src">ui/input.tsx</p>
+        <div class="stage">
+          <div class="field"><label>Patente</label><div class="input placeholder">AB 123 CD</div><span class="help">Default</span></div>
+          <div class="field"><label>Patente</label><div class="input focus">AB 123</div><span class="help">Focus</span></div>
+          <div class="field"><label>Patente</label><div class="input error">AB12</div><span class="help err">La patente tiene que tener 6 o 7 caracteres.</span></div>
+          <div class="field"><label>Patente</label><div class="input disabled">AB 123 CD</div><span class="help">Disabled</span></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Siempre con label visible. El error dice qué hacer, no solo qué está mal.</li><li>Texto de 16 px en mobile para que iOS no haga zoom.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses el placeholder como label.</li></ul></div>
+        <p class="tokens">Tokens: <code>border-strong</code>, <code>focus</code>, <code>danger-text</code>, <code>danger-subtle</code>, <code>radius-md</code>.</p>
+      </div>
+    </div>
+
+    <!-- PIN -->
+    <div class="comp">
+      <div>
+        <h3>PIN de verificación</h3>
+        <p class="src">shared/OtpInput.tsx · client/ActiveBookingCard.tsx</p>
+        <div class="stage">
+          <div class="state"><span class="lbl">Cliente ve su PIN</span><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
+          <div class="state"><span class="lbl">Lavador · vacío</span><div class="otp"><span></span><span></span><span></span><span></span></div></div>
+          <div class="state"><span class="lbl">Lavador · focus</span><div class="otp focus"><span></span><span></span><span></span><span></span></div></div>
+          <div class="state"><span class="lbl">Lavador · error</span><div class="otp error"><span>4</span><span>8</span><span>1</span><span>2</span></div></div>
+          <div class="state"><span class="lbl">Lavador · correcto</span><div class="otp ok"><span>4</span><span>8</span><span>2</span><span>1</span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para confirmar que llegó la persona correcta: el cliente lo dicta y el lavador lo ingresa.</li><li>Si el PIN es incorrecto, la fila tiembla (con <code>prefers-reduced-motion</code> no).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No lo uses para otras verificaciones (login, pagos).</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, estilo <code>pin</code>, <code>radius-sm</code>.</p>
+      </div>
+    </div>
+
+    <!-- Estados del pedido -->
+    <div class="comp">
+      <div>
+        <h3>Estados del pedido</h3>
+        <p class="src">shared/BookingSteps.tsx · layouts/ClientLayout.tsx</p>
+        <div class="stage" style="flex-direction:column">
+          <div class="state" style="width:100%"><span class="lbl">Stepper · paso actual: PIN</span>
+            <div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Banner de pedido en curso (4 tonos)</span>
+            <div class="sbanner accepted">En camino <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
+            <div class="sbanner waiting">Esperando pago <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
+            <div class="sbanner progress">Lavando <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
+            <div class="sbanner idle">Pedido enviado <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>El cliente y el lavador ven los mismos 6 estados.</li><li>Verde = hecho, azul = ahora, gris = falta.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No cambies el orden: el pago va después del PIN y antes del lavado.</li></ul></div>
+        <p class="tokens">Tokens: <code>success-*</code>, <code>brand-*</code>, <code>border</code>, <code>glow-brand</code>.</p>
+      </div>
+    </div>
+
+    <!-- Pedido + pago -->
+    <div class="comp">
+      <div>
+        <h3>Card de pedido y pago con Mercado Pago</h3>
+        <p class="src">client/ActiveBookingCard.tsx</p>
+        <div class="stage">
+          <div class="card order">
+            <div class="order-head"><div><h5>¡Identidad verificada!</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
+            <div class="paybox">
+              <p>¿Cómo querés pagar?</p>
+              <button class="btn primary block"><svg class="ic"><use href="#i-drops"/></svg>Dinero en MP o débito — $25.000</button>
+              <button class="btn secondary block" style="background:var(--surface)"><svg class="ic"><use href="#i-card"/></svg>Tarjeta de crédito — $26.900</button>
+              <small>El precio con crédito incluye el costo de financiación de Mercado Pago.</small>
+              <span class="mp">Pagos con <img src="/design-system/mercadopago-logo.svg" alt="Mercado Pago" /></span>
+            </div>
+            <div class="washer-row"><span class="avatar">T</span><div><small>Tu lavador</small><b>Tomás</b></div><span class="icon-btn"><svg class="ic"><use href="#i-chat"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>El pago aparece cuando el lavador llegó y validó el PIN.</li><li>Siempre mostrar el monto exacto en el botón.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No ocultes el recargo de la tarjeta de crédito.</li><li>El logo de Mercado Pago va con sus colores, no con los tokens.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface</code>, <code>brand-*</code>, <code>radius-lg</code>. Los montos son de ejemplo.</p>
+      </div>
+    </div>
+
+    <!-- Toasts y modal -->
+    <div class="comp">
+      <div>
+        <h3>Toast y modal</h3>
+        <p class="src">ui/sonner.tsx (richColors) · ui/dialog.tsx · shared/GuestGateDialog.tsx</p>
+        <div class="stage">
+          <div class="state"><span class="lbl">Toast · normal</span><div class="toast"><svg class="ic"><use href="#i-info"/></svg><div>Link copiado</div></div></div>
+          <div class="state"><span class="lbl">Toast · éxito</span><div class="toast success"><svg class="ic"><use href="#i-check-circle"/></svg><div>¡Trabajo aceptado!</div></div></div>
+          <div class="state"><span class="lbl">Toast · error</span><div class="toast error"><svg class="ic"><use href="#i-alert"/></svg><div>No se pudo tomar el pedido.<small>Revisá tu conexión e intentá de nuevo.</small></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Modal · invitado</span>
+            <div class="modal-wrap"><div class="modal dark"><span class="kick"><svg class="ic" style="width:14px;height:14px"><use href="#i-user"/></svg>Creá tu cuenta</span><h5>Necesitás una cuenta</h5><p>Creá tu cuenta gratis para ver el historial de tus lavados.</p><button class="btn md primary" style="width:100%;border-radius:var(--radius-lg);text-transform:none;letter-spacing:0;font-weight:700">Crear cuenta / Iniciar sesión</button><button class="btn sm ghost" style="color:var(--p-neutral-400)">Ahora no</button></div></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Toast</b>: confirmar algo que ya pasó, sin pedir acción.</li><li><b>Modal</b>: una decisión que bloquea el flujo (por ejemplo, crear cuenta para seguir).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses modal para avisos informativos.</li><li>Un solo sistema de toast (sonner).</li></ul></div>
+        <p class="tokens">Tokens: <code>surface</code>, <code>success-*</code>, <code>danger-*</code>, <code>overlay</code>, <code>radius-xl</code>, <code>shadow md / lg</code>.</p>
+      </div>
+    </div>
+
+    <!-- Chat, reseña, wallet, toggle -->
+    <div class="comp">
+      <div>
+        <h3>Chat, reseña, wallet y estado online</h3>
+        <p class="src">shared/ChatComponent.tsx · client/Reviews.tsx · client/WalletHistory.tsx · washer/WasherDashboard.tsx</p>
+        <div class="stage">
+          <div class="state"><span class="lbl">Chat</span><div class="chat"><div class="bubble other">Hola, estoy llegando en 5 minutos.<small>14:52</small></div><div class="bubble me">¡Perfecto! El auto está en la puerta.<small>14:53</small></div></div></div>
+          <div class="state"><span class="lbl">Reseña</span><div class="card review"><div class="stars"><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill off"><use href="#i-star"/></svg></div><p>Muy prolijo y puntual. El interior quedó impecable.</p><small>Lucía · 08 oct</small></div></div>
+          <div class="state"><span class="lbl">Historial de pagos</span><div class="card wallet"><div class="wrow"><div class="l"><span class="ico in"><svg class="ic"><use href="#i-check-circle"/></svg></span><div><b>Lavado completo</b><small>08 oct, 15:40 · <span style="color:var(--brand-text)">Tomás</span> · Mercado Pago</small></div></div><span class="amt">$25.000</span></div><div class="wrow"><div class="l"><span class="ico pend"><svg class="ic"><use href="#i-clock"/></svg></span><div><b>Lavado básico</b><small>02 oct, 10:15 · <span style="color:var(--brand-text)">Martín</span> · Efectivo</small></div></div><span class="amt">$11.000</span></div></div></div>
+          <div class="state"><span class="lbl">Lavador · online / offline</span><div style="display:flex;gap:12px;flex-wrap:wrap"><span class="online on"><span class="sw"></span><b>Online</b></span><span class="online"><span class="sw"></span><b>Offline</b></span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Mensajes propios a la derecha en azul de marca y los del otro a la izquierda en superficie.</li><li>En el historial de pagos, pagado va con check verde y pendiente con reloj ámbar.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses solo el color para el estado del pago: va el ícono.</li><li>El switch Online usa el color del lavador; el cliente nunca lo ve.</li></ul></div>
+        <p class="tokens">Tokens: <code>brand</code>, <code>surface</code>, <code>rating</code>, <code>success-*</code>, <code>danger-*</code>, <code>washer</code>.</p>
+      </div>
+    </div>
+  </section>
+<section class="sg" id="pantallas">
+    <p class="eyebrow">Pantallas</p>
+    <h2 class="sg-h2">Pantallas recreadas con el sistema</h2>
+    <p class="sg-p">A la izquierda la captura de la app real (los nombres y fotos de lavadores reales están difuminados) y a la derecha la misma pantalla armada solo con componentes y tokens.</p>
+
+    <h3 class="sg-h3">1 · Home del cliente: mapa y lista de lavadores (desktop)</h3>
+    <div class="compare stack">
+      <figure><figcaption>App real</figcaption><img class="ref" src="/design-system/real-cliente-home-desktop.png" alt="Captura real del home del cliente" /></figure>
+      <figure><figcaption>Recreación</figcaption>
+        <div class="desk">
+          <div class="app-header"><img src="/design-system/logo2.png" alt="Pedí tu lavado" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><button class="btn sm primary">Iniciar sesión</button></div></div>
+          <div class="desk-body">
+            <nav class="seg"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav>
+            <div class="desk-map stage map" style="padding:0;display:block">
+              <div class="loc"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado <span>· tocá para cambiar</span></div><div class="value">Seleccioná una ubicación <svg class="ic"><use href="#i-chevron"/></svg></div></div></div>
+              <div class="on-map" style="left:62%;top:150px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div>
+              <div class="on-map" style="left:48%;top:300px"><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div>
+              <div class="on-map" style="left:78%;top:330px"><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div>
+              <div class="desk-panel">
+                <div class="welcome"><span class="avatar"><svg class="ic"><use href="#i-user"/></svg></span><div><h5>¡Hola, <span>Invitado!</span></h5><p>¿Qué lavamos hoy? ✨</p></div></div>
+                <div class="tabs"><button class="active"><svg class="ic"><use href="#i-car"/></svg>Lavadores</button><button><svg class="ic"><use href="#i-cal"/></svg>Turnos (0)</button></div>
+                <div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca ahora</span></div>
+                <div class="sub" style="max-width:none"><p>¡Suscribite y ahorrá!</p><button class="pill">Ver planes</button><span class="x"><svg class="ic" style="width:14px;height:14px"><use href="#i-x"/></svg></span></div>
+                <div><div class="chips"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip">Pulidos</button></div>
+                <div class="note" style="margin-top:10px"><svg class="ic" style="width:14px;height:14px"><use href="#i-leaf"/></svg>Eco lavado — muy pronto</div></div>
+                <div class="wcard" style="width:100%"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg><span class="badge near"><svg class="ic"><use href="#i-nav"/></svg>Cerca de tu zona</span></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </div>
+
+    <h3 class="sg-h3">2 · Seguimiento con PIN (cliente)</h3>
+    <div class="compare">
+      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="/peditulavado/pin-cliente.jpg" alt="Captura real: lavador en camino con PIN" /></div></figure>
+      <figure><figcaption>Recreación</figcaption>
+        <div class="screen"><div class="screen-body">
+          <div class="card order" style="width:100%;border-top:6px solid var(--brand)">
+            <div class="order-head"><div><h5 style="font-size:20px">Lavador en camino</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
+            <div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div>
+            <div class="washer-row"><span class="avatar">T</span><div><small>Tu lavador</small><b>Tomás</b> <span class="rating" style="padding:2px 6px;box-shadow:none"><svg class="ic fill" style="width:12px;height:12px"><use href="#i-star"/></svg><b>5.0</b></span></div><span class="icon-btn"><svg class="ic"><use href="#i-chat"/></svg></span></div>
+          </div>
+        </div></div>
+      </figure>
+    </div>
+
+    <h3 class="sg-h3">3 · Pedido y pago (cliente)</h3>
+    <div class="compare">
+      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="/peditulavado/pago-cliente.jpg" alt="Captura real: botón para pagar e iniciar" /></div></figure>
+      <figure><figcaption>Recreación</figcaption>
+        <div class="screen"><div class="screen-body">
+          <div class="card order" style="width:100%;border-top:6px solid var(--success)">
+            <div class="order-head"><div><h5 style="font-size:20px">¡Identidad verificada!</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
+            <div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>PIN</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div>
+            <button class="btn primary block" style="height:52px"><svg class="ic"><use href="#i-card"/></svg>Pagar $25.000 ahora para iniciar</button>
+            <div class="washer-row"><span class="avatar">T</span><div><small>Tu lavador</small><b>Tomás</b></div><span class="icon-btn"><svg class="ic"><use href="#i-chat"/></svg></span></div>
+          </div>
+        </div></div>
+      </figure>
+    </div>
+
+    <h3 class="sg-h3">4 · Panel del lavador: validación de PIN</h3>
+    <div class="compare">
+      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="/peditulavado/pin-profesional.jpg" alt="Captura real: lavador valida el PIN" /></div></figure>
+      <figure><figcaption>Recreación</figcaption>
+        <div class="screen"><div class="screen-body">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="note" style="font-size:14px"><svg class="ic" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg>Volver atrás</span><span class="pill-date" style="padding:6px 12px;font-weight:700;letter-spacing:.12em"><i style="width:6px;height:6px;border-radius:50%;background:var(--brand)"></i>Servicio activo</span></div>
+          <div style="background:var(--p-neutral-900);color:#fff;border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="badge" style="background:var(--p-neutral-700);color:#fff">Aceptado</span><span style="font:500 13px var(--font);color:var(--p-neutral-300)">8 oct · 15:00 hs</span></div>
+            <b style="font:700 24px/1.2 var(--font);letter-spacing:-.02em">Lavado completo</b>
+            <span style="font:700 12px var(--font);letter-spacing:.05em;color:var(--p-neutral-300)">VOLKSWAGEN GOL TREND · GRIS</span>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--p-alpha-white-10);padding-top:12px"><span style="display:flex;align-items:center;gap:8px;font:700 14px var(--font)"><span class="avatar" style="width:32px;height:32px;font-size:12px;background:var(--p-neutral-700);border-color:var(--p-neutral-900)">L</span>Lucía</span><b style="font:700 20px var(--font);color:var(--p-emerald-400)">$22.000</b></div>
+          </div>
+          <div style="display:flex;gap:12px"><button class="btn secondary block" style="border-color:var(--border);color:var(--text-primary);background:var(--surface)"><svg class="ic" style="color:var(--p-rose-600)"><use href="#i-map-pin"/></svg>Ubicación</button><button class="btn secondary block" style="border-color:var(--border);color:var(--text-primary);background:var(--surface)"><svg class="ic" style="color:var(--brand-text)"><use href="#i-chat"/></svg>Chatear</button></div>
+          <div class="steps" style="max-width:none"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:var(--radius-lg);background:var(--warning-subtle);color:var(--warning-text);font:500 13px/1.4 var(--font)"><svg class="ic"><use href="#i-alert"/></svg><span style="flex:1">Asegurate de registrar fotos de golpes o detalles previos para evitar reclamos.</span><button class="btn sm secondary" style="color:var(--warning-text);border-color:var(--warning);background:var(--surface)"><svg class="ic" style="width:14px;height:14px"><use href="#i-camera"/></svg>Subir</button></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--surface-chrome-raised);border-radius:var(--radius-xl);padding:20px">
+            <span style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--p-alpha-blue-20);display:grid;place-items:center;color:var(--brand-text-on-chrome)"><svg class="ic" style="width:20px;height:20px"><use href="#i-lock"/></svg></span>
+            <span style="font:700 12px var(--font);letter-spacing:.2em;text-transform:uppercase;color:var(--p-neutral-300)">Validación de PIN</span>
+            <div class="otp focus" style="padding:0;background:transparent"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <span style="text-align:center;font:700 12px var(--font);letter-spacing:.1em;color:var(--text-secondary)">Reportar problema / Cancelar trabajo</span>
+        </div></div>
+      </figure>
+    </div>
+  </section>

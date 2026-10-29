@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="es" data-mode="claro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pedí tu lavado · Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<!-- TOKENS:START -->
+<style id="tokens">
+/* Generado por tools/build.mjs desde tokens.json — no editar a mano */
+:root {
+  --p-neutral-0: #ffffff;
+  --p-neutral-50: #f8fafc;
+  --p-neutral-100: #f1f5f9;
+  --p-neutral-200: #e2e8f0;
+  --p-neutral-300: #cbd5e1;
+  --p-neutral-400: #94a3b8;
+  --p-neutral-500: #64748b;
+  --p-neutral-600: #475569;
+  --p-neutral-700: #334155;
+  --p-neutral-800: #1e293b;
+  --p-neutral-900: #0f172a;
+  --p-navy-900: #0a0f1c;
+  --p-navy-950: #050814;
+  --p-blue-50: #eff6ff;
+  --p-blue-100: #dbeafe;
+  --p-blue-200: #bfdbfe;
+  --p-blue-400: #60a5fa;
+  --p-blue-500: #3b82f6;
+  --p-blue-600: #2563eb;
+  --p-blue-700: #1d4ed8;
+  --p-blue-900: #1e3a8a;
+  --p-indigo-700: #4338ca;
+  --p-magenta-50: #fff0f7;
+  --p-magenta-400: #ff4da6;
+  --p-magenta-500: #ff0080;
+  --p-magenta-600: #e0007a;
+  --p-magenta-700: #b30062;
+  --p-fuchsia-500: #d946ef;
+  --p-violet-50: #f5f3ff;
+  --p-violet-200: #ddd6fe;
+  --p-violet-400: #a78bfa;
+  --p-violet-600: #7c3aed;
+  --p-violet-700: #6d28d9;
+  --p-emerald-50: #ecfdf5;
+  --p-emerald-100: #d1fae5;
+  --p-emerald-400: #34d399;
+  --p-emerald-500: #10b981;
+  --p-emerald-600: #059669;
+  --p-emerald-700: #047857;
+  --p-amber-50: #fffbeb;
+  --p-amber-100: #fef3c7;
+  --p-amber-200: #fde68a;
+  --p-amber-400: #fbbf24;
+  --p-amber-500: #f59e0b;
+  --p-amber-600: #d97706;
+  --p-amber-700: #b45309;
+  --p-amber-900: #78350f;
+  --p-orange-50: #fff7ed;
+  --p-orange-300: #fdba74;
+  --p-orange-600: #c2410c;
+  --p-orange-800: #9a3412;
+  --p-red-50: #fef2f2;
+  --p-red-400: #f87171;
+  --p-red-600: #dc2626;
+  --p-red-700: #b91c1c;
+  --p-rose-600: #e11d48;
+  --p-alpha-white-5: #ffffff0d;
+  --p-alpha-white-10: #ffffff1a;
+  --p-alpha-white-60: #ffffff99;
+  --p-alpha-black-50: #00000080;
+  --p-alpha-black-60: #00000099;
+  --p-alpha-blue-20: #2563eb33;
+  --p-alpha-magenta-20: #ff008033;
+  --p-alpha-emerald-15: #10b98126;
+  --p-alpha-amber-15: #f59e0b26;
+  --p-alpha-red-15: #dc262626;
+  --p-alpha-violet-20: #7c3aed33;
+  --p-alpha-shadow-sm: #0f172a0f;
+  --p-alpha-shadow-md: #0f172a2e;
+  --p-alpha-shadow-lg: #00000080;
+  --p-alpha-glow-brand: #2563eb59;
+  --p-alpha-glow-washer: #ff00804d;
+  --p-alpha-glow-certified: #7c3aed8c;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --surface-chrome: #050814;
+  --surface-chrome-raised: #0a0f1c;
+  --border: #e2e8f0;
+  --border-strong: #64748b;
+  --border-chrome: #ffffff1a;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-on-muted: #475569;
+  --text-on-brand: #ffffff;
+  --text-on-chrome: #ffffff;
+  --text-on-chrome-muted: #94a3b8;
+  --brand: #2563eb;
+  --brand-hover: #1d4ed8;
+  --brand-text: #2563eb;
+  --brand-subtle: #eff6ff;
+  --brand-text-on-chrome: #60a5fa;
+  --washer: #e0007a;
+  --washer-hover: #b30062;
+  --washer-text: #e0007a;
+  --washer-subtle: #fff0f7;
+  --success: #059669;
+  --success-text: #047857;
+  --success-subtle: #ecfdf5;
+  --warning: #f59e0b;
+  --warning-text: #b45309;
+  --warning-subtle: #fffbeb;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --danger-text: #dc2626;
+  --danger-subtle: #fef2f2;
+  --certified: #7c3aed;
+  --certified-text: #6d28d9;
+  --certified-border: #a78bfa;
+  --certified-subtle: #f5f3ff;
+  --certified-end: #d946ef;
+  --rating: #f59e0b;
+  --rating-text: #b45309;
+  --rating-subtle: #fffbeb;
+  --promo: #e11d48;
+  --focus: #3b82f6;
+  --overlay: #00000080;
+  --gradient-subscribe-start: #1d4ed8;
+  --gradient-subscribe-mid: #4338ca;
+  --gradient-subscribe-end: #0f172a;
+  --shadow-sm: #0f172a0f;
+  --shadow-md: #0f172a2e;
+  --shadow-lg: #00000080;
+  --glow-brand: #2563eb59;
+  --glow-washer: #ff00804d;
+  --glow-certified: #7c3aed8c;
+}
+[data-mode="oscuro"] {
+  --bg: #050814;
+  --surface: #0f172a;
+  --surface-muted: #1e293b;
+  --surface-chrome: #050814;
+  --surface-chrome-raised: #0a0f1c;
+  --border: #ffffff1a;
+  --border-strong: #64748b;
+  --border-chrome: #ffffff1a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-on-muted: #94a3b8;
+  --text-on-brand: #ffffff;
+  --text-on-chrome: #ffffff;
+  --text-on-chrome-muted: #94a3b8;
+  --brand: #2563eb;
+  --brand-hover: #1d4ed8;
+  --brand-text: #60a5fa;
+  --brand-subtle: #2563eb33;
+  --brand-text-on-chrome: #60a5fa;
+  --washer: #e0007a;
+  --washer-hover: #ff0080;
+  --washer-text: #ff4da6;
+  --washer-subtle: #ff008033;
+  --success: #10b981;
+  --success-text: #34d399;
+  --success-subtle: #10b98126;
+  --warning: #f59e0b;
+  --warning-text: #fbbf24;
+  --warning-subtle: #f59e0b26;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --danger-text: #f87171;
+  --danger-subtle: #dc262626;
+  --certified: #7c3aed;
+  --certified-text: #a78bfa;
+  --certified-border: #7c3aed;
+  --certified-subtle: #7c3aed33;
+  --certified-end: #d946ef;
+  --rating: #fbbf24;
+  --rating-text: #fbbf24;
+  --rating-subtle: #f59e0b26;
+  --promo: #e11d48;
+  --focus: #60a5fa;
+  --overlay: #00000099;
+  --gradient-subscribe-start: #1d4ed8;
+  --gradient-subscribe-mid: #4338ca;
+  --gradient-subscribe-end: #0f172a;
+  --shadow-sm: #00000080;
+  --shadow-md: #00000080;
+  --shadow-lg: #00000099;
+  --glow-brand: #2563eb59;
+  --glow-washer: #ff00804d;
+  --glow-certified: #7c3aed8c;
+}
+</style>
+<!-- TOKENS:END -->
+<style>
+  /* Escalas no-color (espejo de tokens.json) */
+  :root {
+    --space-2: 2px; --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-20: 20px;
+    --space-24: 24px; --space-32: 32px; --space-40: 40px; --space-48: 48px; --space-64: 64px;
+    --radius-sm: 8px; --radius-md: 12px; --radius-lg: 20px; --radius-xl: 32px; --radius-full: 9999px;
+    --shadow-sm: 0 1px 3px 0 var(--shadow-sm);
+    --shadow-md: 0 8px 24px -8px var(--shadow-md);
+    --shadow-lg: 0 20px 50px 0 var(--shadow-lg);
+    --shadow-glow-brand: 0 0 20px 0 var(--glow-brand);
+    --shadow-glow-washer: 0 0 20px 0 var(--glow-washer);
+    --shadow-glow-certified: 0 8px 24px -10px var(--glow-certified);
+    --font: 'Lexend', system-ui, sans-serif;
+  }
+
+  /* ---------- Página del style guide ---------- */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text-primary); -webkit-font-smoothing: antialiased; }
+  code { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: 12px; background: var(--surface-muted); padding: 1px 6px; border-radius: 6px; color: var(--text-primary); }
+  .sg-top { position: sticky; top: 0; z-index: 50; background: var(--surface-chrome); color: var(--text-on-chrome); border-bottom: 1px solid var(--border-chrome); }
+  .sg-top-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 24px; }
+  .sg-top img { height: 24px; }
+  .sg-top nav { display: flex; gap: 16px; flex: 1; overflow-x: auto; scrollbar-width: none; }
+  .sg-top nav a { color: var(--text-on-chrome-muted); text-decoration: none; font-size: 13px; white-space: nowrap; }
+  .sg-top nav a:hover { color: var(--text-on-chrome); }
+  .sg-mode { display: flex; background: var(--border-chrome); border-radius: var(--radius-full); padding: 3px; }
+  .sg-mode button { font: 500 12px var(--font); border: 0; background: transparent; color: var(--text-on-chrome-muted); padding: 6px 12px; border-radius: var(--radius-full); cursor: pointer; }
+  .sg-mode button[aria-pressed="true"] { background: var(--surface); color: var(--text-primary); }
+  main { max-width: 1200px; margin: 0 auto; padding: 48px 24px 96px; }
+  section.sg { padding: 48px 0; border-top: 1px solid var(--border); }
+  section.sg:first-of-type { border-top: 0; padding-top: 0; }
+  .eyebrow { font: 700 10px/1.2 var(--font); letter-spacing: .2em; text-transform: uppercase; color: var(--brand-text); margin: 0 0 12px; }
+  h1.sg-title { font: 700 48px/1.05 var(--font); letter-spacing: -.02em; margin: 0 0 16px; }
+  h2.sg-h2 { font: 700 32px/1.1 var(--font); letter-spacing: -.02em; margin: 0 0 8px; }
+  h3.sg-h3 { font: 700 20px/1.25 var(--font); letter-spacing: -.02em; margin: 40px 0 12px; }
+  p.lead { font: 400 18px/1.5 var(--font); color: var(--text-secondary); max-width: 760px; margin: 0; }
+  p.sg-p { font: 400 14px/1.6 var(--font); color: var(--text-secondary); max-width: 760px; margin: 0 0 16px; }
+  .grid { display: grid; gap: 16px; }
+  .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 900px) { .g3, .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .g2, .g3, .g4 { grid-template-columns: 1fr; } h1.sg-title { font-size: 32px; } }
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+  .stat { font: 700 32px/1 var(--font); letter-spacing: -.02em; }
+  .stat small { font: 500 14px var(--font); color: var(--text-secondary); letter-spacing: 0; }
+  .stat-label { font: 500 12px/1.4 var(--font); color: var(--text-secondary); margin-top: 8px; }
+  .arrow { color: var(--success-text); }
+  table.sg-table { width: 100%; border-collapse: collapse; font: 400 13px/1.45 var(--font); }
+  .sg-table th { text-align: left; font: 700 10px var(--font); letter-spacing: .15em; text-transform: uppercase; color: var(--text-secondary); padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .sg-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .sg-table .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+  .ok { color: var(--success-text); font-weight: 700; }
+  .ko { color: var(--danger-text); font-weight: 700; }
+  .finding { display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .finding:last-child { border-bottom: 0; }
+  .finding .n { width: 28px; height: 28px; border-radius: var(--radius-full); background: var(--brand-subtle); color: var(--brand-text); font: 700 12px/28px var(--font); text-align: center; }
+  .finding h4 { margin: 2px 0 4px; font: 700 15px/1.3 var(--font); }
+  .finding p { margin: 0; font: 400 14px/1.55 var(--font); color: var(--text-secondary); }
+  .tag-bug { display: inline-block; font: 700 10px var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--danger-text); background: var(--danger-subtle); padding: 2px 6px; border-radius: 6px; margin-left: 6px; vertical-align: 2px; }
+
+  /* Swatches */
+  .ramp { display: grid; grid-template-columns: 120px repeat(12, minmax(0, 1fr)); gap: 4px; align-items: stretch; margin-bottom: 6px; }
+  .ramp .name { font: 500 12px var(--font); color: var(--text-secondary); align-self: center; }
+  .chip-sw { border-radius: 8px; min-height: 52px; padding: 6px; display: flex; flex-direction: column; justify-content: flex-end; font: 500 10px/1.2 var(--font); border: 1px solid var(--border); }
+  .sem-row { display: grid; grid-template-columns: 44px 1fr 1fr 1fr; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .sem-dot { width: 44px; height: 32px; border-radius: 8px; border: 1px solid var(--border); background-image: linear-gradient(45deg, var(--surface-muted) 25%, transparent 25%, transparent 75%, var(--surface-muted) 75%), linear-gradient(45deg, var(--surface-muted) 25%, transparent 25%, transparent 75%, var(--surface-muted) 75%); background-size: 8px 8px; background-position: 0 0, 4px 4px; position: relative; overflow: hidden; }
+  .sem-dot i { position: absolute; inset: 0; }
+  @media (max-width: 600px) { .ramp { grid-template-columns: repeat(6, minmax(0, 1fr)); } .ramp .name { grid-column: 1 / -1; } .sem-row { grid-template-columns: 44px 1fr; } .sem-row .hide-sm { display: none; } }
+
+  /* Tipografía, espaciado, radios, elevación */
+  .type-row { display: grid; grid-template-columns: 140px 1fr 220px; gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .type-row .meta { font: 400 12px/1.4 var(--font); color: var(--text-secondary); }
+  @media (max-width: 700px) { .type-row { grid-template-columns: 1fr; gap: 4px; } }
+  .space-row { display: flex; align-items: center; gap: 16px; padding: 6px 0; font-size: 13px; }
+  .space-row .bar { height: 12px; background: var(--brand); border-radius: 3px; }
+  .space-row .lbl { width: 90px; color: var(--text-secondary); }
+  .radius-box { height: 72px; background: var(--brand-subtle); border: 2px solid var(--brand); }
+  .elev-box { height: 96px; background: var(--surface); border-radius: var(--radius-lg); display: flex; align-items: flex-end; padding: 12px; font-size: 12px; color: var(--text-secondary); border: 1px solid var(--border); }
+
+  /* Specimen de componente */
+  .comp { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; padding: 32px 0; border-top: 1px solid var(--border); }
+  .comp:first-of-type { border-top: 0; }
+  @media (max-width: 900px) { .comp { grid-template-columns: 1fr; } }
+  .comp h3 { font: 700 20px/1.25 var(--font); margin: 0 0 4px; letter-spacing: -.02em; }
+  .comp .src { font: 400 12px var(--font); color: var(--text-secondary); margin: 0 0 16px; }
+  .stage { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+  .stage.dark { background: var(--p-navy-950); border-color: var(--p-navy-900); }
+  .stage.map { background: #e8ecef url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M0 40h120M0 90h120M30 0v120M85 0v120' stroke='%23ffffff' stroke-width='6'/%3E%3Cpath d='M0 15h120M55 0v120' stroke='%23f5f7f8' stroke-width='3'/%3E%3C/svg%3E"); }
+  .state { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .state > .lbl { font: 700 10px var(--font); letter-spacing: .15em; text-transform: uppercase; color: var(--text-secondary); }
+  .stage.dark .state > .lbl { color: var(--p-neutral-400); }
+  .rules { font: 400 13px/1.55 var(--font); }
+  .rules h4 { font: 700 10px var(--font); letter-spacing: .15em; text-transform: uppercase; margin: 0 0 6px; }
+  .rules .yes h4 { color: var(--success-text); }
+  .rules .no h4 { color: var(--danger-text); }
+  .rules ul { margin: 0 0 16px; padding-left: 18px; color: var(--text-secondary); }
+  .rules .tokens { font-size: 12px; color: var(--text-secondary); }
+
+  /* Comparación lado a lado */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  .compare.stack { grid-template-columns: 1fr; }
+  @media (max-width: 900px) { .compare { grid-template-columns: 1fr; } }
+  .compare figure { margin: 0; }
+  .compare figcaption { font: 700 10px var(--font); letter-spacing: .15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 10px; }
+  .compare img.ref { width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border); display: block; }
+  .phone { width: 375px; max-width: 100%; margin: 0 auto; background: var(--bg); border: 1px solid var(--border); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-md); position: relative; }
+  .phone img.ref { border-radius: 0; border: 0; }
+
+  /* ================== COMPONENTES DE LA APP (con tokens) ================== */
+  .ic { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .ic.fill { fill: currentColor; }
+
+  /* Botón */
+  .btn { font: 900 14px/1 var(--font); letter-spacing: .1em; text-transform: uppercase; border: 1px solid transparent; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; transition: background-color .2s, box-shadow .2s, transform .15s; white-space: nowrap; }
+  .btn.md { height: 48px; padding: 0 28px; }
+  .btn.sm { height: 36px; padding: 0 16px; font: 700 12px/1 var(--font); letter-spacing: .05em; }
+  .btn.lg { height: 56px; padding: 0 36px; font-size: 16px; }
+  .btn.primary { background: var(--brand); color: var(--text-on-brand); box-shadow: var(--shadow-glow-brand); }
+  .btn.primary.is-hover, .btn.primary:hover { background: var(--brand-hover); }
+  .btn.washer { background: var(--washer); color: var(--text-on-brand); box-shadow: var(--shadow-glow-washer); }
+  .btn.washer.is-hover, .btn.washer:hover { background: var(--washer-hover); }
+  .btn.secondary { background: transparent; color: var(--brand-text); border-color: var(--brand-text); }
+  .btn.secondary.is-hover, .btn.secondary:hover { background: var(--brand-subtle); }
+  .btn.ghost { background: transparent; color: var(--text-secondary); }
+  .btn.ghost.is-hover, .btn.ghost:hover { background: var(--surface-muted); color: var(--text-primary); }
+  .btn.danger { background: transparent; color: var(--danger-text); border-color: var(--danger-subtle); }
+  .btn.danger.is-hover, .btn.danger:hover { background: var(--danger-subtle); }
+  .btn.is-pressed { transform: scale(.96); }
+  .btn.is-focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .btn.is-disabled, .btn:disabled { opacity: .5; cursor: not-allowed; box-shadow: none; }
+  .btn .spin { animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Header oscuro */
+  .app-header { width: 100%; background: var(--surface-chrome); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 72px; border-radius: var(--radius-md); }
+  .app-header::before { content: ""; position: absolute; top: -50%; right: -10%; width: 80%; height: 200%; border-radius: 50%; background: radial-gradient(circle, rgba(0,160,255,.35) 0%, transparent 60%); filter: blur(40px); opacity: .6; }
+  .app-header > * { position: relative; }
+  .app-header img { height: 28px; }
+  .app-header .right { display: flex; align-items: center; gap: 12px; }
+  .ig { width: 36px; height: 36px; border-radius: var(--radius-full); display: grid; place-items: center; color: var(--p-magenta-400); background: var(--washer-subtle); }
+  [data-mode="claro"] .app-header .ig { background: var(--p-alpha-magenta-20); }
+  .avatar-btn { width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--p-blue-600); color: #fff; display: grid; place-items: center; font: 700 14px var(--font); border: 2px solid var(--border-chrome); }
+
+  /* Navegación segmentada */
+  .seg { display: inline-flex; padding: 4px; background: var(--surface-muted); border: 1px solid var(--border); border-radius: var(--radius-full); box-shadow: var(--shadow-sm); }
+  .seg a { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: var(--radius-full); font: 500 14px var(--font); color: var(--text-secondary); text-decoration: none; }
+  .seg a .ic { opacity: .8; }
+  .seg a.active { background: var(--surface); color: var(--text-primary); box-shadow: var(--shadow-sm); }
+  .seg a.active .ic { color: var(--brand-text); opacity: 1; }
+  .seg a.hover { color: var(--text-primary); background: var(--border); }
+
+  /* Barra de ubicación */
+  .loc { width: 100%; max-width: 560px; background: var(--surface-chrome); border: 1px solid var(--p-alpha-blue-20); border-radius: 24px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 16px; padding: 16px 24px; color: var(--text-on-chrome); }
+  .loc .pin { background: var(--p-alpha-blue-20); border: 1px solid var(--p-alpha-blue-20); border-radius: var(--radius-md); padding: 8px; color: var(--brand-text-on-chrome); display: grid; place-items: center; }
+  .loc .kicker { display: flex; align-items: center; gap: 6px; font: 700 10px var(--font); letter-spacing: .2em; text-transform: uppercase; color: var(--brand-text-on-chrome); }
+  .loc .kicker span { font: 500 10px var(--font); letter-spacing: .02em; text-transform: none; color: var(--text-on-chrome-muted); }
+  .loc .value { display: flex; align-items: center; gap: 6px; font: 700 16px var(--font); margin-top: 2px; }
+  .loc .value .ic { color: var(--brand-text-on-chrome); }
+  .loc-menu { width: 100%; max-width: 560px; background: var(--surface-chrome-raised); border: 1px solid var(--p-alpha-blue-20); border-radius: var(--radius-lg); padding: 8px; box-shadow: var(--shadow-lg); margin-top: 8px; }
+  .loc-menu div { padding: 10px 12px; border-radius: var(--radius-sm); color: var(--text-on-chrome); font: 400 14px var(--font); }
+  .loc-menu div.sel { background: var(--p-alpha-white-10); }
+  .loc-menu div.new { color: var(--brand-text-on-chrome); }
+
+  /* Panel del cliente: bienvenida, tabs, filtros */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+  .welcome { display: flex; align-items: center; gap: 16px; padding: 4px 0; }
+  .avatar { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--brand); color: var(--text-on-brand); display: grid; place-items: center; font: 700 16px var(--font); border: 2px solid var(--surface); box-shadow: var(--shadow-sm); flex-shrink: 0; }
+  .welcome h5 { margin: 0; font: 700 18px/1 var(--font); letter-spacing: -.01em; }
+  .welcome h5 span { color: var(--brand-text); }
+  .welcome p { margin: 6px 0 0; font: 700 10px var(--font); letter-spacing: .2em; text-transform: uppercase; color: var(--text-secondary); }
+  .tabs { display: flex; padding: 4px; background: var(--surface-muted); border-radius: var(--radius-md); width: 100%; }
+  .tabs button { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; border: 0; background: transparent; padding: 10px 8px; border-radius: var(--radius-sm); font: 500 12px var(--font); letter-spacing: .08em; color: var(--text-on-muted); cursor: pointer; }
+  .tabs button.active { background: var(--surface); color: var(--brand-text); box-shadow: var(--shadow-md); }
+  .section-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; }
+  .section-title h6 { margin: 0; font: 700 24px/1.2 var(--font); letter-spacing: -.02em; }
+  .section-title h6 span { color: var(--brand-text); }
+  .live { display: flex; align-items: center; gap: 6px; font: 700 12px var(--font); color: var(--text-secondary); white-space: nowrap; }
+  .live i { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+  .chips { display: inline-flex; gap: 4px; padding: 4px; background: var(--surface-muted); border-radius: var(--radius-full); max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .chip { border: 0; background: transparent; padding: 6px 16px; border-radius: var(--radius-full); font: 700 14px var(--font); color: var(--text-on-muted); white-space: nowrap; cursor: pointer; }
+  .chip.active { background: var(--surface); color: var(--text-primary); box-shadow: var(--shadow-sm); }
+  .chip.hover { color: var(--text-primary); }
+  .note { display: flex; align-items: center; gap: 6px; font: 500 12px var(--font); color: var(--text-secondary); }
+
+  /* Banner suscripción */
+  .sub { position: relative; display: flex; align-items: center; gap: 12px; border-radius: var(--radius-lg); padding: 12px 40px 12px 16px; color: #fff; background: linear-gradient(135deg, var(--gradient-subscribe-start), var(--gradient-subscribe-mid), var(--gradient-subscribe-end)); border: 1px solid var(--p-alpha-white-10); box-shadow: var(--shadow-md); width: 100%; max-width: 420px; }
+  .sub p { flex: 1; margin: 0; font: 700 14px var(--font); letter-spacing: -.01em; }
+  .sub .pill { background: #fff; color: var(--p-blue-900); border: 0; border-radius: var(--radius-full); padding: 8px 14px; font: 700 12px var(--font); }
+  .sub .x { position: absolute; top: 6px; right: 6px; color: var(--p-alpha-white-60); padding: 6px; }
+  .sub.map { padding-top: 10px; padding-bottom: 10px; box-shadow: var(--shadow-lg); }
+
+  /* Badges */
+  .badge { display: inline-flex; align-items: center; gap: 4px; font: 700 10px/1 var(--font); letter-spacing: .12em; text-transform: uppercase; padding: 4px 6px; border-radius: 6px; border: 1px solid transparent; white-space: nowrap; }
+  .badge .ic { width: 10px; height: 10px; }
+  .badge.near { color: var(--success-text); background: var(--success-subtle); border-color: var(--success-subtle); }
+  .badge.busy { color: var(--warning-text); background: var(--warning-subtle); }
+  .badge.sub-b { color: var(--brand-text); background: var(--brand-subtle); }
+  .badge.new { color: var(--brand-text); background: transparent; padding: 0; }
+  .badge.promo { color: #fff; background: var(--promo); font-weight: 900; letter-spacing: 0; font-size: 12px; transform: rotate(-10deg); }
+  .rating { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 10px; background: var(--rating-subtle); color: var(--rating); font: 900 12px var(--font); box-shadow: var(--shadow-sm); }
+  .rating b { color: var(--rating-text); font-weight: 900; }
+  .rating.empty .ic { color: var(--p-neutral-300); }
+  .level { display: inline-flex; align-items: center; gap: 3px; border-radius: var(--radius-full); padding: 3px 8px; font: 900 10px var(--font); letter-spacing: .12em; text-transform: uppercase; border: 1.5px solid; }
+  .level.gold { background: linear-gradient(135deg, var(--p-amber-500), var(--p-amber-200) 45%, var(--p-amber-600)); color: var(--p-amber-900); border-color: var(--p-amber-500); }
+  .level.silver { background: linear-gradient(135deg, var(--p-neutral-400), var(--p-neutral-100) 45%, var(--p-neutral-500)); color: var(--p-neutral-800); border-color: var(--p-neutral-400); }
+  .level.bronze { background: linear-gradient(135deg, var(--p-orange-600), var(--p-orange-300) 45%, var(--p-orange-800)); color: var(--p-orange-50); border-color: var(--p-orange-600); }
+
+  /* Card de lavador */
+  .wcard { position: relative; overflow: hidden; display: flex; align-items: center; gap: 14px; padding: 14px; width: 400px; max-width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); transition: box-shadow .2s, transform .2s; }
+  .wcard.hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .wcard .av { position: relative; flex-shrink: 0; }
+  .wcard .av .img { width: 48px; height: 48px; border-radius: var(--radius-md); display: grid; place-items: center; font: 700 18px var(--font); color: #fff; border: 1px solid var(--border); }
+  .wcard .dot { position: absolute; right: -4px; bottom: -4px; width: 16px; height: 16px; border-radius: 50%; background: var(--success); border: 2px solid var(--surface); }
+  .wcard .busy-ic { position: absolute; right: -4px; bottom: -4px; background: var(--warning); color: #fff; border-radius: 10px; padding: 4px; border: 2px solid var(--surface); display: grid; place-items: center; }
+  .wcard .busy-ic .ic { width: 12px; height: 12px; }
+  .wcard .info { flex: 1; min-width: 0; }
+  .wcard .name { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 4px; }
+  .wcard .name b { font: 700 16px/1 var(--font); letter-spacing: -.01em; }
+  .wcard .name .ic { width: 14px; height: 14px; color: var(--p-blue-500); }
+  .wcard .dist { display: flex; align-items: center; gap: 4px; font: 700 10px var(--font); letter-spacing: .05em; text-transform: uppercase; color: var(--text-secondary); }
+  .wcard .dist .ic { width: 10px; height: 10px; color: var(--p-rose-600); }
+  .wcard .course { display: flex; align-items: center; gap: 4px; font: 700 12px var(--font); color: var(--certified-text); margin-top: 4px; }
+  .wcard .course .ic { width: 12px; height: 12px; }
+  .wcard .side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .wcard .off { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; background: var(--surface-muted); padding: 6px 10px; border-radius: 10px; }
+  .wcard .off b { font: 700 10px var(--font); letter-spacing: .15em; text-transform: uppercase; color: var(--text-on-muted); }
+  .wcard .off span { font: 500 10px var(--font); color: var(--text-on-muted); }
+  .wcard.offline { background: var(--bg); }
+  .wcard.offline .av .img { opacity: .7; }
+  .wcard.certified { border-color: var(--certified-border); box-shadow: 0 0 0 2px var(--certified-subtle), var(--shadow-glow-certified); }
+  .wcard.certified .av .img { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--certified-border); }
+  .wcard.certified .side { margin-right: 44px; }
+  .ribbon { position: absolute; top: 15px; right: -34px; transform: rotate(35deg); background: linear-gradient(90deg, var(--certified), var(--certified-end)); color: #fff; font: 900 10px var(--font); letter-spacing: .15em; text-transform: uppercase; padding: 2px 34px; box-shadow: var(--shadow-sm); }
+
+  /* Pins del mapa */
+  .mpin { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .mpin .ring { padding: 4px; border-radius: 50%; position: relative; }
+  .mpin .face { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff; display: grid; place-items: center; font: 500 14px var(--font); color: #fff; }
+  .mpin .sdot { position: absolute; top: 0; right: 0; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; background: var(--success); }
+  .mpin .label { font: 500 10px var(--font); padding: 2px 8px; border-radius: var(--radius-full); white-space: nowrap; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 4px; }
+  .mpin.online .ring { background: var(--success); }
+  .mpin.online .label { background: rgba(255,255,255,.92); color: var(--p-neutral-800); }
+  .mpin.busy .ring { background: var(--warning); }
+  .mpin.busy .sdot { background: var(--warning); }
+  .mpin.offline .ring { background: var(--p-neutral-300); }
+  .mpin.offline .face { filter: grayscale(1); opacity: .7; }
+  .mpin.offline .label { background: rgba(226,232,240,.92); color: var(--p-neutral-600); font-weight: 700; letter-spacing: .05em; }
+  .mpin.offline .label i { width: 6px; height: 6px; border-radius: 50%; background: var(--p-neutral-500); }
+  .mpin.certified .ring { background: var(--success); }
+  .mpin.certified .label { background: linear-gradient(90deg, var(--certified), var(--certified-end)); color: #fff; font-weight: 700; box-shadow: 0 2px 6px var(--glow-certified); }
+  .mpin.client .ring { background: #fff; }
+  .mpin.client .face { background: var(--p-neutral-200); color: var(--p-neutral-500); }
+  .mpin.client .label { background: var(--p-neutral-900); color: #fff; border: 1px solid var(--p-alpha-white-10); }
+  .mpin .label .ic { width: 12px; height: 12px; }
+
+  /* Barra inferior */
+  .bnav { width: 375px; max-width: 100%; height: 75px; background: var(--surface-chrome); border-radius: 32px 32px 0 0; border-top: 1px solid var(--border-chrome); display: flex; align-items: center; padding: 0 8px; position: relative; box-shadow: 0 -15px 50px var(--shadow-lg); margin-top: 28px; }
+  .bnav a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font: 500 10px var(--font); color: var(--text-on-chrome-muted); text-decoration: none; }
+  .bnav a .ic { width: 24px; height: 24px; }
+  .bnav a.active { color: var(--brand-text-on-chrome); font-weight: 700; }
+  .bnav .fab { flex: 1; display: flex; justify-content: center; position: relative; height: 100%; }
+  .bnav .fab span { position: absolute; top: -24px; width: 64px; height: 64px; border-radius: 50%; background: var(--brand); border: 6px solid var(--surface-chrome); display: grid; place-items: center; color: #fff; box-shadow: 0 10px 25px var(--glow-brand); }
+  .bnav .fab span .ic { width: 28px; height: 28px; stroke-width: 2.5; }
+  .bnav .fab.idle span { background: var(--p-neutral-700); box-shadow: var(--shadow-md); }
+
+  /* Input */
+  .field { display: flex; flex-direction: column; gap: 6px; width: 260px; }
+  .field label { font: 500 14px var(--font); }
+  .input { height: 44px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface); padding: 0 12px; font: 400 16px var(--font); color: var(--text-primary); display: flex; align-items: center; }
+  .input.placeholder { color: var(--text-secondary); }
+  .input.focus { border-color: var(--focus); box-shadow: 0 0 0 3px var(--brand-subtle); }
+  .input.error { border-color: var(--danger-text); box-shadow: 0 0 0 3px var(--danger-subtle); }
+  .input.disabled { opacity: .5; }
+  .field .help { font: 500 12px var(--font); color: var(--text-secondary); }
+  .field .help.err { color: var(--danger-text); }
+
+  /* OTP / PIN */
+  .otp { display: flex; gap: 12px; padding: 16px; background: var(--surface-chrome-raised); border-radius: var(--radius-lg); }
+  .otp span { width: 48px; height: 56px; border-radius: 16px; border: 1px solid var(--p-alpha-white-10); background: var(--p-alpha-white-5); color: #fff; display: grid; place-items: center; font: 700 24px ui-monospace, monospace; }
+  .otp.focus span:first-child { border-color: var(--brand-text-on-chrome); box-shadow: 0 0 0 3px var(--p-alpha-blue-20); }
+  .otp.error span { border-color: var(--p-red-400); }
+  .otp.ok span { border-color: var(--p-emerald-400); color: var(--p-emerald-400); }
+  .pin-box { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .pin-box small { font: 700 10px var(--font); letter-spacing: .2em; text-transform: uppercase; color: var(--text-secondary); }
+  .pin-box b { background: var(--p-neutral-900); color: #fff; padding: 6px 12px; border-radius: var(--radius-sm); font: 700 24px/1 ui-monospace, monospace; letter-spacing: .1em; box-shadow: var(--shadow-md); }
+  [data-mode="oscuro"] .pin-box b { background: var(--brand); }
+
+  /* Estados del pedido (stepper) */
+  .steps { display: flex; width: 100%; max-width: 440px; position: relative; }
+  .steps::before { content: ""; position: absolute; top: 21px; left: 8%; right: 8%; height: 2px; background: var(--border); }
+  .step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; }
+  .step .c { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--border); background: var(--surface); color: var(--p-neutral-300); box-shadow: var(--shadow-sm); position: relative; z-index: 1; }
+  .step .c .ic { width: 20px; height: 20px; }
+  .step.done .c { border-color: var(--success); background: var(--success-subtle); color: var(--success-text); }
+  .step.done .c .ic { stroke-width: 3.5; }
+  .step.current .c { border-color: var(--brand); background: var(--brand-subtle); color: var(--brand-text); box-shadow: 0 0 0 4px var(--brand-subtle), var(--shadow-glow-brand); }
+  .step span { font: 700 10px var(--font); letter-spacing: .02em; text-transform: uppercase; color: var(--text-secondary); text-align: center; }
+  .step.done span { color: var(--success-text); }
+  .step.current span { color: var(--brand-text); }
+
+  /* Banner de pedido en curso */
+  .sbanner { width: 100%; max-width: 420px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; border-radius: var(--radius-md); color: #fff; font: 900 12px var(--font); letter-spacing: .1em; text-transform: uppercase; }
+  .sbanner small { font: 700 10px var(--font); display: flex; align-items: center; gap: 4px; }
+  .sbanner.accepted { background: linear-gradient(90deg, var(--p-blue-600), var(--p-blue-700)); }
+  .sbanner.waiting { background: linear-gradient(90deg, var(--p-amber-700), var(--p-orange-800)); }
+  .sbanner.progress { background: linear-gradient(90deg, var(--p-indigo-700), var(--p-blue-700)); }
+  .sbanner.idle { background: linear-gradient(90deg, var(--p-neutral-600), var(--p-neutral-700)); }
+
+  /* Card de pedido activo */
+  .order { width: 380px; max-width: 100%; padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+  .order-head { display: flex; justify-content: space-between; gap: 12px; }
+  .order-head h5 { margin: 0 0 8px; font: 700 16px var(--font); letter-spacing: -.01em; }
+  .pillrow { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill-date { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: var(--radius-full); background: var(--surface-muted); border: 1px solid var(--border); font: 500 10px var(--font); text-transform: uppercase; color: var(--text-on-muted); }
+  .pill-date .ic { width: 12px; height: 12px; }
+  .washer-row { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: var(--radius-lg); background: var(--bg); border: 1px solid var(--border); }
+  .washer-row .avatar { width: 40px; height: 40px; }
+  .washer-row div { flex: 1; }
+  .washer-row small { display: block; font: 700 10px var(--font); letter-spacing: .15em; text-transform: uppercase; color: var(--text-secondary); }
+  .washer-row b { font: 700 14px var(--font); }
+  .icon-btn { width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--surface); border: 1px solid var(--border); display: grid; place-items: center; color: var(--brand-text); }
+  .paybox { display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: var(--radius-lg); background: var(--brand-subtle); border: 1px solid var(--border); }
+  .paybox p { margin: 0; text-align: center; font: 700 12px var(--font); letter-spacing: .05em; }
+  .paybox small { text-align: center; font: 500 10px/1.4 var(--font); color: var(--text-secondary); }
+  .btn.block { width: 100%; border-radius: var(--radius-lg); height: 44px; font: 700 12px var(--font); letter-spacing: .05em; }
+  .mp { display: flex; align-items: center; justify-content: center; gap: 6px; font: 500 10px var(--font); color: var(--text-secondary); }
+  .mp img { height: 14px; }
+
+  /* Toast */
+  .toast { width: 340px; max-width: 100%; display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; border-radius: var(--radius-md); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-md); font: 500 14px/1.4 var(--font); }
+  .toast .ic { width: 18px; height: 18px; margin-top: 1px; }
+  .toast small { display: block; font: 400 13px/1.4 var(--font); color: var(--text-secondary); margin-top: 2px; }
+  .toast.success { background: var(--success-subtle); border-color: var(--success-subtle); color: var(--success-text); }
+  .toast.error { background: var(--danger-subtle); border-color: var(--danger-subtle); color: var(--danger-text); }
+  .toast.success small, .toast.error small { color: inherit; opacity: .85; }
+
+  /* Modal */
+  .modal-wrap { position: relative; width: 100%; max-width: 460px; padding: 32px 16px; border-radius: var(--radius-lg); background: var(--overlay); display: grid; place-items: center; }
+  .modal { width: 100%; max-width: 380px; background: var(--surface); border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 12px; position: relative; }
+  .modal h5 { margin: 0; font: 700 20px/1.25 var(--font); letter-spacing: -.02em; }
+  .modal p { margin: 0; font: 400 14px/1.5 var(--font); color: var(--text-secondary); }
+  .modal .x { position: absolute; top: 16px; right: 16px; color: var(--text-secondary); }
+  .modal.dark { background: var(--surface-chrome-raised); border: 1px solid var(--border-chrome); text-align: center; align-items: center; padding: 32px 28px 24px; }
+  .modal.dark h5 { color: var(--text-on-chrome); }
+  .modal.dark p { color: var(--p-neutral-300); }
+  .modal .kick { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: var(--radius-full); background: var(--p-alpha-blue-20); color: var(--brand-text-on-chrome); font: 900 10px var(--font); letter-spacing: .3em; text-transform: uppercase; }
+
+  /* Chat */
+  .chat { width: 340px; max-width: 100%; display: flex; flex-direction: column; gap: 8px; padding: 16px; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border); }
+  .bubble { max-width: 80%; padding: 8px 16px; border-radius: 16px; font: 500 14px/1.4 var(--font); box-shadow: var(--shadow-sm); }
+  .bubble small { display: block; text-align: right; font: 400 10px var(--font); margin-top: 4px; opacity: .75; }
+  .bubble.me { align-self: flex-end; background: var(--brand); color: var(--text-on-brand); border-bottom-right-radius: 4px; }
+  .bubble.other { align-self: flex-start; background: var(--surface); color: var(--text-primary); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+
+  /* Reseña y wallet */
+  .review { width: 340px; max-width: 100%; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .stars { display: flex; gap: 2px; color: var(--rating); }
+  .stars .ic { width: 16px; height: 16px; }
+  .stars .off { color: var(--p-neutral-300); }
+  .review p { margin: 0; font: 400 14px/1.5 var(--font); }
+  .review small { font: 700 10px var(--font); letter-spacing: .15em; text-transform: uppercase; color: var(--text-secondary); }
+  .wallet { width: 360px; max-width: 100%; overflow: hidden; }
+  .wrow { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .wrow:last-child { border-bottom: 0; }
+  .wrow .l { display: flex; align-items: center; gap: 12px; }
+  .wrow .ico { width: 32px; height: 32px; border-radius: var(--radius-sm); display: grid; place-items: center; }
+  .wrow .ico.in { background: var(--success-subtle); color: var(--success-text); }
+  .wrow .ico.out { background: var(--danger-subtle); color: var(--danger-text); }
+  .wrow .ico.pend { background: var(--warning-subtle); color: var(--warning-text); }
+  .wrow b { display: block; font: 700 14px var(--font); }
+  .wrow small { font: 700 10px var(--font); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary); }
+  .wrow .amt { font: 700 14px var(--font); font-variant-numeric: tabular-nums; }
+  .wrow .amt.in { color: var(--success-text); }
+  .wrow .amt.out { color: var(--danger-text); }
+
+  /* Toggle online del lavador */
+  .online { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px 8px 10px; border-radius: var(--radius-full); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+  .online .sw { width: 40px; height: 24px; border-radius: 12px; background: var(--p-neutral-300); position: relative; }
+  .online .sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: var(--shadow-sm); transition: left .2s; }
+  .online.on .sw { background: var(--washer); }
+  .online.on .sw::after { left: 19px; }
+  .online b { font: 700 10px var(--font); letter-spacing: .15em; text-transform: uppercase; color: var(--text-on-muted); }
+  .online.on b { color: var(--washer-text); }
+
+  /* Pantallas recreadas */
+  .screen { width: 375px; max-width: 100%; margin: 0 auto; background: var(--bg); border: 1px solid var(--border); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-md); position: relative; }
+  .screen .app-header { border-radius: 0; height: 64px; padding: 0 16px; }
+  .screen .app-header img { height: 24px; }
+  .screen-body { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+  .desk { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+  .desk .app-header { border-radius: 0; }
+  .desk-body { padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .desk-map { position: relative; width: 100%; min-height: 560px; border-radius: var(--radius-lg); overflow: hidden; }
+  .desk-panel { position: absolute; left: 32px; top: 100px; width: 400px; max-width: calc(100% - 48px); background: var(--surface); border-radius: var(--radius-xl); padding: 20px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 14px; }
+  .desk-map .loc { position: absolute; left: 24px; top: 24px; max-width: 540px; width: calc(100% - 48px); }
+  .on-map { position: absolute; }
+  @media (max-width: 700px) { .desk-panel { position: relative; left: 0; top: 0; margin: 96px 12px 12px; } .desk-map .on-map { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- Íconos (trazos de lucide-react, la librería de íconos de la app) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></symbol>
+  <symbol id="i-drops" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-loader" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+</svg>
+
+<header class="sg-top">
+  <div class="sg-top-inner">
+    <img src="assets/logo2.png" alt="Pedí tu lavado" />
+    <nav aria-label="Secciones">
+      <a href="#auditoria">Auditoría</a><a href="#color">Color</a><a href="#contraste">Contraste</a><a href="#tipografia">Tipografía</a>
+      <a href="#espacio">Espaciado y radios</a><a href="#componentes">Componentes</a><a href="#pantallas">Pantallas</a><a href="#mapeo">Mapeo</a>
+    </nav>
+    <div class="sg-mode" role="group" aria-label="Modo">
+      <button type="button" data-set-mode="claro" aria-pressed="true">Claro</button>
+      <button type="button" data-set-mode="oscuro" aria-pressed="false">Oscuro</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ===================== INTRO / AUDITORÍA ===================== -->
+  <section class="sg" id="auditoria">
+    <p class="eyebrow">Design system · v1</p>
+    <h1 class="sg-title">Pedí tu lavado</h1>
+    <p class="lead">Sistema armado a partir del código real de la app (cliente, lavador y landing). Primero medí qué se usa de verdad y después lo consolidé al set mínimo que cubre todos los casos.</p>
+
+    <h3 class="sg-h3">Antes y después</h3>
+    <div class="grid g4">
+      <div class="panel"><div class="stat">761 <span class="arrow">→</span> 53</div><div class="stat-label">Clases de color distintas → tokens semánticos por modo (más 57 hex y 122 rgba sueltos)</div></div>
+      <div class="panel"><div class="stat">36 <span class="arrow">→</span> 9</div><div class="stat-label">Tamaños de texto (de 6.5 a 112 px) → escala de 10 a 48 px</div></div>
+      <div class="panel"><div class="stat">19 <span class="arrow">→</span> 5</div><div class="stat-label">Valores de radio (de 2 a 48 px) → sm, md, lg, xl y full</div></div>
+      <div class="panel"><div class="stat">97 <span class="arrow">→</span> 6</div><div class="stat-label">Sombras (8 de Tailwind + 89 arbitrarias) → 3 niveles y 3 glows</div></div>
+    </div>
+
+    <h3 class="sg-h3">Qué encontré</h3>
+    <div class="panel">
+      <div class="finding"><span class="n">1</span><div><h4>Los tokens de shadcn casi no se usan</h4><p><code>bg-primary</code> aparece 9 veces y <code>bg-accent</code> 35. La UI real pinta con la paleta de Tailwind directa: <code>blue-600</code>, <code>slate-*</code>, <code>emerald</code>, <code>amber</code>, <code>fuchsia</code>, <code>pink</code>, <code>indigo</code>. Hay dos azules de marca: <code>--primary</code> (#0067d1) y <code>blue-600</code> (#2563eb). Me quedo con el que se ve en pantalla.</p></div></div>
+      <div class="finding"><span class="n">2</span><div><h4>Ocho navys casi iguales</h4><p>El fondo oscuro de marca es <code>#050814</code> (66 usos), no <code>#030712</code> (4). Conviven además #080c1a, #090d1a, #0a0f1c, #0b1220, #050505, #0a0518 y #0b0b14. Quedan en dos: <code>navy-950</code> (#050814) y <code>navy-900</code> (#0a0f1c) para lo elevado.</p></div></div>
+      <div class="finding"><span class="n">3</span><div><h4>Dos rosas para el mismo rol</h4><p>"Ser lavador" usa <code>#FF0080</code> en la landing, pero el panel del lavador usa <code>fuchsia-500/600</code> y el Instagram usa <code>pink-500</code>. Propongo una sola escala <code>magenta</code> anclada en #FF0080.</p></div></div>
+      <div class="finding"><span class="n">4</span><div><h4>El gris secundario no se lee</h4><p><code>text-slate-400</code> es el color de texto más usado (361 veces) y sobre blanco da 2.56:1. Pasa a <code>text-secondary</code> = slate-500 (4.76:1) en modo claro.</p></div></div>
+      <div class="finding"><span class="n">5</span><div><h4>Texto de 6.5 a 9 px</h4><p>Hay 175 usos de <code>text-[6.5px]</code> a <code>text-[9.5px]</code> en badges y etiquetas ("Cerca de tu zona", "NUEVO", la cinta "Certificado"). El mínimo del sistema es 10 px, siempre en mayúsculas y con tracking.</p></div></div>
+      <div class="finding"><span class="n">6</span><div><h4>Los títulos ignoran el peso que se les pone</h4><p><code>index.css</code> fuerza <code>font-weight: 400 !important</code> en <code>h1</code>–<code>h6</code>. Un <code>font-bold</code> en un título no hace nada, por eso conviven títulos en 400 y en 700. Además se cargan 7 pesos de Lexend (300 a 900) y alcanzan 4: 400, 500, 700 y 900.</p></div></div>
+      <div class="finding"><span class="n">7</span><div><h4>Los toasts normales pueden quedar sin fondo <span class="tag-bug">Bug</span></h4><p><code>sonner.tsx</code> usa <code>var(--popover)</code> como color, pero <code>--popover</code> guarda solo los números de OKLCH (<code>1 0 0</code>) sin <code>oklch()</code>. El valor es inválido. También conviven dos sistemas de toast (sonner en 30 archivos y el de Radix en 1).</p></div></div>
+      <div class="finding"><span class="n">8</span><div><h4>Bordes de input invisibles</h4><p><code>--input</code> da 1.26:1 sobre blanco y los inputs necesitan 3:1. Separo <code>border</code> (decorativo, slate-200) de <code>border-strong</code> (inputs, slate-500, 4.76:1).</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===================== COLOR ===================== -->
+  <section class="sg" id="color">
+    <p class="eyebrow">Fundamentos</p>
+    <h2 class="sg-h2">Color</h2>
+    <p class="sg-p">Dos capas. Los <b>primitivos</b> son las escalas por tono y solo incluyen los pasos que la app usa. Los <b>semánticos</b> nombran la función y son lo único que usan los componentes. Cambiá entre Claro y Oscuro arriba a la derecha.</p>
+    <h3 class="sg-h3">Primitivos</h3>
+    <div id="ramps"></div>
+    <h3 class="sg-h3">Semánticos</h3>
+    <div class="table-wrap" style="padding:8px 16px"><div id="semantic"></div></div>
+  </section>
+
+  <!-- ===================== CONTRASTE ===================== -->
+  <section class="sg" id="contraste">
+    <p class="eyebrow">Accesibilidad</p>
+    <h2 class="sg-h2">Contraste WCAG AA</h2>
+    <p class="sg-p">Texto 4.5:1, bordes de inputs y componentes 3:1. Se calcula en <code>tools/build.mjs</code> y el build falla si algún par no cumple.</p>
+    <h3 class="sg-h3">Ajustes mínimos propuestos</h3>
+    <div class="table-wrap">
+      <table class="sg-table">
+        <thead><tr><th>Dónde</th><th>Hoy</th><th>Propuesta</th><th>Ratio</th></tr></thead>
+        <tbody>
+          <tr><td>Botón "Ser lavador"</td><td>Blanco sobre <code>#FF0080</code> · 3.77:1</td><td>Fondo <code>magenta-600</code> #e0007a (el #FF0080 queda para glow y detalles)</td><td class="num">4.72:1</td></tr>
+          <tr><td>Panel del lavador (Online)</td><td>Blanco sobre <code>fuchsia-500</code> · 3.46:1</td><td><code>washer</code> = magenta-600</td><td class="num">4.72:1</td></tr>
+          <tr><td>Texto secundario</td><td><code>slate-400</code> sobre blanco · 2.56:1</td><td><code>text-secondary</code> = slate-500</td><td class="num">4.76:1</td></tr>
+          <tr><td>Chips inactivos y "Offline"</td><td><code>slate-500</code> sobre slate-100 · 4.34:1</td><td><code>text-on-muted</code> = slate-600</td><td class="num">6.92:1</td></tr>
+          <tr><td>Badge "Cerca de tu zona"</td><td><code>emerald-600</code> sobre emerald-50 · 3.58:1</td><td><code>success-text</code> = emerald-700</td><td class="num">5.21:1</td></tr>
+          <tr><td>Badge "Ocupado"</td><td><code>amber-600</code> sobre amber-50 · 3.07:1</td><td><code>warning-text</code> = amber-700</td><td class="num">4.84:1</td></tr>
+          <tr><td>Punto "online" (sin texto al lado)</td><td><code>emerald-500</code> sobre blanco · 2.54:1</td><td><code>success</code> = emerald-600</td><td class="num">3.77:1</td></tr>
+          <tr><td>Borde de inputs</td><td><code>--input</code> sobre blanco · 1.26:1</td><td><code>border-strong</code> = slate-500</td><td class="num">4.76:1</td></tr>
+          <tr><td>Hover del botón en oscuro</td><td>Blanco sobre <code>blue-500</code> · 3.68:1</td><td><code>brand-hover</code> = blue-700 en ambos modos</td><td class="num">6.70:1</td></tr>
+          <tr><td>Texto de error en oscuro</td><td><code>red-600</code> sobre slate-900 · 3.70:1</td><td><code>danger-text</code> = red-400 en oscuro</td><td class="num">≥ 4.5:1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 class="sg-h3">Pares verificados</h3>
+    <div class="table-wrap">
+      <table class="sg-table" id="contrast-table">
+        <thead><tr><th>Modo</th><th>Par</th><th>Uso</th><th>Ratio</th><th>Mínimo</th><th>Resultado</th></tr></thead>
+        <tbody>
+<!-- CONTRASTE:START -->
+<tr data-mode="claro"><td>Claro</td><td><code>text-primary</code> / <code>surface</code></td><td>Texto principal en cards</td><td class="num">17.85:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-primary</code> / <code>bg</code></td><td>Texto principal sobre el fondo</td><td class="num">17.06:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-secondary</code> / <code>surface</code></td><td>Texto secundario en cards</td><td class="num">4.76:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-secondary</code> / <code>bg</code></td><td>Texto secundario sobre el fondo</td><td class="num">4.55:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-muted</code> / <code>surface-muted</code></td><td>Chips de filtro inactivos, "Offline"</td><td class="num">6.92:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>brand</code></td><td>Botón "Pedir lavado"</td><td class="num">5.17:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>brand-hover</code></td><td>Botón principal en hover</td><td class="num">6.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>washer</code></td><td>Botón "Ser lavador"</td><td class="num">4.72:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>danger</code></td><td>Botón destructivo</td><td class="num">4.83:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>certified</code></td><td>Cinta "Certificado"</td><td class="num">5.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-brand</code> / <code>promo</code></td><td>Etiqueta de descuento</td><td class="num">4.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>brand-text</code> / <code>surface</code></td><td>Links y "en la zona"</td><td class="num">5.17:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>brand-text</code> / <code>brand-subtle</code></td><td>Badge de servicio</td><td class="num">4.75:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>washer-text</code> / <code>surface</code></td><td>Texto del modo lavador</td><td class="num">4.72:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>success-text</code> / <code>success-subtle</code></td><td>Badge "Cerca de tu zona"</td><td class="num">5.21:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>warning-text</code> / <code>warning-subtle</code></td><td>Badge "Ocupado"</td><td class="num">4.84:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>rating-text</code> / <code>rating-subtle</code></td><td>Número de calificación</td><td class="num">4.84:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>certified-text</code> / <code>surface</code></td><td>"Hizo el curso de lavado"</td><td class="num">7.10:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>danger-text</code> / <code>surface</code></td><td>Texto de error</td><td class="num">4.83:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-chrome</code> / <code>surface-chrome</code></td><td>Header y barra inferior</td><td class="num">19.98:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>text-on-chrome-muted</code> / <code>surface-chrome</code></td><td>Ítems inactivos de la barra inferior</td><td class="num">7.79:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>brand-text-on-chrome</code> / <code>surface-chrome</code></td><td>Etiqueta "Ubicación de lavado"</td><td class="num">7.86:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>border-strong</code> / <code>surface</code></td><td>Borde de inputs</td><td class="num">4.76:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>focus</code> / <code>surface</code></td><td>Anillo de foco</td><td class="num">3.68:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="claro"><td>Claro</td><td><code>success</code> / <code>surface</code></td><td>Punto "online" (componente)</td><td class="num">3.77:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-primary</code> / <code>surface</code></td><td>Texto principal en cards</td><td class="num">17.06:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-primary</code> / <code>bg</code></td><td>Texto principal sobre el fondo</td><td class="num">19.09:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-secondary</code> / <code>surface</code></td><td>Texto secundario en cards</td><td class="num">6.96:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-secondary</code> / <code>bg</code></td><td>Texto secundario sobre el fondo</td><td class="num">7.79:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-muted</code> / <code>surface-muted</code></td><td>Chips de filtro inactivos, "Offline"</td><td class="num">5.71:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>brand</code></td><td>Botón "Pedir lavado"</td><td class="num">5.17:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>brand-hover</code></td><td>Botón principal en hover</td><td class="num">6.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>washer</code></td><td>Botón "Ser lavador"</td><td class="num">4.72:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>danger</code></td><td>Botón destructivo</td><td class="num">4.83:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>certified</code></td><td>Cinta "Certificado"</td><td class="num">5.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-brand</code> / <code>promo</code></td><td>Etiqueta de descuento</td><td class="num">4.70:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>brand-text</code> / <code>surface</code></td><td>Links y "en la zona"</td><td class="num">7.02:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>brand-text</code> / <code>brand-subtle</code></td><td>Badge de servicio</td><td class="num">5.80:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>washer-text</code> / <code>surface</code></td><td>Texto del modo lavador</td><td class="num">5.84:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>success-text</code> / <code>success-subtle</code></td><td>Badge "Cerca de tu zona"</td><td class="num">7.37:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>warning-text</code> / <code>warning-subtle</code></td><td>Badge "Ocupado"</td><td class="num">8.37:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>rating-text</code> / <code>rating-subtle</code></td><td>Número de calificación</td><td class="num">8.37:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>certified-text</code> / <code>surface</code></td><td>"Hizo el curso de lavado"</td><td class="num">6.56:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>danger-text</code> / <code>surface</code></td><td>Texto de error</td><td class="num">6.45:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-chrome</code> / <code>surface-chrome</code></td><td>Header y barra inferior</td><td class="num">19.98:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>text-on-chrome-muted</code> / <code>surface-chrome</code></td><td>Ítems inactivos de la barra inferior</td><td class="num">7.79:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>brand-text-on-chrome</code> / <code>surface-chrome</code></td><td>Etiqueta "Ubicación de lavado"</td><td class="num">7.86:1</td><td class="num">4.5:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>border-strong</code> / <code>surface</code></td><td>Borde de inputs</td><td class="num">3.75:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>focus</code> / <code>surface</code></td><td>Anillo de foco</td><td class="num">7.02:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<tr data-mode="oscuro"><td>Oscuro</td><td><code>success</code> / <code>surface</code></td><td>Punto "online" (componente)</td><td class="num">7.04:1</td><td class="num">3:1</td><td><span class="ok">Cumple</span></td></tr>
+<!-- CONTRASTE:END -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== TIPOGRAFÍA ===================== -->
+  <section class="sg" id="tipografia">
+    <p class="eyebrow">Fundamentos</p>
+    <h2 class="sg-h2">Tipografía</h2>
+    <p class="sg-p">Lexend en 4 pesos: 400 (texto), 500 (UI), 700 (títulos y énfasis) y 900 (CTA en mayúsculas). Los 600 se consolidan en 700 y los 800 en 900. Nueve tamaños, de 10 a 48 px.</p>
+    <div class="panel" id="type"></div>
+  </section>
+
+  <!-- ===================== ESPACIADO / RADIOS / ELEVACIÓN ===================== -->
+  <section class="sg" id="espacio">
+    <p class="eyebrow">Fundamentos</p>
+    <h2 class="sg-h2">Espaciado, radios y elevación</h2>
+    <p class="sg-p">Base de 4 px. Los medios pasos de Tailwind (<code>1.5</code>, <code>2.5</code>, <code>3.5</code>: 6, 10 y 14 px) se redondean al paso más cercano. El 2 px queda solo para separaciones mínimas entre íconos y texto.</p>
+    <div class="grid g2">
+      <div class="panel" id="spacing"></div>
+      <div>
+        <div class="grid g3" id="radii"></div>
+        <div class="grid g3" id="elev" style="margin-top:16px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMPONENTES ===================== -->
+  <section class="sg" id="componentes">
+    <p class="eyebrow">Componentes</p>
+    <h2 class="sg-h2">Componentes reales</h2>
+    <p class="sg-p">Cada componente sale de su archivo en la app, con los tokens consolidados aplicados. Los nombres son de ejemplo, no de lavadores reales.</p>
+
+    <!-- Botón -->
+    <div class="comp">
+      <div>
+        <h3>Botón</h3>
+        <p class="src">Landing.tsx · NavbarActions.tsx · ActiveBookingCard.tsx</p>
+        <div class="stage" style="flex-direction:column">
+          <div style="display:flex;flex-wrap:wrap;gap:16px">
+            <div class="state"><span class="lbl">Primario</span><button class="btn md primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Lavador</span><button class="btn md washer">Ser lavador</button></div>
+            <div class="state"><span class="lbl">Secundario</span><button class="btn md secondary">Buscar otro</button></div>
+            <div class="state"><span class="lbl">Ghost</span><button class="btn md ghost">Volver</button></div>
+            <div class="state"><span class="lbl">Destructivo</span><button class="btn md danger">Cancelar</button></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:16px">
+            <div class="state"><span class="lbl">Default</span><button class="btn md primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Hover</span><button class="btn md primary is-hover">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Pressed</span><button class="btn md primary is-pressed">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Focus</span><button class="btn md primary is-focus">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Disabled</span><button class="btn md primary is-disabled" disabled>Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Loading</span><button class="btn md primary"><svg class="ic spin"><use href="#i-loader"/></svg>Preparando pago…</button></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
+            <div class="state"><span class="lbl">sm · 36</span><button class="btn sm primary">Iniciar sesión</button></div>
+            <div class="state"><span class="lbl">md · 48</span><button class="btn md primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">lg · 56</span><button class="btn lg primary">Pedir lavado</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Primario</b>: una sola acción principal por pantalla (pedir, pagar, aceptar).</li><li><b>Lavador</b>: solo para sumarse como lavador o en el modo lavador.</li><li>En mobile, altura mínima de 44 px (md o lg).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No pongas dos primarios juntos: el segundo va como secundario.</li><li>No uses el rosa de lavador para acciones del cliente.</li><li><b>sm</b> no va como acción principal en mobile.</li></ul></div>
+        <p class="tokens">Tokens: <code>brand</code>, <code>brand-hover</code>, <code>washer</code>, <code>text-on-brand</code>, <code>radius-full</code>, <code>glow-brand</code>, estilo <code>cta</code>.</p>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="comp">
+      <div>
+        <h3>Header oscuro</h3>
+        <p class="src">RootLayout.tsx · NavbarActions.tsx</p>
+        <div class="stage" style="flex-direction:column;align-items:stretch">
+          <div class="state" style="align-items:stretch"><span class="lbl">Invitado</span>
+            <div class="app-header"><img src="assets/logo2.png" alt="Pedí tu lavado" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><button class="btn sm primary">Iniciar sesión</button></div></div></div>
+          <div class="state" style="align-items:stretch"><span class="lbl">Con sesión</span>
+            <div class="app-header"><img src="assets/logo2.png" alt="Pedí tu lavado" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><span class="avatar-btn">L</span></div></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Arriba de todas las pantallas de la app, cliente y lavador.</li><li>Es oscuro en los dos modos: es el "chrome" de la marca.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No sumes más acciones: logo, Instagram y sesión.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>text-on-chrome</code>, <code>washer-subtle</code>.</p>
+      </div>
+    </div>
+
+    <!-- Nav segmentada -->
+    <div class="comp">
+      <div>
+        <h3>Navegación segmentada</h3>
+        <p class="src">ClientLayout.tsx (solo desktop)</p>
+        <div class="stage" style="flex-direction:column">
+          <div class="state"><span class="lbl">Lavadores activo</span>
+            <nav class="seg"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
+          <div class="state"><span class="lbl">Hover en Historial</span>
+            <nav class="seg"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a class="hover" href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para las secciones principales en desktop. En mobile, el mismo rol lo cumple la barra inferior.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No la uses para filtrar contenido: para eso están los chips.</li><li>Máximo 4 ítems.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-muted</code>, <code>surface</code>, <code>brand-text</code>, <code>radius-full</code>.</p>
+      </div>
+    </div>
+
+    <!-- Barra de ubicación -->
+    <div class="comp">
+      <div>
+        <h3>Barra de ubicación de lavado</h3>
+        <p class="src">client/Dashboard.tsx (Select + Popover)</p>
+        <div class="stage map" style="flex-direction:column">
+          <div class="state" style="width:100%"><span class="lbl">Cerrada</span>
+            <div class="loc"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado <span>· tocá para cambiar</span><svg class="ic" style="width:12px;height:12px"><use href="#i-info"/></svg></div><div class="value">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Desplegada</span>
+            <div class="loc"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado <span>· tocá para cambiar</span></div><div class="value">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div>
+            <div class="loc-menu"><div>Ubicación actual</div><div class="sel">Casa · Barrio Jardín</div><div>Trabajo · Centro</div><div class="new">+ Nueva dirección</div></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Flotando arriba del mapa: define qué lavadores llegan hasta esa dirección.</li><li>La "i" explica para qué sirve y no abre el selector.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No la repitas dentro de la lista: es una sola por pantalla.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, <code>shadow lg</code>, radio 24.</p>
+      </div>
+    </div>
+
+    <!-- Bienvenida + tabs + filtros -->
+    <div class="comp">
+      <div>
+        <h3>Bienvenida, tabs y filtros</h3>
+        <p class="src">client/Dashboard.tsx</p>
+        <div class="stage" style="flex-direction:column;max-width:460px">
+          <div class="state" style="width:100%"><span class="lbl">Card de bienvenida</span>
+            <div class="welcome"><span class="avatar">L</span><div><h5>¡Hola, <span>Lucía!</span></h5><p>¿Qué lavamos hoy? ✨</p></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Tabs</span>
+            <div class="tabs"><button class="active"><svg class="ic"><use href="#i-car"/></svg>Lavadores</button><button><svg class="ic"><use href="#i-cal"/></svg>Turnos (2)</button></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Título de sección</span>
+            <div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca ahora</span></div></div>
+          <div class="state"><span class="lbl">Chips de filtro (Todos activo · hover en Pulidos)</span>
+            <div class="chips"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip hover">Pulidos</button></div>
+            <span class="note"><svg class="ic" style="width:14px;height:14px"><use href="#i-leaf"/></svg>Eco lavado — muy pronto</span></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Tabs</b>: alternar dos vistas del mismo contexto (lista y turnos).</li><li><b>Chips</b>: filtrar la lista. Siempre hay uno activo ("Todos").</li><li>La nota "muy pronto" va en texto secundario, sin acción.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>Los chips no navegan a otra pantalla.</li><li>No muestres un chip deshabilitado para lo que viene: usá la nota.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-muted</code>, <code>text-on-muted</code>, <code>brand-text</code>, <code>success</code>, estilos <code>title-lg</code>, <code>overline</code>.</p>
+      </div>
+    </div>
+
+    <!-- Banner suscripción -->
+    <div class="comp">
+      <div>
+        <h3>Banner "¡Suscribite y ahorrá!"</h3>
+        <p class="src">client/SubscribeBanner.tsx</p>
+        <div class="stage" style="flex-direction:column">
+          <div class="state" style="width:100%"><span class="lbl">En la lista</span>
+            <div class="sub"><p>¡Suscribite y ahorrá!</p><button class="pill">Ver planes</button><span class="x"><svg class="ic" style="width:14px;height:14px"><use href="#i-x"/></svg></span></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Flotando en el mapa</span>
+            <div class="sub map"><p>¡Suscribite y ahorrá!</p><button class="pill">Ver planes</button><span class="x"><svg class="ic" style="width:14px;height:14px"><use href="#i-x"/></svg></span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Solo para quien no está suscripto. La cruz lo oculta durante esa visita.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No sumes más texto: la info está en la pantalla de planes.</li><li>No uses este gradiente para otra cosa.</li></ul></div>
+        <p class="tokens">Tokens: <code>gradient-subscribe-*</code>, <code>radius-lg</code>, <code>shadow md / lg</code>.</p>
+      </div>
+    </div>
+
+    <!-- Card de lavador -->
+    <div class="comp">
+      <div>
+        <h3>Card de lavador</h3>
+        <p class="src">client/Dashboard.tsx · ui/WasherBadge.tsx · ui/CertifiedInfo.tsx</p>
+        <div class="stage" style="flex-direction:column">
+          <div class="state"><span class="lbl">Online · cerca · nuevo</span>
+            <div class="wcard"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg><span class="badge near"><svg class="ic"><use href="#i-nav"/></svg>Cerca de tu zona</span></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div></div>
+          <div class="state"><span class="lbl">Online · con calificación · nivel oro</span>
+            <div class="wcard"><div class="av"><div class="img" style="background:#0f766e">T</div><span class="dot"></span></div><div class="info"><div class="name"><b>Tomás R.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 7.3 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>5.0</b></span><span class="level gold">🥇 Oro</span></div></div></div>
+          <div class="state"><span class="lbl">Ocupado · con promo</span>
+            <div class="wcard"><div class="av"><span class="badge promo" style="position:absolute;top:-8px;left:-8px;z-index:2">-20%</span><div class="img" style="background:#9333ea">S</div><span class="busy-ic"><svg class="ic"><use href="#i-clock"/></svg></span></div><div class="info"><div class="name"><b>Sofía P.</b><span class="badge busy">Ocupado</span><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 2.1 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.8</b></span></div></div></div>
+          <div class="state"><span class="lbl">Offline · solo reservas a futuro</span>
+            <div class="wcard offline"><div class="av"><div class="img" style="background:#64748b">A</div></div><div class="info"><div class="name"><b>Andrés L.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 1.3 km</div></div><div class="side"><div class="off"><b>Offline</b><span>Solo reservas a futuro</span></div></div></div></div>
+          <div class="state"><span class="lbl">Certificado · online</span>
+            <div class="wcard certified"><div class="ribbon">Certificado</div><div class="av"><div class="img" style="background:#0d9488">J</div><span class="dot"></span></div><div class="info"><div class="name"><b>Julián V.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 2.4 km</div><div class="course"><svg class="ic"><use href="#i-award"/></svg>Hizo el curso de lavado<svg class="ic" style="opacity:.7"><use href="#i-info"/></svg></div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div></div>
+          <div class="state"><span class="lbl">Certificado · offline</span>
+            <div class="wcard certified offline"><div class="ribbon">Certificado</div><div class="av"><div class="img" style="background:#ea580c">E</div></div><div class="info"><div class="name"><b>Emilia M.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 3.6 km</div><div class="course"><svg class="ic"><use href="#i-award"/></svg>Hizo el curso de lavado</div></div><div class="side"><div class="off"><b>Offline</b><span>Solo reservas a futuro</span></div></div></div></div>
+          <div class="state"><span class="lbl">Hover</span>
+            <div class="wcard hover"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.9</b></span></div></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>En la lista de lavadores, una por lavador.</li><li>El punto verde solo para online. Ocupado usa el reloj ámbar.</li><li>Offline sigue legible: solo se atenúa el avatar.</li><li>"Certificado" (hizo el curso) es distinto de "verificado" (el escudo azul, que tienen todos).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No combines la cinta violeta con el marco de medalla: la certificación manda.</li><li>No uses el violeta para otra cosa que la certificación.</li><li>Rating y "Offline" nunca juntos.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface</code>, <code>success</code>, <code>warning</code>, <code>certified-*</code>, <code>rating-*</code>, <code>promo</code>, <code>radius-lg</code>, <code>glow-certified</code>.</p>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="comp">
+      <div>
+        <h3>Badges</h3>
+        <p class="src">client/Dashboard.tsx · ui/WasherBadge.tsx</p>
+        <div class="stage">
+          <div class="state"><span class="lbl">Cerca</span><span class="badge near"><svg class="ic"><use href="#i-nav"/></svg>Cerca de tu zona</span></div>
+          <div class="state"><span class="lbl">Ocupado</span><span class="badge busy">Ocupado</span></div>
+          <div class="state"><span class="lbl">Suscripción</span><span class="badge sub-b"><svg class="ic"><use href="#i-drops"/></svg>Suscripción</span></div>
+          <div class="state"><span class="lbl">Nuevo</span><span class="badge new">Nuevo</span></div>
+          <div class="state"><span class="lbl">Promo</span><span class="badge promo">-20%</span></div>
+          <div class="state"><span class="lbl">Rating</span><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.9</b></span></div>
+          <div class="state"><span class="lbl">Sin rating</span><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span></div>
+          <div class="state"><span class="lbl">Nivel</span><div style="display:flex;gap:6px"><span class="level gold">🥇 Oro</span><span class="level silver">🥈 Plata</span><span class="level bronze">🥉 Bronce</span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para estados o atributos cortos (1 a 3 palabras), en mayúsculas.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>Nunca menos de 10 px. Si no entra, sacá palabras.</li><li>Las medallas usan sus gradientes metálicos y no se recolorean.</li></ul></div>
+        <p class="tokens">Tokens: <code>success-*</code>, <code>warning-*</code>, <code>brand-*</code>, <code>rating-*</code>, <code>promo</code>, estilo <code>overline</code>.</p>
+      </div>
+    </div>
+
+    <!-- Pins -->
+    <div class="comp">
+      <div>
+        <h3>Pins del mapa</h3>
+        <p class="src">shared/MapView.tsx</p>
+        <div class="stage map" style="gap:32px">
+          <div class="state"><span class="lbl">Online</span><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div>
+          <div class="state"><span class="lbl">Ocupado</span><div class="mpin busy"><div class="ring"><div class="face" style="background:#9333ea">S</div><span class="sdot"></span></div><span class="label" style="background:rgba(255,255,255,.92);color:var(--p-neutral-800)"><i style="width:6px;height:6px;border-radius:50%;background:var(--p-indigo-700)"></i>Lavando</span></div></div>
+          <div class="state"><span class="lbl">Certificado</span><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div>
+          <div class="state"><span class="lbl">Offline</span><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div>
+          <div class="state"><span class="lbl">Cliente</span><div class="mpin client"><div class="ring"><div class="face">L</div></div><span class="label">Vos</span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>El aro de color indica el estado y siempre va con la etiqueta de texto.</li><li>La etiqueta violeta solo para lavadores certificados.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses el color como única señal: la etiqueta "Solo reservas" lo dice con texto.</li></ul></div>
+        <p class="tokens">Tokens: <code>success</code>, <code>warning</code>, <code>certified</code>, <code>certified-end</code>, <code>radius-full</code>.</p>
+      </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="comp">
+      <div>
+        <h3>Barra inferior (mobile)</h3>
+        <p class="src">layouts/ClientLayout.tsx</p>
+        <div class="stage" style="flex-direction:column;align-items:center">
+          <div class="state" style="align-items:center"><span class="lbl">Mapa activo</span>
+            <nav class="bnav"><a href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
+          <div class="state" style="align-items:center"><span class="lbl">Lavadores activo</span>
+            <nav class="bnav"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab idle"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Navegación principal en mobile. El botón central (mapa) es la vista de inicio.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No más de 5 destinos.</li><li>Las etiquetas no bajan de 10 px (hoy están en 9).</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>brand</code>, <code>brand-text-on-chrome</code>, <code>text-on-chrome-muted</code>, <code>radius-xl</code>.</p>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="comp">
+      <div>
+        <h3>Input</h3>
+        <p class="src">ui/input.tsx</p>
+        <div class="stage">
+          <div class="field"><label>Patente</label><div class="input placeholder">AB 123 CD</div><span class="help">Default</span></div>
+          <div class="field"><label>Patente</label><div class="input focus">AB 123</div><span class="help">Focus</span></div>
+          <div class="field"><label>Patente</label><div class="input error">AB12</div><span class="help err">La patente tiene que tener 6 o 7 caracteres.</span></div>
+          <div class="field"><label>Patente</label><div class="input disabled">AB 123 CD</div><span class="help">Disabled</span></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Siempre con label visible. El error dice qué hacer, no solo qué está mal.</li><li>Texto de 16 px en mobile para que iOS no haga zoom.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses el placeholder como label.</li></ul></div>
+        <p class="tokens">Tokens: <code>border-strong</code>, <code>focus</code>, <code>danger-text</code>, <code>danger-subtle</code>, <code>radius-md</code>.</p>
+      </div>
+    </div>
+
+    <!-- PIN -->
+    <div class="comp">
+      <div>
+        <h3>PIN de verificación</h3>
+        <p class="src">shared/OtpInput.tsx · client/ActiveBookingCard.tsx</p>
+        <div class="stage">
+          <div class="state"><span class="lbl">Cliente ve su PIN</span><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
+          <div class="state"><span class="lbl">Lavador · vacío</span><div class="otp"><span></span><span></span><span></span><span></span></div></div>
+          <div class="state"><span class="lbl">Lavador · focus</span><div class="otp focus"><span></span><span></span><span></span><span></span></div></div>
+          <div class="state"><span class="lbl">Lavador · error</span><div class="otp error"><span>4</span><span>8</span><span>1</span><span>2</span></div></div>
+          <div class="state"><span class="lbl">Lavador · correcto</span><div class="otp ok"><span>4</span><span>8</span><span>2</span><span>1</span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para confirmar que llegó la persona correcta: el cliente lo dicta y el lavador lo ingresa.</li><li>Si el PIN es incorrecto, la fila tiembla (con <code>prefers-reduced-motion</code> no).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No lo uses para otras verificaciones (login, pagos).</li></ul></div>
+        <p class="tokens">Tokens: <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, estilo <code>pin</code>, <code>radius-sm</code>.</p>
+      </div>
+    </div>
+
+    <!-- Estados del pedido -->
+    <div class="comp">
+      <div>
+        <h3>Estados del pedido</h3>
+        <p class="src">shared/BookingSteps.tsx · layouts/ClientLayout.tsx</p>
+        <div class="stage" style="flex-direction:column">
+          <div class="state" style="width:100%"><span class="lbl">Stepper · paso actual: PIN</span>
+            <div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Banner de pedido en curso (4 tonos)</span>
+            <div class="sbanner accepted">En camino <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
+            <div class="sbanner waiting">Esperando pago <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
+            <div class="sbanner progress">Lavando <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
+            <div class="sbanner idle">Pedido enviado <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>El cliente y el lavador ven los mismos 6 estados.</li><li>Verde = hecho, azul = ahora, gris = falta.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No cambies el orden: el pago va después del PIN y antes del lavado.</li></ul></div>
+        <p class="tokens">Tokens: <code>success-*</code>, <code>brand-*</code>, <code>border</code>, <code>glow-brand</code>.</p>
+      </div>
+    </div>
+
+    <!-- Pedido + pago -->
+    <div class="comp">
+      <div>
+        <h3>Card de pedido y pago con Mercado Pago</h3>
+        <p class="src">client/ActiveBookingCard.tsx</p>
+        <div class="stage">
+          <div class="card order">
+            <div class="order-head"><div><h5>¡Identidad verificada!</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
+            <div class="paybox">
+              <p>¿Cómo querés pagar?</p>
+              <button class="btn primary block"><svg class="ic"><use href="#i-drops"/></svg>Dinero en MP o débito — $25.000</button>
+              <button class="btn secondary block" style="background:var(--surface)"><svg class="ic"><use href="#i-card"/></svg>Tarjeta de crédito — $26.900</button>
+              <small>El precio con crédito incluye el costo de financiación de Mercado Pago.</small>
+              <span class="mp">Pagos con <img src="assets/mercadopago-logo.svg" alt="Mercado Pago" /></span>
+            </div>
+            <div class="washer-row"><span class="avatar">T</span><div><small>Tu lavador</small><b>Tomás</b></div><span class="icon-btn"><svg class="ic"><use href="#i-chat"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>El pago aparece cuando el lavador llegó y validó el PIN.</li><li>Siempre mostrar el monto exacto en el botón.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No ocultes el recargo de la tarjeta de crédito.</li><li>El logo de Mercado Pago va con sus colores, no con los tokens.</li></ul></div>
+        <p class="tokens">Tokens: <code>surface</code>, <code>brand-*</code>, <code>radius-lg</code>. Los montos son de ejemplo.</p>
+      </div>
+    </div>
+
+    <!-- Toasts y modal -->
+    <div class="comp">
+      <div>
+        <h3>Toast y modal</h3>
+        <p class="src">ui/sonner.tsx (richColors) · ui/dialog.tsx · shared/GuestGateDialog.tsx</p>
+        <div class="stage">
+          <div class="state"><span class="lbl">Toast · normal</span><div class="toast"><svg class="ic"><use href="#i-info"/></svg><div>Link copiado</div></div></div>
+          <div class="state"><span class="lbl">Toast · éxito</span><div class="toast success"><svg class="ic"><use href="#i-check-circle"/></svg><div>¡Trabajo aceptado!</div></div></div>
+          <div class="state"><span class="lbl">Toast · error</span><div class="toast error"><svg class="ic"><use href="#i-alert"/></svg><div>No se pudo tomar el pedido.<small>Revisá tu conexión e intentá de nuevo.</small></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Modal · invitado</span>
+            <div class="modal-wrap"><div class="modal dark"><span class="kick"><svg class="ic" style="width:14px;height:14px"><use href="#i-user"/></svg>Creá tu cuenta</span><h5>Necesitás una cuenta</h5><p>Creá tu cuenta gratis para ver el historial de tus lavados.</p><button class="btn md primary" style="width:100%;border-radius:var(--radius-lg);text-transform:none;letter-spacing:0;font-weight:700">Crear cuenta / Iniciar sesión</button><button class="btn sm ghost" style="color:var(--p-neutral-400)">Ahora no</button></div></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Toast</b>: confirmar algo que ya pasó, sin pedir acción.</li><li><b>Modal</b>: una decisión que bloquea el flujo (por ejemplo, crear cuenta para seguir).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses modal para avisos informativos.</li><li>Un solo sistema de toast (sonner).</li></ul></div>
+        <p class="tokens">Tokens: <code>surface</code>, <code>success-*</code>, <code>danger-*</code>, <code>overlay</code>, <code>radius-xl</code>, <code>shadow md / lg</code>.</p>
+      </div>
+    </div>
+
+    <!-- Chat, reseña, wallet, toggle -->
+    <div class="comp">
+      <div>
+        <h3>Chat, reseña, wallet y estado online</h3>
+        <p class="src">shared/ChatComponent.tsx · client/Reviews.tsx · client/WalletHistory.tsx · washer/WasherDashboard.tsx</p>
+        <div class="stage">
+          <div class="state"><span class="lbl">Chat</span><div class="chat"><div class="bubble other">Hola, estoy llegando en 5 minutos.<small>14:52</small></div><div class="bubble me">¡Perfecto! El auto está en la puerta.<small>14:53</small></div></div></div>
+          <div class="state"><span class="lbl">Reseña</span><div class="card review"><div class="stars"><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill off"><use href="#i-star"/></svg></div><p>Muy prolijo y puntual. El interior quedó impecable.</p><small>Lucía · 08 oct</small></div></div>
+          <div class="state"><span class="lbl">Historial de pagos</span><div class="card wallet"><div class="wrow"><div class="l"><span class="ico in"><svg class="ic"><use href="#i-check-circle"/></svg></span><div><b>Lavado completo</b><small>08 oct, 15:40 · <span style="color:var(--brand-text)">Tomás</span> · Mercado Pago</small></div></div><span class="amt">$25.000</span></div><div class="wrow"><div class="l"><span class="ico pend"><svg class="ic"><use href="#i-clock"/></svg></span><div><b>Lavado básico</b><small>02 oct, 10:15 · <span style="color:var(--brand-text)">Martín</span> · Efectivo</small></div></div><span class="amt">$11.000</span></div></div></div>
+          <div class="state"><span class="lbl">Lavador · online / offline</span><div style="display:flex;gap:12px;flex-wrap:wrap"><span class="online on"><span class="sw"></span><b>Online</b></span><span class="online"><span class="sw"></span><b>Offline</b></span></div></div>
+        </div>
+      </div>
+      <div class="rules">
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Mensajes propios a la derecha en azul de marca y los del otro a la izquierda en superficie.</li><li>En el historial de pagos, pagado va con check verde y pendiente con reloj ámbar.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses solo el color para el estado del pago: va el ícono.</li><li>El switch Online usa el color del lavador; el cliente nunca lo ve.</li></ul></div>
+        <p class="tokens">Tokens: <code>brand</code>, <code>surface</code>, <code>rating</code>, <code>success-*</code>, <code>danger-*</code>, <code>washer</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PANTALLAS ===================== -->
+  <section class="sg" id="pantallas">
+    <p class="eyebrow">Pantallas</p>
+    <h2 class="sg-h2">Pantallas recreadas con el sistema</h2>
+    <p class="sg-p">A la izquierda la captura de la app real (los nombres y fotos de lavadores reales están difuminados) y a la derecha la misma pantalla armada solo con componentes y tokens.</p>
+
+    <h3 class="sg-h3">1 · Home del cliente: mapa y lista de lavadores (desktop)</h3>
+    <div class="compare stack">
+      <figure><figcaption>App real</figcaption><img class="ref" src="referencias/real-cliente-home-desktop.png" alt="Captura real del home del cliente" /></figure>
+      <figure><figcaption>Recreación</figcaption>
+        <div class="desk">
+          <div class="app-header"><img src="assets/logo2.png" alt="Pedí tu lavado" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><button class="btn sm primary">Iniciar sesión</button></div></div>
+          <div class="desk-body">
+            <nav class="seg"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav>
+            <div class="desk-map stage map" style="padding:0;display:block">
+              <div class="loc"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado <span>· tocá para cambiar</span></div><div class="value">Seleccioná una ubicación <svg class="ic"><use href="#i-chevron"/></svg></div></div></div>
+              <div class="on-map" style="left:62%;top:150px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div>
+              <div class="on-map" style="left:48%;top:300px"><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div>
+              <div class="on-map" style="left:78%;top:330px"><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div>
+              <div class="desk-panel">
+                <div class="welcome"><span class="avatar"><svg class="ic"><use href="#i-user"/></svg></span><div><h5>¡Hola, <span>Invitado!</span></h5><p>¿Qué lavamos hoy? ✨</p></div></div>
+                <div class="tabs"><button class="active"><svg class="ic"><use href="#i-car"/></svg>Lavadores</button><button><svg class="ic"><use href="#i-cal"/></svg>Turnos (0)</button></div>
+                <div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca ahora</span></div>
+                <div class="sub" style="max-width:none"><p>¡Suscribite y ahorrá!</p><button class="pill">Ver planes</button><span class="x"><svg class="ic" style="width:14px;height:14px"><use href="#i-x"/></svg></span></div>
+                <div><div class="chips"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip">Pulidos</button></div>
+                <div class="note" style="margin-top:10px"><svg class="ic" style="width:14px;height:14px"><use href="#i-leaf"/></svg>Eco lavado — muy pronto</div></div>
+                <div class="wcard" style="width:100%"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg><span class="badge near"><svg class="ic"><use href="#i-nav"/></svg>Cerca de tu zona</span></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </div>
+
+    <h3 class="sg-h3">2 · Seguimiento con PIN (cliente)</h3>
+    <div class="compare">
+      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="../public/peditulavado/pin-cliente.jpg" alt="Captura real: lavador en camino con PIN" /></div></figure>
+      <figure><figcaption>Recreación</figcaption>
+        <div class="screen"><div class="screen-body">
+          <div class="card order" style="width:100%;border-top:6px solid var(--brand)">
+            <div class="order-head"><div><h5 style="font-size:20px">Lavador en camino</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
+            <div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div>
+            <div class="washer-row"><span class="avatar">T</span><div><small>Tu lavador</small><b>Tomás</b> <span class="rating" style="padding:2px 6px;box-shadow:none"><svg class="ic fill" style="width:12px;height:12px"><use href="#i-star"/></svg><b>5.0</b></span></div><span class="icon-btn"><svg class="ic"><use href="#i-chat"/></svg></span></div>
+          </div>
+        </div></div>
+      </figure>
+    </div>
+
+    <h3 class="sg-h3">3 · Pedido y pago (cliente)</h3>
+    <div class="compare">
+      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="../public/peditulavado/pago-cliente.jpg" alt="Captura real: botón para pagar e iniciar" /></div></figure>
+      <figure><figcaption>Recreación</figcaption>
+        <div class="screen"><div class="screen-body">
+          <div class="card order" style="width:100%;border-top:6px solid var(--success)">
+            <div class="order-head"><div><h5 style="font-size:20px">¡Identidad verificada!</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
+            <div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>PIN</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div>
+            <button class="btn primary block" style="height:52px"><svg class="ic"><use href="#i-card"/></svg>Pagar $25.000 ahora para iniciar</button>
+            <div class="washer-row"><span class="avatar">T</span><div><small>Tu lavador</small><b>Tomás</b></div><span class="icon-btn"><svg class="ic"><use href="#i-chat"/></svg></span></div>
+          </div>
+        </div></div>
+      </figure>
+    </div>
+
+    <h3 class="sg-h3">4 · Panel del lavador: validación de PIN</h3>
+    <div class="compare">
+      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="../public/peditulavado/pin-profesional.jpg" alt="Captura real: lavador valida el PIN" /></div></figure>
+      <figure><figcaption>Recreación</figcaption>
+        <div class="screen"><div class="screen-body">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="note" style="font-size:14px"><svg class="ic" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg>Volver atrás</span><span class="pill-date" style="padding:6px 12px;font-weight:700;letter-spacing:.12em"><i style="width:6px;height:6px;border-radius:50%;background:var(--brand)"></i>Servicio activo</span></div>
+          <div style="background:var(--p-neutral-900);color:#fff;border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="badge" style="background:var(--p-neutral-700);color:#fff">Aceptado</span><span style="font:500 13px var(--font);color:var(--p-neutral-300)">8 oct · 15:00 hs</span></div>
+            <b style="font:700 24px/1.2 var(--font);letter-spacing:-.02em">Lavado completo</b>
+            <span style="font:700 12px var(--font);letter-spacing:.05em;color:var(--p-neutral-300)">VOLKSWAGEN GOL TREND · GRIS</span>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--p-alpha-white-10);padding-top:12px"><span style="display:flex;align-items:center;gap:8px;font:700 14px var(--font)"><span class="avatar" style="width:32px;height:32px;font-size:12px;background:var(--p-neutral-700);border-color:var(--p-neutral-900)">L</span>Lucía</span><b style="font:700 20px var(--font);color:var(--p-emerald-400)">$22.000</b></div>
+          </div>
+          <div style="display:flex;gap:12px"><button class="btn secondary block" style="border-color:var(--border);color:var(--text-primary);background:var(--surface)"><svg class="ic" style="color:var(--p-rose-600)"><use href="#i-map-pin"/></svg>Ubicación</button><button class="btn secondary block" style="border-color:var(--border);color:var(--text-primary);background:var(--surface)"><svg class="ic" style="color:var(--brand-text)"><use href="#i-chat"/></svg>Chatear</button></div>
+          <div class="steps" style="max-width:none"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:var(--radius-lg);background:var(--warning-subtle);color:var(--warning-text);font:500 13px/1.4 var(--font)"><svg class="ic"><use href="#i-alert"/></svg><span style="flex:1">Asegurate de registrar fotos de golpes o detalles previos para evitar reclamos.</span><button class="btn sm secondary" style="color:var(--warning-text);border-color:var(--warning);background:var(--surface)"><svg class="ic" style="width:14px;height:14px"><use href="#i-camera"/></svg>Subir</button></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--surface-chrome-raised);border-radius:var(--radius-xl);padding:20px">
+            <span style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--p-alpha-blue-20);display:grid;place-items:center;color:var(--brand-text-on-chrome)"><svg class="ic" style="width:20px;height:20px"><use href="#i-lock"/></svg></span>
+            <span style="font:700 12px var(--font);letter-spacing:.2em;text-transform:uppercase;color:var(--p-neutral-300)">Validación de PIN</span>
+            <div class="otp focus" style="padding:0;background:transparent"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <span style="text-align:center;font:700 12px var(--font);letter-spacing:.1em;color:var(--text-secondary)">Reportar problema / Cancelar trabajo</span>
+        </div></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== MAPEO ===================== -->
+  <section class="sg" id="mapeo">
+    <p class="eyebrow">Migración</p>
+    <h2 class="sg-h2">Mapeo de lo viejo a lo nuevo</h2>
+    <p class="sg-p">Referencia para pasar el código al sistema sin cambiar el diseño.</p>
+    <div class="table-wrap">
+      <table class="sg-table">
+        <thead><tr><th>Hoy en el código</th><th>Pasa a</th></tr></thead>
+        <tbody>
+          <tr><td><code>bg-[#050814]</code> <code>#080c1a</code> <code>#090d1a</code> <code>#0b1220</code> <code>#030712</code> <code>#050505</code> <code>#0a0518</code> <code>#0b0b14</code></td><td><code>surface-chrome</code> (navy-950)</td></tr>
+          <tr><td><code>bg-[#0a0f1c]</code></td><td><code>surface-chrome-raised</code> (navy-900)</td></tr>
+          <tr><td><code>bg-primary</code> <code>bg-blue-600</code> <code>from-blue-600</code></td><td><code>brand</code></td></tr>
+          <tr><td><code>hover:bg-blue-700</code> <code>bg-blue-600/90 → hover</code></td><td><code>brand-hover</code></td></tr>
+          <tr><td><code>text-blue-600</code> <code>text-blue-500</code> <code>dark:text-blue-400</code> <code>text-indigo-600</code> (tab Turnos)</td><td><code>brand-text</code></td></tr>
+          <tr><td><code>bg-[#FF0080]</code> <code>bg-fuchsia-500</code> <code>bg-fuchsia-600</code></td><td><code>washer</code> (magenta-600)</td></tr>
+          <tr><td><code>text-fuchsia-600</code> <code>text-pink-500</code> <code>text-pink-600</code></td><td><code>washer-text</code></td></tr>
+          <tr><td><code>text-slate-400</code> (sobre claro) <code>text-muted-foreground</code></td><td><code>text-secondary</code> (slate-500)</td></tr>
+          <tr><td><code>text-slate-500</code> sobre <code>bg-slate-100</code></td><td><code>text-on-muted</code> (slate-600)</td></tr>
+          <tr><td><code>bg-emerald-500</code> (punto online) <code>bg-accent</code></td><td><code>success</code> (emerald-600)</td></tr>
+          <tr><td><code>text-emerald-600</code> <code>text-emerald-500</code></td><td><code>success-text</code> (emerald-700)</td></tr>
+          <tr><td><code>text-amber-600</code> (Ocupado)</td><td><code>warning-text</code> (amber-700)</td></tr>
+          <tr><td><code>text-amber-500</code> + <code>fill-current</code> (estrella)</td><td><code>rating</code></td></tr>
+          <tr><td><code>text-violet-700</code> <code>border-violet-400</code> <code>from-violet-600 to-fuchsia-500</code></td><td><code>certified-text</code> · <code>certified-border</code> · <code>certified → certified-end</code></td></tr>
+          <tr><td><code>text-[6.5px]</code> a <code>text-[10.5px]</code></td><td>Estilo <code>overline</code> (10 px)</td></tr>
+          <tr><td><code>text-[11px]</code> <code>text-xs</code> <code>text-[12.5px]</code></td><td>Estilos <code>caption</code> / <code>label-sm</code> (12 px)</td></tr>
+          <tr><td><code>text-[13px]</code> <code>text-[13.5px]</code> <code>text-sm</code></td><td>Estilos <code>body-sm</code> / <code>label</code> (14 px)</td></tr>
+          <tr><td><code>font-semibold</code> · <code>font-extrabold</code> · <code>font-light</code></td><td><code>font-bold</code> · <code>font-black</code> · <code>font-normal</code></td></tr>
+          <tr><td><code>rounded</code> <code>rounded-sm</code> <code>rounded-md</code> <code>rounded-[10px]</code></td><td><code>radius-sm</code> (8)</td></tr>
+          <tr><td><code>rounded-lg</code> <code>rounded-xl</code> <code>rounded-[14px]</code></td><td><code>radius-md</code> (12)</td></tr>
+          <tr><td><code>rounded-2xl</code> <code>rounded-[18px]</code> <code>rounded-[20px]</code> <code>rounded-[22px]</code> <code>rounded-[24px]</code></td><td><code>radius-lg</code> (20)</td></tr>
+          <tr><td><code>rounded-3xl</code> <code>rounded-[28px]</code> a <code>rounded-[48px]</code></td><td><code>radius-xl</code> (32)</td></tr>
+          <tr><td><code>shadow-sm</code> <code>shadow</code></td><td><code>shadow sm</code></td></tr>
+          <tr><td><code>shadow-md</code> <code>shadow-lg</code> <code>shadow-xl</code></td><td><code>shadow md</code></td></tr>
+          <tr><td><code>shadow-2xl</code> <code>shadow-[0_20px_50px_rgba(0,0,0,0.8)]</code> y variantes</td><td><code>shadow lg</code></td></tr>
+          <tr><td><code>shadow-[0_0_20px_rgba(37,99,235,…)]</code> · <code>rgba(255,0,128,…)</code> · <code>rgba(124,58,237,…)</code></td><td><code>glow-brand</code> · <code>glow-washer</code> · <code>glow-certified</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<!-- TOKENS-JSON:START -->
+<script id="tokens-data" type="application/json">{"primitivos":{"neutral":{"0":{"$type":"color","$value":"#ffffff"},"50":{"$type":"color","$value":"#f8fafc"},"100":{"$type":"color","$value":"#f1f5f9"},"200":{"$type":"color","$value":"#e2e8f0"},"300":{"$type":"color","$value":"#cbd5e1"},"400":{"$type":"color","$value":"#94a3b8"},"500":{"$type":"color","$value":"#64748b"},"600":{"$type":"color","$value":"#475569"},"700":{"$type":"color","$value":"#334155"},"800":{"$type":"color","$value":"#1e293b"},"900":{"$type":"color","$value":"#0f172a"}},"navy":{"900":{"$type":"color","$value":"#0a0f1c","$description":"Superficies elevadas sobre fondo oscuro (popovers, menús de la barra de ubicación)."},"950":{"$type":"color","$value":"#050814","$description":"Fondo oscuro de marca: header, barra inferior, barra de ubicación, landing. Consolida #050814, #080c1a, #090d1a, #0b1220, #030712, #050505, #0a0518 y #0b0b14."}},"blue":{"50":{"$type":"color","$value":"#eff6ff"},"100":{"$type":"color","$value":"#dbeafe"},"200":{"$type":"color","$value":"#bfdbfe"},"400":{"$type":"color","$value":"#60a5fa"},"500":{"$type":"color","$value":"#3b82f6"},"600":{"$type":"color","$value":"#2563eb","$description":"Azul de marca. Es el que usa la UI (blue-600); --primary (#0067d1) queda alineado a este valor."},"700":{"$type":"color","$value":"#1d4ed8"},"900":{"$type":"color","$value":"#1e3a8a"}},"indigo":{"700":{"$type":"color","$value":"#4338ca","$description":"Solo en el gradiente del banner de suscripción."}},"magenta":{"50":{"$type":"color","$value":"#fff0f7"},"400":{"$type":"color","$value":"#ff4da6"},"500":{"$type":"color","$value":"#ff0080","$description":"Rosa de \"Ser lavador\" (landing). Con texto blanco da 3.77:1: no se usa como fondo de texto chico."},"600":{"$type":"color","$value":"#e0007a","$description":"Ajuste mínimo de #ff0080 para texto blanco: 4.72:1 (AA)."},"700":{"$type":"color","$value":"#b30062"}},"fuchsia":{"500":{"$type":"color","$value":"#d946ef","$description":"Solo como final del gradiente de \"Certificado\"."}},"violet":{"50":{"$type":"color","$value":"#f5f3ff"},"200":{"$type":"color","$value":"#ddd6fe"},"400":{"$type":"color","$value":"#a78bfa"},"600":{"$type":"color","$value":"#7c3aed"},"700":{"$type":"color","$value":"#6d28d9"}},"emerald":{"50":{"$type":"color","$value":"#ecfdf5"},"100":{"$type":"color","$value":"#d1fae5"},"400":{"$type":"color","$value":"#34d399"},"500":{"$type":"color","$value":"#10b981"},"600":{"$type":"color","$value":"#059669"},"700":{"$type":"color","$value":"#047857"}},"amber":{"50":{"$type":"color","$value":"#fffbeb"},"100":{"$type":"color","$value":"#fef3c7"},"200":{"$type":"color","$value":"#fde68a","$description":"Brillo de la medalla de oro."},"400":{"$type":"color","$value":"#fbbf24"},"500":{"$type":"color","$value":"#f59e0b"},"600":{"$type":"color","$value":"#d97706"},"700":{"$type":"color","$value":"#b45309"},"900":{"$type":"color","$value":"#78350f","$description":"Texto de la medalla de oro."}},"orange":{"50":{"$type":"color","$value":"#fff7ed"},"300":{"$type":"color","$value":"#fdba74"},"600":{"$type":"color","$value":"#c2410c"},"800":{"$type":"color","$value":"#9a3412"}},"red":{"50":{"$type":"color","$value":"#fef2f2"},"400":{"$type":"color","$value":"#f87171"},"600":{"$type":"color","$value":"#dc2626"},"700":{"$type":"color","$value":"#b91c1c"}},"rose":{"600":{"$type":"color","$value":"#e11d48","$description":"Etiqueta de descuento (-20%) del lavador."}},"alpha":{"white-5":{"$type":"color","$value":"#ffffff0d"},"white-10":{"$type":"color","$value":"#ffffff1a"},"white-60":{"$type":"color","$value":"#ffffff99"},"black-50":{"$type":"color","$value":"#00000080"},"black-60":{"$type":"color","$value":"#00000099"},"blue-20":{"$type":"color","$value":"#2563eb33"},"magenta-20":{"$type":"color","$value":"#ff008033"},"emerald-15":{"$type":"color","$value":"#10b98126"},"amber-15":{"$type":"color","$value":"#f59e0b26"},"red-15":{"$type":"color","$value":"#dc262626"},"violet-20":{"$type":"color","$value":"#7c3aed33"},"shadow-sm":{"$type":"color","$value":"#0f172a0f"},"shadow-md":{"$type":"color","$value":"#0f172a2e"},"shadow-lg":{"$type":"color","$value":"#00000080"},"glow-brand":{"$type":"color","$value":"#2563eb59"},"glow-washer":{"$type":"color","$value":"#ff00804d"},"glow-certified":{"$type":"color","$value":"#7c3aed8c"}}},"semanticos":{"claro":{"bg":{"ref":"color.neutral.50","hex":"#f8fafc"},"surface":{"ref":"color.neutral.0","hex":"#ffffff"},"surface-muted":{"ref":"color.neutral.100","hex":"#f1f5f9"},"surface-chrome":{"ref":"color.navy.950","hex":"#050814"},"surface-chrome-raised":{"ref":"color.navy.900","hex":"#0a0f1c"},"border":{"ref":"color.neutral.200","hex":"#e2e8f0"},"border-strong":{"ref":"color.neutral.500","hex":"#64748b"},"border-chrome":{"ref":"color.alpha.white-10","hex":"#ffffff1a"},"text-primary":{"ref":"color.neutral.900","hex":"#0f172a"},"text-secondary":{"ref":"color.neutral.500","hex":"#64748b"},"text-on-muted":{"ref":"color.neutral.600","hex":"#475569"},"text-on-brand":{"ref":"color.neutral.0","hex":"#ffffff"},"text-on-chrome":{"ref":"color.neutral.0","hex":"#ffffff"},"text-on-chrome-muted":{"ref":"color.neutral.400","hex":"#94a3b8"},"brand":{"ref":"color.blue.600","hex":"#2563eb"},"brand-hover":{"ref":"color.blue.700","hex":"#1d4ed8"},"brand-text":{"ref":"color.blue.600","hex":"#2563eb"},"brand-subtle":{"ref":"color.blue.50","hex":"#eff6ff"},"brand-text-on-chrome":{"ref":"color.blue.400","hex":"#60a5fa"},"washer":{"ref":"color.magenta.600","hex":"#e0007a"},"washer-hover":{"ref":"color.magenta.700","hex":"#b30062"},"washer-text":{"ref":"color.magenta.600","hex":"#e0007a"},"washer-subtle":{"ref":"color.magenta.50","hex":"#fff0f7"},"success":{"ref":"color.emerald.600","hex":"#059669"},"success-text":{"ref":"color.emerald.700","hex":"#047857"},"success-subtle":{"ref":"color.emerald.50","hex":"#ecfdf5"},"warning":{"ref":"color.amber.500","hex":"#f59e0b"},"warning-text":{"ref":"color.amber.700","hex":"#b45309"},"warning-subtle":{"ref":"color.amber.50","hex":"#fffbeb"},"danger":{"ref":"color.red.600","hex":"#dc2626"},"danger-hover":{"ref":"color.red.700","hex":"#b91c1c"},"danger-text":{"ref":"color.red.600","hex":"#dc2626"},"danger-subtle":{"ref":"color.red.50","hex":"#fef2f2"},"certified":{"ref":"color.violet.600","hex":"#7c3aed"},"certified-text":{"ref":"color.violet.700","hex":"#6d28d9"},"certified-border":{"ref":"color.violet.400","hex":"#a78bfa"},"certified-subtle":{"ref":"color.violet.50","hex":"#f5f3ff"},"certified-end":{"ref":"color.fuchsia.500","hex":"#d946ef"},"rating":{"ref":"color.amber.500","hex":"#f59e0b"},"rating-text":{"ref":"color.amber.700","hex":"#b45309"},"rating-subtle":{"ref":"color.amber.50","hex":"#fffbeb"},"promo":{"ref":"color.rose.600","hex":"#e11d48"},"focus":{"ref":"color.blue.500","hex":"#3b82f6"},"overlay":{"ref":"color.alpha.black-50","hex":"#00000080"},"gradient-subscribe-start":{"ref":"color.blue.700","hex":"#1d4ed8"},"gradient-subscribe-mid":{"ref":"color.indigo.700","hex":"#4338ca"},"gradient-subscribe-end":{"ref":"color.neutral.900","hex":"#0f172a"},"shadow-sm":{"ref":"color.alpha.shadow-sm","hex":"#0f172a0f"},"shadow-md":{"ref":"color.alpha.shadow-md","hex":"#0f172a2e"},"shadow-lg":{"ref":"color.alpha.shadow-lg","hex":"#00000080"},"glow-brand":{"ref":"color.alpha.glow-brand","hex":"#2563eb59"},"glow-washer":{"ref":"color.alpha.glow-washer","hex":"#ff00804d"},"glow-certified":{"ref":"color.alpha.glow-certified","hex":"#7c3aed8c"}},"oscuro":{"bg":{"ref":"color.navy.950","hex":"#050814"},"surface":{"ref":"color.neutral.900","hex":"#0f172a"},"surface-muted":{"ref":"color.neutral.800","hex":"#1e293b"},"surface-chrome":{"ref":"color.navy.950","hex":"#050814"},"surface-chrome-raised":{"ref":"color.navy.900","hex":"#0a0f1c"},"border":{"ref":"color.alpha.white-10","hex":"#ffffff1a"},"border-strong":{"ref":"color.neutral.500","hex":"#64748b"},"border-chrome":{"ref":"color.alpha.white-10","hex":"#ffffff1a"},"text-primary":{"ref":"color.neutral.50","hex":"#f8fafc"},"text-secondary":{"ref":"color.neutral.400","hex":"#94a3b8"},"text-on-muted":{"ref":"color.neutral.400","hex":"#94a3b8"},"text-on-brand":{"ref":"color.neutral.0","hex":"#ffffff"},"text-on-chrome":{"ref":"color.neutral.0","hex":"#ffffff"},"text-on-chrome-muted":{"ref":"color.neutral.400","hex":"#94a3b8"},"brand":{"ref":"color.blue.600","hex":"#2563eb"},"brand-hover":{"ref":"color.blue.700","hex":"#1d4ed8"},"brand-text":{"ref":"color.blue.400","hex":"#60a5fa"},"brand-subtle":{"ref":"color.alpha.blue-20","hex":"#2563eb33"},"brand-text-on-chrome":{"ref":"color.blue.400","hex":"#60a5fa"},"washer":{"ref":"color.magenta.600","hex":"#e0007a"},"washer-hover":{"ref":"color.magenta.500","hex":"#ff0080"},"washer-text":{"ref":"color.magenta.400","hex":"#ff4da6"},"washer-subtle":{"ref":"color.alpha.magenta-20","hex":"#ff008033"},"success":{"ref":"color.emerald.500","hex":"#10b981"},"success-text":{"ref":"color.emerald.400","hex":"#34d399"},"success-subtle":{"ref":"color.alpha.emerald-15","hex":"#10b98126"},"warning":{"ref":"color.amber.500","hex":"#f59e0b"},"warning-text":{"ref":"color.amber.400","hex":"#fbbf24"},"warning-subtle":{"ref":"color.alpha.amber-15","hex":"#f59e0b26"},"danger":{"ref":"color.red.600","hex":"#dc2626"},"danger-hover":{"ref":"color.red.700","hex":"#b91c1c"},"danger-text":{"ref":"color.red.400","hex":"#f87171"},"danger-subtle":{"ref":"color.alpha.red-15","hex":"#dc262626"},"certified":{"ref":"color.violet.600","hex":"#7c3aed"},"certified-text":{"ref":"color.violet.400","hex":"#a78bfa"},"certified-border":{"ref":"color.violet.600","hex":"#7c3aed"},"certified-subtle":{"ref":"color.alpha.violet-20","hex":"#7c3aed33"},"certified-end":{"ref":"color.fuchsia.500","hex":"#d946ef"},"rating":{"ref":"color.amber.400","hex":"#fbbf24"},"rating-text":{"ref":"color.amber.400","hex":"#fbbf24"},"rating-subtle":{"ref":"color.alpha.amber-15","hex":"#f59e0b26"},"promo":{"ref":"color.rose.600","hex":"#e11d48"},"focus":{"ref":"color.blue.400","hex":"#60a5fa"},"overlay":{"ref":"color.alpha.black-60","hex":"#00000099"},"gradient-subscribe-start":{"ref":"color.blue.700","hex":"#1d4ed8"},"gradient-subscribe-mid":{"ref":"color.indigo.700","hex":"#4338ca"},"gradient-subscribe-end":{"ref":"color.neutral.900","hex":"#0f172a"},"shadow-sm":{"ref":"color.alpha.black-50","hex":"#00000080"},"shadow-md":{"ref":"color.alpha.black-50","hex":"#00000080"},"shadow-lg":{"ref":"color.alpha.black-60","hex":"#00000099"},"glow-brand":{"ref":"color.alpha.glow-brand","hex":"#2563eb59"},"glow-washer":{"ref":"color.alpha.glow-washer","hex":"#ff00804d"},"glow-certified":{"ref":"color.alpha.glow-certified","hex":"#7c3aed8c"}}}}</script>
+<!-- TOKENS-JSON:END -->
+<script>
+  // Modo claro / oscuro
+  const setMode = (m) => {
+    document.documentElement.dataset.mode = m;
+    document.querySelectorAll('[data-set-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.setMode === m)));
+    document.querySelectorAll('#contrast-table tbody tr').forEach((tr) => { tr.style.display = tr.dataset.mode === m ? '' : 'none'; });
+    renderSemantic();
+  };
+  document.querySelectorAll('[data-set-mode]').forEach((b) => b.addEventListener('click', () => setMode(b.dataset.setMode)));
+
+  const data = JSON.parse(document.getElementById('tokens-data').textContent);
+  const textOn = (hex) => {
+    const h = hex.replace('#', '');
+    if (h.length > 6 && parseInt(h.slice(6, 8), 16) < 160) return 'var(--text-primary)';
+    const [r, g, b] = [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16));
+    return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? '#0f172a' : '#ffffff';
+  };
+
+  // Primitivos
+  const ramps = document.getElementById('ramps');
+  for (const [group, steps] of Object.entries(data.primitivos)) {
+    const row = document.createElement('div');
+    row.className = 'ramp';
+    row.innerHTML = `<span class="name">${group}</span>` + Object.entries(steps).map(([step, t]) =>
+      `<div class="chip-sw" style="background:${t.$value};color:${textOn(t.$value)}" title="${t.$description || ''}"><b>${step}</b><span>${t.$value}</span></div>`).join('');
+    ramps.appendChild(row);
+  }
+
+  // Semánticos (según el modo activo)
+  function renderSemantic() {
+    const mode = document.documentElement.dataset.mode;
+    const sem = data.semanticos[mode];
+    document.getElementById('semantic').innerHTML =
+      `<div class="sem-row" style="font:700 10px var(--font);letter-spacing:.15em;text-transform:uppercase;color:var(--text-secondary)"><span></span><span>Token</span><span>Primitivo</span><span class="hide-sm">Valor</span></div>` +
+      Object.entries(sem).map(([name, v]) =>
+        `<div class="sem-row"><span class="sem-dot"><i style="background:${v.hex}"></i></span><code>${name}</code><span>${v.ref.replace('color.', '')}</span><span class="hide-sm" style="color:var(--text-secondary)">${v.hex}</span></div>`).join('');
+  }
+
+  // Tipografía
+  const TYPE = [
+    ['display', '48 / 1.05 · 700', 'Tu auto impecable, sin moverte.', 'font:700 48px/1.05 var(--font);letter-spacing:-.02em'],
+    ['title-xl', '32 / 1.1 · 700', 'Lavadores en la zona', 'font:700 32px/1.1 var(--font);letter-spacing:-.02em'],
+    ['title-lg', '24 / 1.2 · 700', 'Lavadores en la zona', 'font:700 24px/1.2 var(--font);letter-spacing:-.02em'],
+    ['title-md', '20 / 1.25 · 700', 'Lavador en camino', 'font:700 20px/1.25 var(--font);letter-spacing:-.02em'],
+    ['title-sm', '18 / 1.3 · 700', '¡Hola, Lucía!', 'font:700 18px/1.3 var(--font);letter-spacing:-.01em'],
+    ['body', '16 / 1.5 · 400', 'Elegí dónde va a estar el auto: tu casa, el trabajo u otra dirección.', 'font:400 16px/1.5 var(--font)'],
+    ['body-sm', '14 / 1.5 · 400', 'El precio con crédito incluye el costo de financiación.', 'font:400 14px/1.5 var(--font)'],
+    ['label', '14 / 1.2 · 500', 'Lavadores · Historial · Mi Perfil', 'font:500 14px/1.2 var(--font)'],
+    ['label-sm', '12 / 1.2 · 700', '12 cerca ahora', 'font:700 12px/1.2 var(--font)'],
+    ['caption', '12 / 1.4 · 500', 'Eco lavado — muy pronto', 'font:500 12px/1.4 var(--font)'],
+    ['overline', '10 / 1.2 · 700 · +0.2em · MAYÚS', 'Ubicación de lavado', 'font:700 10px/1.2 var(--font);letter-spacing:.2em;text-transform:uppercase'],
+    ['cta', '14 / 1 · 900 · +0.1em · MAYÚS', 'Pedir lavado', 'font:900 14px/1 var(--font);letter-spacing:.1em;text-transform:uppercase'],
+    ['cta-sm', '12 / 1 · 700 · +0.05em · MAYÚS', 'Iniciar sesión', 'font:700 12px/1 var(--font);letter-spacing:.05em;text-transform:uppercase'],
+    ['pin', '24 / 1 · 700 · +0.1em · mono en la app', '4821', 'font:700 24px/1 ui-monospace,monospace;letter-spacing:.1em'],
+  ];
+  document.getElementById('type').innerHTML = TYPE.map(([n, spec, sample, css]) =>
+    `<div class="type-row"><code>${n}</code><span style="${css}">${sample}</span><span class="meta">${spec}</span></div>`).join('');
+
+  // Espaciado, radios, elevación
+  document.getElementById('spacing').innerHTML = '<h4 class="eyebrow" style="color:var(--text-secondary)">Espaciado</h4>' +
+    [2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64].map((v) => `<div class="space-row"><span class="lbl"><code>space-${v}</code></span><span class="bar" style="width:${v * 3}px"></span><span>${v}px</span></div>`).join('');
+  document.getElementById('radii').innerHTML = [['sm', 8], ['md', 12], ['lg', 20], ['xl', 32], ['full', 9999]].map(([n, v]) =>
+    `<div><div class="radius-box" style="border-radius:${Math.min(v, 36)}px"></div><p class="stat-label"><code>radius-${n}</code> · ${v === 9999 ? 'píldora' : v + 'px'}</p></div>`).join('');
+  document.getElementById('elev').innerHTML = [['sm', 'Cards en reposo'], ['md', 'Hover, popovers'], ['lg', 'Flotantes sobre el mapa'], ['glow-brand', 'CTA principal'], ['glow-washer', 'Ser lavador'], ['glow-certified', 'Certificado']].map(([n, d]) =>
+    `<div class="elev-box" style="box-shadow:var(--shadow-${n})"><span><code>${n}</code><br>${d}</span></div>`).join('');
+
+  setMode(new URLSearchParams(location.search).get('modo') === 'oscuro' ? 'oscuro' : 'claro');
+</script>
+</body>
+</html>
