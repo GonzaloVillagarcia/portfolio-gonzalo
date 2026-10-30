@@ -5,17 +5,43 @@ import { DS } from './ds/ds-data';
 import './ds/ds-embed.css';
 
 // Pestaña "Design system" del caso Pedí tu lavado.
-// Fundamentos en React a partir de ds-data.ts; componentes y pantallas desde ds-embed.html.
+// Fundamentos en React a partir de ds-data.ts; componentes y pantallas desde ds-embed.html, de a uno.
 // Ambos se generan con `node design-system/tools/export-portfolio.mjs`.
 
 type Mode = 'claro' | 'oscuro';
 type SemanticName = keyof typeof DS.semantic;
 
 const LEXEND = "'Lexend', system-ui, sans-serif";
-const [componentsHtml, screensHtml] = (() => {
-    const cut = dsHtml.indexOf('<section class="sg" id="pantallas">');
-    return [dsHtml.slice(0, cut), dsHtml.slice(cut)];
-})();
+// El HTML exportado trae: sprite de íconos + sección de componentes + sección de pantallas.
+// Se parte en piezas para mostrarlas de a una.
+const SPRITE = dsHtml.slice(0, dsHtml.indexOf('<section'));
+const sectionOf = (id: string) => {
+    const start = dsHtml.indexOf(`<section class="sg" id="${id}">`);
+    const end = dsHtml.indexOf('</section>', start);
+    return dsHtml.slice(start, end);
+};
+const clean = (s: string) => s.replace(/(\s*<!--[^>]*-->)*\s*$/, '');
+const COMPONENTS = sectionOf('componentes')
+    .split('<div class="comp">')
+    .slice(1)
+    .map((chunk) => ({ title: (chunk.match(/<h3>([^<]+)<\/h3>/) || [])[1] ?? '', html: '<div class="comp">' + clean(chunk) }));
+const SCREENS = sectionOf('pantallas')
+    .split('<h3 class="sg-h3">')
+    .slice(1)
+    .map((chunk) => {
+        const cut = chunk.indexOf('</h3>');
+        return { title: chunk.slice(0, cut).replace(/^\d+\s*·\s*/, ''), html: clean(chunk.slice(cut + 5)) };
+    });
+
+// Componentes agrupados por dónde viven en la app
+const COMPONENT_GROUPS: { name: string; items: string[] }[] = [
+    { name: 'Base', items: ['Botón', 'Campo de texto', 'Etiquetas', 'Aviso emergente y ventana'] },
+    { name: 'Navegación', items: ['Encabezado oscuro', 'Barra inferior (celular)', 'Navegación segmentada', 'Barra de ubicación de lavado', 'Bienvenida, pestañas y filtros'] },
+    { name: 'Lavadores', items: ['Tarjeta de lavador', 'Marcadores del mapa', 'Aviso "¡Suscribite y ahorrá!"', 'Disponibilidad del lavador'] },
+    { name: 'Pedido y pago', items: ['Pedido en curso (burbuja flotante)', 'Estados del pedido', 'PIN de verificación', 'Tarjeta de pedido y pago con Mercado Pago', 'Historial de pagos'] },
+    { name: 'Comunicación', items: ['Chat', 'Reseñas'] },
+];
+const SCREEN_LABELS = ['Inicio del cliente', 'Seguimiento con PIN', 'Pedido y pago', 'Panel del lavador'];
 
 const luminance = (hex: string) => {
     const h = hex.replace('#', '');
@@ -204,8 +230,52 @@ function Anatomy() {
     );
 }
 
+// Bloque plegable para el detalle que no hace falta ver de entrada
+function More({ label, children }: { label: string; children: ReactNode }) {
+    return (
+        <details className="group rounded-2xl border border-neutral-800 bg-neutral-950">
+            <summary className="cursor-pointer list-none px-5 py-4 text-neutral-300 hover:text-neutral-100 flex items-center justify-between gap-4" style={{ fontFamily: LEXEND }}>
+                {label}
+                <span className="text-neutral-500 transition-transform group-open:rotate-180 shrink-0"><Ic id="chevron" /></span>
+            </summary>
+            <div className="px-5 pb-5">{children}</div>
+        </details>
+    );
+}
+
+// Botón tipo píldora para los selectores
+function Pill({ active, onClick, children, small }: { active: boolean; onClick: () => void; children: ReactNode; small?: boolean }) {
+    return (
+        <button
+            type="button"
+            onClick={onClick}
+            aria-pressed={active}
+            className={`rounded-full border transition-colors text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9FD592] ${small ? 'px-3.5 py-1.5 text-sm' : 'px-4 py-2 text-sm'} ${
+                active ? 'bg-[#9FD592] border-[#9FD592] text-[#0a0a0a]' : 'border-neutral-800 text-neutral-400 hover:text-neutral-100 hover:border-neutral-600'
+            }`}
+        >
+            {children}
+        </button>
+    );
+}
+
+const SECTIONS = [
+    { id: 'ds-pantallas', label: 'Pantallas' },
+    { id: 'ds-componentes', label: 'Componentes' },
+    { id: 'ds-fundamentos', label: 'Fundamentos' },
+] as const;
+
+const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150, behavior: 'smooth' });
+};
+
 export default function PeditulavadoDesignSystem() {
     const [mode, setMode] = useState<Mode>('claro');
+    const [screen, setScreen] = useState(0);
+    const [group, setGroup] = useState(0);
+    const [compTitle, setCompTitle] = useState(COMPONENT_GROUPS[0].items[0]);
+    const [active, setActive] = useState<string>(SECTIONS[0].id);
 
     // Lexend: la tipografía de Pedí tu lavado
     useEffect(() => {
@@ -218,16 +288,59 @@ export default function PeditulavadoDesignSystem() {
         document.head.appendChild(link);
     }, []);
 
+    // Índice: marca la sección que se está leyendo (la última cuyo inicio ya pasó debajo de las barras fijas)
+    useEffect(() => {
+        const onScroll = () => {
+            let current: string = SECTIONS[0].id;
+            for (const sec of SECTIONS) {
+                const el = document.getElementById(sec.id);
+                if (el && el.getBoundingClientRect().top < 260) current = sec.id;
+            }
+            setActive(current);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
     const hex = (t: SemanticName) => DS.semantic[t][mode];
     const pairs = DS.contrast.filter((c) => c.mode === mode);
 
+    const flat = COMPONENT_GROUPS.flatMap((g) => g.items);
+    const compIndex = flat.indexOf(compTitle);
+    const comp = COMPONENTS.find((c) => c.title === compTitle);
+    const goTo = (title: string) => {
+        setCompTitle(title);
+        setGroup(COMPONENT_GROUPS.findIndex((g) => g.items.includes(title)));
+        scrollToSection('ds-comp-view');
+    };
+
+    const contrastTile = (c: (typeof pairs)[number]) => (
+        <div key={c.fg + c.bg} className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 flex flex-col">
+            <div className="h-20 grid place-items-center" style={{ background: c.bgHex }}>
+                {c.min === 3 ? (
+                    c.fg === 'success'
+                        ? <span className="w-4 h-4 rounded-full" style={{ background: c.fgHex }} />
+                        : <span className="w-24 h-8 rounded-lg" style={{ border: `2px solid ${c.fgHex}` }} />
+                ) : (
+                    <span className="text-2xl" style={{ color: c.fgHex, fontFamily: LEXEND, fontWeight: 700 }}>Aa</span>
+                )}
+            </div>
+            <div className="p-3 flex-1 flex flex-col justify-between gap-2">
+                <p className="text-xs text-neutral-400 leading-snug">{c.use}</p>
+                <p className="text-sm text-[#9FD592]" style={{ fontFamily: LEXEND }}>{c.ratio.toFixed(2)}:1</p>
+            </div>
+        </div>
+    );
+
     return (
         <section id="design-system" className="max-w-6xl w-full pb-24 md:pb-32 relative z-10">
-            <style>{`.ds-embed .ds-part section.sg { border-top: 0; padding: 0; }`}</style>
+            <style>{`.ds-embed .ds-part section.sg { border-top: 0; padding: 0; } .ds-embed .ds-part .comp { border-top: 0; padding-top: 0; }`}</style>
             <div className="ds-embed" data-mode={mode}>
+                <div aria-hidden dangerouslySetInnerHTML={{ __html: SPRITE }} />
 
                 {/* ---------- Apertura ---------- */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24 md:mb-32">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20 md:mb-24">
                     <div className="lg:col-span-5">
                         <p className="text-[#9FD592] text-sm mb-6" style={{ fontFamily: LEXEND }}>Sistema de diseño</p>
                         <h2 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight text-neutral-50 mb-8" style={{ fontFamily: LEXEND, fontWeight: 500 }}>
@@ -245,9 +358,76 @@ export default function PeditulavadoDesignSystem() {
                     </div>
                 </div>
 
-                {/* ---------- 1. Fundamentos ---------- */}
-                <div className="border-t border-neutral-900 pt-16 md:pt-24 mb-24 md:mb-32">
-                    <SectionHead step="1" title="Fundamentos">
+                {/* ---------- Índice ---------- */}
+                <nav aria-label="Secciones del sistema" className="sticky top-[141px] z-30 -mx-6 md:-mx-12 lg:-mx-24 px-6 md:px-12 lg:px-24 mb-16 md:mb-20 bg-[#0a0a0a]/85 backdrop-blur-md border-b border-neutral-900">
+                    <div className="flex gap-6 md:gap-10">
+                        {SECTIONS.map((s, i) => (
+                            <button
+                                key={s.id}
+                                type="button"
+                                onClick={() => scrollToSection(s.id)}
+                                aria-current={active === s.id ? 'true' : undefined}
+                                className={`py-3 text-sm border-b-2 -mb-px transition-colors focus-visible:outline-2 focus-visible:outline-[#9FD592] ${active === s.id ? 'border-[#9FD592] text-neutral-50' : 'border-transparent text-neutral-500 hover:text-neutral-200'}`}
+                                style={{ fontFamily: LEXEND }}
+                            >
+                                <span className="text-[#9FD592] mr-1.5">{i + 1}</span>{s.label}
+                            </button>
+                        ))}
+                    </div>
+                </nav>
+
+                {/* ---------- 1. Pantallas ---------- */}
+                <div id="ds-pantallas" className="mb-24 md:mb-32">
+                    <SectionHead step="1" title="Pantallas">
+                        <p>A la izquierda, una captura de la app tal como está hoy. A la derecha, la misma pantalla armada solo con los componentes y tokens del sistema.</p>
+                        <p>Las diferencias son lo que el sistema ordena: textos todos en español y con el mismo criterio de mayúsculas, tamaños de letra que no bajan de 10 px, los mismos radios y colores con contraste AA. Los nombres y las fotos de lavadores reales están difuminados.</p>
+                    </SectionHead>
+                    <div role="group" aria-label="Pantalla" className="flex flex-wrap gap-2 mb-8">
+                        {SCREENS.map((s, i) => (
+                            <Pill key={s.title} active={screen === i} onClick={() => setScreen(i)}>{SCREEN_LABELS[i] ?? s.title}</Pill>
+                        ))}
+                    </div>
+                    <h4 className="text-xl md:text-2xl text-neutral-100 tracking-tight mb-6" style={{ fontFamily: LEXEND, fontWeight: 500 }}>{SCREENS[screen].title}</h4>
+                    <div key={screen} className="ds-part" dangerouslySetInnerHTML={{ __html: SCREENS[screen].html }} />
+                </div>
+
+                {/* ---------- 2. Componentes ---------- */}
+                <div id="ds-componentes" className="border-t border-neutral-900 pt-16 md:pt-24 mb-24 md:mb-32">
+                    <SectionHead step="2" title="Componentes">
+                        <p>Los componentes reales de la app armados solo con tokens, cada uno con sus variantes, sus estados y cuándo usarlo. Al lado, un celular muestra dónde aparece y cómo queda.</p>
+                    </SectionHead>
+                    <div id="ds-comp-view" className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-4 md:p-6 mb-10">
+                        <div role="group" aria-label="Grupo de componentes" className="flex flex-wrap gap-2">
+                            {COMPONENT_GROUPS.map((g, i) => (
+                                <Pill key={g.name} active={group === i} onClick={() => { setGroup(i); setCompTitle(g.items[0]); }}>
+                                    {g.name} <span className={group === i ? 'opacity-60' : 'text-neutral-600'}>{g.items.length}</span>
+                                </Pill>
+                            ))}
+                        </div>
+                        <div role="group" aria-label="Componente" className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-neutral-900">
+                            {COMPONENT_GROUPS[group].items.map((t) => (
+                                <Pill key={t} small active={compTitle === t} onClick={() => setCompTitle(t)}>{t}</Pill>
+                            ))}
+                        </div>
+                    </div>
+                    {comp && <div key={comp.title} className="ds-part" dangerouslySetInnerHTML={{ __html: comp.html }} />}
+                    <div className="flex justify-between gap-4 mt-10 pt-6 border-t border-neutral-900 text-sm" style={{ fontFamily: LEXEND }}>
+                        {compIndex > 0 ? (
+                            <button type="button" onClick={() => goTo(flat[compIndex - 1])} className="text-left text-neutral-400 hover:text-neutral-100">
+                                <span className="block text-xs text-neutral-600 mb-1">Anterior</span>{flat[compIndex - 1]}
+                            </button>
+                        ) : <span />}
+                        {compIndex < flat.length - 1 && (
+                            <button type="button" onClick={() => goTo(flat[compIndex + 1])} className="text-right text-neutral-400 hover:text-neutral-100">
+                                <span className="block text-xs text-neutral-600 mb-1">Siguiente</span>{flat[compIndex + 1]}
+                            </button>
+                        )}
+                    </div>
+                </div>
+
+                {/* ---------- 3. Fundamentos ---------- */}
+                <div id="ds-fundamentos" className="border-t border-neutral-900 pt-16 md:pt-24">
+                    <SectionHead step="3" title="Fundamentos">
                         <p>
                             Un <span className="text-neutral-200">token</span> es una decisión de diseño con nombre. Un botón no usa <code>#2563eb</code>: usa <code>brand</code>. Si el azul cambia, cambia en un solo lugar y se actualizan Figma y el código.
                         </p>
@@ -256,9 +436,9 @@ export default function PeditulavadoDesignSystem() {
                         </p>
                     </SectionHead>
 
-                    {/* Roles */}
+                    {/* Color */}
                     <SubHead title="Seis colores con un rol cada uno" />
-                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 mb-16 md:mb-20">
+                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 mb-6">
                         {ROLES.map((r) => (
                             <div key={r.token} className="flex flex-col">
                                 <div className="h-36 md:h-44 rounded-2xl p-4 flex flex-col justify-end border border-white/5" style={{ background: hex(r.token), color: inkOn(hex(r.token)), fontFamily: LEXEND }}>
@@ -270,85 +450,67 @@ export default function PeditulavadoDesignSystem() {
                             </div>
                         ))}
                     </div>
-
-                    {/* Semánticos por función */}
-                    <SubHead title="Tokens por función">
-                        Cada token con su valor en modo claro y en modo oscuro.
-                    </SubHead>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        {GROUPS.map((g) => (
-                            <div key={g.title} className="rounded-2xl border border-neutral-800 bg-neutral-950 p-5">
-                                <div className="flex items-center justify-between mb-3">
-                                    <h5 className="text-neutral-100" style={{ fontFamily: LEXEND, fontWeight: 500 }}>{g.title}</h5>
-                                    <div className="flex gap-2 text-[11px] text-neutral-500 w-[116px] justify-between"><span className="w-[54px] text-center">Claro</span><span className="w-[54px] text-center">Oscuro</span></div>
-                                </div>
-                                {g.tokens.map((t) => (
-                                    <div key={t} className="flex items-center justify-between gap-3 py-2 border-t border-neutral-900">
-                                        <span className="min-w-0 text-sm text-neutral-300 leading-tight">{tokenEs(t)}<code className="block mt-0.5 text-[10px] text-neutral-500 bg-transparent p-0 truncate">{t}</code></span>
-                                        <div className="flex gap-2 shrink-0">
-                                            {(['claro', 'oscuro'] as Mode[]).map((m) => (
-                                                <span key={m} title={`${t} · ${m}: ${DS.semantic[t][m]}`} className="w-[54px] h-7 rounded-md border border-white/10" style={{ background: DS.semantic[t][m] }} />
+                    <div className="space-y-3 mb-16 md:mb-20">
+                        <More label="Ver los 53 tokens con su valor en claro y oscuro">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {GROUPS.map((g) => (
+                                    <div key={g.title} className="rounded-2xl border border-neutral-800 p-5">
+                                        <div className="flex items-center justify-between mb-3">
+                                            <h5 className="text-neutral-100" style={{ fontFamily: LEXEND, fontWeight: 500 }}>{g.title}</h5>
+                                            <div className="flex gap-2 text-[11px] text-neutral-500 w-[116px] justify-between"><span className="w-[54px] text-center">Claro</span><span className="w-[54px] text-center">Oscuro</span></div>
+                                        </div>
+                                        {g.tokens.map((t) => (
+                                            <div key={t} className="flex items-center justify-between gap-3 py-2 border-t border-neutral-900">
+                                                <span className="min-w-0 text-sm text-neutral-300 leading-tight">{tokenEs(t)}<code className="block mt-0.5 text-[10px] text-neutral-500 bg-transparent p-0 truncate">{t}</code></span>
+                                                <div className="flex gap-2 shrink-0">
+                                                    {(['claro', 'oscuro'] as Mode[]).map((m) => (
+                                                        <span key={m} title={`${t} · ${m}: ${DS.semantic[t][m]}`} className="w-[54px] h-7 rounded-md border border-white/10" style={{ background: DS.semantic[t][m] }} />
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ))}
+                            </div>
+                        </More>
+                        <More label="Ver las escalas de color completas">
+                            <div className="space-y-2">
+                                <p className="text-sm text-neutral-400 font-light leading-relaxed mb-4 max-w-2xl">
+                                    Todos salen de los colores que usa la app hoy. Los marcados con un punto son ajustes que propongo: tonos del rosa de lavador para que el texto blanco cumpla AA.
+                                </p>
+                                {Object.entries(DS.primitives).map(([g, steps]) => (
+                                    <div key={g} className="grid grid-cols-[96px_1fr] gap-3 items-center">
+                                        <span className="text-xs text-neutral-400 leading-tight">{GROUP_ES[g] ?? g}<code className="block mt-0.5 text-[10px] text-neutral-600 bg-transparent p-0">{g}</code></span>
+                                        <div className="flex flex-wrap gap-1">
+                                            {steps.map(([step, value]) => (
+                                                <span key={step} title={`${g}/${step} ${value}`} className={`relative ${g === 'alpha' ? 'w-[4.5rem]' : 'w-12'} h-10 rounded-md border border-white/5 flex items-end p-1 text-[10px] leading-tight`} style={{ background: value, color: inkOn(value) }}>
+                                                    {g === 'alpha' ? ALPHA_ES[step] ?? step : step}
+                                                    {PROPOSED.has(`${g}.${step}`) && <span aria-label="propuesto" className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-current" />}
+                                                </span>
                                             ))}
                                         </div>
                                     </div>
                                 ))}
                             </div>
-                        ))}
+                        </More>
                     </div>
-                    <details className="group mb-16 md:mb-20 rounded-2xl border border-neutral-800 bg-neutral-950">
-                        <summary className="cursor-pointer list-none px-5 py-4 text-neutral-300 flex items-center justify-between" style={{ fontFamily: LEXEND }}>
-                            Ver las escalas de color completas
-                            <span className="text-neutral-500 transition-transform group-open:rotate-180"><Ic id="chevron" /></span>
-                        </summary>
-                        <div className="px-5 pb-5 space-y-2">
-                            <p className="text-sm text-neutral-400 font-light leading-relaxed mb-4 max-w-2xl">
-                                Todos salen de los colores que usa la app hoy. Los marcados con un punto son ajustes que propongo: tonos del rosa de lavador para que el texto blanco cumpla AA.
-                            </p>
-                            {Object.entries(DS.primitives).map(([group, steps]) => (
-                                <div key={group} className="grid grid-cols-[96px_1fr] gap-3 items-center">
-                                    <span className="text-xs text-neutral-400 leading-tight">{GROUP_ES[group] ?? group}<code className="block mt-0.5 text-[10px] text-neutral-600 bg-transparent p-0">{group}</code></span>
-                                    <div className="flex flex-wrap gap-1">
-                                        {steps.map(([step, value]) => (
-                                            <span key={step} title={`${group}/${step} ${value}`} className={`relative ${group === 'alpha' ? 'w-[4.5rem]' : 'w-12'} h-10 rounded-md border border-white/5 flex items-end p-1 text-[10px] leading-tight`} style={{ background: value, color: inkOn(value) }}>
-                                                {group === 'alpha' ? ALPHA_ES[step] ?? step : step}
-                                                {PROPOSED.has(`${group}.${step}`) && <span aria-label="propuesto" className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-current" />}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </details>
 
                     {/* Contraste */}
                     <SubHead title="Contraste que se lee">
                         Cada combinación que usa la interfaz, medida contra WCAG AA: 4.5:1 para texto y 3:1 para bordes y componentes. Se verifica sola cada vez que cambia un token.
                     </SubHead>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-16 md:mb-20">
-                        {pairs.map((c) => (
-                            <div key={c.fg + c.bg} className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 flex flex-col">
-                                <div className="h-20 grid place-items-center" style={{ background: c.bgHex }}>
-                                    {c.min === 3 ? (
-                                        c.fg === 'success'
-                                            ? <span className="w-4 h-4 rounded-full" style={{ background: c.fgHex }} />
-                                            : <span className="w-24 h-8 rounded-lg" style={{ border: `2px solid ${c.fgHex}` }} />
-                                    ) : (
-                                        <span className="text-2xl" style={{ color: c.fgHex, fontFamily: LEXEND, fontWeight: 700 }}>Aa</span>
-                                    )}
-                                </div>
-                                <div className="p-3 flex-1 flex flex-col justify-between gap-2">
-                                    <p className="text-xs text-neutral-400 leading-snug">{c.use}</p>
-                                    <p className="text-sm text-[#9FD592]" style={{ fontFamily: LEXEND }}>{c.ratio.toFixed(2)}:1</p>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">{pairs.slice(0, 5).map(contrastTile)}</div>
+                    <div className="mb-16 md:mb-20">
+                        <More label={`Ver los ${pairs.length} pares del modo ${mode}`}>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">{pairs.slice(5).map(contrastTile)}</div>
+                        </More>
                     </div>
 
                     {/* Tipografía */}
                     <SubHead title="Una tipografía, cuatro pesos">
                         Lexend fue pensada para mejorar la lectura. En la app se usa en 400 para texto, 500 para la interfaz, 700 para títulos y 900 para los llamados a la acción.
                     </SubHead>
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10 items-end">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6 items-end">
                         <div className="lg:col-span-4">
                             <span className="block text-[9rem] md:text-[11rem] leading-[0.8] text-neutral-50" style={{ fontFamily: LEXEND, fontWeight: 500 }}>Aa</span>
                         </div>
@@ -361,18 +523,20 @@ export default function PeditulavadoDesignSystem() {
                             ))}
                         </div>
                     </div>
-                    <div className="rounded-2xl border border-neutral-800 bg-neutral-950 px-5 mb-16 md:mb-20">
-                        {DS.textStyles.map((s) => (
-                            <div key={s.name} className="grid grid-cols-1 md:grid-cols-[150px_1fr_160px] gap-1 md:gap-6 items-baseline py-4 border-b border-neutral-900 last:border-0">
-                                <span className="self-start text-sm text-neutral-300 leading-tight">{TEXT_ES[s.name] ?? s.name}<code className="block mt-1 text-[10px] text-neutral-500 bg-transparent p-0">{s.name}</code></span>
-                                <span className="text-neutral-100 min-w-0 break-words" style={{
-                                    fontFamily: s.name === 'pin' ? 'ui-monospace, monospace' : LEXEND, fontWeight: s.fontWeight,
-                                    fontSize: `min(${s.fontSize}, 11vw)`, lineHeight: s.lineHeight, letterSpacing: s.letterSpacing,
-                                    textTransform: 'textCase' in s ? 'uppercase' : undefined,
-                                }}>{TYPE_SAMPLES[s.name] || s.name}</span>
-                                <span className="text-xs text-neutral-500">{parseFloat(s.fontSize)} px, peso {s.fontWeight}</span>
-                            </div>
-                        ))}
+                    <div className="mb-16 md:mb-20">
+                        <More label="Ver los 14 estilos de texto">
+                            {DS.textStyles.map((s) => (
+                                <div key={s.name} className="grid grid-cols-1 md:grid-cols-[150px_1fr_160px] gap-1 md:gap-6 items-baseline py-4 border-b border-neutral-900 last:border-0">
+                                    <span className="self-start text-sm text-neutral-300 leading-tight">{TEXT_ES[s.name] ?? s.name}<code className="block mt-1 text-[10px] text-neutral-500 bg-transparent p-0">{s.name}</code></span>
+                                    <span className="text-neutral-100 min-w-0 break-words" style={{
+                                        fontFamily: s.name === 'pin' ? 'ui-monospace, monospace' : LEXEND, fontWeight: s.fontWeight,
+                                        fontSize: `min(${s.fontSize}, 11vw)`, lineHeight: s.lineHeight, letterSpacing: s.letterSpacing,
+                                        textTransform: 'textCase' in s ? 'uppercase' : undefined,
+                                    }}>{TYPE_SAMPLES[s.name] || s.name}</span>
+                                    <span className="text-xs text-neutral-500">{parseFloat(s.fontSize)} px, peso {s.fontWeight}</span>
+                                </div>
+                            ))}
+                        </More>
                     </div>
 
                     {/* Espaciado, radios y elevación */}
@@ -410,23 +574,6 @@ export default function PeditulavadoDesignSystem() {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                {/* ---------- 2. Componentes ---------- */}
-                <div className="border-t border-neutral-900 pt-16 md:pt-24 mb-24 md:mb-32">
-                    <SectionHead step="2" title="Componentes">
-                        <p>Los componentes reales de la app armados solo con tokens. Cada uno con sus variantes, sus estados y una regla corta de cuándo usarlo y cuándo no. Debajo del título, el archivo de la app donde vive, y al lado, un celular que muestra dónde aparece y cómo queda.</p>
-                    </SectionHead>
-                    <div className="ds-part" dangerouslySetInnerHTML={{ __html: componentsHtml }} />
-                </div>
-
-                {/* ---------- 3. Pantallas ---------- */}
-                <div className="border-t border-neutral-900 pt-16 md:pt-24">
-                    <SectionHead step="3" title="Pantallas">
-                        <p>A la izquierda, una captura de la app tal como está hoy. A la derecha, la misma pantalla armada solo con los componentes y tokens del sistema.</p>
-                        <p>Las diferencias son lo que el sistema ordena: textos todos en español y con el mismo criterio de mayúsculas, tamaños de letra que no bajan de 10 px, los mismos radios y colores con contraste AA. Los nombres y las fotos de lavadores reales están difuminados.</p>
-                    </SectionHead>
-                    <div className="ds-part" dangerouslySetInnerHTML={{ __html: screensHtml }} />
                 </div>
             </div>
 
