@@ -199,7 +199,7 @@ export default function PeditulavadoDesignSystem() {
                             Colores, tipografía, espaciado y componentes, cada uno con su regla de uso, para diseñar en Figma y construir en código con el mismo criterio. Todo sale de la interfaz real de cliente, lavador y landing.
                         </p>
                         <p className="text-sm text-neutral-500 font-light leading-relaxed">
-                            73 colores base, 53 tokens con modo claro y oscuro, 14 estilos de texto y 16 componentes documentados, con contraste AA verificado.
+                            73 colores base, 53 tokens con modo claro y oscuro, 14 estilos de texto y 20 componentes documentados, con contraste AA verificado.
                         </p>
                     </div>
                     <div className="lg:col-span-7">
@@ -371,7 +371,7 @@ export default function PeditulavadoDesignSystem() {
                 {/* ---------- 2. Componentes ---------- */}
                 <div className="border-t border-neutral-900 pt-16 md:pt-24 mb-24 md:mb-32">
                     <SectionHead step="2" title="Componentes">
-                        <p>Los componentes reales de la app armados solo con tokens. Cada uno con sus variantes, sus estados y una regla corta de cuándo usarlo y cuándo no. Debajo del título, el archivo de la app donde vive.</p>
+                        <p>Los componentes reales de la app armados solo con tokens. Cada uno con sus variantes, sus estados y una regla corta de cuándo usarlo y cuándo no. Debajo del título, el archivo de la app donde vive, y al lado, un celular que muestra dónde aparece y cómo queda.</p>
                     </SectionHead>
                     <div className="ds-part" dangerouslySetInnerHTML={{ __html: componentsHtml }} />
                 </div>

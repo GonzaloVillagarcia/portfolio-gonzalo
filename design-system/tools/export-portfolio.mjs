@@ -123,7 +123,7 @@ const OVERRIDES = `
 .ds-embed .wcard .info { min-width: 0; }
 @media (max-width: 480px) { .ds-embed .seg a { padding: 10px 14px; } .ds-embed .stage { padding: 16px; } }
 /* Las muestras de la app usan el color de texto de sus tokens, no el del portfolio */
-.ds-embed .stage, .ds-embed .screen, .ds-embed .desk, .ds-embed .phone { color: var(--text-primary); font-family: var(--font); }
+.ds-embed .stage, .ds-embed .screen, .ds-embed .desk, .ds-embed .phone, .ds-embed .mock, .ds-embed .chatcard, .ds-embed .rv-card { color: var(--text-primary); font-family: var(--font); }
 .ds-embed[data-mode="claro"] [data-mode-row="oscuro"], .ds-embed[data-mode="oscuro"] [data-mode-row="claro"] { display: none; }
 .ds-embed[data-mode="claro"] tr[data-mode="oscuro"], .ds-embed[data-mode="oscuro"] tr[data-mode="claro"] { display: none; }
 `;
