@@ -47,28 +47,28 @@
             <div class="state"><span class="lbl">Primario</span><button class="btn md primary">Pedir lavado</button></div>
             <div class="state"><span class="lbl">Lavador</span><button class="btn md washer">Ser lavador</button></div>
             <div class="state"><span class="lbl">Secundario</span><button class="btn md secondary">Buscar otro</button></div>
-            <div class="state"><span class="lbl">Ghost</span><button class="btn md ghost">Volver</button></div>
+            <div class="state"><span class="lbl">Solo texto</span><button class="btn md ghost">Volver</button></div>
             <div class="state"><span class="lbl">Destructivo</span><button class="btn md danger">Cancelar</button></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:16px">
-            <div class="state"><span class="lbl">Default</span><button class="btn md primary">Pedir lavado</button></div>
-            <div class="state"><span class="lbl">Hover</span><button class="btn md primary is-hover">Pedir lavado</button></div>
-            <div class="state"><span class="lbl">Pressed</span><button class="btn md primary is-pressed">Pedir lavado</button></div>
-            <div class="state"><span class="lbl">Focus</span><button class="btn md primary is-focus">Pedir lavado</button></div>
-            <div class="state"><span class="lbl">Disabled</span><button class="btn md primary is-disabled" disabled>Pedir lavado</button></div>
-            <div class="state"><span class="lbl">Loading</span><button class="btn md primary"><svg class="ic spin"><use href="#i-loader"/></svg>Preparando pago…</button></div>
+            <div class="state"><span class="lbl">Normal</span><button class="btn md primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Mouse encima</span><button class="btn md primary is-hover">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Presionado</span><button class="btn md primary is-pressed">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Con foco</span><button class="btn md primary is-focus">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Deshabilitado</span><button class="btn md primary is-disabled" disabled>Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Cargando</span><button class="btn md primary"><svg class="ic spin"><use href="#i-loader"/></svg>Preparando pago…</button></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
-            <div class="state"><span class="lbl">sm · 36</span><button class="btn sm primary">Iniciar sesión</button></div>
-            <div class="state"><span class="lbl">md · 48</span><button class="btn md primary">Pedir lavado</button></div>
-            <div class="state"><span class="lbl">lg · 56</span><button class="btn lg primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Chico · 36</span><button class="btn sm primary">Iniciar sesión</button></div>
+            <div class="state"><span class="lbl">Mediano · 48</span><button class="btn md primary">Pedir lavado</button></div>
+            <div class="state"><span class="lbl">Grande · 56</span><button class="btn lg primary">Pedir lavado</button></div>
           </div>
         </div>
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody "><div class="wcard"><div class="av"><div class="img" style="background:#0f766e">T</div><span class="dot"></span></div><div class="info"><div class="name"><b>Tomás R.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 7.3 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>5.0</b></span><span class="level gold">🥇 Oro</span></div></div><p class="msub">Elegí el servicio</p><div class="svc"><span>Lavado básico</span><span>$11.000</span></div><div class="svc sel"><span>Lavado completo</span><span>$25.000</span></div><div class="grow"></div><button class="btn lg primary hl" style="width:100%">Pedir lavado</button></div></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Primario</b>: una sola acción principal por pantalla (pedir, pagar, aceptar).</li><li><b>Lavador</b>: solo para sumarse como lavador o en el modo lavador.</li><li>En mobile, altura mínima de 44 px (md o lg).</li></ul></div>
-        <div class="no"><h4>Cuándo no</h4><ul><li>No pongas dos primarios juntos: el segundo va como secundario.</li><li>No uses el rosa de lavador para acciones del cliente.</li><li><b>sm</b> no va como acción principal en mobile.</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Primario</b>: una sola acción principal por pantalla (pedir, pagar, aceptar).</li><li><b>Lavador</b>: solo para sumarse como lavador o en el modo lavador.</li><li>En celular, altura mínima de 44 px (mediano o grande).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No pongas dos primarios juntos: el segundo va como secundario.</li><li>No uses el rosa de lavador para acciones del cliente.</li><li>El <b>chico</b> no va como acción principal en celular.</li></ul></div>
         <p class="tokens">Tokens: <code>brand</code>, <code>brand-hover</code>, <code>washer</code>, <code>text-on-brand</code>, <code>radius-full</code>, <code>glow-brand</code>, estilo <code>cta</code>.</p>
       </div>
     </div>
@@ -76,7 +76,7 @@
     <!-- Header -->
     <div class="comp">
       <div>
-        <h3>Header oscuro</h3>
+        <h3>Encabezado oscuro</h3>
         <p class="src">RootLayout.tsx · NavbarActions.tsx</p>
         <div class="stage" style="flex-direction:column;align-items:stretch">
           <div class="state" style="align-items:stretch"><span class="lbl">Invitado</span>
@@ -87,7 +87,7 @@
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header hl in"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><span class="avatar-btn">L</span></div></div><div class="mbody map nav"><div class="loc" style="padding:14px 16px;gap:12px"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado</div><div class="value" style="font-size:15px">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div><div class="on-map" style="left:210px;top:150px;border-radius:12px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div><div class="on-map" style="left:60px;top:250px;border-radius:12px"><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div><div class="on-map" style="left:230px;top:330px;border-radius:12px"><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div><div class="on-map" style="left:130px;top:400px;border-radius:12px"><div class="mpin client"><div class="ring"><div class="face">L</div></div><span class="label">Vos</span></div></div></div><nav class="bnav"><a href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li>Arriba de todas las pantallas de la app, cliente y lavador.</li><li>Es oscuro en los dos modos: es el "chrome" de la marca.</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Arriba de todas las pantallas de la app, cliente y lavador.</li><li>Es oscuro en los dos modos: es el fondo de marca.</li></ul></div>
         <div class="no"><h4>Cuándo no</h4><ul><li>No sumes más acciones: logo, Instagram y sesión.</li></ul></div>
         <p class="tokens">Tokens: <code>surface-chrome</code>, <code>text-on-chrome</code>, <code>washer-subtle</code>.</p>
       </div>
@@ -101,14 +101,14 @@
         <div class="stage" style="flex-direction:column">
           <div class="state"><span class="lbl">Lavadores activo</span>
             <nav class="seg"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
-          <div class="state"><span class="lbl">Hover en Historial</span>
+          <div class="state"><span class="lbl">Mouse sobre Historial</span>
             <nav class="seg"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a class="hover" href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div>
         </div>
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock wide"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><button class="btn sm primary">Iniciar sesión</button></div></div><div class="mbody "><nav class="seg hl" style="align-self:center"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav><div class="mapbox"><div class="loc" style="padding:14px 16px;gap:12px"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado</div><div class="value" style="font-size:15px">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div><div class="on-map" style="left:470px;top:140px;border-radius:12px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div><div class="on-map" style="left:360px;top:250px;border-radius:12px"><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div><div class="on-map" style="left:600px;top:260px;border-radius:12px"><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div></div></div></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para las secciones principales en desktop. En mobile, el mismo rol lo cumple la barra inferior.</li></ul></div>
-        <div class="no"><h4>Cuándo no</h4><ul><li>No la uses para filtrar contenido: para eso están los chips.</li><li>Máximo 4 ítems.</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para las secciones principales en computadora. En celular, el mismo rol lo cumple la barra inferior.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No la uses para filtrar contenido: para eso están los filtros.</li><li>Máximo 4 ítems.</li></ul></div>
         <p class="tokens">Tokens: <code>surface-muted</code>, <code>surface</code>, <code>brand-text</code>, <code>radius-full</code>.</p>
       </div>
     </div>
@@ -137,24 +137,24 @@
     <!-- Bienvenida + tabs + filtros -->
     <div class="comp">
       <div>
-        <h3>Bienvenida, tabs y filtros</h3>
+        <h3>Bienvenida, pestañas y filtros</h3>
         <p class="src">client/Dashboard.tsx</p>
         <div class="stage" style="flex-direction:column;max-width:460px">
-          <div class="state" style="width:100%"><span class="lbl">Card de bienvenida</span>
+          <div class="state" style="width:100%"><span class="lbl">Tarjeta de bienvenida</span>
             <div class="welcome"><span class="avatar">L</span><div><h5>¡Hola, <span>Lucía!</span></h5><p>¿Qué lavamos hoy? ✨</p></div></div></div>
-          <div class="state" style="width:100%"><span class="lbl">Tabs</span>
+          <div class="state" style="width:100%"><span class="lbl">Pestañas</span>
             <div class="tabs"><button class="active"><svg class="ic"><use href="#i-car"/></svg>Lavadores</button><button><svg class="ic"><use href="#i-cal"/></svg>Turnos (2)</button></div></div>
           <div class="state" style="width:100%"><span class="lbl">Título de sección</span>
             <div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca ahora</span></div></div>
-          <div class="state"><span class="lbl">Chips de filtro (Todos activo · hover en Pulidos)</span>
+          <div class="state"><span class="lbl">Filtros (Todos activo · mouse sobre Pulidos)</span>
             <div class="chips"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip hover">Pulidos</button></div>
             <span class="note"><svg class="ic" style="width:14px;height:14px"><use href="#i-leaf"/></svg>Eco lavado — muy pronto</span></div>
         </div>
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody nav"><div class="welcome"><span class="avatar">L</span><div><h5>¡Hola, <span>Lucía!</span></h5><p>¿Qué lavamos hoy? ✨</p></div></div><div class="tabs hl"><button class="active"><svg class="ic"><use href="#i-car"/></svg>Lavadores</button><button><svg class="ic"><use href="#i-cal"/></svg>Turnos (2)</button></div><div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca</span></div><div class="chips hl" style="align-self:flex-start"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip">Pulidos</button></div><div class="wcard"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div><div class="wcard"><div class="av"><div class="img" style="background:#0f766e">T</div><span class="dot"></span></div><div class="info"><div class="name"><b>Tomás R.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 7.3 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>5.0</b></span><span class="level gold">🥇 Oro</span></div></div></div><nav class="bnav"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab idle"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Tabs</b>: alternar dos vistas del mismo contexto (lista y turnos).</li><li><b>Chips</b>: filtrar la lista. Siempre hay uno activo ("Todos").</li><li>La nota "muy pronto" va en texto secundario, sin acción.</li></ul></div>
-        <div class="no"><h4>Cuándo no</h4><ul><li>Los chips no navegan a otra pantalla.</li><li>No muestres un chip deshabilitado para lo que viene: usá la nota.</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Pestañas</b>: alternar dos vistas del mismo contexto (lista y turnos).</li><li><b>Filtros</b>: filtrar la lista. Siempre hay uno activo ("Todos").</li><li>La nota "muy pronto" va en texto secundario, sin acción.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>Los filtros no navegan a otra pantalla.</li><li>No muestres un filtro deshabilitado para lo que viene: usá la nota.</li></ul></div>
         <p class="tokens">Tokens: <code>surface-muted</code>, <code>text-on-muted</code>, <code>brand-text</code>, <code>success</code>, estilos <code>title-lg</code>, <code>overline</code>.</p>
       </div>
     </div>
@@ -162,7 +162,7 @@
     <!-- Banner suscripción -->
     <div class="comp">
       <div>
-        <h3>Banner "¡Suscribite y ahorrá!"</h3>
+        <h3>Aviso "¡Suscribite y ahorrá!"</h3>
         <p class="src">client/SubscribeBanner.tsx</p>
         <div class="stage" style="flex-direction:column">
           <div class="state" style="width:100%"><span class="lbl">En la lista</span>
@@ -182,29 +182,29 @@
     <!-- Card de lavador -->
     <div class="comp">
       <div>
-        <h3>Card de lavador</h3>
+        <h3>Tarjeta de lavador</h3>
         <p class="src">client/Dashboard.tsx · ui/WasherBadge.tsx · ui/CertifiedInfo.tsx</p>
         <div class="stage" style="flex-direction:column">
-          <div class="state"><span class="lbl">Online · cerca · nuevo</span>
+          <div class="state"><span class="lbl">Conectado · cerca · nuevo</span>
             <div class="wcard"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg><span class="badge near"><svg class="ic"><use href="#i-nav"/></svg>Cerca de tu zona</span></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div></div>
-          <div class="state"><span class="lbl">Online · con calificación · nivel oro</span>
+          <div class="state"><span class="lbl">Conectado · con calificación · nivel oro</span>
             <div class="wcard"><div class="av"><div class="img" style="background:#0f766e">T</div><span class="dot"></span></div><div class="info"><div class="name"><b>Tomás R.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 7.3 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>5.0</b></span><span class="level gold">🥇 Oro</span></div></div></div>
           <div class="state"><span class="lbl">Ocupado · con promo</span>
             <div class="wcard"><div class="av"><span class="badge promo" style="position:absolute;top:-8px;left:-8px;z-index:2">-20%</span><div class="img" style="background:#9333ea">S</div><span class="busy-ic"><svg class="ic"><use href="#i-clock"/></svg></span></div><div class="info"><div class="name"><b>Sofía P.</b><span class="badge busy">Ocupado</span><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 2.1 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.8</b></span></div></div></div>
-          <div class="state"><span class="lbl">Offline · solo reservas a futuro</span>
+          <div class="state"><span class="lbl">Desconectado · solo reservas a futuro</span>
             <div class="wcard offline"><div class="av"><div class="img" style="background:#64748b">A</div></div><div class="info"><div class="name"><b>Andrés L.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 1.3 km</div></div><div class="side"><div class="off"><b>Offline</b><span>Solo reservas a futuro</span></div></div></div></div>
-          <div class="state"><span class="lbl">Certificado · online</span>
+          <div class="state"><span class="lbl">Certificado · conectado</span>
             <div class="wcard certified"><div class="ribbon">Certificado</div><div class="av"><div class="img" style="background:#0d9488">J</div><span class="dot"></span></div><div class="info"><div class="name"><b>Julián V.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 2.4 km</div><div class="course"><svg class="ic"><use href="#i-award"/></svg>Hizo el curso de lavado<svg class="ic" style="opacity:.7"><use href="#i-info"/></svg></div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div></div>
-          <div class="state"><span class="lbl">Certificado · offline</span>
+          <div class="state"><span class="lbl">Certificado · desconectado</span>
             <div class="wcard certified offline"><div class="ribbon">Certificado</div><div class="av"><div class="img" style="background:#ea580c">E</div></div><div class="info"><div class="name"><b>Emilia M.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 3.6 km</div><div class="course"><svg class="ic"><use href="#i-award"/></svg>Hizo el curso de lavado</div></div><div class="side"><div class="off"><b>Offline</b><span>Solo reservas a futuro</span></div></div></div></div>
-          <div class="state"><span class="lbl">Hover</span>
+          <div class="state"><span class="lbl">Mouse encima</span>
             <div class="wcard hover"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.9</b></span></div></div></div>
         </div>
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody nav"><div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca</span></div><div class="chips" style="align-self:flex-start"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip">Pulidos</button></div><div class="wcard"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div><div class="wcard hl"><div class="av"><div class="img" style="background:#0f766e">T</div><span class="dot"></span></div><div class="info"><div class="name"><b>Tomás R.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 7.3 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>5.0</b></span><span class="level gold">🥇 Oro</span></div></div><div class="wcard certified"><div class="ribbon">Certificado</div><div class="av"><div class="img" style="background:#0d9488">J</div><span class="dot"></span></div><div class="info"><div class="name"><b>Julián V.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 2.4 km</div><div class="course"><svg class="ic"><use href="#i-award"/></svg>Hizo el curso de lavado</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span></div></div><div class="wcard offline"><div class="av"><div class="img" style="background:#64748b">A</div></div><div class="info"><div class="name"><b>Andrés L.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 1.3 km</div></div><div class="side"><div class="off"><b>Offline</b><span>Solo reservas a futuro</span></div></div></div></div><nav class="bnav"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab idle"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li>En la lista de lavadores, una por lavador.</li><li>El punto verde solo para online. Ocupado usa el reloj ámbar.</li><li>Offline sigue legible: solo se atenúa el avatar.</li><li>"Certificado" (hizo el curso) es distinto de "verificado" (el escudo azul, que tienen todos).</li></ul></div>
-        <div class="no"><h4>Cuándo no</h4><ul><li>No combines la cinta violeta con el marco de medalla: la certificación manda.</li><li>No uses el violeta para otra cosa que la certificación.</li><li>Rating y "Offline" nunca juntos.</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>En la lista de lavadores, una por lavador.</li><li>El punto verde solo para conectado. Ocupado usa el reloj ámbar.</li><li>Desconectado sigue legible: solo se atenúa la foto.</li><li>"Certificado" (hizo el curso) es distinto de "verificado" (el escudo azul, que tienen todos).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No combines la cinta violeta con el marco de medalla: la certificación manda.</li><li>No uses el violeta para otra cosa que la certificación.</li><li>Calificación y "Offline" nunca juntos.</li></ul></div>
         <p class="tokens">Tokens: <code>surface</code>, <code>success</code>, <code>warning</code>, <code>certified-*</code>, <code>rating-*</code>, <code>promo</code>, <code>radius-lg</code>, <code>glow-certified</code>.</p>
       </div>
     </div>
@@ -212,7 +212,7 @@
     <!-- Badges -->
     <div class="comp">
       <div>
-        <h3>Badges</h3>
+        <h3>Etiquetas</h3>
         <p class="src">client/Dashboard.tsx · ui/WasherBadge.tsx</p>
         <div class="stage">
           <div class="state"><span class="lbl">Cerca</span><span class="badge near"><svg class="ic"><use href="#i-nav"/></svg>Cerca de tu zona</span></div>
@@ -220,8 +220,8 @@
           <div class="state"><span class="lbl">Suscripción</span><span class="badge sub-b"><svg class="ic"><use href="#i-drops"/></svg>Suscripción</span></div>
           <div class="state"><span class="lbl">Nuevo</span><span class="badge new">Nuevo</span></div>
           <div class="state"><span class="lbl">Promo</span><span class="badge promo">-20%</span></div>
-          <div class="state"><span class="lbl">Rating</span><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.9</b></span></div>
-          <div class="state"><span class="lbl">Sin rating</span><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span></div>
+          <div class="state"><span class="lbl">Calificación</span><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>4.9</b></span></div>
+          <div class="state"><span class="lbl">Sin calificación</span><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span></div>
           <div class="state"><span class="lbl">Nivel</span><div style="display:flex;gap:6px"><span class="level gold">🥇 Oro</span><span class="level silver">🥈 Plata</span><span class="level bronze">🥉 Bronce</span></div></div>
         </div>
       </div>
@@ -236,13 +236,13 @@
     <!-- Pins -->
     <div class="comp">
       <div>
-        <h3>Pins del mapa</h3>
+        <h3>Marcadores del mapa</h3>
         <p class="src">shared/MapView.tsx</p>
         <div class="stage map" style="gap:32px">
-          <div class="state"><span class="lbl">Online</span><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div>
+          <div class="state"><span class="lbl">Conectado</span><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div>
           <div class="state"><span class="lbl">Ocupado</span><div class="mpin busy"><div class="ring"><div class="face" style="background:#9333ea">S</div><span class="sdot"></span></div><span class="label" style="background:rgba(255,255,255,.92);color:var(--p-neutral-800)"><i style="width:6px;height:6px;border-radius:50%;background:var(--p-indigo-700)"></i>Lavando</span></div></div>
           <div class="state"><span class="lbl">Certificado</span><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div>
-          <div class="state"><span class="lbl">Offline</span><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div>
+          <div class="state"><span class="lbl">Desconectado</span><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div>
           <div class="state"><span class="lbl">Cliente</span><div class="mpin client"><div class="ring"><div class="face">L</div></div><span class="label">Vos</span></div></div>
         </div>
       </div>
@@ -257,7 +257,7 @@
     <!-- Barra inferior -->
     <div class="comp">
       <div>
-        <h3>Barra inferior (mobile)</h3>
+        <h3>Barra inferior (celular)</h3>
         <p class="src">layouts/ClientLayout.tsx</p>
         <div class="stage" style="flex-direction:column;align-items:center">
           <div class="state" style="align-items:center"><span class="lbl">Mapa activo</span>
@@ -268,7 +268,7 @@
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody map nav"><div class="loc" style="padding:14px 16px;gap:12px"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado</div><div class="value" style="font-size:15px">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div><div class="on-map" style="left:210px;top:150px;border-radius:12px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div><div class="on-map" style="left:60px;top:250px;border-radius:12px"><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div><div class="on-map" style="left:230px;top:330px;border-radius:12px"><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div><div class="on-map" style="left:130px;top:400px;border-radius:12px"><div class="mpin client"><div class="ring"><div class="face">L</div></div><span class="label">Vos</span></div></div></div><nav class="bnav hl in"><a href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li>Navegación principal en mobile. El botón central (mapa) es la vista de inicio.</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Navegación principal en celular. El botón central (mapa) es la vista de inicio.</li></ul></div>
         <div class="no"><h4>Cuándo no</h4><ul><li>No más de 5 destinos.</li><li>Las etiquetas no bajan de 10 px.</li></ul></div>
         <p class="tokens">Tokens: <code>surface-chrome</code>, <code>brand</code>, <code>brand-text-on-chrome</code>, <code>text-on-chrome-muted</code>, <code>radius-xl</code>.</p>
       </div>
@@ -277,7 +277,7 @@
     <!-- Input -->
     <div class="comp">
       <div>
-        <h3>Input</h3>
+        <h3>Campo de texto</h3>
         <p class="src">ui/input.tsx</p>
         <div class="stage">
           <div class="field"><label>Patente</label><div class="input placeholder">AB 123 CD</div><span class="help">Default</span></div>
@@ -288,8 +288,8 @@
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody "><div class="mhead"><span class="ico" style="background:var(--brand-subtle);color:var(--brand-text)"><svg class="ic"><use href="#i-car"/></svg></span><h5>Mi perfil</h5></div></div><div class="shade" style="justify-content:flex-end;padding:0"><div class="modal" style="max-width:none;border-radius:28px 28px 0 0;padding:24px 20px 28px"><h5>¿Cuál es tu vehículo?</h5><p>El lavador usará estos datos para identificar tu auto.</p><div class="field" style="width:100%"><label>Modelo</label><div class="input">Gol Trend</div></div><div class="field hl" style="width:100%"><label>Patente</label><div class="input focus">AB 123</div><span class="help">ABC 123 · AA 123 BB</span></div><button class="btn md primary" style="width:100%">Guardar vehículo</button></div></div></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li>Siempre con label visible. El error dice qué hacer, no solo qué está mal.</li><li>Texto de 16 px en mobile para que iOS no haga zoom.</li></ul></div>
-        <div class="no"><h4>Cuándo no</h4><ul><li>No uses el placeholder como label.</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Siempre con etiqueta visible. El error dice qué hacer, no solo qué está mal.</li><li>Texto de 16 px en celular para que el iPhone no agrande la pantalla.</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses el texto de ejemplo como etiqueta.</li></ul></div>
         <p class="tokens">Tokens: <code>border-strong</code>, <code>focus</code>, <code>danger-text</code>, <code>danger-subtle</code>, <code>radius-md</code>.</p>
       </div>
     </div>
@@ -302,14 +302,14 @@
         <div class="stage">
           <div class="state"><span class="lbl">Cliente ve su PIN</span><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
           <div class="state"><span class="lbl">Lavador · vacío</span><div class="otp"><span></span><span></span><span></span><span></span></div></div>
-          <div class="state"><span class="lbl">Lavador · focus</span><div class="otp focus"><span></span><span></span><span></span><span></span></div></div>
+          <div class="state"><span class="lbl">Lavador · con foco</span><div class="otp focus"><span></span><span></span><span></span><span></span></div></div>
           <div class="state"><span class="lbl">Lavador · error</span><div class="otp error"><span>4</span><span>8</span><span>1</span><span>2</span></div></div>
           <div class="state"><span class="lbl">Lavador · correcto</span><div class="otp ok"><span>4</span><span>8</span><span>2</span><span>1</span></div></div>
         </div>
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody nav"><div class="card order" style="border-top:6px solid var(--brand)"><div class="order-head"><div><h5 style="font-size:20px">Lavador en camino</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box hl"><small>PIN seguridad</small><b>4821</b></div></div><div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div><div class="washer-row"><span class="avatar">T</span><div><small>Tu lavador</small><b>Tomás</b></div><span class="icon-btn"><svg class="ic"><use href="#i-chat"/></svg></span></div></div></div><nav class="bnav"><a href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a class="active" href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab idle"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para confirmar que llegó la persona correcta: el cliente lo dicta y el lavador lo ingresa.</li><li>Si el PIN es incorrecto, la fila tiembla (con <code>prefers-reduced-motion</code> no).</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li>Para confirmar que llegó la persona correcta: el cliente lo dicta y el lavador lo ingresa.</li><li>Si el PIN es incorrecto, la fila tiembla (no tiembla si la persona pidió reducir el movimiento en su teléfono).</li></ul></div>
         <div class="no"><h4>Cuándo no</h4><ul><li>No lo uses para otras verificaciones (login, pagos).</li></ul></div>
         <p class="tokens">Tokens: <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, estilo <code>pin</code>, <code>radius-sm</code>.</p>
       </div>
@@ -321,9 +321,9 @@
         <h3>Estados del pedido</h3>
         <p class="src">shared/BookingSteps.tsx · layouts/ClientLayout.tsx</p>
         <div class="stage" style="flex-direction:column">
-          <div class="state" style="width:100%"><span class="lbl">Stepper · paso actual: PIN</span>
+          <div class="state" style="width:100%"><span class="lbl">Pasos · paso actual: PIN</span>
             <div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div></div>
-          <div class="state" style="width:100%"><span class="lbl">Banner de pedido en curso (4 tonos)</span>
+          <div class="state" style="width:100%"><span class="lbl">Barra de pedido en curso (4 tonos)</span>
             <div class="sbanner accepted">En camino <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
             <div class="sbanner waiting">Esperando pago <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
             <div class="sbanner progress">Lavando <small>Ver pedido <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></small></div>
@@ -341,7 +341,7 @@
     <!-- Pedido + pago -->
     <div class="comp">
       <div>
-        <h3>Card de pedido y pago con Mercado Pago</h3>
+        <h3>Tarjeta de pedido y pago con Mercado Pago</h3>
         <p class="src">client/ActiveBookingCard.tsx</p>
         <div class="stage">
           <div class="card order">
@@ -368,20 +368,20 @@
     <!-- Toasts y modal -->
     <div class="comp">
       <div>
-        <h3>Toast y modal</h3>
+        <h3>Aviso emergente y ventana</h3>
         <p class="src">ui/sonner.tsx (richColors) · ui/dialog.tsx · shared/GuestGateDialog.tsx</p>
         <div class="stage">
-          <div class="state"><span class="lbl">Toast · normal</span><div class="toast"><svg class="ic"><use href="#i-info"/></svg><div>Link copiado</div></div></div>
-          <div class="state"><span class="lbl">Toast · éxito</span><div class="toast success"><svg class="ic"><use href="#i-check-circle"/></svg><div>¡Trabajo aceptado!</div></div></div>
-          <div class="state"><span class="lbl">Toast · error</span><div class="toast error"><svg class="ic"><use href="#i-alert"/></svg><div>No se pudo tomar el pedido.<small>Revisá tu conexión e intentá de nuevo.</small></div></div></div>
-          <div class="state" style="width:100%"><span class="lbl">Modal · invitado</span>
+          <div class="state"><span class="lbl">Aviso · normal</span><div class="toast"><svg class="ic"><use href="#i-info"/></svg><div>Link copiado</div></div></div>
+          <div class="state"><span class="lbl">Aviso · éxito</span><div class="toast success"><svg class="ic"><use href="#i-check-circle"/></svg><div>¡Trabajo aceptado!</div></div></div>
+          <div class="state"><span class="lbl">Aviso · error</span><div class="toast error"><svg class="ic"><use href="#i-alert"/></svg><div>No se pudo tomar el pedido.<small>Revisá tu conexión e intentá de nuevo.</small></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Ventana · invitado</span>
             <div class="modal-wrap"><div class="modal dark"><span class="kick"><svg class="ic" style="width:14px;height:14px"><use href="#i-user"/></svg>Creá tu cuenta</span><h5>Necesitás una cuenta</h5><p>Creá tu cuenta gratis para ver el historial de tus lavados.</p><button class="btn md primary" style="width:100%;border-radius:var(--radius-lg);text-transform:none;letter-spacing:0;font-weight:700">Crear cuenta / Iniciar sesión</button><button class="btn sm ghost" style="color:var(--p-neutral-400)">Ahora no</button></div></div></div>
         </div>
       </div>
       <div class="rules">
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody nav"><div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca</span></div><div class="chips" style="align-self:flex-start"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip">Pulidos</button></div><div class="wcard"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div><div class="wcard"><div class="av"><div class="img" style="background:#0f766e">T</div><span class="dot"></span></div><div class="info"><div class="name"><b>Tomás R.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 7.3 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>5.0</b></span><span class="level gold">🥇 Oro</span></div></div></div><nav class="bnav"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab idle"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav><div class="shade"><div class="toast success" style="position:absolute;top:16px;left:16px;right:16px;width:auto"><svg class="ic"><use href="#i-check-circle"/></svg><div>Link copiado</div></div><div class="modal dark hl"><span class="kick"><svg class="ic" style="width:14px;height:14px"><use href="#i-user"/></svg>Creá tu cuenta</span><h5>Necesitás una cuenta</h5><p>Creá tu cuenta gratis para ver el historial de tus lavados.</p><button class="btn md primary" style="width:100%;border-radius:var(--radius-lg);text-transform:none;letter-spacing:0;font-weight:700">Crear cuenta / Iniciar sesión</button><button class="btn sm ghost" style="color:var(--p-neutral-400)">Ahora no</button></div></div></div></div>
-        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Toast</b>: confirmar algo que ya pasó, sin pedir acción.</li><li><b>Modal</b>: una decisión que bloquea el flujo (por ejemplo, crear cuenta para seguir).</li></ul></div>
-        <div class="no"><h4>Cuándo no</h4><ul><li>No uses modal para avisos informativos.</li><li>Un solo sistema de toast (sonner).</li></ul></div>
+        <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Aviso emergente</b>: confirmar algo que ya pasó, sin pedir acción.</li><li><b>Ventana</b>: una decisión que bloquea el flujo (por ejemplo, crear cuenta para seguir).</li></ul></div>
+        <div class="no"><h4>Cuándo no</h4><ul><li>No uses una ventana para avisos informativos.</li><li>Un solo sistema de avisos en toda la app.</li></ul></div>
         <p class="tokens">Tokens: <code>surface</code>, <code>success-*</code>, <code>danger-*</code>, <code>overlay</code>, <code>radius-xl</code>, <code>shadow md / lg</code>.</p>
       </div>
     </div>
@@ -428,7 +428,7 @@
         </div>
       </div>
       <div class="rules">
-        <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody "><div class="mhead"><span class="ico" style="background:var(--rating-subtle);color:var(--rating)"><svg class="ic fill"><use href="#i-star"/></svg></span><h5>Mis reseñas</h5></div><p class="msub" style="margin-top:-8px">Lo que los lavadores opinan de vos</p><div class="rv-score" style="width:100%"><small>Puntaje global</small><b>4.8<span>/ 5</span></b><div class="stars"><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill off"><use href="#i-star"/></svg></div><small>12 reseñas</small></div><p class="msub">Opiniones recientes</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div class="rv-card hl" style="width:auto"><div class="top"><div class="who"><span class="av">T</span><div><h6>Tomás R.</h6><span class="when">hace 2 días</span></div></div><span class="score"><svg class="ic fill"><use href="#i-star"/></svg>5</span></div><p>"Muy puntual y el auto estaba listo. ¡Gracias!"</p></div><div class="rv-card" style="width:auto"><div class="top"><div class="who"><span class="av">M</span><div><h6>Martín G.</h6><span class="when">hace 1 semana</span></div></div><span class="score"><svg class="ic fill"><use href="#i-star"/></svg>4</span></div><p>"Sin comentario."</p></div></div></div></div></div><div class="yes"><h4>Cuándo sí</h4><ul><li>El puntaje global va arriba y las reseñas debajo, de a dos columnas en mobile.</li><li>El número de la reseña va en el chip ámbar de calificación.</li></ul></div><div class="no"><h4>Cuándo no</h4><ul><li>No muestres reseñas vacías: si no hay comentario, se aclara.</li></ul></div><p class="tokens">Tokens: <code>rating-*</code>, <code>surface</code>, <code>border</code>, <code>radius-md</code>, estilo <code>overline</code>.</p></div>
+        <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody "><div class="mhead"><span class="ico" style="background:var(--rating-subtle);color:var(--rating)"><svg class="ic fill"><use href="#i-star"/></svg></span><h5>Mis reseñas</h5></div><p class="msub" style="margin-top:-8px">Lo que los lavadores opinan de vos</p><div class="rv-score" style="width:100%"><small>Puntaje global</small><b>4.8<span>/ 5</span></b><div class="stars"><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill"><use href="#i-star"/></svg><svg class="ic fill off"><use href="#i-star"/></svg></div><small>12 reseñas</small></div><p class="msub">Opiniones recientes</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div class="rv-card hl" style="width:auto"><div class="top"><div class="who"><span class="av">T</span><div><h6>Tomás R.</h6><span class="when">hace 2 días</span></div></div><span class="score"><svg class="ic fill"><use href="#i-star"/></svg>5</span></div><p>"Muy puntual y el auto estaba listo. ¡Gracias!"</p></div><div class="rv-card" style="width:auto"><div class="top"><div class="who"><span class="av">M</span><div><h6>Martín G.</h6><span class="when">hace 1 semana</span></div></div><span class="score"><svg class="ic fill"><use href="#i-star"/></svg>4</span></div><p>"Sin comentario."</p></div></div></div></div></div><div class="yes"><h4>Cuándo sí</h4><ul><li>El puntaje global va arriba y las reseñas debajo, de a dos columnas en celular.</li><li>El número de la reseña va en la etiqueta ámbar de calificación.</li></ul></div><div class="no"><h4>Cuándo no</h4><ul><li>No muestres reseñas vacías: si no hay comentario, se aclara.</li></ul></div><p class="tokens">Tokens: <code>rating-*</code>, <code>surface</code>, <code>border</code>, <code>radius-md</code>, estilo <code>overline</code>.</p></div>
     </div>
 
     <div class="comp">
@@ -445,24 +445,24 @@
 
     <div class="comp">
       <div>
-        <h3>Estado online del lavador</h3>
+        <h3>Disponibilidad del lavador</h3>
         <p class="src">washer/WasherDashboard.tsx</p>
         <div class="stage map" style="flex-direction:column">
-          <div class="state" style="width:100%"><span class="lbl">Online</span><div class="wbar on"><div class="where"><small>tu ubicación</small><b>Barrio Jardín</b></div><div class="tg"><span class="sw"></span><b>On</b></div></div></div>
-          <div class="state" style="width:100%"><span class="lbl">Offline</span><div class="wbar"><div class="where"><small>tu ubicación</small><b>Barrio Jardín</b></div><div class="tg"><span class="sw"></span><b>Off</b></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Conectado</span><div class="wbar on"><div class="where"><small>tu ubicación</small><b>Barrio Jardín</b></div><div class="tg"><span class="sw"></span><b>On</b></div></div></div>
+          <div class="state" style="width:100%"><span class="lbl">Desconectado</span><div class="wbar"><div class="where"><small>tu ubicación</small><b>Barrio Jardín</b></div><div class="tg"><span class="sw"></span><b>Off</b></div></div></div>
         </div>
       </div>
       <div class="rules">
-        <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn" style="background:var(--washer)">T</span></div></div><div class="mbody map"><div class="wbar on hl"><div class="where"><small>tu ubicación</small><b>Barrio Jardín</b></div><div class="tg"><span class="sw"></span><b>On</b></div></div><div class="on-map" style="left:150px;top:330px;border-radius:12px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">T</div><span class="sdot"></span></div><span class="label">Vos</span></div></div></div></div></div><div class="yes"><h4>Cuándo sí</h4><ul><li>Arriba del mapa del lavador, junto a su ubicación: es lo primero que toca al empezar el día.</li><li>Usa el color del lavador.</li></ul></div><div class="no"><h4>Cuándo no</h4><ul><li>El cliente nunca lo ve.</li><li>Si le faltan datos para ponerse online, no se prende: se abre la lista de lo que falta.</li></ul></div><p class="tokens">Tokens: <code>surface-chrome</code>, <code>washer</code>, <code>text-on-chrome</code>, <code>radius-full</code>.</p></div>
+        <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="/design-system/logo2.png" alt="" /><div class="right"><span class="avatar-btn" style="background:var(--washer)">T</span></div></div><div class="mbody map"><div class="wbar on hl"><div class="where"><small>tu ubicación</small><b>Barrio Jardín</b></div><div class="tg"><span class="sw"></span><b>On</b></div></div><div class="on-map" style="left:150px;top:330px;border-radius:12px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">T</div><span class="sdot"></span></div><span class="label">Vos</span></div></div></div></div></div><div class="yes"><h4>Cuándo sí</h4><ul><li>Arriba del mapa del lavador, junto a su ubicación: es lo primero que toca al empezar el día.</li><li>Usa el color del lavador.</li></ul></div><div class="no"><h4>Cuándo no</h4><ul><li>El cliente nunca lo ve.</li><li>Si le faltan datos para conectarse, no se prende: se abre la lista de lo que falta.</li></ul></div><p class="tokens">Tokens: <code>surface-chrome</code>, <code>washer</code>, <code>text-on-chrome</code>, <code>radius-full</code>.</p></div>
     </div>
   </section>
 <section class="sg" id="pantallas">
     
 
-    <h3 class="sg-h3">1 · Home del cliente: mapa y lista de lavadores (desktop)</h3>
+    <h3 class="sg-h3">1 · Inicio del cliente: mapa y lista de lavadores (computadora)</h3>
     <div class="compare stack">
-      <figure><figcaption>App real</figcaption><img class="ref" src="/design-system/real-cliente-home-desktop.png" alt="Captura real del home del cliente" /></figure>
-      <figure><figcaption>Recreación</figcaption>
+      <figure><figcaption>Hoy en la app</figcaption><img class="ref" src="/design-system/real-cliente-home-desktop.png" alt="Captura real del home del cliente" /></figure>
+      <figure><figcaption>Con el sistema de diseño</figcaption>
         <div class="desk">
           <div class="app-header"><img src="/design-system/logo2.png" alt="Pedí tu lavado" /><div class="right"><span class="ig"><svg class="ic"><use href="#i-ig"/></svg></span><button class="btn sm primary">Iniciar sesión</button></div></div>
           <div class="desk-body">
@@ -489,8 +489,8 @@
 
     <h3 class="sg-h3">2 · Seguimiento con PIN (cliente)</h3>
     <div class="compare">
-      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="/peditulavado/pin-cliente.jpg" alt="Captura real: lavador en camino con PIN" /></div></figure>
-      <figure><figcaption>Recreación</figcaption>
+      <figure><figcaption>Hoy en la app</figcaption><div class="phone"><img class="ref" src="/peditulavado/pin-cliente.jpg" alt="Captura real: lavador en camino con PIN" /></div></figure>
+      <figure><figcaption>Con el sistema de diseño</figcaption>
         <div class="screen"><div class="screen-body">
           <div class="card order" style="width:100%;border-top:6px solid var(--brand)">
             <div class="order-head"><div><h5 style="font-size:20px">Lavador en camino</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
@@ -503,8 +503,8 @@
 
     <h3 class="sg-h3">3 · Pedido y pago (cliente)</h3>
     <div class="compare">
-      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="/peditulavado/pago-cliente.jpg" alt="Captura real: botón para pagar e iniciar" /></div></figure>
-      <figure><figcaption>Recreación</figcaption>
+      <figure><figcaption>Hoy en la app</figcaption><div class="phone"><img class="ref" src="/peditulavado/pago-cliente.jpg" alt="Captura real: botón para pagar e iniciar" /></div></figure>
+      <figure><figcaption>Con el sistema de diseño</figcaption>
         <div class="screen"><div class="screen-body">
           <div class="card order" style="width:100%;border-top:6px solid var(--success)">
             <div class="order-head"><div><h5 style="font-size:20px">¡Identidad verificada!</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box"><small>PIN seguridad</small><b>4821</b></div></div>
@@ -518,8 +518,8 @@
 
     <h3 class="sg-h3">4 · Panel del lavador: validación de PIN</h3>
     <div class="compare">
-      <figure><figcaption>App real</figcaption><div class="phone"><img class="ref" src="/peditulavado/pin-profesional.jpg" alt="Captura real: lavador valida el PIN" /></div></figure>
-      <figure><figcaption>Recreación</figcaption>
+      <figure><figcaption>Hoy en la app</figcaption><div class="phone"><img class="ref" src="/peditulavado/pin-profesional.jpg" alt="Captura real: lavador valida el PIN" /></div></figure>
+      <figure><figcaption>Con el sistema de diseño</figcaption>
         <div class="screen"><div class="screen-body">
           <div style="display:flex;justify-content:space-between;align-items:center"><span class="note" style="font-size:14px"><svg class="ic" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg>Volver atrás</span><span class="pill-date" style="padding:6px 12px;font-weight:700;letter-spacing:.12em"><i style="width:6px;height:6px;border-radius:50%;background:var(--brand)"></i>Servicio activo</span></div>
           <div style="background:var(--p-neutral-900);color:#fff;border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px">

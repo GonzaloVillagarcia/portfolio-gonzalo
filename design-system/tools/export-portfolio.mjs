@@ -121,7 +121,24 @@ const OVERRIDES = `
 .ds-embed .modal .btn { white-space: normal; text-align: center; }
 .ds-embed .wcard .badge { white-space: normal; }
 .ds-embed .wcard .info { min-width: 0; }
-@media (max-width: 480px) { .ds-embed .seg a { padding: 10px 14px; } .ds-embed .stage { padding: 16px; } }
+/* Ningún texto se sale de su contenedor */
+.ds-embed .paybox .btn, .ds-embed .btn.block { white-space: normal; height: auto; min-height: 48px; padding: 10px 16px; line-height: 1.25; }
+.ds-embed .step span { overflow-wrap: anywhere; }
+@media (max-width: 480px) {
+  .ds-embed .stage { padding: 16px; }
+  .ds-embed .seg a { padding: 8px 10px; font-size: 12px; gap: 6px; }
+  .ds-embed .seg a .ic { display: none; }
+  .ds-embed .chips { flex-wrap: wrap; border-radius: 20px; }
+  .ds-embed .app-header { padding: 0 12px; }
+  .ds-embed .app-header img { height: 20px; }
+  .ds-embed .app-header .right { gap: 8px; }
+  .ds-embed .app-header .ig { display: none; }
+  .ds-embed .app-header .btn.sm { padding: 0 10px; font-size: 10px; letter-spacing: .06em; }
+  .ds-embed .wcard { flex-wrap: wrap; }
+  .ds-embed .wcard .info { flex: 1 1 140px; }
+  .ds-embed .step .c { width: 36px; height: 36px; }
+  .ds-embed .step .c .ic { width: 16px; height: 16px; }
+}
 /* Las muestras de la app usan el color de texto de sus tokens, no el del portfolio */
 .ds-embed .stage, .ds-embed .screen, .ds-embed .desk, .ds-embed .phone, .ds-embed .mock, .ds-embed .chatcard, .ds-embed .rv-card { color: var(--text-primary); font-family: var(--font); }
 .ds-embed[data-mode="claro"] [data-mode-row="oscuro"], .ds-embed[data-mode="oscuro"] [data-mode-row="claro"] { display: none; }

@@ -31,7 +31,7 @@ const ROLES: { token: SemanticName; name: string; use: string }[] = [
     { token: 'certified', name: 'Certificado', use: 'Reservado para quien hizo el curso de lavado.' },
     { token: 'success', name: 'Éxito', use: 'Online, hecho, pagado.' },
     { token: 'rating', name: 'Calificación', use: 'Estrellas y nivel del lavador.' },
-    { token: 'surface-chrome', name: 'Chrome', use: 'Header, barra inferior y ubicación. Oscuro en los dos modos.' },
+    { token: 'surface-chrome', name: 'Fondo de marca', use: 'Header, barra inferior y ubicación. Oscuro en los dos modos.' },
 ];
 
 const GROUPS: { title: string; tokens: SemanticName[] }[] = [
@@ -43,6 +43,43 @@ const GROUPS: { title: string; tokens: SemanticName[] }[] = [
     { title: 'Certificado, calificación y promo', tokens: ['certified', 'certified-text', 'certified-border', 'certified-subtle', 'rating', 'rating-text', 'rating-subtle', 'promo'] },
     { title: 'Bordes y foco', tokens: ['border', 'border-strong', 'border-chrome', 'focus'] },
 ];
+
+// Nombres en español para mostrar; el nombre del token queda chico, como código
+const GROUP_ES: Record<string, string> = {
+    neutral: 'Grises', navy: 'Azul noche', blue: 'Azul', indigo: 'Índigo', magenta: 'Rosa lavador', fuchsia: 'Fucsia', violet: 'Violeta',
+    emerald: 'Verde', amber: 'Ámbar', orange: 'Naranja', red: 'Rojo', rose: 'Rosa', alpha: 'Transparencias',
+};
+const ALPHA_ES: Record<string, string> = {
+    'white-5': 'Blanco 5%', 'white-10': 'Blanco 10%', 'white-60': 'Blanco 60%', 'black-50': 'Negro 50%', 'black-60': 'Negro 60%',
+    'blue-20': 'Azul 20%', 'magenta-20': 'Rosa 20%', 'emerald-15': 'Verde 15%', 'amber-15': 'Ámbar 15%', 'red-15': 'Rojo 15%', 'violet-20': 'Violeta 20%',
+    'shadow-sm': 'Sombra baja', 'shadow-md': 'Sombra media', 'shadow-lg': 'Sombra alta', 'glow-brand': 'Brillo azul', 'glow-washer': 'Brillo rosa', 'glow-certified': 'Brillo violeta',
+};
+// Tonos que no están en la app: los propongo para que el rosa cumpla contraste
+const PROPOSED = new Set(['magenta.50', 'magenta.400', 'magenta.600', 'magenta.700']);
+const TEXT_ES: Record<string, string> = {
+    display: 'Titular', 'title-xl': 'Título muy grande', 'title-lg': 'Título grande', 'title-md': 'Título mediano', 'title-sm': 'Título chico',
+    body: 'Texto', 'body-sm': 'Texto chico', label: 'Etiqueta', 'label-sm': 'Etiqueta chica', caption: 'Nota', overline: 'Sobretítulo',
+    cta: 'Botón', 'cta-sm': 'Botón chico', pin: 'PIN',
+};
+const RADIUS_ES: Record<string, string> = { sm: 'Chico', md: 'Mediano', lg: 'Grande', xl: 'Muy grande', full: 'Píldora' };
+const SHADOW_ES: Record<string, string> = { sm: 'Baja', md: 'Media', lg: 'Alta', 'glow-brand': 'Brillo azul', 'glow-washer': 'Brillo rosa', 'glow-certified': 'Brillo violeta' };
+
+// Nombre en español de cada token semántico (para mostrar; el token queda como código)
+const BASE_ES: Record<string, string> = {
+    bg: 'Fondo', surface: 'Superficie', 'surface-muted': 'Superficie apagada', 'surface-chrome': 'Fondo de marca', 'surface-chrome-raised': 'Fondo de marca elevado',
+    overlay: 'Velo', 'text-primary': 'Texto principal', 'text-secondary': 'Texto secundario', 'text-on-muted': 'Texto sobre superficie apagada',
+    'text-on-brand': 'Texto sobre azul', 'text-on-chrome': 'Texto sobre fondo de marca', 'text-on-chrome-muted': 'Texto secundario sobre fondo de marca',
+    'brand-text-on-chrome': 'Azul sobre fondo de marca', brand: 'Azul de marca', washer: 'Rosa lavador', success: 'Éxito', warning: 'Alerta', danger: 'Error',
+    certified: 'Certificado', rating: 'Calificación', promo: 'Promoción', border: 'Borde', 'border-strong': 'Borde marcado', 'border-chrome': 'Borde sobre fondo de marca', focus: 'Foco',
+};
+const SUFFIX_ES: Record<string, string> = { hover: 'con el mouse encima', text: 'texto', subtle: 'suave', border: 'borde', end: 'final del degradado' };
+const tokenEs = (t: string) => {
+    if (BASE_ES[t]) return BASE_ES[t];
+    const i = t.lastIndexOf('-');
+    const base = BASE_ES[t.slice(0, i)];
+    const suf = SUFFIX_ES[t.slice(i + 1)];
+    return base && suf ? `${base}, ${suf}` : t;
+};
 
 const TYPE_SAMPLES: Record<string, string> = {
     display: 'Tu auto impecable, sin moverte.', 'title-xl': 'Lavadores en la zona', 'title-lg': 'Lavadores en la zona', 'title-md': 'Lavador en camino',
@@ -57,12 +94,12 @@ const Ic = ({ id, size = 16 }: { id: string; size?: number }) => (
 
 function SectionHead({ step, title, children }: { step: string; title: string; children: ReactNode }) {
     return (
-        <header className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 mb-12 md:mb-16">
-            <div className="lg:col-span-5 flex items-baseline gap-4">
+        <header className="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-16 mb-12 md:mb-16">
+            <div className="xl:col-span-5 flex items-baseline gap-4">
                 <span className="text-[#9FD592] text-4xl md:text-5xl tracking-tight" style={{ fontFamily: LEXEND, fontWeight: 300 }}>{step}</span>
                 <h3 className="text-4xl md:text-5xl text-neutral-50 tracking-tight" style={{ fontFamily: LEXEND, fontWeight: 500 }}>{title}</h3>
             </div>
-            <div className="lg:col-span-7 text-base md:text-lg text-neutral-400 font-light leading-relaxed max-w-2xl space-y-4">{children}</div>
+            <div className="xl:col-span-7 text-base md:text-lg text-neutral-400 font-light leading-relaxed max-w-2xl space-y-4">{children}</div>
         </header>
     );
 }
@@ -79,11 +116,11 @@ function SubHead({ title, children }: { title: string; children?: ReactNode }) {
 // --- Anatomía: una pantalla armada con las piezas reales y el token que pinta cada una ---
 function Anatomy() {
     const reduce = useReducedMotion();
-    const rows: { el: ReactNode; token: string; note: string; bleed?: boolean }[] = [
+    const rows: { el: ReactNode; token: string; title: string; note: string; bleed?: boolean }[] = [
         {
             bleed: true,
             token: 'surface-chrome',
-            note: 'El chrome de la marca. Es oscuro en los dos modos.',
+            title: 'Fondo de marca', note: 'Header, barra inferior y ubicación. Es oscuro en los dos modos.',
             el: (
                 <div className="app-header" style={{ borderRadius: 0, height: 60, padding: '0 16px' }}>
                     <img src="/design-system/logo2.png" alt="Pedí tu lavado" style={{ height: 22 }} />
@@ -93,7 +130,7 @@ function Anatomy() {
         },
         {
             token: 'brand-text-on-chrome',
-            note: 'El azul de marca, aclarado para leerse sobre el navy.',
+            title: 'Azul sobre fondo oscuro', note: 'El azul de marca, aclarado para que se lea sobre el fondo de marca.',
             el: (
                 <div className="loc" style={{ padding: '14px 16px', gap: 12, borderRadius: 20 }}>
                     <span className="pin"><Ic id="map-pin" /></span>
@@ -106,7 +143,7 @@ function Anatomy() {
         },
         {
             token: 'certified',
-            note: 'El violeta queda reservado para quien hizo el curso.',
+            title: 'Certificado', note: 'El violeta queda reservado para quien hizo el curso.',
             el: (
                 <div className="wcard certified" style={{ width: '100%' }}>
                     <div className="ribbon">Certificado</div>
@@ -122,7 +159,7 @@ function Anatomy() {
         },
         {
             token: 'success',
-            note: 'Verde es hecho, azul es lo que está pasando ahora.',
+            title: 'Éxito', note: 'Verde es hecho, azul es lo que está pasando ahora.',
             el: (
                 <div className="steps" style={{ maxWidth: 'none' }}>
                     {[['Pedido', 'check', 'done'], ['Aceptado', 'check', 'done'], ['En camino', 'check', 'done'], ['PIN', 'shield', 'current'], ['Pago', 'card', ''], ['Lavado', 'drops', '']].map(([label, ic, st]) => (
@@ -133,16 +170,16 @@ function Anatomy() {
         },
         {
             token: 'brand',
-            note: 'La acción principal. Una sola por pantalla.',
+            title: 'Marca', note: 'La acción principal. Una sola por pantalla.',
             el: <button className="btn md primary" type="button" tabIndex={-1} style={{ width: '100%' }}>Pedir lavado</button>,
         },
     ];
 
     return (
-        <div className="relative">
+        <div className="relative max-w-[400px] mx-auto xl:max-w-none">
             {/* Pantalla de fondo (solo la columna de la izquierda) */}
-            <div aria-hidden className="absolute top-0 bottom-0 left-0 w-full lg:w-[360px] rounded-[32px] border overflow-hidden" style={{ background: 'var(--bg)', borderColor: 'var(--border)', boxShadow: '0 40px 80px -30px rgba(0,0,0,0.7)' }} />
-            <ol className="relative grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-y-5 pb-6 list-none">
+            <div aria-hidden className="absolute top-0 bottom-0 left-0 w-full xl:w-[360px] rounded-[32px] border overflow-hidden" style={{ background: 'var(--bg)', borderColor: 'var(--border)', boxShadow: '0 40px 80px -30px rgba(0,0,0,0.7)' }} />
+            <ol style={{ color: 'var(--text-primary)' }} className="relative grid grid-cols-1 xl:grid-cols-[360px_1fr] gap-y-5 pb-6 list-none">
                 {rows.map((r, i) => (
                     <motion.li
                         key={r.token}
@@ -152,11 +189,12 @@ function Anatomy() {
                         className="contents"
                     >
                         <div className={r.bleed ? 'overflow-hidden rounded-t-[32px]' : 'px-4'}>{r.el}</div>
-                        <div className="hidden lg:flex items-center gap-4 pl-6">
+                        <div className="hidden xl:flex items-center gap-4 pl-6">
                             <span aria-hidden className="h-px w-10 bg-neutral-700 shrink-0" />
                             <p className="text-sm text-neutral-400 font-light leading-snug">
-                                <code className="text-[#9FD592] bg-transparent p-0 text-[13px]">{r.token}</code>
+                                <span className="block text-base text-neutral-100" style={{ fontFamily: LEXEND, fontWeight: 500 }}>{r.title}</span>
                                 <span className="block mt-1">{r.note}</span>
+                                <code className="inline-block mt-2 text-[#9FD592] bg-transparent p-0 text-xs">{r.token}</code>
                             </p>
                         </div>
                     </motion.li>
@@ -191,7 +229,7 @@ export default function PeditulavadoDesignSystem() {
                 {/* ---------- Apertura ---------- */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24 md:mb-32">
                     <div className="lg:col-span-5">
-                        <p className="text-[#9FD592] text-sm mb-6" style={{ fontFamily: LEXEND }}>Design system</p>
+                        <p className="text-[#9FD592] text-sm mb-6" style={{ fontFamily: LEXEND }}>Sistema de diseño</p>
                         <h2 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight text-neutral-50 mb-8" style={{ fontFamily: LEXEND, fontWeight: 500 }}>
                             Las piezas con las que está hecha Pedí tu lavado.
                         </h2>
@@ -220,7 +258,7 @@ export default function PeditulavadoDesignSystem() {
 
                     {/* Roles */}
                     <SubHead title="Seis colores con un rol cada uno" />
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-16 md:mb-20">
+                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 mb-16 md:mb-20">
                         {ROLES.map((r) => (
                             <div key={r.token} className="flex flex-col">
                                 <div className="h-36 md:h-44 rounded-2xl p-4 flex flex-col justify-end border border-white/5" style={{ background: hex(r.token), color: inkOn(hex(r.token)), fontFamily: LEXEND }}>
@@ -246,7 +284,7 @@ export default function PeditulavadoDesignSystem() {
                                 </div>
                                 {g.tokens.map((t) => (
                                     <div key={t} className="flex items-center justify-between gap-3 py-2 border-t border-neutral-900">
-                                        <code className="truncate">{t}</code>
+                                        <span className="min-w-0 text-sm text-neutral-300 leading-tight">{tokenEs(t)}<code className="block mt-0.5 text-[10px] text-neutral-500 bg-transparent p-0 truncate">{t}</code></span>
                                         <div className="flex gap-2 shrink-0">
                                             {(['claro', 'oscuro'] as Mode[]).map((m) => (
                                                 <span key={m} title={`${t} · ${m}: ${DS.semantic[t][m]}`} className="w-[54px] h-7 rounded-md border border-white/10" style={{ background: DS.semantic[t][m] }} />
@@ -263,12 +301,18 @@ export default function PeditulavadoDesignSystem() {
                             <span className="text-neutral-500 transition-transform group-open:rotate-180"><Ic id="chevron" /></span>
                         </summary>
                         <div className="px-5 pb-5 space-y-2">
+                            <p className="text-sm text-neutral-400 font-light leading-relaxed mb-4 max-w-2xl">
+                                Todos salen de los colores que usa la app hoy. Los marcados con un punto son ajustes que propongo: tonos del rosa de lavador para que el texto blanco cumpla AA.
+                            </p>
                             {Object.entries(DS.primitives).map(([group, steps]) => (
-                                <div key={group} className="grid grid-cols-[88px_1fr] gap-3 items-center">
-                                    <span className="text-xs text-neutral-500">{group}</span>
+                                <div key={group} className="grid grid-cols-[96px_1fr] gap-3 items-center">
+                                    <span className="text-xs text-neutral-400 leading-tight">{GROUP_ES[group] ?? group}<code className="block mt-0.5 text-[10px] text-neutral-600 bg-transparent p-0">{group}</code></span>
                                     <div className="flex flex-wrap gap-1">
                                         {steps.map(([step, value]) => (
-                                            <span key={step} title={`${group}/${step} ${value}`} className="w-12 h-10 rounded-md border border-white/5 flex items-end p-1 text-[10px]" style={{ background: value, color: inkOn(value) }}>{step}</span>
+                                            <span key={step} title={`${group}/${step} ${value}`} className={`relative ${group === 'alpha' ? 'w-[4.5rem]' : 'w-12'} h-10 rounded-md border border-white/5 flex items-end p-1 text-[10px] leading-tight`} style={{ background: value, color: inkOn(value) }}>
+                                                {group === 'alpha' ? ALPHA_ES[step] ?? step : step}
+                                                {PROPOSED.has(`${group}.${step}`) && <span aria-label="propuesto" className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-current" />}
+                                            </span>
                                         ))}
                                     </div>
                                 </div>
@@ -311,7 +355,7 @@ export default function PeditulavadoDesignSystem() {
                         <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
                             {[400, 500, 700, 900].map((w) => (
                                 <div key={w} className="rounded-2xl border border-neutral-800 bg-neutral-950 p-4">
-                                    <span className="block text-3xl text-neutral-100" style={{ fontFamily: LEXEND, fontWeight: w }}>Lavado</span>
+                                    <span className="block text-2xl xl:text-3xl text-neutral-100 break-words" style={{ fontFamily: LEXEND, fontWeight: w }}>Lavado</span>
                                     <span className="block mt-2 text-xs text-neutral-500">{w}</span>
                                 </div>
                             ))}
@@ -319,8 +363,8 @@ export default function PeditulavadoDesignSystem() {
                     </div>
                     <div className="rounded-2xl border border-neutral-800 bg-neutral-950 px-5 mb-16 md:mb-20">
                         {DS.textStyles.map((s) => (
-                            <div key={s.name} className="grid grid-cols-1 md:grid-cols-[120px_1fr_160px] gap-1 md:gap-6 items-baseline py-4 border-b border-neutral-900 last:border-0">
-                                <code className="self-start justify-self-start">{s.name}</code>
+                            <div key={s.name} className="grid grid-cols-1 md:grid-cols-[150px_1fr_160px] gap-1 md:gap-6 items-baseline py-4 border-b border-neutral-900 last:border-0">
+                                <span className="self-start text-sm text-neutral-300 leading-tight">{TEXT_ES[s.name] ?? s.name}<code className="block mt-1 text-[10px] text-neutral-500 bg-transparent p-0">{s.name}</code></span>
                                 <span className="text-neutral-100 min-w-0 break-words" style={{
                                     fontFamily: s.name === 'pin' ? 'ui-monospace, monospace' : LEXEND, fontWeight: s.fontWeight,
                                     fontSize: `min(${s.fontSize}, 11vw)`, lineHeight: s.lineHeight, letterSpacing: s.letterSpacing,
@@ -345,12 +389,12 @@ export default function PeditulavadoDesignSystem() {
                             </div>
                         </div>
                         <div>
-                            <SubHead title="Radios">Del chip a la píldora.</SubHead>
+                            <SubHead title="Radios">De la etiqueta a la píldora.</SubHead>
                             <div className="grid grid-cols-3 gap-3">
                                 {DS.radius.map((r) => (
                                     <div key={r.name}>
                                         <div className="h-16 border-2 border-[#9FD592] bg-[#9FD592]/10" style={{ borderRadius: Math.min(r.value, 32) }} />
-                                        <p className="mt-2 text-xs text-neutral-500">{r.name}, {r.value === 9999 ? 'píldora' : `${r.value} px`}</p>
+                                        <p className="mt-2 text-xs text-neutral-400">{RADIUS_ES[r.name] ?? r.name}{r.value === 9999 ? '' : `, ${r.value} px`}</p>
                                     </div>
                                 ))}
                             </div>
@@ -360,7 +404,7 @@ export default function PeditulavadoDesignSystem() {
                             <div className="grid grid-cols-3 gap-3">
                                 {DS.shadows.map((s) => (
                                     <div key={s.name} className="h-20 rounded-xl flex items-end p-2" style={{ background: 'var(--surface)', boxShadow: `var(--shadow-${s.name})` }}>
-                                        <span className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>{s.name}</span>
+                                        <span className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>{SHADOW_ES[s.name] ?? s.name}</span>
                                     </div>
                                 ))}
                             </div>
@@ -379,7 +423,8 @@ export default function PeditulavadoDesignSystem() {
                 {/* ---------- 3. Pantallas ---------- */}
                 <div className="border-t border-neutral-900 pt-16 md:pt-24">
                     <SectionHead step="3" title="Pantallas">
-                        <p>A la izquierda, la app en producción. A la derecha, la misma pantalla armada solo con los componentes del sistema. Los nombres y las fotos de lavadores reales están difuminados.</p>
+                        <p>A la izquierda, una captura de la app tal como está hoy. A la derecha, la misma pantalla armada solo con los componentes y tokens del sistema.</p>
+                        <p>Las diferencias son lo que el sistema ordena: textos todos en español y con el mismo criterio de mayúsculas, tamaños de letra que no bajan de 10 px, los mismos radios y colores con contraste AA. Los nombres y las fotos de lavadores reales están difuminados.</p>
                     </SectionHead>
                     <div className="ds-part" dangerouslySetInnerHTML={{ __html: screensHtml }} />
                 </div>
