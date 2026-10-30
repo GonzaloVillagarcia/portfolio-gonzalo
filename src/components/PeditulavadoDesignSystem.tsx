@@ -538,7 +538,7 @@ export default function PeditulavadoDesignSystem() {
 
                     {/* Tipografía */}
                     <SubHead title="Una tipografía, cuatro pesos">
-                        Lexend fue pensada para mejorar la lectura. En la app se usa en 400 para texto, 500 para la interfaz, 700 para títulos y 900 para los llamados a la acción.
+                        Lexend fue pensada para mejorar la lectura. En la app se usa en 400 para textos y títulos, 500 para la interfaz, 700 solo para nombres, precios y etiquetas chicas, y 900 para los botones principales.
                     </SubHead>
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6 items-end">
                         <div className="lg:col-span-4">

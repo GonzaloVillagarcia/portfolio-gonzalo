@@ -644,7 +644,7 @@ export const DS = {
   {
    "name": "display",
    "fontFamily": "Lexend",
-   "fontWeight": 700,
+   "fontWeight": 400,
    "fontSize": "48px",
    "lineHeight": 1.05,
    "letterSpacing": "-0.02em"
@@ -652,7 +652,7 @@ export const DS = {
   {
    "name": "title-xl",
    "fontFamily": "Lexend",
-   "fontWeight": 700,
+   "fontWeight": 400,
    "fontSize": "32px",
    "lineHeight": 1.1,
    "letterSpacing": "-0.02em"
@@ -660,7 +660,7 @@ export const DS = {
   {
    "name": "title-lg",
    "fontFamily": "Lexend",
-   "fontWeight": 700,
+   "fontWeight": 400,
    "fontSize": "24px",
    "lineHeight": 1.2,
    "letterSpacing": "-0.02em"
@@ -668,7 +668,7 @@ export const DS = {
   {
    "name": "title-md",
    "fontFamily": "Lexend",
-   "fontWeight": 700,
+   "fontWeight": 400,
    "fontSize": "20px",
    "lineHeight": 1.25,
    "letterSpacing": "-0.02em"
@@ -676,7 +676,7 @@ export const DS = {
   {
    "name": "title-sm",
    "fontFamily": "Lexend",
-   "fontWeight": 700,
+   "fontWeight": 400,
    "fontSize": "18px",
    "lineHeight": 1.3,
    "letterSpacing": "-0.01em"
