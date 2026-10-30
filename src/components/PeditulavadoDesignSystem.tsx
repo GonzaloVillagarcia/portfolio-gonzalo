@@ -91,7 +91,16 @@ const TEXT_ES: Record<string, string> = {
     body: 'Texto', 'body-sm': 'Texto chico', label: 'Etiqueta', 'label-sm': 'Etiqueta chica', caption: 'Nota', overline: 'Sobretítulo',
     cta: 'Botón', 'cta-sm': 'Botón chico', pin: 'PIN',
 };
-const RADIUS_ES: Record<string, string> = { sm: 'Chico', md: 'Mediano', lg: 'Grande', xl: 'Muy grande', full: 'Píldora' };
+const RADIUS_ES: Record<string, string> = { sm: 'Chico', md: 'Mediano', lg: 'Grande', xl: 'Muy grande', '2xl': 'Extra grande', full: 'Píldora' };
+// Cada radio mostrado en el elemento real que lo usa (clases del style guide)
+const RADIUS_DEMO: Record<string, string> = {
+    sm: '<div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;width:100%"><span class="badge near">Cerca de tu zona</span><div class="input" style="width:100%;height:36px;font-size:13px">AB 123 CD</div></div>',
+    md: '<div class="tabs" style="width:100%"><button class="active">Lavadores</button><button>Turnos (2)</button></div>',
+    lg: '<div class="card" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px"><span style="width:40px;height:40px;border-radius:var(--radius-md);background:#0f766e;color:#fff;display:grid;place-items:center;font:700 15px var(--font)">T</span><span style="font:700 14px var(--font);color:var(--text-primary)">Tomás R.</span></div>',
+    xl: '<div class="loc" style="padding:12px 16px;gap:10px"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="min-width:0"><div class="kicker">Ubicación de lavado</div><div class="value" style="font-size:14px">Casa</div></div></div>',
+    '2xl': '<div style="width:100%;align-self:flex-end;height:64px;background:var(--surface-chrome);border-radius:var(--radius-2xl) var(--radius-2xl) 0 0;display:flex;align-items:center;justify-content:space-around;color:var(--text-on-chrome-muted)"><svg class="ic"><use href="#i-user"/></svg><svg class="ic"><use href="#i-cal"/></svg><svg class="ic"><use href="#i-history"/></svg><svg class="ic"><use href="#i-grid"/></svg></div>',
+    full: '<div style="display:flex;flex-direction:column;gap:10px;align-items:center"><button class="btn sm primary" type="button" tabindex="-1">Pedir lavado</button><div class="chips"><span class="chip active">Todos</span><span class="chip">Lavados</span></div></div>',
+};
 const SHADOW_ES: Record<string, string> = { sm: 'Baja', md: 'Media', lg: 'Alta', 'glow-brand': 'Brillo azul', 'glow-washer': 'Brillo rosa', 'glow-certified': 'Brillo violeta' };
 
 // Nombre en español de cada token semántico (para mostrar; el token queda como código)
@@ -570,35 +579,46 @@ export default function PeditulavadoDesignSystem() {
                     </div>
 
                     {/* Espaciado, radios y elevación */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    <div className="space-y-16 md:space-y-20">
                         <div>
-                            <SubHead title="Espaciado">Base de 4 px, con un paso de 2 para ajustes finos.</SubHead>
-                            <div className="space-y-2">
+                            <SubHead title="Espaciado">
+                                Las distancias entre elementos: el relleno de un botón, el espacio entre tarjetas, los márgenes de una pantalla. Todas salen de esta escala, a tamaño real. La app también usa 6 y 10 px; el sistema los lleva al paso más cercano.
+                            </SubHead>
+                            <div className="flex flex-wrap items-end gap-x-5 gap-y-6">
                                 {DS.space.map((v) => (
-                                    <div key={v} className="flex items-center gap-3">
-                                        <span className="w-10 text-xs text-neutral-500 text-right">{v}</span>
-                                        <span className="h-3 rounded-sm bg-[#9FD592]" style={{ width: v * 2.5 }} />
+                                    <div key={v} className="flex flex-col items-center gap-2">
+                                        <span className="bg-[#9FD592]" style={{ width: v, height: v }} />
+                                        <span className="text-xs text-neutral-400 tabular-nums">{v} px</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
                         <div>
-                            <SubHead title="Radios">De la etiqueta a la píldora.</SubHead>
-                            <div className="grid grid-cols-3 gap-3">
+                            <SubHead title="Radios">
+                                Cuánto se redondean las esquinas. Cada radio tiene un uso: el mismo tipo de elemento siempre lleva el mismo radio.
+                            </SubHead>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {DS.radius.map((r) => (
-                                    <div key={r.name}>
-                                        <div className="h-16 border-2 border-[#9FD592] bg-[#9FD592]/10" style={{ borderRadius: Math.min(r.value, 32) }} />
-                                        <p className="mt-2 text-xs text-neutral-400">{RADIUS_ES[r.name] ?? r.name}{r.value === 9999 ? '' : `, ${r.value} px`}</p>
+                                    <div key={r.name} className="rounded-2xl border border-neutral-800 bg-neutral-950 overflow-hidden">
+                                        <div className="h-32 px-5 flex items-center justify-center" style={{ background: 'var(--bg)' }} dangerouslySetInnerHTML={{ __html: RADIUS_DEMO[r.name] ?? '' }} />
+                                        <div className="p-4">
+                                            <p className="text-sm text-neutral-100" style={{ fontFamily: LEXEND, fontWeight: 500 }}>{RADIUS_ES[r.name] ?? r.name}{r.value === 9999 ? '' : `, ${r.value} px`}</p>
+                                            <p className="mt-1 text-sm text-neutral-400 font-light leading-snug">{r.description}</p>
+                                            <code className="inline-block mt-2 text-[10px] text-neutral-500 bg-transparent p-0">radius-{r.name}</code>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
                         <div>
-                            <SubHead title="Elevación">Tres niveles y tres brillos.</SubHead>
-                            <div className="grid grid-cols-3 gap-3">
+                            <SubHead title="Elevación">
+                                Las sombras que separan una capa de otra: una tarjeta apoyada, algo que flota sobre el mapa, el botón principal que brilla. Tres niveles y tres brillos de color.
+                            </SubHead>
+                            <div className="rounded-3xl p-6 md:p-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" style={{ background: 'var(--bg)' }}>
                                 {DS.shadows.map((s) => (
-                                    <div key={s.name} className="h-20 rounded-xl flex items-end p-2" style={{ background: 'var(--surface)', boxShadow: `var(--shadow-${s.name})` }}>
-                                        <span className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>{SHADOW_ES[s.name] ?? s.name}</span>
+                                    <div key={s.name} className="rounded-2xl p-5 min-h-28 flex flex-col justify-end" style={{ background: 'var(--surface)', boxShadow: `var(--shadow-${s.name})` }}>
+                                        <span className="text-sm" style={{ color: 'var(--text-primary)', fontFamily: LEXEND, fontWeight: 500 }}>{SHADOW_ES[s.name] ?? s.name}</span>
+                                        <span className="text-xs mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>{s.description}</span>
                                     </div>
                                 ))}
                             </div>

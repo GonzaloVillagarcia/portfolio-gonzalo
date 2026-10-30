@@ -773,54 +773,59 @@ export const DS = {
  "radius": [
   {
    "name": "sm",
-   "value": 8,
-   "description": "Chips internos, etiquetas, PIN."
+   "value": 10,
+   "description": "Etiquetas (\"Cerca de tu zona\", \"Ocupado\"), calificación y campos de texto."
   },
   {
    "name": "md",
    "value": 12,
-   "description": "Base (--radius: 0.75rem). Inputs, tabs, avatares cuadrados."
+   "description": "Pestañas (\"Lavadores / Turnos\"), recuadro del PIN, íconos y fotos cuadradas."
   },
   {
    "name": "lg",
    "value": 20,
-   "description": "Cards (card de lavador, banner)."
+   "description": "Tarjetas: la de cada lavador y el aviso de suscripción."
   },
   {
    "name": "xl",
+   "value": 24,
+   "description": "Barra \"Ubicación de lavado\" que flota sobre el mapa."
+  },
+  {
+   "name": "2xl",
    "value": 32,
-   "description": "Contenedores grandes, barra inferior, sheets."
+   "description": "Barra inferior y ventana \"Necesitás una cuenta\"."
   },
   {
    "name": "full",
    "value": 9999,
-   "description": "Botones píldora, chips de filtro, avatares redondos."
+   "description": "Botones y filtros (\"Todos\", \"Lavados\"…)."
   }
  ],
  "shadows": [
   {
    "name": "sm",
-   "description": "Cards en reposo (shadow-sm)."
+   "description": "Tarjetas apoyadas."
   },
   {
    "name": "md",
-   "description": "Hover de card, popovers, chips activos."
+   "description": "Tarjeta con el mouse encima, menús y filtro activo."
   },
   {
    "name": "lg",
-   "description": "Elementos flotantes sobre el mapa y barras oscuras."
+   "description": "Lo que flota sobre el mapa y las barras oscuras."
   },
   {
    "name": "glow-brand",
-   "description": "CTA principal y paso activo del pedido."
+   "description": "Botón principal y paso actual del pedido."
   },
   {
    "name": "glow-washer",
-   "description": "CTA \"Ser lavador\"."
+   "description": "Botón \"Ser lavador\"."
   },
   {
    "name": "glow-certified",
-   "description": "Card de lavador certificado."
+   "description": "Tarjeta de lavador certificado."
   }
  ],
  "contrast": [

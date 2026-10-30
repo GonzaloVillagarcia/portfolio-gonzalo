@@ -190,7 +190,7 @@
   .ds-embed {
     --space-2: 2px; --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-20: 20px;
     --space-24: 24px; --space-32: 32px; --space-40: 40px; --space-48: 48px; --space-64: 64px;
-    --radius-sm: 8px; --radius-md: 12px; --radius-lg: 20px; --radius-xl: 32px; --radius-full: 9999px;
+    --radius-sm: 10px; --radius-md: 12px; --radius-lg: 20px; --radius-xl: 24px; --radius-2xl: 32px; --radius-full: 9999px;
     --shadow-sm: 0 1px 3px 0 var(--shadow-sm);
     --shadow-md: 0 8px 24px -8px var(--shadow-md);
     --shadow-lg: 0 20px 50px 0 var(--shadow-lg);
@@ -341,7 +341,7 @@
   .ds-embed .seg a.hover { color: var(--text-primary); background: var(--border); }
 
   /* Barra de ubicación */
-  .ds-embed .loc { width: 100%; max-width: 560px; background: var(--surface-chrome); border: 1px solid var(--p-alpha-blue-20); border-radius: 24px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 16px; padding: 16px 24px; color: var(--text-on-chrome); }
+  .ds-embed .loc { width: 100%; max-width: 560px; background: var(--surface-chrome); border: 1px solid var(--p-alpha-blue-20); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 16px; padding: 16px 24px; color: var(--text-on-chrome); }
   .ds-embed .loc .pin { background: var(--p-alpha-blue-20); border: 1px solid var(--p-alpha-blue-20); border-radius: var(--radius-md); padding: 8px; color: var(--brand-text-on-chrome); display: grid; place-items: center; }
   .ds-embed .loc .kicker { display: flex; align-items: center; gap: 6px; font: 700 10px var(--font); letter-spacing: .2em; text-transform: uppercase; color: var(--brand-text-on-chrome); }
   .ds-embed .loc .kicker span { font: 500 10px var(--font); letter-spacing: .02em; text-transform: none; color: var(--text-on-chrome-muted); }
@@ -381,7 +381,7 @@
   .ds-embed .sub.map { padding-top: 10px; padding-bottom: 10px; box-shadow: var(--shadow-lg); }
 
   /* Badges */
-  .ds-embed .badge { display: inline-flex; align-items: center; gap: 4px; font: 700 10px/1 var(--font); letter-spacing: .12em; text-transform: uppercase; padding: 4px 6px; border-radius: 6px; border: 1px solid transparent; white-space: nowrap; }
+  .ds-embed .badge { display: inline-flex; align-items: center; gap: 4px; font: 700 10px/1 var(--font); letter-spacing: .12em; text-transform: uppercase; padding: 4px 6px; border-radius: var(--radius-sm); border: 1px solid transparent; white-space: nowrap; }
   .ds-embed .badge .ic { width: 10px; height: 10px; }
   .ds-embed .badge.near { color: var(--success-text); background: var(--success-subtle); border-color: var(--success-subtle); }
   .ds-embed .badge.busy { color: var(--warning-text); background: var(--warning-subtle); }
@@ -445,7 +445,7 @@
   .ds-embed .mpin .label .ic { width: 12px; height: 12px; }
 
   /* Barra inferior */
-  .ds-embed .bnav { width: 375px; max-width: 100%; height: 75px; background: var(--surface-chrome); border-radius: 32px 32px 0 0; border-top: 1px solid var(--border-chrome); display: flex; align-items: center; padding: 0 8px; position: relative; box-shadow: 0 -15px 50px var(--shadow-lg); margin-top: 28px; }
+  .ds-embed .bnav { width: 375px; max-width: 100%; height: 75px; background: var(--surface-chrome); border-radius: var(--radius-2xl) var(--radius-2xl) 0 0; border-top: 1px solid var(--border-chrome); display: flex; align-items: center; padding: 0 8px; position: relative; box-shadow: 0 -15px 50px var(--shadow-lg); margin-top: 28px; }
   .ds-embed .bnav a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font: 500 10px var(--font); color: var(--text-on-chrome-muted); text-decoration: none; }
   .ds-embed .bnav a .ic { width: 24px; height: 24px; }
   .ds-embed .bnav a.active { color: var(--brand-text-on-chrome); font-weight: 700; }
@@ -457,7 +457,7 @@
   /* Input */
   .ds-embed .field { display: flex; flex-direction: column; gap: 6px; width: 260px; }
   .ds-embed .field label { font: 500 14px var(--font); }
-  .ds-embed .input { height: 44px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface); padding: 0 12px; font: 400 16px var(--font); color: var(--text-primary); display: flex; align-items: center; }
+  .ds-embed .input { height: 44px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface); padding: 0 12px; font: 400 16px var(--font); color: var(--text-primary); display: flex; align-items: center; }
   .ds-embed .input.placeholder { color: var(--text-secondary); }
   .ds-embed .input.focus { border-color: var(--focus); box-shadow: 0 0 0 3px var(--brand-subtle); }
   .ds-embed .input.error { border-color: var(--danger-text); box-shadow: 0 0 0 3px var(--danger-subtle); }
@@ -473,7 +473,7 @@
   .ds-embed .otp.ok span { border-color: var(--p-emerald-400); color: var(--p-emerald-400); }
   .ds-embed .pin-box { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
   .ds-embed .pin-box small { font: 700 10px var(--font); letter-spacing: .2em; text-transform: uppercase; color: var(--text-secondary); }
-  .ds-embed .pin-box b { background: var(--p-neutral-900); color: #fff; padding: 6px 12px; border-radius: var(--radius-sm); font: 700 24px/1 ui-monospace, monospace; letter-spacing: .1em; box-shadow: var(--shadow-md); }
+  .ds-embed .pin-box b { background: var(--p-neutral-900); color: #fff; padding: 6px 12px; border-radius: var(--radius-md); font: 700 24px/1 ui-monospace, monospace; letter-spacing: .1em; box-shadow: var(--shadow-md); }
   .ds-embed[data-mode="oscuro"] .pin-box b { background: var(--brand); }
 
   /* Estados del pedido (stepper) */
@@ -527,7 +527,7 @@
 
   /* Modal */
   .ds-embed .modal-wrap { position: relative; width: 100%; max-width: 460px; padding: 32px 16px; border-radius: var(--radius-lg); background: var(--overlay); display: grid; place-items: center; }
-  .ds-embed .modal { width: 100%; max-width: 380px; background: var(--surface); border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 12px; position: relative; }
+  .ds-embed .modal { width: 100%; max-width: 380px; background: var(--surface); border-radius: var(--radius-2xl); padding: 24px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 12px; position: relative; }
   .ds-embed .modal h5 { margin: 0; font: 400 20px/1.25 var(--font); letter-spacing: -.02em; }
   .ds-embed .modal p { margin: 0; font: 400 14px/1.5 var(--font); color: var(--text-secondary); }
   .ds-embed .modal .x { position: absolute; top: 16px; right: 16px; color: var(--text-secondary); }
@@ -582,7 +582,7 @@
   .ds-embed .desk .app-header { border-radius: 0; }
   .ds-embed .desk-body { padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
   .ds-embed .desk-map { position: relative; width: 100%; min-height: 560px; border-radius: var(--radius-lg); overflow: hidden; }
-  .ds-embed .desk-panel { position: absolute; left: 32px; top: 100px; width: 400px; max-width: calc(100% - 48px); background: var(--surface); border-radius: var(--radius-xl); padding: 20px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 14px; }
+  .ds-embed .desk-panel { position: absolute; left: 32px; top: 100px; width: 400px; max-width: calc(100% - 48px); background: var(--surface); border-radius: var(--radius-2xl); padding: 20px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 14px; }
   .ds-embed .desk-map .loc { position: absolute; left: 24px; top: 24px; max-width: 540px; width: calc(100% - 48px); }
   .ds-embed .on-map { position: absolute; }
   @media (max-width: 700px) { .ds-embed .desk-panel { position: relative; left: 0; top: 0; margin: 96px 12px 12px; } .ds-embed .desk-map .on-map { display: none; } }

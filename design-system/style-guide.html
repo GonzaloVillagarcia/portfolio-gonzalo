@@ -200,7 +200,7 @@
   :root {
     --space-2: 2px; --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-20: 20px;
     --space-24: 24px; --space-32: 32px; --space-40: 40px; --space-48: 48px; --space-64: 64px;
-    --radius-sm: 8px; --radius-md: 12px; --radius-lg: 20px; --radius-xl: 32px; --radius-full: 9999px;
+    --radius-sm: 10px; --radius-md: 12px; --radius-lg: 20px; --radius-xl: 24px; --radius-2xl: 32px; --radius-full: 9999px;
     --shadow-sm: 0 1px 3px 0 var(--shadow-sm);
     --shadow-md: 0 8px 24px -8px var(--shadow-md);
     --shadow-lg: 0 20px 50px 0 var(--shadow-lg);
@@ -351,7 +351,7 @@
   .seg a.hover { color: var(--text-primary); background: var(--border); }
 
   /* Barra de ubicación */
-  .loc { width: 100%; max-width: 560px; background: var(--surface-chrome); border: 1px solid var(--p-alpha-blue-20); border-radius: 24px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 16px; padding: 16px 24px; color: var(--text-on-chrome); }
+  .loc { width: 100%; max-width: 560px; background: var(--surface-chrome); border: 1px solid var(--p-alpha-blue-20); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 16px; padding: 16px 24px; color: var(--text-on-chrome); }
   .loc .pin { background: var(--p-alpha-blue-20); border: 1px solid var(--p-alpha-blue-20); border-radius: var(--radius-md); padding: 8px; color: var(--brand-text-on-chrome); display: grid; place-items: center; }
   .loc .kicker { display: flex; align-items: center; gap: 6px; font: 700 10px var(--font); letter-spacing: .2em; text-transform: uppercase; color: var(--brand-text-on-chrome); }
   .loc .kicker span { font: 500 10px var(--font); letter-spacing: .02em; text-transform: none; color: var(--text-on-chrome-muted); }
@@ -391,7 +391,7 @@
   .sub.map { padding-top: 10px; padding-bottom: 10px; box-shadow: var(--shadow-lg); }
 
   /* Badges */
-  .badge { display: inline-flex; align-items: center; gap: 4px; font: 700 10px/1 var(--font); letter-spacing: .12em; text-transform: uppercase; padding: 4px 6px; border-radius: 6px; border: 1px solid transparent; white-space: nowrap; }
+  .badge { display: inline-flex; align-items: center; gap: 4px; font: 700 10px/1 var(--font); letter-spacing: .12em; text-transform: uppercase; padding: 4px 6px; border-radius: var(--radius-sm); border: 1px solid transparent; white-space: nowrap; }
   .badge .ic { width: 10px; height: 10px; }
   .badge.near { color: var(--success-text); background: var(--success-subtle); border-color: var(--success-subtle); }
   .badge.busy { color: var(--warning-text); background: var(--warning-subtle); }
@@ -455,7 +455,7 @@
   .mpin .label .ic { width: 12px; height: 12px; }
 
   /* Barra inferior */
-  .bnav { width: 375px; max-width: 100%; height: 75px; background: var(--surface-chrome); border-radius: 32px 32px 0 0; border-top: 1px solid var(--border-chrome); display: flex; align-items: center; padding: 0 8px; position: relative; box-shadow: 0 -15px 50px var(--shadow-lg); margin-top: 28px; }
+  .bnav { width: 375px; max-width: 100%; height: 75px; background: var(--surface-chrome); border-radius: var(--radius-2xl) var(--radius-2xl) 0 0; border-top: 1px solid var(--border-chrome); display: flex; align-items: center; padding: 0 8px; position: relative; box-shadow: 0 -15px 50px var(--shadow-lg); margin-top: 28px; }
   .bnav a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font: 500 10px var(--font); color: var(--text-on-chrome-muted); text-decoration: none; }
   .bnav a .ic { width: 24px; height: 24px; }
   .bnav a.active { color: var(--brand-text-on-chrome); font-weight: 700; }
@@ -467,7 +467,7 @@
   /* Input */
   .field { display: flex; flex-direction: column; gap: 6px; width: 260px; }
   .field label { font: 500 14px var(--font); }
-  .input { height: 44px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface); padding: 0 12px; font: 400 16px var(--font); color: var(--text-primary); display: flex; align-items: center; }
+  .input { height: 44px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface); padding: 0 12px; font: 400 16px var(--font); color: var(--text-primary); display: flex; align-items: center; }
   .input.placeholder { color: var(--text-secondary); }
   .input.focus { border-color: var(--focus); box-shadow: 0 0 0 3px var(--brand-subtle); }
   .input.error { border-color: var(--danger-text); box-shadow: 0 0 0 3px var(--danger-subtle); }
@@ -483,7 +483,7 @@
   .otp.ok span { border-color: var(--p-emerald-400); color: var(--p-emerald-400); }
   .pin-box { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
   .pin-box small { font: 700 10px var(--font); letter-spacing: .2em; text-transform: uppercase; color: var(--text-secondary); }
-  .pin-box b { background: var(--p-neutral-900); color: #fff; padding: 6px 12px; border-radius: var(--radius-sm); font: 700 24px/1 ui-monospace, monospace; letter-spacing: .1em; box-shadow: var(--shadow-md); }
+  .pin-box b { background: var(--p-neutral-900); color: #fff; padding: 6px 12px; border-radius: var(--radius-md); font: 700 24px/1 ui-monospace, monospace; letter-spacing: .1em; box-shadow: var(--shadow-md); }
   [data-mode="oscuro"] .pin-box b { background: var(--brand); }
 
   /* Estados del pedido (stepper) */
@@ -537,7 +537,7 @@
 
   /* Modal */
   .modal-wrap { position: relative; width: 100%; max-width: 460px; padding: 32px 16px; border-radius: var(--radius-lg); background: var(--overlay); display: grid; place-items: center; }
-  .modal { width: 100%; max-width: 380px; background: var(--surface); border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 12px; position: relative; }
+  .modal { width: 100%; max-width: 380px; background: var(--surface); border-radius: var(--radius-2xl); padding: 24px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 12px; position: relative; }
   .modal h5 { margin: 0; font: 400 20px/1.25 var(--font); letter-spacing: -.02em; }
   .modal p { margin: 0; font: 400 14px/1.5 var(--font); color: var(--text-secondary); }
   .modal .x { position: absolute; top: 16px; right: 16px; color: var(--text-secondary); }
@@ -592,7 +592,7 @@
   .desk .app-header { border-radius: 0; }
   .desk-body { padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
   .desk-map { position: relative; width: 100%; min-height: 560px; border-radius: var(--radius-lg); overflow: hidden; }
-  .desk-panel { position: absolute; left: 32px; top: 100px; width: 400px; max-width: calc(100% - 48px); background: var(--surface); border-radius: var(--radius-xl); padding: 20px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 14px; }
+  .desk-panel { position: absolute; left: 32px; top: 100px; width: 400px; max-width: calc(100% - 48px); background: var(--surface); border-radius: var(--radius-2xl); padding: 20px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 14px; }
   .desk-map .loc { position: absolute; left: 24px; top: 24px; max-width: 540px; width: calc(100% - 48px); }
   .on-map { position: absolute; }
   @media (max-width: 700px) { .desk-panel { position: relative; left: 0; top: 0; margin: 96px 12px 12px; } .desk-map .on-map { display: none; } }
@@ -1004,7 +1004,7 @@
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="assets/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody map nav"><div class="loc hl" style="padding:14px 16px;gap:12px"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado</div><div class="value" style="font-size:15px">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div><div class="on-map" style="left:210px;top:150px;border-radius:12px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div><div class="on-map" style="left:60px;top:250px;border-radius:12px"><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div><div class="on-map" style="left:230px;top:330px;border-radius:12px"><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div><div class="on-map" style="left:130px;top:400px;border-radius:12px"><div class="mpin client"><div class="ring"><div class="face">L</div></div><span class="label">Vos</span></div></div></div><nav class="bnav"><a href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div></div>
         <div class="yes"><h4>Cuándo sí</h4><ul><li>Flotando arriba del mapa: define qué lavadores llegan hasta esa dirección.</li><li>La "i" explica para qué sirve y no abre el selector.</li></ul></div>
         <div class="no"><h4>Cuándo no</h4><ul><li>No la repitas dentro de la lista: es una sola por pantalla.</li></ul></div>
-        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, <code>shadow lg</code>, radio 24.</p>
+        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, <code>shadow lg</code>, <code>radius-xl</code>.</p>
       </div>
     </div>
 
@@ -1144,7 +1144,7 @@
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="assets/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody map nav"><div class="loc" style="padding:14px 16px;gap:12px"><span class="pin"><svg class="ic"><use href="#i-map-pin"/></svg></span><div style="flex:1;min-width:0"><div class="kicker">Ubicación de lavado</div><div class="value" style="font-size:15px">Casa · Barrio Jardín <svg class="ic"><use href="#i-chevron"/></svg></div></div></div><div class="on-map" style="left:210px;top:150px;border-radius:12px"><div class="mpin certified"><div class="ring"><div class="face" style="background:#0d9488">J</div><span class="sdot"></span></div><span class="label"><svg class="ic"><use href="#i-award"/></svg>Julián V.</span></div></div><div class="on-map" style="left:60px;top:250px;border-radius:12px"><div class="mpin online"><div class="ring"><div class="face" style="background:#65a30d">M</div><span class="sdot"></span></div><span class="label">Martín G.</span></div></div><div class="on-map" style="left:230px;top:330px;border-radius:12px"><div class="mpin offline"><div class="ring"><div class="face" style="background:#64748b">A</div></div><span class="label"><i></i>Solo reservas</span></div></div><div class="on-map" style="left:130px;top:400px;border-radius:12px"><div class="mpin client"><div class="ring"><div class="face">L</div></div><span class="label">Vos</span></div></div></div><nav class="bnav hl in"><a href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div></div>
         <div class="yes"><h4>Cuándo sí</h4><ul><li>Navegación principal en celular. El botón central (mapa) es la vista de inicio.</li></ul></div>
         <div class="no"><h4>Cuándo no</h4><ul><li>No más de 5 destinos.</li><li>Las etiquetas no bajan de 10 px (hoy están en 9).</li></ul></div>
-        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>brand</code>, <code>brand-text-on-chrome</code>, <code>text-on-chrome-muted</code>, <code>radius-xl</code>.</p>
+        <p class="tokens">Tokens: <code>surface-chrome</code>, <code>brand</code>, <code>brand-text-on-chrome</code>, <code>text-on-chrome-muted</code>, <code>radius-2xl</code>.</p>
       </div>
     </div>
 
@@ -1164,7 +1164,7 @@
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="assets/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody "><div class="mhead"><span class="ico" style="background:var(--brand-subtle);color:var(--brand-text)"><svg class="ic"><use href="#i-car"/></svg></span><h5>Mi perfil</h5></div></div><div class="shade" style="justify-content:flex-end;padding:0"><div class="modal" style="max-width:none;border-radius:28px 28px 0 0;padding:24px 20px 28px"><h5>¿Cuál es tu vehículo?</h5><p>El lavador usará estos datos para identificar tu auto.</p><div class="field" style="width:100%"><label>Modelo</label><div class="input">Gol Trend</div></div><div class="field hl" style="width:100%"><label>Patente</label><div class="input focus">AB 123</div><span class="help">ABC 123 · AA 123 BB</span></div><button class="btn md primary" style="width:100%">Guardar vehículo</button></div></div></div></div>
         <div class="yes"><h4>Cuándo sí</h4><ul><li>Siempre con etiqueta visible. El error dice qué hacer, no solo qué está mal.</li><li>Texto de 16 px en celular para que el iPhone no agrande la pantalla.</li></ul></div>
         <div class="no"><h4>Cuándo no</h4><ul><li>No uses el texto de ejemplo como etiqueta.</li></ul></div>
-        <p class="tokens">Tokens: <code>border-strong</code>, <code>focus</code>, <code>danger-text</code>, <code>danger-subtle</code>, <code>radius-md</code>.</p>
+        <p class="tokens">Tokens: <code>border-strong</code>, <code>focus</code>, <code>danger-text</code>, <code>danger-subtle</code>, <code>radius-sm</code>.</p>
       </div>
     </div>
 
@@ -1185,7 +1185,7 @@
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="assets/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody nav"><div class="card order" style="border-top:6px solid var(--brand)"><div class="order-head"><div><h5 style="font-size:20px">Lavador en camino</h5><div class="pillrow"><span class="pill-date"><svg class="ic"><use href="#i-cal"/></svg>08 oct • 15:00 hs</span><span class="badge sub-b">Lavado completo</span></div></div><div class="pin-box hl"><small>PIN seguridad</small><b>4821</b></div></div><div class="steps"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div><div class="washer-row"><span class="avatar">T</span><div><small>Tu lavador</small><b>Tomás</b></div><span class="icon-btn"><svg class="ic"><use href="#i-chat"/></svg></span></div></div></div><nav class="bnav"><a href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a class="active" href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab idle"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav></div></div>
         <div class="yes"><h4>Cuándo sí</h4><ul><li>Para confirmar que llegó la persona correcta: el cliente lo dicta y el lavador lo ingresa.</li><li>Si el PIN es incorrecto, la fila tiembla (no tiembla si la persona pidió reducir el movimiento en su teléfono).</li></ul></div>
         <div class="no"><h4>Cuándo no</h4><ul><li>No lo uses para otras verificaciones (login, pagos).</li></ul></div>
-        <p class="tokens">Tokens: <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, estilo <code>pin</code>, <code>radius-sm</code>.</p>
+        <p class="tokens">Tokens: <code>surface-chrome-raised</code>, <code>brand-text-on-chrome</code>, estilo <code>pin</code>, <code>radius-md</code>.</p>
       </div>
     </div>
 
@@ -1256,7 +1256,7 @@
         <div class="ctx"><span class="lbl">En la app</span><div class="mock"><div class="app-header"><img src="assets/logo2.png" alt="" /><div class="right"><span class="avatar-btn">L</span></div></div><div class="mbody nav"><div class="section-title"><h6>Lavadores <span>en la zona</span></h6><span class="live"><i></i>12 cerca</span></div><div class="chips" style="align-self:flex-start"><button class="chip active">Todos</button><button class="chip">Lavados</button><button class="chip">Tapizados</button><button class="chip">Pulidos</button></div><div class="wcard"><div class="av"><div class="img" style="background:#65a30d">M</div><span class="dot"></span></div><div class="info"><div class="name"><b>Martín G.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 0.4 km</div></div><div class="side"><span class="rating empty"><svg class="ic"><use href="#i-star"/></svg><b>0.0</b></span><span class="badge new">Nuevo</span></div></div><div class="wcard"><div class="av"><div class="img" style="background:#0f766e">T</div><span class="dot"></span></div><div class="info"><div class="name"><b>Tomás R.</b><svg class="ic"><use href="#i-shield"/></svg></div><div class="dist"><svg class="ic"><use href="#i-map-pin"/></svg>A 7.3 km</div></div><div class="side"><span class="rating"><svg class="ic fill"><use href="#i-star"/></svg><b>5.0</b></span><span class="level gold">🥇 Oro</span></div></div></div><nav class="bnav"><a class="active" href="#"><svg class="ic"><use href="#i-user"/></svg>Lavadores</a><a href="#"><svg class="ic"><use href="#i-cal"/></svg>Agenda</a><div class="fab idle"><span><svg class="ic"><use href="#i-map"/></svg></span></div><a href="#"><svg class="ic"><use href="#i-history"/></svg>Historial</a><a href="#"><svg class="ic"><use href="#i-grid"/></svg>Mi Perfil</a></nav><div class="shade"><div class="toast success" style="position:absolute;top:16px;left:16px;right:16px;width:auto"><svg class="ic"><use href="#i-check-circle"/></svg><div>Link copiado</div></div><div class="modal dark hl"><span class="kick"><svg class="ic" style="width:14px;height:14px"><use href="#i-user"/></svg>Creá tu cuenta</span><h5>Necesitás una cuenta</h5><p>Creá tu cuenta gratis para ver el historial de tus lavados.</p><button class="btn md primary" style="width:100%;border-radius:var(--radius-lg);text-transform:none;letter-spacing:0;font-weight:700">Crear cuenta / Iniciar sesión</button><button class="btn sm ghost" style="color:var(--p-neutral-400)">Ahora no</button></div></div></div></div>
         <div class="yes"><h4>Cuándo sí</h4><ul><li><b>Aviso emergente</b>: confirmar algo que ya pasó, sin pedir acción.</li><li><b>Ventana</b>: una decisión que bloquea el flujo (por ejemplo, crear cuenta para seguir).</li></ul></div>
         <div class="no"><h4>Cuándo no</h4><ul><li>No uses una ventana para avisos informativos.</li><li>Un solo sistema de avisos en toda la app.</li></ul></div>
-        <p class="tokens">Tokens: <code>surface</code>, <code>success-*</code>, <code>danger-*</code>, <code>overlay</code>, <code>radius-xl</code>, <code>shadow md / lg</code>.</p>
+        <p class="tokens">Tokens: <code>surface</code>, <code>success-*</code>, <code>danger-*</code>, <code>overlay</code>, <code>radius-2xl</code>, <code>shadow md / lg</code>.</p>
       </div>
     </div>
 
@@ -1409,7 +1409,7 @@
           <div style="display:flex;gap:12px"><button class="btn secondary block" style="border-color:var(--border);color:var(--text-primary);background:var(--surface)"><svg class="ic" style="color:var(--p-rose-600)"><use href="#i-map-pin"/></svg>Ubicación</button><button class="btn secondary block" style="border-color:var(--border);color:var(--text-primary);background:var(--surface)"><svg class="ic" style="color:var(--brand-text)"><use href="#i-chat"/></svg>Chatear</button></div>
           <div class="steps" style="max-width:none"><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Pedido</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>Aceptado</span></div><div class="step done"><span class="c"><svg class="ic"><use href="#i-check"/></svg></span><span>En camino</span></div><div class="step current"><span class="c"><svg class="ic"><use href="#i-shield"/></svg></span><span>PIN</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-card"/></svg></span><span>Pago</span></div><div class="step"><span class="c"><svg class="ic"><use href="#i-drops"/></svg></span><span>Lavado</span></div></div>
           <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:var(--radius-lg);background:var(--warning-subtle);color:var(--warning-text);font:500 13px/1.4 var(--font)"><svg class="ic"><use href="#i-alert"/></svg><span style="flex:1">Asegurate de registrar fotos de golpes o detalles previos para evitar reclamos.</span><button class="btn sm secondary" style="color:var(--warning-text);border-color:var(--warning);background:var(--surface)"><svg class="ic" style="width:14px;height:14px"><use href="#i-camera"/></svg>Subir</button></div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--surface-chrome-raised);border-radius:var(--radius-xl);padding:20px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--surface-chrome-raised);border-radius:var(--radius-2xl);padding:20px">
             <span style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--p-alpha-blue-20);display:grid;place-items:center;color:var(--brand-text-on-chrome)"><svg class="ic" style="width:20px;height:20px"><use href="#i-lock"/></svg></span>
             <span style="font:700 12px var(--font);letter-spacing:.2em;text-transform:uppercase;color:var(--p-neutral-300)">Validación de PIN</span>
             <div class="otp focus" style="padding:0;background:transparent"><span></span><span></span><span></span><span></span></div>
