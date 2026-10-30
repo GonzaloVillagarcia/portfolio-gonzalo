@@ -30,7 +30,11 @@ const SCREENS = sectionOf('pantallas')
     .slice(1)
     .map((chunk) => {
         const cut = chunk.indexOf('</h3>');
-        return { title: chunk.slice(0, cut).replace(/^\d+\s*·\s*/, ''), html: clean(chunk.slice(cut + 5)) };
+        // Solo la pantalla armada con el sistema: se saca la captura de referencia y los rótulos
+        const html = clean(chunk.slice(cut + 5))
+            .replace(/<figure><figcaption>Hoy en la app<\/figcaption>[\s\S]*?<\/figure>/, '')
+            .replace('<figcaption>Con el sistema de diseño</figcaption>', '');
+        return { title: chunk.slice(0, cut).replace(/^\d+\s*·\s*/, ''), html };
     });
 
 // Componentes agrupados por dónde viven en la app
@@ -251,10 +255,25 @@ function Pill({ active, onClick, children, small }: { active: boolean; onClick: 
             onClick={onClick}
             aria-pressed={active}
             className={`rounded-full border transition-colors text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9FD592] ${small ? 'px-3.5 py-1.5 text-sm' : 'px-4 py-2 text-sm'} ${
-                active ? 'bg-[#9FD592] border-[#9FD592] text-[#0a0a0a]' : 'border-neutral-800 text-neutral-400 hover:text-neutral-100 hover:border-neutral-600'
+                active ? 'bg-[#9FD592] border-[#9FD592] text-[#0a0a0a]' : 'bg-neutral-900 border-neutral-700 text-neutral-200 hover:bg-neutral-800 hover:border-neutral-500 hover:text-white'
             }`}
         >
             {children}
+        </button>
+    );
+}
+
+// Flecha redonda para pasar a la pantalla anterior o siguiente
+function StepButton({ label, onClick, disabled, back }: { label: string; onClick: () => void; disabled?: boolean; back?: boolean }) {
+    return (
+        <button
+            type="button"
+            aria-label={label}
+            onClick={onClick}
+            disabled={disabled}
+            className="w-10 h-10 rounded-full border border-neutral-700 bg-neutral-900 text-neutral-200 grid place-items-center hover:bg-neutral-800 hover:border-neutral-500 disabled:opacity-30 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-[#9FD592]"
+        >
+            <span className={back ? 'rotate-180' : ''}><Ic id="chevron-right" /></span>
         </button>
     );
 }
@@ -335,7 +354,7 @@ export default function PeditulavadoDesignSystem() {
 
     return (
         <section id="design-system" className="max-w-6xl w-full pb-24 md:pb-32 relative z-10">
-            <style>{`.ds-embed .ds-part section.sg { border-top: 0; padding: 0; } .ds-embed .ds-part .comp { border-top: 0; padding-top: 0; }`}</style>
+            <style>{`.ds-embed .ds-part section.sg { border-top: 0; padding: 0; } .ds-embed .ds-part .comp { border-top: 0; padding-top: 0; } .ds-embed .ds-part .compare { grid-template-columns: 1fr; } .ds-embed .ds-part .compare .screen { border: 10px solid #0b0f1a; border-radius: 46px; min-height: 680px; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.7); }`}</style>
             <div className="ds-embed" data-mode={mode}>
                 <div aria-hidden dangerouslySetInnerHTML={{ __html: SPRITE }} />
 
@@ -379,15 +398,24 @@ export default function PeditulavadoDesignSystem() {
                 {/* ---------- 1. Pantallas ---------- */}
                 <div id="ds-pantallas" className="mb-24 md:mb-32">
                     <SectionHead step="1" title="Pantallas">
-                        <p>A la izquierda, una captura de la app tal como está hoy. A la derecha, la misma pantalla armada solo con los componentes y tokens del sistema.</p>
-                        <p>Las diferencias son lo que el sistema ordena: textos todos en español y con el mismo criterio de mayúsculas, tamaños de letra que no bajan de 10 px, los mismos radios y colores con contraste AA. Los nombres y las fotos de lavadores reales están difuminados.</p>
+                        <p>Pantallas clave de la app armadas solo con los componentes y tokens del sistema: el inicio del cliente, el seguimiento con PIN, el pago y el panel del lavador.</p>
                     </SectionHead>
-                    <div role="group" aria-label="Pantalla" className="flex flex-wrap gap-2 mb-8">
-                        {SCREENS.map((s, i) => (
-                            <Pill key={s.title} active={screen === i} onClick={() => setScreen(i)}>{SCREEN_LABELS[i] ?? s.title}</Pill>
-                        ))}
+                    <div className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-4 md:p-6 mb-10">
+                        <p className="text-sm text-neutral-400 mb-3" style={{ fontFamily: LEXEND }}>Elegí una pantalla</p>
+                        <div role="group" aria-label="Pantalla" className="flex flex-wrap gap-2">
+                            {SCREENS.map((s, i) => (
+                                <Pill key={s.title} active={screen === i} onClick={() => setScreen(i)}>{SCREEN_LABELS[i] ?? s.title}</Pill>
+                            ))}
+                        </div>
                     </div>
-                    <h4 className="text-xl md:text-2xl text-neutral-100 tracking-tight mb-6" style={{ fontFamily: LEXEND, fontWeight: 500 }}>{SCREENS[screen].title}</h4>
+                    <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 mb-6">
+                        <h4 className="text-xl md:text-2xl text-neutral-100 tracking-tight" style={{ fontFamily: LEXEND, fontWeight: 500 }}>{SCREENS[screen].title}</h4>
+                        <div className="flex items-center gap-2 shrink-0" style={{ fontFamily: LEXEND }}>
+                            <span className="text-sm text-neutral-500 mr-1">{screen + 1} de {SCREENS.length}</span>
+                            <StepButton label="Pantalla anterior" disabled={screen === 0} onClick={() => setScreen(screen - 1)} back />
+                            <StepButton label="Pantalla siguiente" disabled={screen === SCREENS.length - 1} onClick={() => setScreen(screen + 1)} />
+                        </div>
+                    </div>
                     <div key={screen} className="ds-part" dangerouslySetInnerHTML={{ __html: SCREENS[screen].html }} />
                 </div>
 
@@ -397,6 +425,7 @@ export default function PeditulavadoDesignSystem() {
                         <p>Los componentes reales de la app armados solo con tokens, cada uno con sus variantes, sus estados y cuándo usarlo. Al lado, un celular muestra dónde aparece y cómo queda.</p>
                     </SectionHead>
                     <div id="ds-comp-view" className="rounded-3xl border border-neutral-800 bg-neutral-950/60 p-4 md:p-6 mb-10">
+                        <p className="text-sm text-neutral-400 mb-3" style={{ fontFamily: LEXEND }}>Elegí un grupo</p>
                         <div role="group" aria-label="Grupo de componentes" className="flex flex-wrap gap-2">
                             {COMPONENT_GROUPS.map((g, i) => (
                                 <Pill key={g.name} active={group === i} onClick={() => { setGroup(i); setCompTitle(g.items[0]); }}>
@@ -404,7 +433,8 @@ export default function PeditulavadoDesignSystem() {
                                 </Pill>
                             ))}
                         </div>
-                        <div role="group" aria-label="Componente" className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-neutral-900">
+                        <p className="text-sm text-neutral-400 mt-5 pt-5 mb-3 border-t border-neutral-900" style={{ fontFamily: LEXEND }}>Elegí un componente</p>
+                        <div role="group" aria-label="Componente" className="flex flex-wrap gap-2">
                             {COMPONENT_GROUPS[group].items.map((t) => (
                                 <Pill key={t} small active={compTitle === t} onClick={() => setCompTitle(t)}>{t}</Pill>
                             ))}
