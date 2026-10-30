@@ -86,10 +86,11 @@ for (const mode of ['claro', 'oscuro']) {
     const bgHex = s[bg].hex.length > 7 ? over(s[bg].hex, s.surface.hex) : s[bg].hex;
     const fgHex = s[fg].hex.length > 7 ? over(s[fg].hex, bgHex) : s[fg].hex;
     const r = ratio(fgHex, bgHex);
-    report.push({ mode, fg, bg, min, use, ratio: r, pass: r >= min });
+    report.push({ mode, fg, bg, fgHex, bgHex, min, use, ratio: r, pass: r >= min });
   }
 }
 const failures = report.filter((r) => !r.pass);
+writeFileSync(join(root, 'contrast-report.json'), JSON.stringify(report, null, 1));
 
 // --- CSS para el style guide -----------------------------------------------
 const cssVars = (mode) => Object.entries(semantic[mode]).map(([k, v]) => `  --${k}: ${v.hex};`).join('\n');

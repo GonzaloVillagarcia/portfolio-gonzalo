@@ -1,7 +1,8 @@
 // Exporta el style guide al portfolio (pestaña "Design system" del caso Pedí tu lavado).
 //   node design-system/tools/export-portfolio.mjs
 // Genera:
-//   src/components/ds/ds-embed.html  → secciones del style guide (estáticas, sin JS)
+//   src/components/ds/ds-embed.html  → componentes y pantallas del style guide
+//   src/components/ds/ds-data.ts     → tokens y contraste para los fundamentos (React)
 //   src/components/ds/ds-embed.css   → estilos del style guide con alcance .ds-embed
 //   public/design-system/            → imágenes que usa (logo, Mercado Pago, captura de referencia)
 // Correr después de tools/build.mjs, que inyecta los tokens en style-guide.html.
@@ -129,69 +130,33 @@ const OVERRIDES = `
 
 const css = `/* Generado por design-system/tools/export-portfolio.mjs — no editar a mano */\n` + scopeCss(tokenCss) + '\n' + scopeCss(mainCss) + OVERRIDES;
 
-// --- HTML estático de las piezas que el style guide arma con JS -----------------
-const textOn = (hex) => {
-  const h = hex.replace('#', '');
-  if (h.length > 6 && parseInt(h.slice(6, 8), 16) < 160) return '#e5e5e5';
-  const [r, g, b] = [0, 2, 4].map((k) => parseInt(h.slice(k, k + 2), 16));
-  return 0.299 * r + 0.587 * g + 0.114 * b > 150 ? '#0f172a' : '#ffffff';
-};
+// --- Datos para la pestaña (fundamentos en React) -------------------------------
 const prim = tokens.primitivos.color;
-const ramps = Object.entries(prim).map(([group, steps]) =>
-  `<div class="ramp"><span class="name">${group}</span>` + Object.entries(steps).map(([step, t]) =>
-    `<div class="chip-sw" style="background:${t.$value};color:${textOn(t.$value)}"><b>${step}</b><span>${t.$value}</span></div>`).join('') + '</div>').join('\n');
-
 const primHex = (ref) => { const [g, s] = ref.replace(/[{}]/g, '').replace(/^color\./, '').split('.'); return prim[g][s].$value; };
-const semantic = ['claro', 'oscuro'].map((mode) =>
-  `<div class="sem-row" data-mode-row="${mode}" style="font:700 10px var(--font);letter-spacing:.15em;text-transform:uppercase"><span></span><span>Token</span><span>Primitivo</span><span class="hide-sm">Valor</span></div>` +
-  Object.entries(tokens.semanticos[mode].color).map(([name, t]) => {
-    const hex = primHex(t.$value);
-    return `<div class="sem-row" data-mode-row="${mode}"><span class="sem-dot"><i style="background:${hex}"></i></span><code>${name}</code><span>${t.$value.replace(/[{}]/g, '').replace('color.', '')}</span><span class="hide-sm">${hex}</span></div>`;
-  }).join('')).join('\n');
+const contrast = JSON.parse(readFileSync(join(dsRoot, 'contrast-report.json'), 'utf8'));
+const data = {
+  primitives: Object.fromEntries(Object.entries(prim).map(([g, steps]) => [g, Object.entries(steps).map(([s, t]) => [s, t.$value])])),
+  semantic: Object.fromEntries(Object.keys(tokens.semanticos.claro.color).map((name) => [name, {
+    claro: primHex(tokens.semanticos.claro.color[name].$value),
+    oscuro: primHex(tokens.semanticos.oscuro.color[name].$value),
+    refClaro: tokens.semanticos.claro.color[name].$value.replace(/[{}]/g, '').replace('color.', ''),
+    refOscuro: tokens.semanticos.oscuro.color[name].$value.replace(/[{}]/g, '').replace('color.', ''),
+  }])),
+  textStyles: Object.entries(tokens.estilos.texto).map(([name, t]) => ({ name, ...t.$value })),
+  space: Object.keys(tokens.primitivos.space).map((k) => parseFloat(tokens.primitivos.space[k].$value)).filter((v) => v > 0),
+  radius: Object.entries(tokens.primitivos.radius).map(([k, t]) => ({ name: k, value: parseFloat(t.$value), description: t.$description || '' })),
+  shadows: Object.entries(tokens.estilos.sombra).map(([k, t]) => ({ name: k, description: t.$description || '' })),
+  contrast: contrast.map(({ mode, fg, bg, fgHex, bgHex, ratio, min, use }) => ({ mode, fg, bg, fgHex, bgHex, ratio, min, use })),
+};
 
-const SAMPLES = { display: 'Tu auto impecable, sin moverte.', 'title-xl': 'Lavadores en la zona', 'title-lg': 'Lavadores en la zona', 'title-md': 'Lavador en camino', 'title-sm': '¡Hola, Lucía!', body: 'Elegí dónde va a estar el auto: tu casa, el trabajo u otra dirección.', 'body-sm': 'El precio con crédito incluye el costo de financiación.', label: 'Lavadores · Historial · Mi Perfil', 'label-sm': '12 cerca ahora', caption: 'Eco lavado — muy pronto', overline: 'Ubicación de lavado', cta: 'Pedir lavado', 'cta-sm': 'Iniciar sesión', pin: '4821' };
-const type = Object.entries(tokens.estilos.texto).map(([name, t]) => {
-  const v = t.$value;
-  const fam = name === 'pin' ? 'ui-monospace,monospace' : "'Lexend',system-ui,sans-serif";
-  const css = `font:${v.fontWeight} ${v.fontSize}/${v.lineHeight} ${fam};letter-spacing:${v.letterSpacing}${v.textCase ? ';text-transform:uppercase' : ''}`;
-  const spec = `${parseFloat(v.fontSize)} / ${v.lineHeight} · ${v.fontWeight}${v.textCase ? ' · MAYÚS' : ''}`;
-  return `<div class="type-row"><code>${name}</code><span style="${css}">${SAMPLES[name] || name}</span><span class="meta">${spec}</span></div>`;
-}).join('\n');
-
-const spacing = '<h4 class="eyebrow">Espaciado</h4>' + Object.keys(tokens.primitivos.space).filter((k) => k !== '0').map((k) =>
-  `<div class="space-row"><span class="lbl"><code>space-${k}</code></span><span class="bar" style="width:${parseInt(k, 10) * 3}px"></span><span>${k}px</span></div>`).join('');
-const radii = Object.entries(tokens.primitivos.radius).map(([k, t]) => {
-  const v = parseFloat(t.$value);
-  return `<div><div class="radius-box" style="border-radius:${Math.min(v, 36)}px"></div><p class="stat-label"><code>radius-${k}</code> · ${v === 9999 ? 'píldora' : v + 'px'}</p></div>`;
-}).join('');
-const elev = Object.entries(tokens.estilos.sombra).map(([k, t]) =>
-  `<div class="elev-box" style="box-shadow:var(--shadow-${k})"><span><code>${k}</code><br>${t.$description || ''}</span></div>`).join('');
-
-// --- Secciones -----------------------------------------------------------------
-let contraste = section('contraste');
-// Fuera la tabla "Ajustes mínimos propuestos" (comparación con el código anterior)
-contraste = contraste.replace(/\s*<h3 class="sg-h3">Ajustes mínimos propuestos<\/h3>\s*<div class="table-wrap">[\s\S]*?<\/table>\s*<\/div>/, '');
-const sections = [section('color'), contraste, section('tipografia'), section('espacio'), section('componentes'), section('pantallas')]
+// --- Componentes y pantallas (HTML del style guide, sin su encabezado) ---------
+const stripHeader = (s) => s.replace(/<p class="eyebrow">[\s\S]*?<\/p>\s*<h2 class="sg-h2">[\s\S]*?<\/h2>\s*<p class="sg-p">[\s\S]*?<\/p>/, '');
+const sections = [section('componentes'), section('pantallas')].map(stripHeader)
   .join('\n')
-  .replace('<div id="ramps"></div>', `<div id="ramps">${ramps}</div>`)
-  .replace('<div id="semantic"></div>', `<div id="semantic">${semantic}</div>`)
-  .replace('<div class="panel" id="type"></div>', `<div class="panel" id="type">${type}</div>`)
-  .replace('<div class="panel" id="spacing"></div>', `<div class="panel" id="spacing">${spacing}</div>`)
-  .replace('<div class="grid g3" id="radii"></div>', `<div class="grid g3" id="radii">${radii}</div>`)
-  .replace('<div class="grid g3" id="elev" style="margin-top:16px"></div>', `<div class="grid g3" id="elev" style="margin-top:16px">${elev}</div>`)
   .replace(' (hoy están en 9)', '')
-  .replace('Cambiá entre Claro y Oscuro arriba a la derecha.', 'Cambiá entre Claro y Oscuro con el selector de arriba.')
-  .replace('Se calcula en <code>tools/build.mjs</code> y el build falla si algún par no cumple.', 'Cada par se calcula automáticamente a partir de los tokens: si un cambio rompe el contraste, el build falla.')
-  // Textos de proceso → descripción del sistema
-  .replace(' Los 600 se consolidan en 700 y los 800 en 900.', '')
-  .replace(/Base de 4 px\. Los medios pasos de Tailwind[\s\S]*?se redondean al paso más cercano\. /, 'Base de 4 px: todos los espacios son múltiplos de 4. ')
-  .replace('Cada componente sale de su archivo en la app, con los tokens consolidados aplicados.', 'Cada componente con sus variantes, sus estados y una regla corta de cuándo usarlo y cuándo no. Debajo del título, el archivo de la app donde vive.')
   .replace(/src="assets\//g, 'src="/design-system/')
   .replace(/src="referencias\//g, 'src="/design-system/')
   .replace(/src="\.\.\/public\/peditulavado\//g, 'src="/peditulavado/');
-
-// Filas de contraste: vienen inyectadas por build.mjs
-if (!sections.includes('<tr data-mode=')) throw new Error('Faltan las filas de contraste: corré tools/build.mjs primero');
 
 const sprite = '<svg width="0" height="0"' + between(html, '<svg width="0" height="0"', '\n</svg>') + '\n</svg>';
 const out = `<!-- Generado por design-system/tools/export-portfolio.mjs desde style-guide.html — no editar a mano -->\n${sprite}\n${sections}\n`;
@@ -200,6 +165,7 @@ const outDir = join(repo, 'src', 'components', 'ds');
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, 'ds-embed.html'), out);
 writeFileSync(join(outDir, 'ds-embed.css'), css);
+writeFileSync(join(outDir, 'ds-data.ts'), `// Generado por design-system/tools/export-portfolio.mjs desde tokens.json — no editar a mano\nexport const DS = ${JSON.stringify(data, null, 1)} as const;\n`);
 
 const pub = join(repo, 'public', 'design-system');
 mkdirSync(pub, { recursive: true });
